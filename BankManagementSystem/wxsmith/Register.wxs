@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="Register">
+		<size>407,326</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+			<pos>0,0</pos>
+			<size>408,256</size>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfEName" member="yes">
+				<value>Employee Name</value>
+				<pos>184,72</pos>
+				<size>128,21</size>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblName" member="yes">
+				<label>Enter name:</label>
+				<pos>16,72</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfEID" member="yes">
+				<value>SAID</value>
+				<pos>184,112</pos>
+				<size>128,21</size>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblEID" member="yes">
+				<label>Enter SAID:</label>
+				<pos>16,120</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfEPass" member="yes">
+				<value>password</value>
+				<pos>184,152</pos>
+				<size>128,21</size>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblEPass" member="yes">
+				<label>Enter password:</label>
+				<pos>16,152</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblMPass" member="yes">
+				<label>Managers password: </label>
+				<pos>16,200</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfMPass" member="yes">
+				<value>Confirming password</value>
+				<pos>184,192</pos>
+				<size>128,21</size>
+			</object>
+			<object class="wxButton" name="ID_BUTTON2" variable="btnSubmit" member="yes">
+				<label>Submit</label>
+				<pos>312,272</pos>
+				<handler function="OnbtnSubmitClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON1" variable="btnBack" member="yes">
+				<label>Back</label>
+				<pos>16,272</pos>
+				<handler function="OnButton1Click" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT5" variable="lblRegister" member="yes">
+				<label>Register</label>
+				<pos>168,24</pos>
+			</object>
+		</object>
+	</object>
+</wxsmith>
