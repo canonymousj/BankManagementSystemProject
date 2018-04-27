@@ -142,7 +142,10 @@ void BankManagementSystemFrame::OnbtnLoginClick(wxCommandEvent& event)
         q = "SELECT * FROM tblEmployee WHERE employeeID = "+std::to_string(userID)+";";
         res = db->query(q.c_str());
 
-        selForm->currentLogged = new employee("Jerry", "975543", 1, "password", 554, 1);
+        //std::to_string(
+        if(!(res.empty())){
+            selForm->currentLogged = new employee(res[0][1], res[0][2], atoi(res[0][0].c_str()), res[0][3], atof(res[0][4].c_str()), atoi(res[0][5].c_str()));
+        }
         selForm->Show(TRUE);
 
         selForm->lblWelcome->SetLabelText("Welcome: "+selForm->currentLogged->getName());
@@ -158,14 +161,17 @@ void DatabaseConnect(){
     db = new Database("Database.sqlite");
 }
 
-int daysBetween(std::string date){
-    struct std::tm a = {0,0,0,24,5,104}; /* June 24, 2004 */
-    struct std::tm b = {0,0,0,5,6,104}; /* July 5, 2004 */
-    std::time_t x = std::mktime(&a);
+int daysBetween(std::string date){  //needs to be looked at
+    std::time_t x = std::time(0);
+    std::tm* now = std::localtime(&x);
+
+    struct std::tm b = {0,0,0,atoi(date.substr(0,2).c_str()),atoi(date.substr(3,2).c_str()),(now->tm_year)-1};
     std::time_t y = std::mktime(&b);
+
+
     if ( x != (std::time_t)(-1) && y != (std::time_t)(-1) )
     {
-        double difference = std::difftime(y, x) / (60 * 60 * 24);
+        double difference = std::difftime(x, y) / (60 * 60 * 24);
         return difference;
     }
     return 0;

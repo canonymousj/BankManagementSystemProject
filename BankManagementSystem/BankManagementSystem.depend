@@ -1831,3 +1831,124 @@
 	<wx/stattext.h>
 	"Employee.h"
 
+1524810871 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
+	"BankManagementSystemApp.h"
+	"BankManagementSystemMain.h"
+	<wx/image.h>
+
+1524810871 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
+	<wx/app.h>
+
+1524834753 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1524811962 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
+	"Database.h"
+
+1523621819 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
+	<string>
+	<vector>
+	"sqlite3.h"
+
+1522668050 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
+	<stdarg.h>
+
+1524512035 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
+	"Employee.h"
+
+1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
+	<string>
+
+1524837771 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+	"Register.h"
+	"BankManagementSystemMain.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1524834873 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
+	"wx/msw/wx.rc"
+
+1524836960 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+	"SelectionMenu.h"
+	"BankManagementSystemMain.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1524836960 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
+	"Employee.h"
+
+1522668050 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
+
