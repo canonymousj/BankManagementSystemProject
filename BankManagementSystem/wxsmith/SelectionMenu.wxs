@@ -8,7 +8,7 @@
 			<pos>0,0</pos>
 			<size>408,248</size>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblWelcome" member="yes">
-				<label>Welcome: *Name*</label>
+				<label>Welcome: *Name* &#x0A;Employee ID: *ID*</label>
 				<pos>16,56</pos>
 			</object>
 			<object class="wxButton" name="ID_BUTTON1" variable="btnEFunct" member="yes">
@@ -42,7 +42,7 @@
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblSelection" member="yes">
 				<label>Selection</label>
-				<pos>160,24</pos>
+				<pos>176,24</pos>
 			</object>
 		</object>
 	</object>

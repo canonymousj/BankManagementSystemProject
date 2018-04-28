@@ -142,13 +142,15 @@ void BankManagementSystemFrame::OnbtnLoginClick(wxCommandEvent& event)
         q = "SELECT * FROM tblEmployee WHERE employeeID = "+std::to_string(userID)+";";
         res = db->query(q.c_str());
 
-        //std::to_string(
         if(!(res.empty())){
             selForm->currentLogged = new employee(res[0][1], res[0][2], atoi(res[0][0].c_str()), res[0][3], atof(res[0][4].c_str()), atoi(res[0][5].c_str()));
         }
         selForm->Show(TRUE);
 
-        selForm->lblWelcome->SetLabelText("Welcome: "+selForm->currentLogged->getName());
+        wxString EmID;
+        EmID<<selForm->currentLogged->getEmployeeNumber();
+
+        selForm->lblWelcome->SetLabelText("Welcome: "+selForm->currentLogged->getName()+"\nEmployee ID: "+EmID);
         selForm->lblDays->SetLabelText("Days till Birthday: "+to_string(daysBetween("24/11/1997")));
 
         this->Close(TRUE);
@@ -179,9 +181,17 @@ int daysBetween(std::string date){  //needs to be looked at
 
 void BankManagementSystemFrame::OnbtnRegClick(wxCommandEvent& event)
 {
+    vector<vector<string> > resulta = db->query("SELECT * FROM tblEmployee;");
+
+	int max = resulta.size();
+	wxString maxStr;
+	maxStr << (max+1);
+
     Register *regForm = new Register(NULL);
 
     regForm->Show(TRUE);
+    regForm->txfEmNum->SetValue(maxStr);
+    regForm->emNum = maxStr;
 
     this->Close(TRUE);
 }

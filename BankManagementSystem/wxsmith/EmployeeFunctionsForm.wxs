@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="EmployeeFunctionsForm">
+		<size>463,335</size>
+		<id_arg>0</id_arg>
+		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
+			<pos>120,72</pos>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANEL1" variable="pnlViewEm" member="yes">
+					<pos>262,206</pos>
+					<object class="wxBoxSizer" variable="BoxSizer1" member="no" />
+				</object>
+				<label>View employees</label>
+			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANEL2" variable="pnlUpdateEm" member="yes">
+					<pos>78,11</pos>
+					<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblUpEmNum" member="yes">
+						<label>Enter employee number:</label>
+						<pos>32,16</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUpEmNum" member="yes">
+						<pos>160,16</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON1" variable="btnUpSearch" member="yes">
+						<label>Search</label>
+						<pos>352,16</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfUpEName" member="yes">
+						<pos>160,64</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfUpESAID" member="yes">
+						<pos>160,104</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfUpESal" member="yes">
+						<pos>160,144</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfUpEPriv" member="yes">
+						<pos>160,184</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblUpEName" member="yes">
+						<label>Employee Name: </label>
+						<pos>32,64</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblUpESAID" member="yes">
+						<label>Employee SAID:</label>
+						<pos>32,112</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblUpESal" member="yes">
+						<label>Employee salary:</label>
+						<pos>32,152</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT5" variable="lblUpEPriv" member="yes">
+						<label>Employee privilege:</label>
+						<pos>32,192</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON2" variable="btnUpUpdate" member="yes">
+						<label>Update</label>
+						<pos>344,240</pos>
+						<handler function="OnbtnUpUpdateClick" entry="EVT_BUTTON" />
+					</object>
+				</object>
+				<label>Update employee</label>
+			</object>
+		</object>
+	</object>
+</wxsmith>

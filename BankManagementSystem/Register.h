@@ -22,14 +22,17 @@ class Register: public wxFrame
 		wxPanel* Panel1;
 		wxStaticText* lblEID;
 		wxStaticText* lblEPass;
+		wxStaticText* lblEmNum;
 		wxStaticText* lblMPass;
 		wxStaticText* lblName;
 		wxStaticText* lblRegister;
 		wxTextCtrl* txfEID;
 		wxTextCtrl* txfEName;
 		wxTextCtrl* txfEPass;
+		wxTextCtrl* txfEmNum;
 		wxTextCtrl* txfMPass;
 		//*)
+		wxString emNum = "1";
 
 	protected:
 
@@ -45,6 +48,8 @@ class Register: public wxFrame
 		static const long ID_BUTTON2;
 		static const long ID_BUTTON1;
 		static const long ID_STATICTEXT5;
+		static const long ID_TEXTCTRL5;
+		static const long ID_STATICTEXT6;
 		static const long ID_PANEL1;
 		//*)
 

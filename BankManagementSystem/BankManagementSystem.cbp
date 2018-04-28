@@ -51,6 +51,8 @@
 		<Unit filename="DatabaseFunctions.cpp" />
 		<Unit filename="Employee.h" />
 		<Unit filename="EmployeeFunctions.cpp" />
+		<Unit filename="EmployeeFunctionsForm.cpp" />
+		<Unit filename="EmployeeFunctionsForm.h" />
 		<Unit filename="Register.cpp" />
 		<Unit filename="Register.h" />
 		<Unit filename="SelectionMenu.cpp" />
@@ -64,6 +66,7 @@
 		<Unit filename="sqlite3.h" />
 		<Unit filename="sqlite3ext.h" />
 		<Unit filename="wxsmith/BankManagementSystemframe.wxs" />
+		<Unit filename="wxsmith/EmployeeFunctionsForm.wxs" />
 		<Unit filename="wxsmith/Register.wxs" />
 		<Unit filename="wxsmith/SelectionMenu.wxs" />
 		<Extensions>
@@ -76,6 +79,7 @@
 					<wxFrame wxs="wxsmith/BankManagementSystemframe.wxs" src="BankManagementSystemMain.cpp" hdr="BankManagementSystemMain.h" fwddecl="0" i18n="1" name="BankManagementSystemFrame" language="CPP" />
 					<wxFrame wxs="wxsmith/Register.wxs" src="Register.cpp" hdr="Register.h" fwddecl="0" i18n="1" name="Register" language="CPP" />
 					<wxFrame wxs="wxsmith/SelectionMenu.wxs" src="SelectionMenu.cpp" hdr="SelectionMenu.h" fwddecl="0" i18n="1" name="SelectionMenu" language="CPP" />
+					<wxFrame wxs="wxsmith/EmployeeFunctionsForm.wxs" src="EmployeeFunctionsForm.cpp" hdr="EmployeeFunctionsForm.h" fwddecl="0" i18n="1" name="EmployeeFunctionsForm" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

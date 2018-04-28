@@ -1863,7 +1863,7 @@
 1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1524837771 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1524936278 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
@@ -1871,7 +1871,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1524834873 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+1524936299 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1881,13 +1881,13 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1524836960 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1524936491 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1524836960 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1524936491 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1951,4 +1951,17 @@
 	<unicode/utf16.h>
 	<ctype.h>
 	<math.h>
+
+1524935635 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+	"BankManagementSystemMain.h"
+	<wx/msgdlg.h>
+	"Database.h"
+	"Register.h"
+	"sqlite3.h"
+	"SelectionMenu.h"
+	"Employee.h"
+	<ctime>
+	<wx/font.h>
+	<wx/intl.h>
+	<wx/string.h>
 
