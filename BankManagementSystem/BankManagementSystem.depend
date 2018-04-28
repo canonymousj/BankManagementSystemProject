@@ -1881,9 +1881,10 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1524936491 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1524941045 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
+	"EmployeeFunctionsForm.h"
 	<wx/intl.h>
 	<wx/string.h>
 
@@ -1952,7 +1953,7 @@
 	<ctype.h>
 	<math.h>
 
-1524935635 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1524936638 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -1964,4 +1965,198 @@
 	<wx/font.h>
 	<wx/intl.h>
 	<wx/string.h>
+
+1524942567 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/notebook.h>
+	<wx/panel.h>
+	<wx/sizer.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"Employee.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\notebook.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/univ/notebook.h"
+	"wx/msw/notebook.h"
+	"wx/generic/notebook.h"
+	"wx/gtk/notebook.h"
+	"wx/gtk1/notebook.h"
+	"wx/osx/notebook.h"
+	"wx/qt/notebook.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\bookctrl.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/withimages.h"
+	"wx/notebook.h"
+	"wx/choicebk.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\withimages.h
+	"wx/defs.h"
+	"wx/icon.h"
+	"wx/imaglist.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\choicebk.h
+	"wx/defs.h"
+	"wx/bookctrl.h"
+	"wx/choice.h"
+	"wx/containr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\choice.h
+	"wx/defs.h"
+	"wx/ctrlsub.h"
+	"wx/univ/choice.h"
+	"wx/msw/choice.h"
+	"wx/motif/choice.h"
+	"wx/gtk/choice.h"
+	"wx/gtk1/choice.h"
+	"wx/osx/choice.h"
+	"wx/qt/choice.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\ctrlsub.h
+	"wx/defs.h"
+	"wx/arrstr.h"
+	"wx/control.h"
+	<vector>
+	"wx/msw/ctrlsub.h"
+	"wx/motif/ctrlsub.h"
+	"wx/qt/ctrlsub.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\ctrlsub.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\ctrlsub.h
+	"wx/dynarray.h"
+	"wx/generic/ctrlsub.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\ctrlsub.h
+	"wx/dynarray.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\ctrlsub.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\choice.h
+	"wx/combobox.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\combobox.h
+	"wx/defs.h"
+	"wx/textctrl.h"
+	"wx/ctrlsub.h"
+	"wx/textentry.h"
+	"wx/univ/combobox.h"
+	"wx/msw/combobox.h"
+	"wx/motif/combobox.h"
+	"wx/gtk/combobox.h"
+	"wx/gtk1/combobox.h"
+	"wx/osx/combobox.h"
+	"wx/qt/combobox.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\combobox.h
+	"wx/combo.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\combo.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/renderer.h"
+	"wx/bitmap.h"
+	"wx/textentry.h"
+	"wx/time.h"
+	"wx/msw/combo.h"
+	"wx/generic/combo.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\renderer.h
+	"wx/gdicmn.h"
+	"wx/colour.h"
+	"wx/font.h"
+	"wx/bitmap.h"
+	"wx/string.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\time.h
+	"wx/longlong.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\combo.h
+	"wx/timer.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\timer.h
+	"wx/defs.h"
+	"wx/object.h"
+	"wx/longlong.h"
+	"wx/event.h"
+	"wx/stopwatch.h"
+	"wx/utils.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\stopwatch.h
+	"wx/defs.h"
+	"wx/longlong.h"
+	"wx/time.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\combo.h
+	"wx/containr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\combobox.h
+	"wx/choice.h"
+	"wx/textentry.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\combobox.h
+	"wx/choice.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\combobox.h
+	"wx/defs.h"
+	"wx/object.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\combobox.h
+	"wx/containr.h"
+	"wx/choice.h"
+	"wx/textctrl.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\combobox.h
+	"wx/choice.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\choice.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\choice.h
+	"wx/clntdata.h"
+	"wx/dynarray.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\choice.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\choice.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\choice.h
+	"wx/control.h"
+	"wx/dynarray.h"
+	"wx/arrstr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\choice.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\notebook.h
+	"wx/arrstr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\notebook.h
+	"wx/control.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\notebook.h
+	"wx/event.h"
+	"wx/control.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\notebook.h
+	"wx/list.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\notebook.h
+	"wx/list.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\notebook.h
+	"wx/event.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\notebook.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\sizer.h
+	"wx/defs.h"
+	"wx/window.h"
 

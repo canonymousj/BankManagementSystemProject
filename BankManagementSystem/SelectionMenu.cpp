@@ -1,5 +1,6 @@
 #include "SelectionMenu.h"
 #include "BankManagementSystemMain.h"
+#include "EmployeeFunctionsForm.h"
 
 //(*InternalHeaders(SelectionMenu)
 #include <wx/intl.h>
@@ -64,5 +65,10 @@ void SelectionMenu::OnbtnLogoutClick(wxCommandEvent& event)
 
 void SelectionMenu::OnbtnEFunctClick(wxCommandEvent& event)
 {
+    EmployeeFunctionsForm *emFunctForm = new EmployeeFunctionsForm(NULL);
 
+    emFunctForm->Show(TRUE);
+    emFunctForm->curEmployee = this->currentLogged;
+
+    this->Close(TRUE);
 }

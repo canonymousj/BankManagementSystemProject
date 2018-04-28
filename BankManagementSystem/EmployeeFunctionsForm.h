@@ -11,31 +11,37 @@
 #include <wx/textctrl.h>
 //*)
 
+#include "Employee.h"
+
 class EmployeeFunctionsForm: public wxFrame
 {
 	public:
 
 		EmployeeFunctionsForm(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
 		virtual ~EmployeeFunctionsForm();
+        void setupCurEmployee();
 
 		//(*Declarations(EmployeeFunctionsForm)
+		wxButton* btnUpExit;
 		wxButton* btnUpSearch;
 		wxButton* btnUpUpdate;
 		wxNotebook* Notebook1;
 		wxPanel* pnlUpdateEm;
 		wxPanel* pnlViewEm;
 		wxStaticText* lblUpEName;
+		wxStaticText* lblUpEPass;
 		wxStaticText* lblUpEPriv;
 		wxStaticText* lblUpESAID;
 		wxStaticText* lblUpESal;
 		wxStaticText* lblUpEmNum;
 		wxTextCtrl* txfUpEName;
+		wxTextCtrl* txfUpEPass;
 		wxTextCtrl* txfUpEPriv;
 		wxTextCtrl* txfUpESAID;
 		wxTextCtrl* txfUpESal;
 		wxTextCtrl* txfUpEmNum;
 		//*)
-
+        employee *curEmployee = NULL;
 	protected:
 
 		//(*Identifiers(EmployeeFunctionsForm)
@@ -52,6 +58,9 @@ class EmployeeFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT4;
 		static const long ID_STATICTEXT5;
 		static const long ID_BUTTON2;
+		static const long ID_STATICTEXT6;
+		static const long ID_TEXTCTRL6;
+		static const long ID_BUTTON3;
 		static const long ID_PANEL2;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -59,8 +68,8 @@ class EmployeeFunctionsForm: public wxFrame
 	private:
 
 		//(*Handlers(EmployeeFunctionsForm)
-		void OnTreeCtrl1BeginDrag(wxTreeEvent& event);
 		void OnbtnUpUpdateClick(wxCommandEvent& event);
+		void OnbtnUpExitClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
