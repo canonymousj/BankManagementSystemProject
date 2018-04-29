@@ -1839,7 +1839,7 @@
 1524810871 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
 	<wx/app.h>
 
-1524834753 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
+1524997666 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1881,7 +1881,7 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1524993712 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1524997519 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
@@ -1953,7 +1953,7 @@
 	<ctype.h>
 	<math.h>
 
-1524993662 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1524997465 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -1966,7 +1966,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1524994828 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1524997544 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/notebook.h>
@@ -2160,8 +2160,9 @@
 	"wx/defs.h"
 	"wx/window.h"
 
-1524993423 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+1524997580 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
 	"EmployeeFunctionsForm.h"
+	"SelectionMenu.h"
 	"Database.h"
 	<wx/msgdlg.h>
 	<wx/intl.h>

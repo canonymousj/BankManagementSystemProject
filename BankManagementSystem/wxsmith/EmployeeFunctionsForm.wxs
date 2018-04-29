@@ -57,7 +57,7 @@
 					</object>
 					<object class="wxButton" name="ID_BUTTON2" variable="btnUpUpdate" member="yes">
 						<label>Update</label>
-						<pos>344,232</pos>
+						<pos>344,200</pos>
 						<handler function="OnbtnUpUpdateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT6" variable="lblUpEPass" member="yes">
@@ -71,6 +71,11 @@
 						<label>Exit</label>
 						<pos>344,264</pos>
 						<handler function="OnbtnUpExitClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON4" variable="btnUpBack" member="yes">
+						<label>Back</label>
+						<pos>344,232</pos>
+						<handler function="OnbtnUpBackClick" entry="EVT_BUTTON" />
 					</object>
 				</object>
 				<label>Update employee</label>

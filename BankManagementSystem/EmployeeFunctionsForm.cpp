@@ -1,4 +1,5 @@
 #include "EmployeeFunctionsForm.h"
+#include "SelectionMenu.h"
 #include "Database.h"
 #include <wx/msgdlg.h>
 
@@ -23,6 +24,7 @@ const long EmployeeFunctionsForm::ID_BUTTON2 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT6 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL6 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON3 = wxNewId();
+const long EmployeeFunctionsForm::ID_BUTTON4 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL2 = wxNewId();
 const long EmployeeFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -60,16 +62,18 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	lblUpESAID = new wxStaticText(pnlUpdateEm, ID_STATICTEXT3, _("Employee SAID:"), wxPoint(32,112), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 	lblUpESal = new wxStaticText(pnlUpdateEm, ID_STATICTEXT4, _("Employee salary:"), wxPoint(32,152), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
 	lblUpEPriv = new wxStaticText(pnlUpdateEm, ID_STATICTEXT5, _("Employee privilege:"), wxPoint(32,192), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("Update"), wxPoint(344,232), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("Update"), wxPoint(344,200), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
 	lblUpEPass = new wxStaticText(pnlUpdateEm, ID_STATICTEXT6, _("Employee password:"), wxPoint(32,232), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
 	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("Exit"), wxPoint(344,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+	btnUpBack = new wxButton(pnlUpdateEm, ID_BUTTON4, _("Back"), wxPoint(344,232), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpSearchClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpUpdateClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpExitClick);
+	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpBackClick);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -187,4 +191,19 @@ void EmployeeFunctionsForm::OnbtnUpSearchClick(wxCommandEvent& event)
 	}else{
         wxMessageBox("Employee doesn't exit");
 	}
+}
+
+void EmployeeFunctionsForm::OnbtnUpBackClick(wxCommandEvent& event)
+{
+    SelectionMenu *seleForm = new SelectionMenu(NULL);
+
+    seleForm->currentLogged = this->curEmployee;
+    seleForm->Show(TRUE);
+    wxString EmID;
+    EmID<<seleForm->currentLogged->getEmployeeNumber();
+
+    seleForm->lblWelcome->SetLabelText("Welcome: "+seleForm->currentLogged->getName()+"\nEmployee ID: "+EmID);
+    seleForm->lblDays->SetLabelText(lblTextStore);
+
+    this->Close(TRUE);
 }

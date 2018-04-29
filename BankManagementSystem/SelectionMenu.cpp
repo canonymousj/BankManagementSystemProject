@@ -71,6 +71,7 @@ void SelectionMenu::OnbtnEFunctClick(wxCommandEvent& event)
     emFunctForm->Show(TRUE);
     emFunctForm->curEmployee = this->currentLogged;
     emFunctForm->setupCurEmployee();
+    emFunctForm->lblTextStore = lblDays->GetLabel();
     //delete emFunctForm;
 
     this->Close(TRUE);

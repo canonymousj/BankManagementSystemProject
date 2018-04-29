@@ -22,7 +22,10 @@ class EmployeeFunctionsForm: public wxFrame
         void setupCurEmployee();
         void populateUpdateFields(int EmNum);
 
+        wxString lblTextStore = "Error";
+
 		//(*Declarations(EmployeeFunctionsForm)
+		wxButton* btnUpBack;
 		wxButton* btnUpExit;
 		wxButton* btnUpSearch;
 		wxButton* btnUpUpdate;
@@ -62,6 +65,7 @@ class EmployeeFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT6;
 		static const long ID_TEXTCTRL6;
 		static const long ID_BUTTON3;
+		static const long ID_BUTTON4;
 		static const long ID_PANEL2;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -72,6 +76,7 @@ class EmployeeFunctionsForm: public wxFrame
 		void OnbtnUpUpdateClick(wxCommandEvent& event);
 		void OnbtnUpExitClick(wxCommandEvent& event);
 		void OnbtnUpSearchClick(wxCommandEvent& event);
+		void OnbtnUpBackClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
