@@ -131,6 +131,14 @@ void EmployeeFunctionsForm::setupCurEmployee(){
 
     txfUpEPriv->SetEditable(FALSE);
     txfUpESal->SetEditable(FALSE);
+
+    if(curEmployee->getPrivilege() != 0){
+        txfUpEmNum->SetEditable(FALSE);
+        btnUpSearch->Hide();
+    }else{
+        txfUpEmNum->SetEditable(TRUE);
+        btnUpSearch->Show(TRUE);
+    }
 }
 void EmployeeFunctionsForm::OnbtnUpUpdateClick(wxCommandEvent& event)
 {
