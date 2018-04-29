@@ -117,6 +117,8 @@ void Register::OnbtnSubmitClick(wxCommandEvent& event)
 
         BankManagementSystemFrame *loginForm = new BankManagementSystemFrame(NULL);
         loginForm->Show(TRUE);
+        //delete loginForm;
+
         this->Close(TRUE);
     }else{
         wxMessageBox("Reg failed");

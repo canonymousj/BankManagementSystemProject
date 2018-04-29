@@ -25,6 +25,7 @@
 					<object class="wxButton" name="ID_BUTTON1" variable="btnUpSearch" member="yes">
 						<label>Search</label>
 						<pos>352,16</pos>
+						<handler function="OnbtnUpSearchClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfUpEName" member="yes">
 						<pos>160,64</pos>

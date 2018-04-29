@@ -192,6 +192,7 @@ void BankManagementSystemFrame::OnbtnRegClick(wxCommandEvent& event)
     regForm->Show(TRUE);
     regForm->txfEmNum->SetValue(maxStr);
     regForm->emNum = maxStr;
+    //delete regForm;
 
     this->Close(TRUE);
 }

@@ -20,6 +20,7 @@ class EmployeeFunctionsForm: public wxFrame
 		EmployeeFunctionsForm(wxWindow* parent,wxWindowID id=wxID_ANY,const wxPoint& pos=wxDefaultPosition,const wxSize& size=wxDefaultSize);
 		virtual ~EmployeeFunctionsForm();
         void setupCurEmployee();
+        void populateUpdateFields(int EmNum);
 
 		//(*Declarations(EmployeeFunctionsForm)
 		wxButton* btnUpExit;
@@ -70,6 +71,7 @@ class EmployeeFunctionsForm: public wxFrame
 		//(*Handlers(EmployeeFunctionsForm)
 		void OnbtnUpUpdateClick(wxCommandEvent& event);
 		void OnbtnUpExitClick(wxCommandEvent& event);
+		void OnbtnUpSearchClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

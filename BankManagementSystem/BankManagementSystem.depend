@@ -1863,7 +1863,7 @@
 1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1524936278 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1524993662 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
@@ -1871,7 +1871,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1524936299 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+1524943785 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1881,7 +1881,7 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1524941045 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1524993712 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
@@ -1953,7 +1953,7 @@
 	<ctype.h>
 	<math.h>
 
-1524936638 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1524993662 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -1966,7 +1966,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1524942567 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1524994828 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/notebook.h>
@@ -2159,4 +2159,11 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\sizer.h
 	"wx/defs.h"
 	"wx/window.h"
+
+1524993423 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+	"EmployeeFunctionsForm.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/intl.h>
+	<wx/string.h>
 

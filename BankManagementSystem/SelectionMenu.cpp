@@ -59,6 +59,7 @@ void SelectionMenu::OnbtnLogoutClick(wxCommandEvent& event)
     BankManagementSystemFrame *logForm = new BankManagementSystemFrame(NULL);
 
     logForm->Show(TRUE);
+    //delete logForm;
 
     this->Close(TRUE);
 }
@@ -69,6 +70,8 @@ void SelectionMenu::OnbtnEFunctClick(wxCommandEvent& event)
 
     emFunctForm->Show(TRUE);
     emFunctForm->curEmployee = this->currentLogged;
+    emFunctForm->setupCurEmployee();
+    //delete emFunctForm;
 
     this->Close(TRUE);
 }

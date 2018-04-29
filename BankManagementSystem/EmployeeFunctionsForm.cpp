@@ -1,4 +1,6 @@
 #include "EmployeeFunctionsForm.h"
+#include "Database.h"
+#include <wx/msgdlg.h>
 
 //(*InternalHeaders(EmployeeFunctionsForm)
 #include <wx/intl.h>
@@ -29,6 +31,9 @@ BEGIN_EVENT_TABLE(EmployeeFunctionsForm,wxFrame)
 	//(*EventTable(EmployeeFunctionsForm)
 	//*)
 END_EVENT_TABLE()
+
+void DatabaseConnectEF();
+Database *dbEF = NULL;
 
 EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -62,47 +67,116 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
+	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpSearchClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpUpdateClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpExitClick);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
-    setupCurEmployee();
+    DatabaseConnectEF();
 }
 
 EmployeeFunctionsForm::~EmployeeFunctionsForm()
 {
 	//(*Destroy(EmployeeFunctionsForm)
 	//*)
+	dbEF->close();
+	delete dbEF;
 }
 
-void EmployeeFunctionsForm::setupCurEmployee(){
+void DatabaseConnectEF(){
+    dbEF = new Database("Database.sqlite");
+}
+
+void EmployeeFunctionsForm::populateUpdateFields(int EmNum){
     wxString upEmNum, upEmName, upEmID, upEmPass, upEmSal, upEmPriv;
 
-    //upEmNum << (curEmployee->getEmployeeNumber());
+    std::string q = "SELECT * FROM tblEmployee WHERE employeeID = "+std::to_string(EmNum)+";";
+    vector<vector<string> > res = dbEF->query(q.c_str());
 
-    //upEmName << curEmployee->getName();
-    //upEmID << curEmployee->getID();
-   // upEmPass << curEmployee->getPassword();
-    //upEmSal << curEmployee->getSalary();
-    //upEmPriv << curEmployee->getPrivilege();
-/*
+    if(!(res.empty())){
+        upEmNum << res[0][0];
+        upEmName << res[0][1];
+        upEmID << res[0][2];
+        upEmPass << res[0][3];
+        upEmSal << res[0][4];
+        upEmPriv << res[0][5];
+    }
+
     txfUpEmNum->SetValue(upEmNum);
     txfUpEName->SetValue(upEmName);
     txfUpESAID->SetValue(upEmID);
     txfUpESal->SetValue(upEmSal);
     txfUpEPriv->SetValue(upEmPriv);
-    txfUpEPass->SetValue(upEmPass); */
+    txfUpEPass->SetValue(upEmPass);
+}
 
-    /*
+void EmployeeFunctionsForm::setupCurEmployee(){
+    wxString upEmNum, upEmName, upEmID, upEmPass, upEmSal, upEmPriv;
+
+    upEmNum << curEmployee->getEmployeeNumber();
+    upEmName << curEmployee->getName();
+    upEmID << curEmployee->getID();
+    upEmPass << curEmployee->getPassword();
+    upEmSal << curEmployee->getSalary();
+    upEmPriv << curEmployee->getPrivilege();
+
+    txfUpEmNum->SetValue(upEmNum);
+    txfUpEName->SetValue(upEmName);
+    txfUpESAID->SetValue(upEmID);
+    txfUpESal->SetValue(upEmSal);
+    txfUpEPriv->SetValue(upEmPriv);
+    txfUpEPass->SetValue(upEmPass);
+
+
     txfUpEPriv->SetEditable(FALSE);
-    txfUpESal->SetEditable(FALSE);*/
+    txfUpESal->SetEditable(FALSE);
 }
 void EmployeeFunctionsForm::OnbtnUpUpdateClick(wxCommandEvent& event)
 {
+    int upEmNum = wxAtoi(txfUpEmNum->GetValue()), upEmPriv = wxAtoi(txfUpEPriv->GetValue());
+	std::string upEmName = txfUpEName->GetValue().ToStdString(), upEmID = txfUpESAID->GetValue().ToStdString(), upEmPass = txfUpEPass->GetValue().ToStdString();
+	double upEmSal = wxAtof(txfUpESal->GetValue());
+
 }
 
 void EmployeeFunctionsForm::OnbtnUpExitClick(wxCommandEvent& event)
 {
     this->Close();
+}
+
+void EmployeeFunctionsForm::OnbtnUpSearchClick(wxCommandEvent& event)
+{
+    vector<vector<string> > resulta = dbEF->query("SELECT * FROM tblEmployee;");
+
+	int max = resulta.size();
+
+	int upEmNum = wxAtoi(txfUpEmNum->GetValue());
+
+	if(upEmNum <= max && upEmNum > 0){
+        wxMessageBox("Acceptable");
+        populateUpdateFields(upEmNum);
+
+        if(upEmNum != curEmployee->getEmployeeNumber()){
+            txfUpEPass->Hide();
+            lblUpEPass->Hide();
+
+            if(curEmployee->getPrivilege() == 0){
+                txfUpEPriv->SetEditable(TRUE);
+                txfUpESal->SetEditable(TRUE);
+            }else{
+                txfUpEPriv->SetEditable(FALSE);
+                txfUpESal->SetEditable(FALSE);
+            }
+
+        }else{
+            txfUpEPass->Show(TRUE);
+            lblUpEPass->Show(TRUE);
+            txfUpEPriv->SetEditable(FALSE);
+            txfUpESal->SetEditable(FALSE);
+        }
+
+	}else{
+        wxMessageBox("Employee doesn't exit");
+	}
 }
