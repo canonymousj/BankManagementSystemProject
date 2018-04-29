@@ -4,6 +4,7 @@
 //(*Headers(EmployeeFunctionsForm)
 #include <wx/button.h>
 #include <wx/frame.h>
+#include <wx/grid.h>
 #include <wx/notebook.h>
 #include <wx/panel.h>
 #include <wx/sizer.h>
@@ -29,7 +30,9 @@ class EmployeeFunctionsForm: public wxFrame
 		wxButton* btnUpExit;
 		wxButton* btnUpSearch;
 		wxButton* btnUpUpdate;
+		wxGrid* Grid1;
 		wxNotebook* Notebook1;
+		wxPanel* Panel1;
 		wxPanel* pnlUpdateEm;
 		wxPanel* pnlViewEm;
 		wxStaticText* lblUpEName;
@@ -49,6 +52,8 @@ class EmployeeFunctionsForm: public wxFrame
 	protected:
 
 		//(*Identifiers(EmployeeFunctionsForm)
+		static const long ID_GRID1;
+		static const long ID_PANEL3;
 		static const long ID_PANEL1;
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;

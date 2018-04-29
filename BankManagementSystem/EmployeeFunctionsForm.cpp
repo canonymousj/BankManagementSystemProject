@@ -8,6 +8,8 @@
 #include <wx/string.h>
 //*)
 //(*IdInit(EmployeeFunctionsForm)
+const long EmployeeFunctionsForm::ID_GRID1 = wxNewId();
+const long EmployeeFunctionsForm::ID_PANEL3 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL1 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT1 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL1 = wxNewId();
@@ -47,6 +49,18 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
+	Panel1 = new wxPanel(pnlViewEm, ID_PANEL3, wxDefaultPosition, wxSize(445,226), wxTAB_TRAVERSAL, _T("ID_PANEL3"));
+	Grid1 = new wxGrid(Panel1, ID_GRID1, wxPoint(0,0), wxSize(448,136), 0, _T("ID_GRID1"));
+	Grid1->CreateGrid(5,4);
+	Grid1->EnableEditing(true);
+	Grid1->EnableGridLines(true);
+	Grid1->SetColLabelValue(0, _("Name       "));
+	Grid1->SetColLabelValue(1, _("SAID    "));
+	Grid1->SetColLabelValue(2, _("Salary"));
+	Grid1->SetColLabelValue(3, _("Privilege"));
+	Grid1->SetDefaultCellFont( Grid1->GetFont() );
+	Grid1->SetDefaultCellTextColour( Grid1->GetForegroundColour() );
+	BoxSizer1->Add(Panel1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
 	pnlViewEm->SetSizer(BoxSizer1);
 	BoxSizer1->Fit(pnlViewEm);
 	BoxSizer1->SetSizeHints(pnlViewEm);
@@ -135,6 +149,7 @@ void EmployeeFunctionsForm::setupCurEmployee(){
 
     txfUpEPriv->SetEditable(FALSE);
     txfUpESal->SetEditable(FALSE);
+    txfUpESAID->SetEditable(FALSE);
 
     if(curEmployee->getPrivilege() != 0){
         txfUpEmNum->SetEditable(FALSE);
@@ -150,6 +165,24 @@ void EmployeeFunctionsForm::OnbtnUpUpdateClick(wxCommandEvent& event)
 	std::string upEmName = txfUpEName->GetValue().ToStdString(), upEmID = txfUpESAID->GetValue().ToStdString(), upEmPass = txfUpEPass->GetValue().ToStdString();
 	double upEmSal = wxAtof(txfUpESal->GetValue());
 
+    std::string name = "employeeName = '" + upEmName + "', ";
+    std::string sID = "SAID = '" + upEmID + "', ";
+    std::string pwd = "password = '" + upEmPass + "', ";
+    std::string sal = "salary = " + to_string(upEmSal) + ", ";
+    std::string priv = "privilege = " + to_string(upEmPriv);
+
+    string q = "UPDATE tblEmployee SET "+ name + sID + pwd + sal + priv + " WHERE employeeID = " + to_string(upEmNum) +";";
+
+	dbEF->query(q.c_str());
+
+	if(upEmNum == curEmployee->getEmployeeNumber()){
+        this->curEmployee->setName(upEmName);
+        this->curEmployee->setPassword(upEmPass);
+        this->curEmployee->setSalary(upEmSal);
+        this->curEmployee->setPrivilege(upEmPriv);
+	}
+
+	wxMessageBox("Update successful!");
 }
 
 void EmployeeFunctionsForm::OnbtnUpExitClick(wxCommandEvent& event)

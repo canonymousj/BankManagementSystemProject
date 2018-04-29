@@ -8,7 +8,28 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL1" variable="pnlViewEm" member="yes">
 					<pos>262,206</pos>
-					<object class="wxBoxSizer" variable="BoxSizer1" member="no" />
+					<object class="wxBoxSizer" variable="BoxSizer1" member="no">
+						<object class="sizeritem">
+							<object class="wxPanel" name="ID_PANEL3" variable="Panel1" member="yes">
+								<size>445,226</size>
+								<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">
+									<cols>4</cols>
+									<rows>5</rows>
+									<collabels>
+										<item>Name       </item>
+										<item>SAID    </item>
+										<item>Salary</item>
+										<item>Privilege</item>
+									</collabels>
+									<pos>0,0</pos>
+									<size>448,136</size>
+								</object>
+							</object>
+							<flag>wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL</flag>
+							<border>5</border>
+							<option>1</option>
+						</object>
+					</object>
 				</object>
 				<label>View employees</label>
 			</object>
