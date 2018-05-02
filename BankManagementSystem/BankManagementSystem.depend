@@ -1881,14 +1881,15 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1525286727 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1525288924 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
+	"ClientFunctionsForm.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1524936491 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1525287406 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1966,7 +1967,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1525286970 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1525287218 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/grid.h>
@@ -2160,7 +2161,7 @@
 	"wx/defs.h"
 	"wx/window.h"
 
-1525286455 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+1525287218 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
 	"EmployeeFunctionsForm.h"
 	"SelectionMenu.h"
 	"Database.h"
@@ -2185,4 +2186,76 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\generic\gridctrl.h
 	"wx/grid.h"
 	"wx/datetime.h"
+
+1525288904 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+	"ClientFunctionsForm.h"
+	"SelectionMenu.h"
+	<wx/msgdlg.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1525289038 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/radiobut.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"Employee.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\radiobut.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/radiobut.h"
+	"wx/msw/radiobut.h"
+	"wx/motif/radiobut.h"
+	"wx/gtk/radiobut.h"
+	"wx/gtk1/radiobut.h"
+	"wx/osx/radiobut.h"
+	"wx/qt/radiobut.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\radiobut.h
+	"wx/checkbox.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\checkbox.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/checkbox.h"
+	"wx/msw/checkbox.h"
+	"wx/motif/checkbox.h"
+	"wx/gtk/checkbox.h"
+	"wx/gtk1/checkbox.h"
+	"wx/osx/checkbox.h"
+	"wx/qt/checkbox.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\checkbox.h
+	"wx/button.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\checkbox.h
+	"wx/msw/ownerdrawnbutton.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\ownerdrawnbutton.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\checkbox.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\checkbox.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\checkbox.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\checkbox.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\checkbox.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\radiobut.h
+	"wx/msw/ownerdrawnbutton.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\radiobut.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\radiobut.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\radiobut.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\radiobut.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\radiobut.h
 

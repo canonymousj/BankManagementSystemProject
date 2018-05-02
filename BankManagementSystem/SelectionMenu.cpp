@@ -1,6 +1,7 @@
 #include "SelectionMenu.h"
 #include "BankManagementSystemMain.h"
 #include "EmployeeFunctionsForm.h"
+#include "ClientFunctionsForm.h"
 
 //(*InternalHeaders(SelectionMenu)
 #include <wx/intl.h>
@@ -41,6 +42,7 @@ SelectionMenu::SelectionMenu(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	lblSelection = new wxStaticText(Panel1, ID_STATICTEXT3, _("Selection"), wxPoint(176,24), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnEFunctClick);
+	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnCFunctClick);
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnLogoutClick);
 	//*)
 	SetMinSize(GetSize());
@@ -73,6 +75,20 @@ void SelectionMenu::OnbtnEFunctClick(wxCommandEvent& event)
     emFunctForm->setupCurEmployee();
     emFunctForm->lblTextStore = lblDays->GetLabel();
     emFunctForm->updateTable();
+    //delete emFunctForm;
+
+    this->Close(TRUE);
+}
+
+void SelectionMenu::OnbtnCFunctClick(wxCommandEvent& event)
+{
+    ClientFunctionsForm *cFunctForm = new ClientFunctionsForm(NULL);
+
+    cFunctForm->Show(TRUE);
+    cFunctForm->curEmployee = this->currentLogged;
+    cFunctForm->lblTextStore = lblDays->GetLabel();
+    //cFunctForm->setupCurEmployee();
+    //cFunctForm->updateTable();
     //delete emFunctForm;
 
     this->Close(TRUE);

@@ -49,6 +49,7 @@ class SelectionMenu: public wxFrame
 		//(*Handlers(SelectionMenu)
 		void OnbtnLogoutClick(wxCommandEvent& event);
 		void OnbtnEFunctClick(wxCommandEvent& event);
+		void OnbtnCFunctClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

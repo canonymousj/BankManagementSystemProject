@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="ClientFunctionsForm">
+		<size>438,397</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+			<pos>64,112</pos>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblCFunct" member="yes">
+				<label>Client Functions</label>
+				<pos>168,24</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblCName" member="yes">
+				<label>Name:</label>
+				<pos>32,88</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblCSAID" member="yes">
+				<label>ID Number: </label>
+				<pos>32,128</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblCConNum" member="yes">
+				<label>Contact number:</label>
+				<pos>32,160</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT5" variable="lblCAddress" member="yes">
+				<label>Physical Address:</label>
+				<pos>32,192</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT6" variable="lblCID" member="yes">
+				<label>Client Number:</label>
+				<pos>32,56</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfCID" member="yes">
+				<pos>200,56</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfCName" member="yes">
+				<pos>200,88</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfCSAID" member="yes">
+				<pos>200,120</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfCConNum" member="yes">
+				<pos>200,152</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
+				<pos>200,184</pos>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT7" variable="lblCOAmt" member="yes">
+				<label>Opening amount:</label>
+				<pos>32,248</pos>
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
+				<pos>200,240</pos>
+			</object>
+			<object class="wxRadioButton" name="ID_RADIOBUTTON1" variable="RadioButton1" member="yes">
+				<label>Cheque</label>
+				<pos>136,272</pos>
+			</object>
+			<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
+				<label>Savings</label>
+				<pos>248,272</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON1" variable="btnCCreate" member="yes">
+				<label>Create</label>
+				<pos>24,352</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON2" variable="btnCBack" member="yes">
+				<label>Back</label>
+				<pos>344,328</pos>
+				<handler function="OnbtnCBackClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON3" variable="btnCExit" member="yes">
+				<label>Exit</label>
+				<pos>344,352</pos>
+				<handler function="OnbtnCExitClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON4" variable="btnCSearch" member="yes">
+				<label>Search</label>
+				<pos>336,56</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON5" variable="btnCNew" member="yes">
+				<label>New</label>
+				<pos>336,88</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
+				<label>New Investment</label>
+				<pos>128,304</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON7" variable="btnCLoan" member="yes">
+				<label>New Loan</label>
+				<pos>248,304</pos>
+			</object>
+		</object>
+	</object>
+</wxsmith>

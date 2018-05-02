@@ -21,6 +21,7 @@
 				<label>Client Functions</label>
 				<pos>136,160</pos>
 				<size>120,23</size>
+				<handler function="OnbtnCFunctClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON3" variable="btnMetr" member="yes">
 				<label>Bank Metrics</label>
