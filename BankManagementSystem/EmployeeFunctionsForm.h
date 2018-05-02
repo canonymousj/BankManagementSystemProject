@@ -7,7 +7,6 @@
 #include <wx/grid.h>
 #include <wx/notebook.h>
 #include <wx/panel.h>
-#include <wx/sizer.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -22,17 +21,19 @@ class EmployeeFunctionsForm: public wxFrame
 		virtual ~EmployeeFunctionsForm();
         void setupCurEmployee();
         void populateUpdateFields(int EmNum);
-
+        void updateTable();
         wxString lblTextStore = "Error";
 
 		//(*Declarations(EmployeeFunctionsForm)
+		wxButton* btnGridRefresh;
 		wxButton* btnUpBack;
 		wxButton* btnUpExit;
 		wxButton* btnUpSearch;
 		wxButton* btnUpUpdate;
+		wxButton* btnViewTblBack;
+		wxButton* btnViewTblExit;
 		wxGrid* Grid1;
 		wxNotebook* Notebook1;
-		wxPanel* Panel1;
 		wxPanel* pnlUpdateEm;
 		wxPanel* pnlViewEm;
 		wxStaticText* lblUpEName;
@@ -53,7 +54,9 @@ class EmployeeFunctionsForm: public wxFrame
 
 		//(*Identifiers(EmployeeFunctionsForm)
 		static const long ID_GRID1;
-		static const long ID_PANEL3;
+		static const long ID_BUTTON5;
+		static const long ID_BUTTON6;
+		static const long ID_BUTTON7;
 		static const long ID_PANEL1;
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;
@@ -82,6 +85,9 @@ class EmployeeFunctionsForm: public wxFrame
 		void OnbtnUpExitClick(wxCommandEvent& event);
 		void OnbtnUpSearchClick(wxCommandEvent& event);
 		void OnbtnUpBackClick(wxCommandEvent& event);
+		void OnbtnGridRefreshClick(wxCommandEvent& event);
+		void OnButton1Click(wxCommandEvent& event);
+		void OnbtnViewTblExitClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

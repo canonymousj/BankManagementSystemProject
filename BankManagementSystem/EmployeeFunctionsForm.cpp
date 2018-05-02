@@ -9,7 +9,9 @@
 //*)
 //(*IdInit(EmployeeFunctionsForm)
 const long EmployeeFunctionsForm::ID_GRID1 = wxNewId();
-const long EmployeeFunctionsForm::ID_PANEL3 = wxNewId();
+const long EmployeeFunctionsForm::ID_BUTTON5 = wxNewId();
+const long EmployeeFunctionsForm::ID_BUTTON6 = wxNewId();
+const long EmployeeFunctionsForm::ID_BUTTON7 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL1 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT1 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL1 = wxNewId();
@@ -42,28 +44,25 @@ Database *dbEF = NULL;
 EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(EmployeeFunctionsForm)
-	wxBoxSizer* BoxSizer1;
-
 	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
 	SetClientSize(wxSize(463,335));
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	BoxSizer1 = new wxBoxSizer(wxHORIZONTAL);
-	Panel1 = new wxPanel(pnlViewEm, ID_PANEL3, wxDefaultPosition, wxSize(445,226), wxTAB_TRAVERSAL, _T("ID_PANEL3"));
-	Grid1 = new wxGrid(Panel1, ID_GRID1, wxPoint(0,0), wxSize(448,136), 0, _T("ID_GRID1"));
-	Grid1->CreateGrid(5,4);
-	Grid1->EnableEditing(true);
+	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(8,40), wxSize(440,200), 0, _T("ID_GRID1"));
+	Grid1->CreateGrid(3,4);
+	Grid1->EnableEditing(false);
 	Grid1->EnableGridLines(true);
-	Grid1->SetColLabelValue(0, _("Name       "));
-	Grid1->SetColLabelValue(1, _("SAID    "));
+	Grid1->SetRowLabelSize(30);
+	Grid1->SetDefaultColSize(98, true);
+	Grid1->SetColLabelValue(0, _("Name"));
+	Grid1->SetColLabelValue(1, _("SAID"));
 	Grid1->SetColLabelValue(2, _("Salary"));
 	Grid1->SetColLabelValue(3, _("Privilege"));
 	Grid1->SetDefaultCellFont( Grid1->GetFont() );
 	Grid1->SetDefaultCellTextColour( Grid1->GetForegroundColour() );
-	BoxSizer1->Add(Panel1, 1, wxALL|wxALIGN_CENTER_HORIZONTAL|wxALIGN_CENTER_VERTICAL, 5);
-	pnlViewEm->SetSizer(BoxSizer1);
-	BoxSizer1->Fit(pnlViewEm);
-	BoxSizer1->SetSizeHints(pnlViewEm);
+	btnGridRefresh = new wxButton(pnlViewEm, ID_BUTTON5, _("Refresh"), wxPoint(16,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
+	btnViewTblBack = new wxButton(pnlViewEm, ID_BUTTON6, _("Back"), wxPoint(352,248), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnViewTblExit = new wxButton(pnlViewEm, ID_BUTTON7, _("Exit"), wxPoint(352,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
 	pnlUpdateEm = new wxPanel(Notebook1, ID_PANEL2, wxPoint(78,11), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
 	lblUpEmNum = new wxStaticText(pnlUpdateEm, ID_STATICTEXT1, _("Employee number:"), wxPoint(32,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	txfUpEmNum = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL1, wxEmptyString, wxPoint(160,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
@@ -84,6 +83,9 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
+	Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnGridRefreshClick);
+	Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnButton1Click);
+	Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnViewTblExitClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpSearchClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpUpdateClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpExitClick);
@@ -159,6 +161,32 @@ void EmployeeFunctionsForm::setupCurEmployee(){
         btnUpSearch->Show(TRUE);
     }
 }
+
+void EmployeeFunctionsForm::updateTable(){
+    int rows = Grid1->GetNumberRows();
+
+    if(rows>0){
+        Grid1->DeleteRows(0, rows, true);
+    }
+
+    vector<vector<string> > resulta = dbEF->query("SELECT * FROM tblEmployee;");
+
+    Grid1->AppendRows(resulta.size(), true);
+
+    int rowPos = 0;
+    for (vector<vector<string> >::iterator it = resulta.begin(); it < resulta.end(); ++it)
+	{
+		vector<string> row = *it;
+
+		Grid1->SetCellValue(rowPos, 0, row.at(1));
+		Grid1->SetCellValue(rowPos, 1, row.at(2));
+		Grid1->SetCellValue(rowPos, 2, row.at(4));
+		Grid1->SetCellValue(rowPos, 3, row.at(5));
+
+		rowPos++;
+	}
+}
+
 void EmployeeFunctionsForm::OnbtnUpUpdateClick(wxCommandEvent& event)
 {
     int upEmNum = wxAtoi(txfUpEmNum->GetValue()), upEmPriv = wxAtoi(txfUpEPriv->GetValue());
@@ -239,4 +267,29 @@ void EmployeeFunctionsForm::OnbtnUpBackClick(wxCommandEvent& event)
     seleForm->lblDays->SetLabelText(lblTextStore);
 
     this->Close(TRUE);
+}
+
+void EmployeeFunctionsForm::OnbtnGridRefreshClick(wxCommandEvent& event)
+{
+    updateTable();
+}
+
+void EmployeeFunctionsForm::OnButton1Click(wxCommandEvent& event)
+{
+    SelectionMenu *seleForm = new SelectionMenu(NULL);
+
+    seleForm->currentLogged = this->curEmployee;
+    seleForm->Show(TRUE);
+    wxString EmID;
+    EmID<<seleForm->currentLogged->getEmployeeNumber();
+
+    seleForm->lblWelcome->SetLabelText("Welcome: "+seleForm->currentLogged->getName()+"\nEmployee ID: "+EmID);
+    seleForm->lblDays->SetLabelText(lblTextStore);
+
+    this->Close(TRUE);
+}
+
+void EmployeeFunctionsForm::OnbtnViewTblExitClick(wxCommandEvent& event)
+{
+    this->Close();
 }
