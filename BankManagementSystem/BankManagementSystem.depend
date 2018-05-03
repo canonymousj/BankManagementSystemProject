@@ -1881,7 +1881,7 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1525288924 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1525338464 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
@@ -1889,7 +1889,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1525287406 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1525289439 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -2187,14 +2187,15 @@
 	"wx/grid.h"
 	"wx/datetime.h"
 
-1525288904 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1525341705 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	<wx/msgdlg.h>
+	"Database.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1525289038 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1525341477 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>

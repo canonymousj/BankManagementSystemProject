@@ -21,15 +21,20 @@ class ClientFunctionsForm: public wxFrame
 		employee *curEmployee = NULL;
 		wxString lblTextStore = "Error";
 
+		void setup();
+
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnCBack;
+		wxButton* btnCCancel;
 		wxButton* btnCCreate;
 		wxButton* btnCExit;
 		wxButton* btnCInv;
 		wxButton* btnCLoan;
 		wxButton* btnCNew;
 		wxButton* btnCSearch;
+		wxButton* btnCUpdate;
 		wxPanel* Panel1;
+		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
 		wxStaticText* lblCAddress;
@@ -61,17 +66,20 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_TEXTCTRL3;
 		static const long ID_TEXTCTRL4;
 		static const long ID_TEXTCTRL5;
-		static const long ID_STATICTEXT7;
-		static const long ID_TEXTCTRL6;
-		static const long ID_RADIOBUTTON1;
-		static const long ID_RADIOBUTTON2;
 		static const long ID_BUTTON1;
 		static const long ID_BUTTON2;
 		static const long ID_BUTTON3;
 		static const long ID_BUTTON4;
 		static const long ID_BUTTON5;
-		static const long ID_BUTTON6;
+		static const long ID_TEXTCTRL6;
+		static const long ID_RADIOBUTTON2;
+		static const long ID_RADIOBUTTON1;
+		static const long ID_STATICTEXT7;
+		static const long ID_PANEL2;
+		static const long ID_BUTTON8;
 		static const long ID_BUTTON7;
+		static const long ID_BUTTON6;
+		static const long ID_BUTTON9;
 		static const long ID_PANEL1;
 		//*)
 
@@ -80,6 +88,9 @@ class ClientFunctionsForm: public wxFrame
 		//(*Handlers(ClientFunctionsForm)
 		void OnbtnCBackClick(wxCommandEvent& event);
 		void OnbtnCExitClick(wxCommandEvent& event);
+		void OnbtnCSearchClick(wxCommandEvent& event);
+		void OnbtnCNewClick(wxCommandEvent& event);
+		void OnbtnCCancelClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

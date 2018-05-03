@@ -45,21 +45,6 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
 				<pos>200,184</pos>
 			</object>
-			<object class="wxStaticText" name="ID_STATICTEXT7" variable="lblCOAmt" member="yes">
-				<label>Opening amount:</label>
-				<pos>32,248</pos>
-			</object>
-			<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
-				<pos>200,240</pos>
-			</object>
-			<object class="wxRadioButton" name="ID_RADIOBUTTON1" variable="RadioButton1" member="yes">
-				<label>Cheque</label>
-				<pos>136,272</pos>
-			</object>
-			<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
-				<label>Savings</label>
-				<pos>248,272</pos>
-			</object>
 			<object class="wxButton" name="ID_BUTTON1" variable="btnCCreate" member="yes">
 				<label>Create</label>
 				<pos>24,352</pos>
@@ -77,18 +62,48 @@
 			<object class="wxButton" name="ID_BUTTON4" variable="btnCSearch" member="yes">
 				<label>Search</label>
 				<pos>336,56</pos>
+				<handler function="OnbtnCSearchClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON5" variable="btnCNew" member="yes">
 				<label>New</label>
 				<pos>336,88</pos>
+				<handler function="OnbtnCNewClick" entry="EVT_BUTTON" />
 			</object>
-			<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
-				<label>New Investment</label>
-				<pos>128,304</pos>
+			<object class="wxPanel" name="ID_PANEL2" variable="pnlCAccount" member="yes">
+				<pos>16,216</pos>
+				<size>408,72</size>
+				<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
+					<pos>184,16</pos>
+				</object>
+				<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
+					<label>Savings</label>
+					<pos>232,48</pos>
+				</object>
+				<object class="wxRadioButton" name="ID_RADIOBUTTON1" variable="RadioButton1" member="yes">
+					<label>Cheque</label>
+					<pos>128,48</pos>
+				</object>
+				<object class="wxStaticText" name="ID_STATICTEXT7" variable="lblCOAmt" member="yes">
+					<label>Opening amount:</label>
+					<pos>16,24</pos>
+				</object>
+			</object>
+			<object class="wxButton" name="ID_BUTTON8" variable="btnCUpdate" member="yes">
+				<label>Update</label>
+				<pos>104,352</pos>
 			</object>
 			<object class="wxButton" name="ID_BUTTON7" variable="btnCLoan" member="yes">
 				<label>New Loan</label>
 				<pos>248,304</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
+				<label>New Investment</label>
+				<pos>120,304</pos>
+			</object>
+			<object class="wxButton" name="ID_BUTTON9" variable="btnCCancel" member="yes">
+				<label>Cancel</label>
+				<pos>184,352</pos>
+				<handler function="OnbtnCCancelClick" entry="EVT_BUTTON" />
 			</object>
 		</object>
 	</object>
