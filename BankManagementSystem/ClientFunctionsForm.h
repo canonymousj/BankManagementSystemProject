@@ -27,6 +27,7 @@ class ClientFunctionsForm: public wxFrame
 		int populateClientFields(int cNum, std::string SAID);
 
 		//(*Declarations(ClientFunctionsForm)
+		wxButton* btnCAcc;
 		wxButton* btnCBack;
 		wxButton* btnCCancel;
 		wxButton* btnCCreate;
@@ -101,6 +102,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_BUTTON7;
 		static const long ID_BUTTON6;
 		static const long ID_BUTTON9;
+		static const long ID_BUTTON10;
 		static const long ID_PANEL1;
 		static const long ID_STATICTEXT9;
 		static const long ID_STATICTEXT10;
@@ -130,6 +132,9 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnCCreateClick(wxCommandEvent& event);
 		void OnRadioButton2Select(wxCommandEvent& event);
 		void OnRadioButton1Select(wxCommandEvent& event);
+		void OnbtnCAccClick(wxCommandEvent& event);
+		void OnbtnCInvClick(wxCommandEvent& event);
+		void OnbtnCLoanClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

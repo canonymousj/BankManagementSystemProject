@@ -110,16 +110,23 @@
 					</object>
 					<object class="wxButton" name="ID_BUTTON7" variable="btnCLoan" member="yes">
 						<label>Loan</label>
-						<pos>248,304</pos>
+						<pos>272,304</pos>
+						<handler function="OnbtnCLoanClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
 						<label>Investment</label>
-						<pos>120,304</pos>
+						<pos>176,304</pos>
+						<handler function="OnbtnCInvClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON9" variable="btnCCancel" member="yes">
 						<label>Cancel</label>
 						<pos>184,352</pos>
 						<handler function="OnbtnCCancelClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON10" variable="btnCAcc" member="yes">
+						<label>Account</label>
+						<pos>80,304</pos>
+						<handler function="OnbtnCAccClick" entry="EVT_BUTTON" />
 					</object>
 				</object>
 				<label>Client Functions</label>

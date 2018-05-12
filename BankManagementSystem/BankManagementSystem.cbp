@@ -43,18 +43,25 @@
 		<Linker>
 			<Add option="-mthreads" />
 		</Linker>
+		<Unit filename="Account.cpp" />
+		<Unit filename="Account.h" />
 		<Unit filename="BankManagementSystemApp.cpp" />
 		<Unit filename="BankManagementSystemApp.h" />
 		<Unit filename="BankManagementSystemMain.cpp" />
 		<Unit filename="BankManagementSystemMain.h" />
 		<Unit filename="ClientFunctionsForm.cpp" />
 		<Unit filename="ClientFunctionsForm.h" />
+		<Unit filename="ClientalManagement.h" />
 		<Unit filename="Database.h" />
 		<Unit filename="DatabaseFunctions.cpp" />
 		<Unit filename="Employee.h" />
 		<Unit filename="EmployeeFunctions.cpp" />
 		<Unit filename="EmployeeFunctionsForm.cpp" />
 		<Unit filename="EmployeeFunctionsForm.h" />
+		<Unit filename="Investment.cpp" />
+		<Unit filename="Investment.h" />
+		<Unit filename="Loan.cpp" />
+		<Unit filename="Loan.h" />
 		<Unit filename="Register.cpp" />
 		<Unit filename="Register.h" />
 		<Unit filename="SelectionMenu.cpp" />
@@ -67,9 +74,12 @@
 		</Unit>
 		<Unit filename="sqlite3.h" />
 		<Unit filename="sqlite3ext.h" />
+		<Unit filename="wxsmith/Account.wxs" />
 		<Unit filename="wxsmith/BankManagementSystemframe.wxs" />
 		<Unit filename="wxsmith/ClientFunctionsForm.wxs" />
 		<Unit filename="wxsmith/EmployeeFunctionsForm.wxs" />
+		<Unit filename="wxsmith/Investment.wxs" />
+		<Unit filename="wxsmith/Loan.wxs" />
 		<Unit filename="wxsmith/Register.wxs" />
 		<Unit filename="wxsmith/SelectionMenu.wxs" />
 		<Extensions>
@@ -84,6 +94,9 @@
 					<wxFrame wxs="wxsmith/SelectionMenu.wxs" src="SelectionMenu.cpp" hdr="SelectionMenu.h" fwddecl="0" i18n="1" name="SelectionMenu" language="CPP" />
 					<wxFrame wxs="wxsmith/EmployeeFunctionsForm.wxs" src="EmployeeFunctionsForm.cpp" hdr="EmployeeFunctionsForm.h" fwddecl="0" i18n="1" name="EmployeeFunctionsForm" language="CPP" />
 					<wxFrame wxs="wxsmith/ClientFunctionsForm.wxs" src="ClientFunctionsForm.cpp" hdr="ClientFunctionsForm.h" fwddecl="0" i18n="1" name="ClientFunctionsForm" language="CPP" />
+					<wxFrame wxs="wxsmith/Account.wxs" src="Account.cpp" hdr="Account.h" fwddecl="0" i18n="1" name="Account" language="CPP" />
+					<wxFrame wxs="wxsmith/Investment.wxs" src="Investment.cpp" hdr="Investment.h" fwddecl="0" i18n="1" name="Investment" language="CPP" />
+					<wxFrame wxs="wxsmith/Loan.wxs" src="Loan.cpp" hdr="Loan.h" fwddecl="0" i18n="1" name="Loan" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>
