@@ -28,6 +28,8 @@ const long ClientFunctionsForm::ID_TEXTCTRL6 = wxNewId();
 const long ClientFunctionsForm::ID_RADIOBUTTON2 = wxNewId();
 const long ClientFunctionsForm::ID_RADIOBUTTON1 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT7 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT20 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL7 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL2 = wxNewId();
 const long ClientFunctionsForm::ID_BUTTON8 = wxNewId();
 const long ClientFunctionsForm::ID_BUTTON7 = wxNewId();
@@ -82,14 +84,16 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	btnCExit = new wxButton(Panel1, ID_BUTTON3, _("Exit"), wxPoint(344,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	btnCSearch = new wxButton(Panel1, ID_BUTTON4, _("Search"), wxPoint(336,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
 	btnCNew = new wxButton(Panel1, ID_BUTTON5, _("New"), wxPoint(336,88), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
-	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,216), wxSize(408,72), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(184,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
-	RadioButton2 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON2, _("Savings"), wxPoint(232,48), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
-	RadioButton1 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON1, _("Cheque"), wxPoint(128,48), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
-	lblCOAmt = new wxStaticText(pnlCAccount, ID_STATICTEXT7, _("Opening amount:"), wxPoint(16,24), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,216), wxSize(408,88), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(184,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+	RadioButton2 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON2, _("Savings"), wxPoint(224,32), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
+	RadioButton1 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON1, _("Cheque"), wxPoint(120,32), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
+	lblCOAmt = new wxStaticText(pnlCAccount, ID_STATICTEXT7, _("Opening amount:"), wxPoint(16,16), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+	lblInterest = new wxStaticText(pnlCAccount, ID_STATICTEXT20, _("Interest:"), wxPoint(16,64), wxDefaultSize, 0, _T("ID_STATICTEXT20"));
+	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(184,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
 	btnCUpdate = new wxButton(Panel1, ID_BUTTON8, _("Update"), wxPoint(104,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
-	btnCLoan = new wxButton(Panel1, ID_BUTTON7, _("New Loan"), wxPoint(248,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
-	btnCInv = new wxButton(Panel1, ID_BUTTON6, _("New Investment"), wxPoint(120,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnCLoan = new wxButton(Panel1, ID_BUTTON7, _("Loan"), wxPoint(248,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnCInv = new wxButton(Panel1, ID_BUTTON6, _("Investment"), wxPoint(120,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
 	btnCCancel = new wxButton(Panel1, ID_BUTTON9, _("Cancel"), wxPoint(184,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
 	Panel2 = new wxPanel(Notebook1, ID_PANEL3, wxPoint(8,10), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
 	StaticText2 = new wxStaticText(Panel2, ID_STATICTEXT9, _("Client name: "), wxPoint(232,48), wxDefaultSize, 0, _T("ID_STATICTEXT9"));
@@ -107,10 +111,13 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
 
+	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCreateClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCBackClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCExitClick);
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCSearchClick);
 	Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCNewClick);
+	Connect(ID_RADIOBUTTON2,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OnRadioButton2Select);
+	Connect(ID_RADIOBUTTON1,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OnRadioButton1Select);
 	Connect(ID_BUTTON8,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCUpdateClick);
 	Connect(ID_BUTTON9,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCancelClick);
 	//*)
@@ -168,6 +175,9 @@ void ClientFunctionsForm::setup(){
     RadioButton1->SetValue(TRUE);
     RadioButton2->SetValue(FALSE);
 
+    lblInterest->Hide();
+    txfInterest->Hide();
+
     btnCCreate->Hide();
     btnCUpdate->Hide();
     btnCCancel->Hide();
@@ -180,6 +190,8 @@ void ClientFunctionsForm::setup(){
     txfCName->SetEditable(FALSE);
     txfCAddress->SetEditable(FALSE);
     txfCConNum->SetEditable(FALSE);
+
+    txfCID->SetEditable(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)
@@ -245,6 +257,16 @@ void ClientFunctionsForm::OnbtnCNewClick(wxCommandEvent& event)
     txfCName->SetEditable(TRUE);
     txfCAddress->SetEditable(TRUE);
     txfCConNum->SetEditable(TRUE);
+
+    txfCID->SetEditable(FALSE);
+
+    vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
+
+	int max = resulta.size();
+	wxString maxStr;
+	maxStr << (max+1);
+
+	txfCID->SetValue(maxStr);
 }
 
 void ClientFunctionsForm::OnbtnCCancelClick(wxCommandEvent& event)
@@ -267,4 +289,72 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
 	dbCF->query(q.c_str());
 
 	wxMessageBox("Update successful!");
+}
+
+void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
+{
+    int check = 1, type = -1;
+    int cNumber = wxAtoi(txfCID->GetValue());
+
+    std::string name = txfCName->GetValue().ToStdString();
+    std::string ID = txfCSAID->GetValue().ToStdString();
+    std::string con = txfCConNum->GetValue().ToStdString();
+    std::string add = txfCAddress->GetValue().ToStdString();
+    double openAmt = wxAtof(txfCOAmt->GetValue());
+    double openInterest = 0.0;
+    bool cheque = RadioButton1->GetValue(), savings = RadioButton2->GetValue();
+
+    if (cheque){
+        type = 0;
+    }
+    if(savings){
+        type = 1;
+        openInterest = wxAtof(txfInterest->GetValue());
+    }
+
+    string q = "SELECT SAID FROM tblClient WHERE SAID = '"+ ID +"';";
+    vector<vector<string> > resReg;
+    resReg = dbCF->query(q.c_str());
+    if (!(resReg.empty())){
+        check = 0;
+    }
+
+
+    if (check){
+        q = "INSERT INTO tblClient VALUES(null, '" + name + "', '" + ID + "', '" + con + "', '" + add + "');";
+        dbCF->query(q.c_str());
+
+        q = "INSERT INTO tblAccount VALUES(null, " + std::to_string(openAmt) + ", " + std::to_string(type) + ", " + std::to_string(openInterest) + ", " + std::to_string(cNumber) + ");";
+        dbCF->query(q.c_str());
+
+        wxMessageBox("Reg success");
+        wxMessageBox("They are client number: "+txfCID->GetValue());
+
+        setup();
+
+        btnCUpdate->Show(TRUE);
+        btnCInv->Show(TRUE);
+        btnCLoan->Show(TRUE);
+
+        txfCName->SetEditable(TRUE);
+        txfCAddress->SetEditable(TRUE);
+        txfCConNum->SetEditable(TRUE);
+
+        populateClientFields(cNumber, "1");
+    }else{
+        wxMessageBox("Reg failed");
+    }
+
+}
+
+void ClientFunctionsForm::OnRadioButton2Select(wxCommandEvent& event)
+{
+    lblInterest->Show(TRUE);
+    txfInterest->Show(TRUE);
+}
+
+void ClientFunctionsForm::OnRadioButton1Select(wxCommandEvent& event)
+{
+    lblInterest->Hide();
+    txfInterest->Hide();
 }

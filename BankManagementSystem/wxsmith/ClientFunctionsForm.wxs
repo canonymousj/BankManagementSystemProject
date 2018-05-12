@@ -53,6 +53,7 @@
 					<object class="wxButton" name="ID_BUTTON1" variable="btnCCreate" member="yes">
 						<label>Create</label>
 						<pos>24,352</pos>
+						<handler function="OnbtnCCreateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON2" variable="btnCBack" member="yes">
 						<label>Back</label>
@@ -76,21 +77,30 @@
 					</object>
 					<object class="wxPanel" name="ID_PANEL2" variable="pnlCAccount" member="yes">
 						<pos>16,216</pos>
-						<size>408,72</size>
+						<size>408,88</size>
 						<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
-							<pos>184,16</pos>
+							<pos>184,8</pos>
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
 							<label>Savings</label>
-							<pos>232,48</pos>
+							<pos>224,32</pos>
+							<handler function="OnRadioButton2Select" entry="EVT_RADIOBUTTON" />
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON1" variable="RadioButton1" member="yes">
 							<label>Cheque</label>
-							<pos>128,48</pos>
+							<pos>120,32</pos>
+							<handler function="OnRadioButton1Select" entry="EVT_RADIOBUTTON" />
 						</object>
 						<object class="wxStaticText" name="ID_STATICTEXT7" variable="lblCOAmt" member="yes">
 							<label>Opening amount:</label>
-							<pos>16,24</pos>
+							<pos>16,16</pos>
+						</object>
+						<object class="wxStaticText" name="ID_STATICTEXT20" variable="lblInterest" member="yes">
+							<label>Interest:</label>
+							<pos>16,64</pos>
+						</object>
+						<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="txfInterest" member="yes">
+							<pos>184,56</pos>
 						</object>
 					</object>
 					<object class="wxButton" name="ID_BUTTON8" variable="btnCUpdate" member="yes">
@@ -99,11 +109,11 @@
 						<handler function="OnbtnCUpdateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON7" variable="btnCLoan" member="yes">
-						<label>New Loan</label>
+						<label>Loan</label>
 						<pos>248,304</pos>
 					</object>
 					<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
-						<label>New Investment</label>
+						<label>Investment</label>
 						<pos>120,304</pos>
 					</object>
 					<object class="wxButton" name="ID_BUTTON9" variable="btnCCancel" member="yes">

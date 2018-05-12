@@ -61,12 +61,14 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblCName;
 		wxStaticText* lblCOAmt;
 		wxStaticText* lblCSAID;
+		wxStaticText* lblInterest;
 		wxTextCtrl* txfCAddress;
 		wxTextCtrl* txfCConNum;
 		wxTextCtrl* txfCID;
 		wxTextCtrl* txfCName;
 		wxTextCtrl* txfCOAmt;
 		wxTextCtrl* txfCSAID;
+		wxTextCtrl* txfInterest;
 		//*)
 
 	protected:
@@ -92,6 +94,8 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_RADIOBUTTON2;
 		static const long ID_RADIOBUTTON1;
 		static const long ID_STATICTEXT7;
+		static const long ID_STATICTEXT20;
+		static const long ID_TEXTCTRL7;
 		static const long ID_PANEL2;
 		static const long ID_BUTTON8;
 		static const long ID_BUTTON7;
@@ -123,6 +127,9 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnCNewClick(wxCommandEvent& event);
 		void OnbtnCCancelClick(wxCommandEvent& event);
 		void OnbtnCUpdateClick(wxCommandEvent& event);
+		void OnbtnCCreateClick(wxCommandEvent& event);
+		void OnRadioButton2Select(wxCommandEvent& event);
+		void OnRadioButton1Select(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
