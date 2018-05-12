@@ -1881,7 +1881,7 @@
 1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1525338464 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1525342322 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
@@ -2195,14 +2195,16 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1525341477 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526126529 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
+	<wx/notebook.h>
 	<wx/panel.h>
 	<wx/radiobut.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 	"Employee.h"
+	<string>
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\radiobut.h
 	"wx/defs.h"

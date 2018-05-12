@@ -4,12 +4,14 @@
 //(*Headers(ClientFunctionsForm)
 #include <wx/button.h>
 #include <wx/frame.h>
+#include <wx/notebook.h>
 #include <wx/panel.h>
 #include <wx/radiobut.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
 #include "Employee.h"
+#include <string>
 
 class ClientFunctionsForm: public wxFrame
 {
@@ -22,6 +24,7 @@ class ClientFunctionsForm: public wxFrame
 		wxString lblTextStore = "Error";
 
 		void setup();
+		int populateClientFields(int cNum, std::string SAID);
 
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnCBack;
@@ -33,10 +36,24 @@ class ClientFunctionsForm: public wxFrame
 		wxButton* btnCNew;
 		wxButton* btnCSearch;
 		wxButton* btnCUpdate;
+		wxNotebook* Notebook1;
 		wxPanel* Panel1;
+		wxPanel* Panel2;
 		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
+		wxStaticText* StaticText10;
+		wxStaticText* StaticText11;
+		wxStaticText* StaticText12;
+		wxStaticText* StaticText1;
+		wxStaticText* StaticText2;
+		wxStaticText* StaticText3;
+		wxStaticText* StaticText4;
+		wxStaticText* StaticText5;
+		wxStaticText* StaticText6;
+		wxStaticText* StaticText7;
+		wxStaticText* StaticText8;
+		wxStaticText* StaticText9;
 		wxStaticText* lblCAddress;
 		wxStaticText* lblCConNum;
 		wxStaticText* lblCFunct;
@@ -81,6 +98,20 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_BUTTON6;
 		static const long ID_BUTTON9;
 		static const long ID_PANEL1;
+		static const long ID_STATICTEXT9;
+		static const long ID_STATICTEXT10;
+		static const long ID_STATICTEXT8;
+		static const long ID_STATICTEXT11;
+		static const long ID_STATICTEXT12;
+		static const long ID_STATICTEXT13;
+		static const long ID_STATICTEXT14;
+		static const long ID_STATICTEXT15;
+		static const long ID_STATICTEXT16;
+		static const long ID_STATICTEXT17;
+		static const long ID_STATICTEXT18;
+		static const long ID_STATICTEXT19;
+		static const long ID_PANEL3;
+		static const long ID_NOTEBOOK1;
 		//*)
 
 	private:
@@ -91,6 +122,7 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnCSearchClick(wxCommandEvent& event);
 		void OnbtnCNewClick(wxCommandEvent& event);
 		void OnbtnCCancelClick(wxCommandEvent& event);
+		void OnbtnCUpdateClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
