@@ -2195,7 +2195,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526136391 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526146333 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/notebook.h>
@@ -2261,4 +2261,28 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\osx\radiobut.h
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\radiobut.h
+
+1526146087 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
+	"Account.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526146087 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
+	<wx/frame.h>
+
+1526146099 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.cpp
+	"Investment.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526146099 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.h
+	<wx/frame.h>
+
+1526146112 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.cpp
+	"Loan.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526146112 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
+	<wx/frame.h>
 

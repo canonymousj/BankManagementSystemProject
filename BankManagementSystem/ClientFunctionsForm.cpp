@@ -1,5 +1,8 @@
 #include "ClientFunctionsForm.h"
 #include "SelectionMenu.h"
+#include "Account.h"
+#include "Investment.h"
+#include "Loan.h"
 #include <wx/msgdlg.h>
 #include "Database.h"
 //(*InternalHeaders(ClientFunctionsForm)
@@ -93,8 +96,8 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblInterest = new wxStaticText(pnlCAccount, ID_STATICTEXT20, _("Interest:"), wxPoint(16,64), wxDefaultSize, 0, _T("ID_STATICTEXT20"));
 	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(184,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
 	btnCUpdate = new wxButton(Panel1, ID_BUTTON8, _("Update"), wxPoint(104,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
-	btnCLoan = new wxButton(Panel1, ID_BUTTON7, _("Loan"), wxPoint(272,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
-	btnCInv = new wxButton(Panel1, ID_BUTTON6, _("Investment"), wxPoint(176,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnCLoan = new wxButton(Panel1, ID_BUTTON7, _("Loan"), wxPoint(256,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnCInv = new wxButton(Panel1, ID_BUTTON6, _("Investment"), wxPoint(168,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
 	btnCCancel = new wxButton(Panel1, ID_BUTTON9, _("Cancel"), wxPoint(184,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
 	btnCAcc = new wxButton(Panel1, ID_BUTTON10, _("Account"), wxPoint(80,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON10"));
 	Panel2 = new wxPanel(Notebook1, ID_PANEL3, wxPoint(8,10), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
@@ -190,6 +193,7 @@ void ClientFunctionsForm::setup(){
 
     btnCInv->Hide();
     btnCLoan->Hide();
+    btnCAcc->Hide();
     pnlCAccount->Hide();
 
     txfCName->SetEditable(FALSE);
@@ -237,6 +241,7 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
             btnCUpdate->Show(TRUE);
             btnCInv->Show(TRUE);
             btnCLoan->Show(TRUE);
+            btnCAcc->Show(TRUE);
 
             txfCName->SetEditable(TRUE);
             txfCAddress->SetEditable(TRUE);
@@ -340,6 +345,7 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
         btnCUpdate->Show(TRUE);
         btnCInv->Show(TRUE);
         btnCLoan->Show(TRUE);
+        btnCAcc->Show(TRUE);
 
         txfCName->SetEditable(TRUE);
         txfCAddress->SetEditable(TRUE);
