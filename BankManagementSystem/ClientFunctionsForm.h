@@ -24,7 +24,8 @@ class ClientFunctionsForm: public wxFrame
 		wxString lblTextStore = "Error";
 
 		void setup();
-		int populateClientFields(int cNum, std::string SAID);
+		int populateClientFields(int cNum);
+		int populateClientFields(std::string SAID);
 
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnCAcc;

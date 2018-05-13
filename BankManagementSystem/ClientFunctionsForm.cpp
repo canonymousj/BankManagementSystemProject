@@ -146,10 +146,33 @@ void DatabaseConnectCF(){
     dbCF = new Database("Database.sqlite");
 }
 
-int ClientFunctionsForm::populateClientFields(int cNum, string SAID){
+int ClientFunctionsForm::populateClientFields(int cNum){
     wxString clNum, cName, cSAID, cContact, cAddress;
 
-    std::string q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+" OR SAID = '"+SAID+"';";
+    std::string q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";
+    vector<vector<string> > res = dbCF->query(q.c_str());
+
+    if(!(res.empty())){
+        clNum << res[0][0];
+        cName << res[0][1];
+        cSAID << res[0][2];
+        cContact << res[0][3];
+        cAddress << res[0][4];
+    }else{
+        return 0;
+    }
+
+    txfCID->SetValue(clNum);
+    txfCName->SetValue(cName);
+    txfCSAID->SetValue(cSAID);
+    txfCConNum->SetValue(cContact);
+    txfCAddress->SetValue(cAddress);
+    return 1;
+}
+int ClientFunctionsForm::populateClientFields(std::string SAID){
+    wxString clNum, cName, cSAID, cContact, cAddress;
+
+    std::string q = "SELECT * FROM tblClient WHERE SAID = '"+SAID+"';";
     vector<vector<string> > res = dbCF->query(q.c_str());
 
     if(!(res.empty())){
@@ -235,7 +258,7 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
 	if(clientNum <= max && clientNum > 0){
         wxMessageBox("Acceptable");
 
-        int state = populateClientFields(clientNum, SAID);
+        int state = populateClientFields(clientNum);
 
         if(state){
             btnCUpdate->Show(TRUE);
@@ -246,14 +269,30 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
             txfCName->SetEditable(TRUE);
             txfCAddress->SetEditable(TRUE);
             txfCConNum->SetEditable(TRUE);
+
+            btnCSearch->Hide();
+            btnCCancel->Show(TRUE);
         }else{
             wxMessageBox("Client doesn't exit");
         }
 
+	}else if(populateClientFields(SAID)){
+        wxMessageBox("Acceptable");
+
+        btnCUpdate->Show(TRUE);
+        btnCInv->Show(TRUE);
+        btnCLoan->Show(TRUE);
+        btnCAcc->Show(TRUE);
+
+        txfCName->SetEditable(TRUE);
+        txfCAddress->SetEditable(TRUE);
+        txfCConNum->SetEditable(TRUE);
+
+        btnCSearch->Hide();
+        btnCCancel->Show(TRUE);
 	}else{
         wxMessageBox("Client doesn't exit");
 	}
-
 }
 
 void ClientFunctionsForm::OnbtnCNewClick(wxCommandEvent& event)
@@ -351,7 +390,7 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
         txfCAddress->SetEditable(TRUE);
         txfCConNum->SetEditable(TRUE);
 
-        populateClientFields(cNumber, "1");
+        populateClientFields(cNumber);
     }else{
         wxMessageBox("Reg failed");
     }
