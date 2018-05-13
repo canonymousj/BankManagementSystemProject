@@ -5,7 +5,9 @@ class client {
 public:
 	client();
 	client(int clientID, std::string cName, std::string cSAID, std::string cConNum, std::string cAddress);
+	void setClientID(int clID);
 	void setName(std::string cName);
+	void setSAID (std::string SAID);
 	void setContactNumber(std::string cConNum);
 	void setAddress(std::string cAddress);
 	int getClientID();
@@ -16,11 +18,11 @@ public:
 	std::string clientBirthday();
 	virtual double calcBalance();
 	virtual double calcDebt();
-	virtual std::string findNextPayment();
-	virtual double interestEarned();
-	virtual void withdraw(double amt);
-	virtual void deposit(double amt);
-private:
+	virtual std::string findNextPayment(){return "";};
+	virtual double interestEarned(){return 0.0;};
+	virtual void withdraw(double amt){};
+	virtual void deposit(double amt){};
+protected:
     int clientID;
 	std::string name, SAID, contactNumber, address;
 };
@@ -36,6 +38,8 @@ public:
 	int getClientID();
 	int getBalance();
 	int getInterest();
+	void withdraw(double amt);
+	void deposit(double amt);
 private:
     int accountID, clientID;
     double balance, interest;

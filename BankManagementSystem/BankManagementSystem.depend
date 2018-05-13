@@ -2187,15 +2187,19 @@
 	"wx/grid.h"
 	"wx/datetime.h"
 
-1526129690 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526215255 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
+	"Account.h"
+	"Investment.h"
+	"Loan.h"
+	"ClientalManagement.h"
 	<wx/msgdlg.h>
 	"Database.h"
 	<wx/intl.h>
 	<wx/string.h>
 
-1526199727 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526218500 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/notebook.h>
@@ -2205,6 +2209,7 @@
 	<wx/textctrl.h>
 	"Employee.h"
 	<string>
+	"ClientalManagement.h"
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\radiobut.h
 	"wx/defs.h"
@@ -2285,4 +2290,10 @@
 
 1526147700 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
 	<wx/frame.h>
+
+1526219511 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+	<string>
+
+1526219511 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+	"ClientalManagement.h"
 

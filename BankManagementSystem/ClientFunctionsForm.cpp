@@ -3,6 +3,7 @@
 #include "Account.h"
 #include "Investment.h"
 #include "Loan.h"
+#include "ClientalManagement.h"
 #include <wx/msgdlg.h>
 #include "Database.h"
 //(*InternalHeaders(ClientFunctionsForm)
@@ -144,6 +145,24 @@ ClientFunctionsForm::~ClientFunctionsForm()
 
 void DatabaseConnectCF(){
     dbCF = new Database("Database.sqlite");
+}
+
+void ClientFunctionsForm::populateAccount(int cNum){
+    std::string q = "SELECT * FROM tblAccount WHERE clientID = "+std::to_string(cNum)+";";
+    vector<vector<string> > res = dbCF->query(q.c_str());
+    if(!(res.empty())){
+        clientAcc = new account(atoi(res[0][0].c_str()), atoi(res[0][4].c_str()), atof(res[0][1].c_str()), atof(res[0][3].c_str()));
+    }
+
+    q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";
+    res = dbCF->query(q.c_str());
+    if(!(res.empty())){
+        clientAcc->setClientID(atoi(res[0][0].c_str()));
+        clientAcc->setName(res[0][1]);
+        clientAcc->setSAID(res[0][2]);
+        clientAcc->setContactNumber(res[0][3]);
+        clientAcc->setAddress(res[0][4]);
+    }
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){

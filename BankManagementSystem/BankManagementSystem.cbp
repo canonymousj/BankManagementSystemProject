@@ -51,6 +51,7 @@
 		<Unit filename="BankManagementSystemMain.h" />
 		<Unit filename="ClientFunctionsForm.cpp" />
 		<Unit filename="ClientFunctionsForm.h" />
+		<Unit filename="ClientManangementFunctions.cpp" />
 		<Unit filename="ClientalManagement.h" />
 		<Unit filename="Database.h" />
 		<Unit filename="DatabaseFunctions.cpp" />

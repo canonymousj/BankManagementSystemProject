@@ -12,6 +12,7 @@
 //*)
 #include "Employee.h"
 #include <string>
+#include "ClientalManagement.h"
 
 class ClientFunctionsForm: public wxFrame
 {
@@ -26,6 +27,9 @@ class ClientFunctionsForm: public wxFrame
 		void setup();
 		int populateClientFields(int cNum);
 		int populateClientFields(std::string SAID);
+
+		void populateAccount(int cNum);
+		client *clientAcc = new account;
 
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnCAcc;
