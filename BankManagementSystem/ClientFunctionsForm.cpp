@@ -205,16 +205,17 @@ void ClientFunctionsForm::populateAccount(int cNum){
     populateClientSummary(accObj);
 }
 
-void ClientFunctionsForm::populateClientSummary(account &accObj){
-    wxString clID, clName, AccID, intEarned;
+void ClientFunctionsForm::populateClientSummary(account &accObj){   //populate fields in client summary tab
+    wxString clID, clName, AccID, intEarned;    //temporary conversion variables
 
     wxString AccType;
 
     double interestEarned = 0.0;
 
-    clientAcc = &accObj;
+    clientAcc = &accObj;    //use of polymorphism, type-compatible derivative class assigned to pointer of
+                            //base class
 
-    interestEarned = clientAcc->interestEarned();
+    interestEarned = clientAcc->interestEarned();   //funct call in account class, using base class pointer through virtual
     intEarned<<("R " + wxString::Format("%.2f", interestEarned) + " @ " + wxString::Format("%.2f", accObj.getInterest()) + "%");
 
 
@@ -253,31 +254,31 @@ void ClientFunctionsForm::populateClientSummary(account &accObj){
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){
-    wxString clNum, cName, cSAID, cContact, cAddress;
+    wxString clNum, cName, cSAID, cContact, cAddress;   //main variable init
 
-    std::string q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";
-    vector<vector<string> > res = dbCF->query(q.c_str());
+    std::string q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";   //get user record from database
+    vector<vector<string> > res = dbCF->query(q.c_str());   //process sql query
 
-    if(!(res.empty())){
-        clNum << res[0][0];
+    if(!(res.empty())){         //check if it returned results
+        clNum << res[0][0];     //populate local variables with elements from client record
         cName << res[0][1];
         cSAID << res[0][2];
         cContact << res[0][3];
         cAddress << res[0][4];
     }else{
-        return 0;
+        return 0;               //return 0 should client not exit
     }
 
-    txfCID->SetValue(clNum);
+    txfCID->SetValue(clNum);    //set textfields with elements from client record
     txfCName->SetValue(cName);
     txfCSAID->SetValue(cSAID);
     txfCConNum->SetValue(cContact);
     txfCAddress->SetValue(cAddress);
 
-    populateAccount(cNum);
+    populateAccount(cNum);      //populate account associated with the client (derivative class of base client)
     return 1;
 }
-int ClientFunctionsForm::populateClientFields(std::string SAID){
+int ClientFunctionsForm::populateClientFields(std::string SAID){    //overloaded function for query of SAID
     wxString clNum, cName, cSAID, cContact, cAddress;
 
     std::replace(SAID.begin(), SAID.end(), '\'', ' ');
