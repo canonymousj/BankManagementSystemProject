@@ -9,7 +9,7 @@
 			<size>438,360</size>
 			<bg>wxSYS_COLOUR_WINDOW</bg>
 			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-				<bitmap>C:\Users\Nascha\Documents\GitHub\BankManagementSystemProject\BankManagementSystem\blue-lace-ribbon-border.jpg</bitmap>
+				<bitmap>blue-lace-ribbon-border.jpg</bitmap>
 				<pos>0,8</pos>
 				<size>440,296</size>
 				<style>0</style>
@@ -28,7 +28,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfEID" member="yes">
@@ -46,7 +45,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfEPass" member="yes">
@@ -63,7 +61,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblMPass" member="yes">
@@ -75,7 +72,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfMPass" member="yes">
@@ -95,7 +91,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 				<handler function="OnbtnSubmitClick" entry="EVT_BUTTON" />
 			</object>
@@ -111,7 +106,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 				<handler function="OnButton1Click" entry="EVT_BUTTON" />
 			</object>
@@ -141,7 +135,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 			</object>
 		</object>

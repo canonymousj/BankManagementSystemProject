@@ -66,8 +66,8 @@ SelectionMenu::SelectionMenu(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	lblSelection = new wxStaticText(Panel1, ID_STATICTEXT3, _("MAIN MENU"), wxPoint(72,32), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 	wxFont lblSelectionFont(26,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	lblSelection->SetFont(lblSelectionFont);
-	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\abstract-icons-tree-gold.jpg")).Rescale(wxSize(48,56).GetWidth(),wxSize(48,56).GetHeight())), wxPoint(328,16), wxSize(48,56), 0, _T("ID_STATICBITMAP1"));
-	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\abstract-icons-tree-gold.jpg")).Rescale(wxSize(48,56).GetWidth(),wxSize(48,56).GetHeight())), wxPoint(16,16), wxSize(48,56), 0, _T("ID_STATICBITMAP2"));
+	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("abstract-icons-tree-gold.jpg")).Rescale(wxSize(48,56).GetWidth(),wxSize(48,56).GetHeight())), wxPoint(328,16), wxSize(48,56), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("abstract-icons-tree-gold.jpg")).Rescale(wxSize(48,56).GetWidth(),wxSize(48,56).GetHeight())), wxPoint(16,16), wxSize(48,56), 0, _T("ID_STATICBITMAP2"));
 
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnCFunctClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnEFunctClick);

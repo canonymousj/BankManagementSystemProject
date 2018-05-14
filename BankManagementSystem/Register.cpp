@@ -47,7 +47,7 @@ Register::Register(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSiz
 	Move(wxDefaultPosition);
 	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(0,0), wxSize(438,360), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
-	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\blue-lace-ribbon-border.jpg")).Rescale(wxSize(440,296).GetWidth(),wxSize(440,296).GetHeight())), wxPoint(0,8), wxSize(440,296), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("blue-lace-ribbon-border.jpg")).Rescale(wxSize(440,296).GetWidth(),wxSize(440,296).GetHeight())), wxPoint(0,8), wxSize(440,296), 0, _T("ID_STATICBITMAP1"));
 	txfEName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(248,136), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
 	txfEName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 	lblName = new wxStaticText(Panel1, ID_STATICTEXT1, _("NAME:"), wxPoint(64,136), wxDefaultSize, 0, _T("ID_STATICTEXT1"));

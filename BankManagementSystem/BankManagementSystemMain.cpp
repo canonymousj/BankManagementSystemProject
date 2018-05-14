@@ -82,7 +82,7 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(16,16), wxSize(448,248), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
     Panel1->SetForegroundColour(wxColour(0,128,0));
     Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
-    StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\spring-leaves-background-photoshop-backgrounds.jpg")).Rescale(wxSize(448,216).GetWidth(),wxSize(448,216).GetHeight())), wxPoint(0,0), wxSize(448,216), 0, _T("ID_STATICBITMAP1"));
+    StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("spring-leaves-background-photoshop-backgrounds.jpg")).Rescale(wxSize(448,216).GetWidth(),wxSize(448,216).GetHeight())), wxPoint(0,0), wxSize(448,216), 0, _T("ID_STATICBITMAP1"));
     lblLogin = new wxStaticText(Panel1, ID_STATICTEXT3, _("LOGIN"), wxPoint(152,24), wxSize(88,24), 0, _T("ID_STATICTEXT3"));
     wxFont lblLoginFont(28,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
     lblLogin->SetFont(lblLoginFont);
