@@ -5,6 +5,7 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 //*)
 #include "Employee.h"
@@ -23,6 +24,8 @@ class SelectionMenu: public wxFrame
 		wxButton* btnLogout;
 		wxButton* btnMetr;
 		wxPanel* Panel1;
+		wxStaticBitmap* StaticBitmap1;
+		wxStaticBitmap* StaticBitmap2;
 		wxStaticText* lblDays;
 		wxStaticText* lblSelection;
 		wxStaticText* lblWelcome;
@@ -33,14 +36,16 @@ class SelectionMenu: public wxFrame
 	protected:
 
 		//(*Identifiers(SelectionMenu)
-		static const long ID_STATICTEXT1;
-		static const long ID_BUTTON1;
 		static const long ID_BUTTON2;
 		static const long ID_BUTTON3;
+		static const long ID_STATICTEXT1;
+		static const long ID_BUTTON1;
 		static const long ID_STATICTEXT2;
 		static const long ID_BUTTON4;
 		static const long ID_BUTTON5;
 		static const long ID_STATICTEXT3;
+		static const long ID_STATICBITMAP1;
+		static const long ID_STATICBITMAP2;
 		static const long ID_PANEL1;
 		//*)
 
@@ -50,6 +55,7 @@ class SelectionMenu: public wxFrame
 		void OnbtnLogoutClick(wxCommandEvent& event);
 		void OnbtnEFunctClick(wxCommandEvent& event);
 		void OnbtnCFunctClick(wxCommandEvent& event);
+		void OnPanel1Paint(wxPaintEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
