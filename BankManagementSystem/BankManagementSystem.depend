@@ -2321,7 +2321,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1526300864 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526301998 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -2330,7 +2330,9 @@
 	"SelectionMenu.h"
 	"Employee.h"
 	<ctime>
+	<wx/bitmap.h>
 	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
 	<wx/settings.h>
 	<wx/string.h>
@@ -2351,10 +2353,11 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1526294583 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1526304321 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 	"Employee.h"
 
