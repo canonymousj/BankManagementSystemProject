@@ -55,6 +55,8 @@ const long ClientFunctionsForm::ID_STATICTEXT21 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT22 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT23 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT24 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT16 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
 const long ClientFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -108,16 +110,18 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText3 = new wxStaticText(Panel2, ID_STATICTEXT10, _("Client number:"), wxPoint(24,48), wxDefaultSize, 0, _T("ID_STATICTEXT10"));
 	StaticText1 = new wxStaticText(Panel2, ID_STATICTEXT8, _("Account number:"), wxPoint(24,96), wxDefaultSize, 0, _T("ID_STATICTEXT8"));
 	StaticText4 = new wxStaticText(Panel2, ID_STATICTEXT11, _("Amount:"), wxPoint(232,96), wxDefaultSize, 0, _T("ID_STATICTEXT11"));
-	StaticText5 = new wxStaticText(Panel2, ID_STATICTEXT12, _("Number of loans:"), wxPoint(24,144), wxDefaultSize, 0, _T("ID_STATICTEXT12"));
-	StaticText6 = new wxStaticText(Panel2, ID_STATICTEXT13, _("Total amount:"), wxPoint(24,168), wxDefaultSize, 0, _T("ID_STATICTEXT13"));
-	StaticText7 = new wxStaticText(Panel2, ID_STATICTEXT14, _("Next repayment amount:"), wxPoint(24,192), wxDefaultSize, 0, _T("ID_STATICTEXT14"));
-	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT15, _("Next repayment date:"), wxPoint(240,192), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
+	StaticText5 = new wxStaticText(Panel2, ID_STATICTEXT12, _("Number of loans:"), wxPoint(24,168), wxDefaultSize, 0, _T("ID_STATICTEXT12"));
+	StaticText6 = new wxStaticText(Panel2, ID_STATICTEXT13, _("Total amount:"), wxPoint(24,192), wxDefaultSize, 0, _T("ID_STATICTEXT13"));
+	StaticText7 = new wxStaticText(Panel2, ID_STATICTEXT14, _("Next repayment amount:"), wxPoint(24,216), wxDefaultSize, 0, _T("ID_STATICTEXT14"));
+	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT15, _("Next repayment date:"), wxPoint(240,216), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
 	StaticText11 = new wxStaticText(Panel2, ID_STATICTEXT18, _("Total assets:"), wxPoint(24,312), wxDefaultSize, 0, _T("ID_STATICTEXT18"));
 	StaticText12 = new wxStaticText(Panel2, ID_STATICTEXT19, _("Total liability:"), wxPoint(248,312), wxDefaultSize, 0, _T("ID_STATICTEXT19"));
-	lblClientID = new wxStaticText(Panel2, ID_STATICTEXT21, wxEmptyString, wxPoint(104,48), wxDefaultSize, 0, _T("ID_STATICTEXT21"));
-	lblClientName = new wxStaticText(Panel2, ID_STATICTEXT22, wxEmptyString, wxPoint(304,48), wxDefaultSize, 0, _T("ID_STATICTEXT22"));
-	lblAccID = new wxStaticText(Panel2, ID_STATICTEXT23, wxEmptyString, wxPoint(112,96), wxDefaultSize, 0, _T("ID_STATICTEXT23"));
-	lblAccBal = new wxStaticText(Panel2, ID_STATICTEXT24, wxEmptyString, wxPoint(280,96), wxDefaultSize, 0, _T("ID_STATICTEXT24"));
+	lblClientID = new wxStaticText(Panel2, ID_STATICTEXT21, wxEmptyString, wxPoint(112,48), wxSize(32,13), 0, _T("ID_STATICTEXT21"));
+	lblClientName = new wxStaticText(Panel2, ID_STATICTEXT22, wxEmptyString, wxPoint(304,48), wxSize(24,13), 0, _T("ID_STATICTEXT22"));
+	lblAccID = new wxStaticText(Panel2, ID_STATICTEXT23, wxEmptyString, wxPoint(120,96), wxSize(24,13), 0, _T("ID_STATICTEXT23"));
+	lblAccBal = new wxStaticText(Panel2, ID_STATICTEXT24, wxEmptyString, wxPoint(288,96), wxSize(32,13), 0, _T("ID_STATICTEXT24"));
+	StaticText9 = new wxStaticText(Panel2, ID_STATICTEXT16, _("Interest earned per month:"), wxPoint(24,128), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
+	lblInterestEarned = new wxStaticText(Panel2, ID_STATICTEXT17, wxEmptyString, wxPoint(184,128), wxSize(56,13), 0, _T("ID_STATICTEXT17"));
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
 
@@ -155,25 +159,44 @@ void ClientFunctionsForm::populateAccount(int cNum){
     std::string q = "SELECT * FROM tblAccount WHERE clientID = "+std::to_string(cNum)+";";
     vector<vector<string> > res = dbCF->query(q.c_str());
     if(!(res.empty())){
-        clientAcc = new account(atoi(res[0][0].c_str()), atoi(res[0][4].c_str()), atof(res[0][1].c_str()), atof(res[0][3].c_str()));
+        accObj = account(atoi(res[0][0].c_str()), atoi(res[0][2].c_str()), atof(res[0][1].c_str()), atof(res[0][3].c_str()));
     }
+
 
     q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";
     res = dbCF->query(q.c_str());
     if(!(res.empty())){
-        clientAcc->setClientID(atoi(res[0][0].c_str()));
-        clientAcc->setName(res[0][1]);
-        clientAcc->setSAID(res[0][2]);
-        clientAcc->setContactNumber(res[0][3]);
-        clientAcc->setAddress(res[0][4]);
+        accObj.setClientID(atoi(res[0][0].c_str()));
+        accObj.setName(res[0][1]);
+        accObj.setSAID(res[0][2]);
+        accObj.setContactNumber(res[0][3]);
+        accObj.setAddress(res[0][4]);
     }
-    populateClientSummary();
+    populateClientSummary(accObj);
 }
 
-void ClientFunctionsForm::populateClientSummary(){
-    wxString clID;
-    clID<<clientAcc->getClientID();
+void ClientFunctionsForm::populateClientSummary(account &accObj){
+    wxString clID, clName, AccID, intEarned;
+
+    double interestEarned = 0.0;
+
+    clientAcc = &accObj;
+
+    interestEarned = clientAcc->interestEarned();
+    intEarned<<("R " + wxString::Format("%.2f", interestEarned) + " @ " + wxString::Format("%.2f", accObj.getInterest()) + "%");
+
+
+    clID<< accObj.getClientID();
+    clName<<accObj.getName();
+
+    AccID<<accObj.getAccountID();
+
     lblClientID->SetLabel(clID);
+    lblClientName->SetLabel(clName);
+
+    lblAccID->SetLabel(AccID);
+    lblAccBal->SetLabel("R "+wxString::Format("%.2f", accObj.getBalance()));
+    lblInterestEarned->SetLabel(intEarned);
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){
@@ -197,6 +220,8 @@ int ClientFunctionsForm::populateClientFields(int cNum){
     txfCSAID->SetValue(cSAID);
     txfCConNum->SetValue(cContact);
     txfCAddress->SetValue(cAddress);
+
+    populateAccount(cNum);
     return 1;
 }
 int ClientFunctionsForm::populateClientFields(std::string SAID){
@@ -220,6 +245,8 @@ int ClientFunctionsForm::populateClientFields(std::string SAID){
     txfCSAID->SetValue(cSAID);
     txfCConNum->SetValue(cContact);
     txfCAddress->SetValue(cAddress);
+
+    populateAccount(wxAtoi(clNum));
     return 1;
 }
 

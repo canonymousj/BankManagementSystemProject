@@ -1863,7 +1863,7 @@
 1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1524999673 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1526285500 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
@@ -1871,7 +1871,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526284174 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+1526285500 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1954,7 +1954,7 @@
 	<ctype.h>
 	<math.h>
 
-1526284174 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526285500 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -2187,7 +2187,7 @@
 	"wx/grid.h"
 	"wx/datetime.h"
 
-1526283138 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526303093 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"
@@ -2199,7 +2199,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526284453 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526305987 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/notebook.h>
@@ -2291,9 +2291,9 @@
 1526147700 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
 	<wx/frame.h>
 
-1526283138 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+1526303845 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
 	<string>
 
-1526283138 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+1526303929 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
 	"ClientalManagement.h"
 

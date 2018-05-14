@@ -31,16 +31,18 @@ class account:public client{
 public:
     account();
     account(int accID, int clID, double bal, double interest);
-    void setClID(int clID);
+    void setAccountID(int accID);
+    void setType(int type);
 	void setbalance(double bal);
 	void setInterest(double interest);
 	int getAccountID();
-	int getClientID();
-	int getBalance();
-	int getInterest();
+	int getType();
+	double getBalance();
+	double getInterest();
+	double interestEarned();
 	void withdraw(double amt);
 	void deposit(double amt);
 private:
-    int accountID, clientID;
+    int accountID, type;
     double balance, interest;
 };

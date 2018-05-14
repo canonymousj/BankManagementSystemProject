@@ -63,18 +63,21 @@ double client::calcDebt(){
 //Account functions
 account::account(){
     this->accountID = 0;
-	this->clientID = 0;
+    this->type = 0;
 	this->balance = 0;
 	this->interest = 0;
 }
-account::account(int accID, int clID, double bal, double interest){
+account::account(int accID, int type, double bal, double interest){
 	this->accountID = accID;
-	this->clientID = clID;
+    this->type = type;
 	this->balance = bal;
 	this->interest = interest;
 }
-void account::setClID(int clID){
-    this->clientID = clID;
+void account::setAccountID(int accID){
+    this->accountID = accID;
+}
+void account::setType(int type){
+    this->type = type;
 }
 void account::setbalance(double bal){
     this->balance = bal;
@@ -85,18 +88,18 @@ void account::setInterest(double interest){
 int account::getAccountID(){
     return this->accountID;
 }
-int account::getClientID(){
-    return this->clientID;
-}
-int account::getBalance(){
+double account::getBalance(){
     return this->balance;
 }
-int account::getInterest(){
+double account::getInterest(){
     return this->interest;
 }
+double account::interestEarned(){
+    return ((interest/100)*balance);
+}
 void account::withdraw(double amt){
-
+    balance -= amt;
 }
 void account::deposit(double amt){
-
+    balance += amt;
 }

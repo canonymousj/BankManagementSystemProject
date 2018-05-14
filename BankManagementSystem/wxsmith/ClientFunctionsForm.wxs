@@ -152,19 +152,19 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT12" variable="StaticText5" member="yes">
 						<label>Number of loans:</label>
-						<pos>24,144</pos>
+						<pos>24,168</pos>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT13" variable="StaticText6" member="yes">
 						<label>Total amount:</label>
-						<pos>24,168</pos>
+						<pos>24,192</pos>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT14" variable="StaticText7" member="yes">
 						<label>Next repayment amount:</label>
-						<pos>24,192</pos>
+						<pos>24,216</pos>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText8" member="yes">
 						<label>Next repayment date:</label>
-						<pos>240,192</pos>
+						<pos>240,216</pos>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText11" member="yes">
 						<label>Total assets:</label>
@@ -176,19 +176,32 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT21" variable="lblClientID" member="yes">
 						<label></label>
-						<pos>104,48</pos>
+						<pos>112,48</pos>
+						<size>32,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT22" variable="lblClientName" member="yes">
 						<label></label>
 						<pos>304,48</pos>
+						<size>24,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT23" variable="lblAccID" member="yes">
 						<label></label>
-						<pos>112,96</pos>
+						<pos>120,96</pos>
+						<size>24,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT24" variable="lblAccBal" member="yes">
 						<label></label>
-						<pos>280,96</pos>
+						<pos>288,96</pos>
+						<size>32,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT16" variable="StaticText9" member="yes">
+						<label>Interest earned per month:</label>
+						<pos>24,128</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT17" variable="lblInterestEarned" member="yes">
+						<label></label>
+						<pos>184,128</pos>
+						<size>56,13</size>
 					</object>
 				</object>
 				<label>Client Summary</label>

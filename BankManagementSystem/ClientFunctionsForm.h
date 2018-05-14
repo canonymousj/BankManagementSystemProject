@@ -29,8 +29,9 @@ class ClientFunctionsForm: public wxFrame
 		int populateClientFields(std::string SAID);
 
 		void populateAccount(int cNum);
-		void populateClientSummary();
+		void populateClientSummary(account &accObj);
 		client *clientAcc = new account;
+		account accObj;
 
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnCAcc;
@@ -59,6 +60,7 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* StaticText6;
 		wxStaticText* StaticText7;
 		wxStaticText* StaticText8;
+		wxStaticText* StaticText9;
 		wxStaticText* lblAccBal;
 		wxStaticText* lblAccID;
 		wxStaticText* lblCAddress;
@@ -71,6 +73,7 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblClientID;
 		wxStaticText* lblClientName;
 		wxStaticText* lblInterest;
+		wxStaticText* lblInterestEarned;
 		wxTextCtrl* txfCAddress;
 		wxTextCtrl* txfCConNum;
 		wxTextCtrl* txfCID;
@@ -126,6 +129,8 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT22;
 		static const long ID_STATICTEXT23;
 		static const long ID_STATICTEXT24;
+		static const long ID_STATICTEXT16;
+		static const long ID_STATICTEXT17;
 		static const long ID_PANEL3;
 		static const long ID_NOTEBOOK1;
 		//*)
