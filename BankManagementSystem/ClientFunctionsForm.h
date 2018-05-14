@@ -34,19 +34,17 @@ class ClientFunctionsForm: public wxFrame
 		account accObj;
 
 		//(*Declarations(ClientFunctionsForm)
-		wxButton* btnCAcc;
 		wxButton* btnCBack;
 		wxButton* btnCCancel;
 		wxButton* btnCCreate;
 		wxButton* btnCExit;
-		wxButton* btnCInv;
-		wxButton* btnCLoan;
 		wxButton* btnCNew;
 		wxButton* btnCSearch;
 		wxButton* btnCUpdate;
 		wxNotebook* Notebook1;
 		wxPanel* Panel1;
 		wxPanel* Panel2;
+		wxPanel* Panel3;
 		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
@@ -110,10 +108,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_TEXTCTRL7;
 		static const long ID_PANEL2;
 		static const long ID_BUTTON8;
-		static const long ID_BUTTON7;
-		static const long ID_BUTTON6;
 		static const long ID_BUTTON9;
-		static const long ID_BUTTON10;
 		static const long ID_PANEL1;
 		static const long ID_STATICTEXT9;
 		static const long ID_STATICTEXT10;
@@ -132,6 +127,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT16;
 		static const long ID_STATICTEXT17;
 		static const long ID_PANEL3;
+		static const long ID_PANEL4;
 		static const long ID_NOTEBOOK1;
 		//*)
 

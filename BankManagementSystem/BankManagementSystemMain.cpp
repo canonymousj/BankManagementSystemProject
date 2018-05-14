@@ -129,6 +129,7 @@ void BankManagementSystemFrame::OnbtnLoginClick(wxCommandEvent& event)
 {
     int userID = wxAtoi(txfUName->GetValue());
     std::string password = txfPass->GetValue().ToStdString();
+    std::replace(password.begin(), password.end(), '\'', ' ');
 
     std::string q = "SELECT employeeID, password FROM tblEmployee WHERE employeeID = "+std::to_string(userID)+" AND password = '"+password+"';";
     vector<vector<string> > res;

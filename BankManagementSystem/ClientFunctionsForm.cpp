@@ -36,10 +36,7 @@ const long ClientFunctionsForm::ID_STATICTEXT20 = wxNewId();
 const long ClientFunctionsForm::ID_TEXTCTRL7 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL2 = wxNewId();
 const long ClientFunctionsForm::ID_BUTTON8 = wxNewId();
-const long ClientFunctionsForm::ID_BUTTON7 = wxNewId();
-const long ClientFunctionsForm::ID_BUTTON6 = wxNewId();
 const long ClientFunctionsForm::ID_BUTTON9 = wxNewId();
-const long ClientFunctionsForm::ID_BUTTON10 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL1 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT9 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT10 = wxNewId();
@@ -58,6 +55,7 @@ const long ClientFunctionsForm::ID_STATICTEXT24 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT16 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
+const long ClientFunctionsForm::ID_PANEL4 = wxNewId();
 const long ClientFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
 
@@ -101,10 +99,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblInterest = new wxStaticText(pnlCAccount, ID_STATICTEXT20, _("Interest:"), wxPoint(16,64), wxDefaultSize, 0, _T("ID_STATICTEXT20"));
 	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(184,56), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
 	btnCUpdate = new wxButton(Panel1, ID_BUTTON8, _("Update"), wxPoint(104,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
-	btnCLoan = new wxButton(Panel1, ID_BUTTON7, _("Loan"), wxPoint(256,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
-	btnCInv = new wxButton(Panel1, ID_BUTTON6, _("Investment"), wxPoint(168,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
 	btnCCancel = new wxButton(Panel1, ID_BUTTON9, _("Cancel"), wxPoint(184,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON9"));
-	btnCAcc = new wxButton(Panel1, ID_BUTTON10, _("Account"), wxPoint(80,304), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON10"));
 	Panel2 = new wxPanel(Notebook1, ID_PANEL3, wxPoint(8,10), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL3"));
 	StaticText2 = new wxStaticText(Panel2, ID_STATICTEXT9, _("Client name: "), wxPoint(232,48), wxDefaultSize, 0, _T("ID_STATICTEXT9"));
 	StaticText3 = new wxStaticText(Panel2, ID_STATICTEXT10, _("Client number:"), wxPoint(24,48), wxDefaultSize, 0, _T("ID_STATICTEXT10"));
@@ -122,8 +117,10 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblAccBal = new wxStaticText(Panel2, ID_STATICTEXT24, wxEmptyString, wxPoint(288,96), wxSize(32,13), 0, _T("ID_STATICTEXT24"));
 	StaticText9 = new wxStaticText(Panel2, ID_STATICTEXT16, _("Interest earned per month:"), wxPoint(24,128), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
 	lblInterestEarned = new wxStaticText(Panel2, ID_STATICTEXT17, wxEmptyString, wxPoint(184,128), wxSize(56,13), 0, _T("ID_STATICTEXT17"));
+	Panel3 = new wxPanel(Notebook1, ID_PANEL4, wxPoint(186,9), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
+	Notebook1->AddPage(Panel3, _("Client Account"), false);
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCreateClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCBackClick);
@@ -133,10 +130,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Connect(ID_RADIOBUTTON2,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OnRadioButton2Select);
 	Connect(ID_RADIOBUTTON1,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OnRadioButton1Select);
 	Connect(ID_BUTTON8,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCUpdateClick);
-	Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCLoanClick);
-	Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCInvClick);
 	Connect(ID_BUTTON9,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCancelClick);
-	Connect(ID_BUTTON10,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCAccClick);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -271,9 +265,6 @@ void ClientFunctionsForm::setup(){
     btnCCancel->Hide();
     btnCSearch->Show(TRUE);
 
-    btnCInv->Hide();
-    btnCLoan->Hide();
-    btnCAcc->Hide();
     pnlCAccount->Hide();
 
     txfCName->SetEditable(FALSE);
@@ -319,9 +310,6 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
 
         if(state){
             btnCUpdate->Show(TRUE);
-            btnCInv->Show(TRUE);
-            btnCLoan->Show(TRUE);
-            btnCAcc->Show(TRUE);
 
             txfCName->SetEditable(TRUE);
             txfCAddress->SetEditable(TRUE);
@@ -337,9 +325,6 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
         wxMessageBox("Acceptable");
 
         btnCUpdate->Show(TRUE);
-        btnCInv->Show(TRUE);
-        btnCLoan->Show(TRUE);
-        btnCAcc->Show(TRUE);
 
         txfCName->SetEditable(TRUE);
         txfCAddress->SetEditable(TRUE);
@@ -439,9 +424,6 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
         setup();
 
         btnCUpdate->Show(TRUE);
-        btnCInv->Show(TRUE);
-        btnCLoan->Show(TRUE);
-        btnCAcc->Show(TRUE);
 
         txfCName->SetEditable(TRUE);
         txfCAddress->SetEditable(TRUE);

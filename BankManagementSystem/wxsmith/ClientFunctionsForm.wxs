@@ -108,25 +108,10 @@
 						<pos>104,352</pos>
 						<handler function="OnbtnCUpdateClick" entry="EVT_BUTTON" />
 					</object>
-					<object class="wxButton" name="ID_BUTTON7" variable="btnCLoan" member="yes">
-						<label>Loan</label>
-						<pos>256,304</pos>
-						<handler function="OnbtnCLoanClick" entry="EVT_BUTTON" />
-					</object>
-					<object class="wxButton" name="ID_BUTTON6" variable="btnCInv" member="yes">
-						<label>Investment</label>
-						<pos>168,304</pos>
-						<handler function="OnbtnCInvClick" entry="EVT_BUTTON" />
-					</object>
 					<object class="wxButton" name="ID_BUTTON9" variable="btnCCancel" member="yes">
 						<label>Cancel</label>
 						<pos>184,352</pos>
 						<handler function="OnbtnCCancelClick" entry="EVT_BUTTON" />
-					</object>
-					<object class="wxButton" name="ID_BUTTON10" variable="btnCAcc" member="yes">
-						<label>Account</label>
-						<pos>80,304</pos>
-						<handler function="OnbtnCAccClick" entry="EVT_BUTTON" />
 					</object>
 				</object>
 				<label>Client Functions</label>
@@ -205,6 +190,12 @@
 					</object>
 				</object>
 				<label>Client Summary</label>
+			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANEL4" variable="Panel3" member="yes">
+					<pos>186,9</pos>
+				</object>
+				<label>Client Account</label>
 			</object>
 		</object>
 	</object>
