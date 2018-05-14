@@ -5,6 +5,7 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -20,6 +21,7 @@ class Register: public wxFrame
 		wxButton* btnBack;
 		wxButton* btnSubmit;
 		wxPanel* Panel1;
+		wxStaticBitmap* StaticBitmap1;
 		wxStaticText* lblEID;
 		wxStaticText* lblEPass;
 		wxStaticText* lblEmNum;
@@ -37,6 +39,7 @@ class Register: public wxFrame
 	protected:
 
 		//(*Identifiers(Register)
+		static const long ID_STATICBITMAP1;
 		static const long ID_TEXTCTRL1;
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL2;

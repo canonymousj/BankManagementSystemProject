@@ -1,18 +1,25 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="BankManagementSystemFrame">
-		<size>448,216</size>
+		<size>448,275</size>
+		<id_arg>0</id_arg>
 		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 			<pos>16,16</pos>
-			<size>432,200</size>
+			<size>448,248</size>
 			<fg>#008000</fg>
 			<bg>wxSYS_COLOUR_WINDOW</bg>
+			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+				<bitmap>C:\Users\Nascha\Documents\GitHub\BankManagementSystemProject\BankManagementSystem\spring-leaves-background-photoshop-backgrounds.jpg</bitmap>
+				<pos>0,0</pos>
+				<size>448,216</size>
+				<style>0</style>
+			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblLogin" member="yes">
 				<label>LOGIN</label>
-				<pos>160,16</pos>
+				<pos>152,24</pos>
 				<size>88,24</size>
 				<font>
-					<size>24</size>
+					<size>28</size>
 					<style>normal</style>
 					<weight>bold</weight>
 					<underlined>0</underlined>
@@ -21,41 +28,45 @@
 				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUName" member="yes">
-				<pos>232,72</pos>
-				<size>128,21</size>
+				<pos>224,104</pos>
+				<size>144,29</size>
+				<fg>wxSYS_COLOUR_BTNTEXT</fg>
+				<bg>#DBEABB</bg>
 				<handler function="OnTextCtrl1Text" entry="EVT_TEXT" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblEmID" member="yes">
 				<label>EMPLOYEE ID:</label>
-				<pos>88,72</pos>
+				<pos>80,104</pos>
 				<font>
-					<size>9</size>
+					<size>11</size>
 					<style>normal</style>
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
+					<face>Arial</face>
 				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfPass" member="yes">
-				<pos>232,112</pos>
-				<size>128,21</size>
+				<pos>224,152</pos>
+				<size>144,29</size>
+				<fg>wxSYS_COLOUR_WINDOWTEXT</fg>
+				<bg>#DCE8C6</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblPass" member="yes">
 				<label>PASSWORD:</label>
-				<pos>88,112</pos>
+				<pos>80,152</pos>
 				<font>
-					<size>9</size>
+					<size>11</size>
 					<style>normal</style>
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
+					<face>Arial</face>
 				</font>
 			</object>
 			<object class="wxButton" name="ID_BUTTON1" variable="btnLogin" member="yes">
 				<label>LOGIN</label>
-				<pos>184,160</pos>
+				<pos>192,216</pos>
 				<size>75,32</size>
 				<fg>wxSYS_COLOUR_WINDOW</fg>
 				<bg>#008000</bg>
@@ -65,13 +76,12 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 				<handler function="OnbtnLoginClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON3" variable="btnReg" member="yes">
 				<label>REGISTER</label>
-				<pos>328,160</pos>
+				<pos>336,216</pos>
 				<size>75,32</size>
 				<fg>wxSYS_COLOUR_WINDOW</fg>
 				<bg>#008000</bg>
@@ -81,13 +91,12 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 				<handler function="OnbtnRegClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON2" variable="btnExit" member="yes">
 				<label>EXIT</label>
-				<pos>48,160</pos>
+				<pos>32,216</pos>
 				<size>75,32</size>
 				<fg>wxSYS_COLOUR_WINDOW</fg>
 				<bg>#008000</bg>
@@ -97,7 +106,6 @@
 					<weight>bold</weight>
 					<underlined>0</underlined>
 					<family>swiss</family>
-					<face></face>
 				</font>
 				<handler function="OnbtnExitClick" entry="EVT_BUTTON" />
 			</object>

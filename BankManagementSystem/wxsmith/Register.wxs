@@ -1,70 +1,148 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="Register">
-		<size>407,326</size>
+		<size>438,362</size>
 		<pos_arg>1</pos_arg>
 		<size_arg>1</size_arg>
 		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 			<pos>0,0</pos>
-			<size>408,256</size>
+			<size>438,360</size>
+			<bg>wxSYS_COLOUR_WINDOW</bg>
+			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+				<bitmap>C:\Users\Nascha\Documents\GitHub\BankManagementSystemProject\BankManagementSystem\blue-lace-ribbon-border.jpg</bitmap>
+				<pos>0,8</pos>
+				<size>440,296</size>
+				<style>0</style>
+			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfEName" member="yes">
-				<value>Employee Name</value>
-				<pos>184,120</pos>
+				<pos>248,136</pos>
 				<size>128,21</size>
+				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblName" member="yes">
-				<label>Enter name:</label>
-				<pos>16,128</pos>
+				<label>NAME:</label>
+				<pos>64,136</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfEID" member="yes">
-				<value>SAID</value>
-				<pos>184,152</pos>
+				<pos>248,176</pos>
 				<size>128,21</size>
+				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 				<handler function="OntxfEIDText" entry="EVT_TEXT" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblEID" member="yes">
-				<label>Enter SAID:</label>
-				<pos>16,160</pos>
+				<label>SA ID NUMBER:</label>
+				<pos>64,176</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfEPass" member="yes">
-				<value>password</value>
-				<pos>184,184</pos>
+				<pos>248,216</pos>
 				<size>128,21</size>
+				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblEPass" member="yes">
-				<label>Enter password:</label>
-				<pos>16,192</pos>
+				<label>PASSWORD:</label>
+				<pos>64,216</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblMPass" member="yes">
-				<label>Managers password: </label>
-				<pos>16,224</pos>
+				<label>MANAGER&apos;S PASSWORD:</label>
+				<pos>64,256</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfMPass" member="yes">
-				<value>Confirming password</value>
-				<pos>184,216</pos>
+				<pos>248,256</pos>
 				<size>128,21</size>
+				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 			</object>
 			<object class="wxButton" name="ID_BUTTON2" variable="btnSubmit" member="yes">
-				<label>Submit</label>
-				<pos>312,272</pos>
+				<label>SUBMIT</label>
+				<pos>320,312</pos>
+				<size>75,32</size>
+				<fg>wxSYS_COLOUR_WINDOW</fg>
+				<bg>#000040</bg>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 				<handler function="OnbtnSubmitClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON1" variable="btnBack" member="yes">
-				<label>Back</label>
-				<pos>16,272</pos>
+				<label>BACK</label>
+				<pos>40,312</pos>
+				<size>75,31</size>
+				<fg>wxSYS_COLOUR_WINDOW</fg>
+				<bg>#000040</bg>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 				<handler function="OnButton1Click" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT5" variable="lblRegister" member="yes">
-				<label>Register</label>
-				<pos>168,24</pos>
+				<label>REGISTER</label>
+				<pos>128,24</pos>
+				<font>
+					<size>26</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Castellar</face>
+				</font>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfEmNum" member="yes">
-				<pos>184,88</pos>
+				<pos>248,96</pos>
 				<size>128,21</size>
+				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT6" variable="lblEmNum" member="yes">
-				<label>Employee ID (given):</label>
-				<pos>16,96</pos>
+				<label>EMPLOYEE ID ASSIGNED:</label>
+				<pos>64,96</pos>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 			</object>
 		</object>
 	</object>

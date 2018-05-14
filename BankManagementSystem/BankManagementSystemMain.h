@@ -14,6 +14,7 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
@@ -37,6 +38,7 @@ class BankManagementSystemFrame: public wxFrame
         //*)
 
         //(*Identifiers(BankManagementSystemFrame)
+        static const long ID_STATICBITMAP1;
         static const long ID_STATICTEXT3;
         static const long ID_TEXTCTRL1;
         static const long ID_STATICTEXT1;
@@ -53,6 +55,7 @@ class BankManagementSystemFrame: public wxFrame
         wxButton* btnLogin;
         wxButton* btnReg;
         wxPanel* Panel1;
+        wxStaticBitmap* StaticBitmap1;
         wxStaticText* lblEmID;
         wxStaticText* lblLogin;
         wxStaticText* lblPass;
