@@ -12,6 +12,7 @@
 				<bitmap>blue-lace-ribbon-border.jpg</bitmap>
 				<pos>0,8</pos>
 				<size>440,296</size>
+				<enabled>0</enabled>
 				<style>0</style>
 			</object>
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfEName" member="yes">

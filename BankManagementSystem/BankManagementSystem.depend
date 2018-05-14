@@ -1864,7 +1864,7 @@
 1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1526312044 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1526312487 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
@@ -1965,7 +1965,7 @@
 	<ctype.h>
 	<math.h>
 
-1526310990 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526312249 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"

@@ -221,6 +221,8 @@ int ClientFunctionsForm::populateClientFields(int cNum){
 int ClientFunctionsForm::populateClientFields(std::string SAID){
     wxString clNum, cName, cSAID, cContact, cAddress;
 
+    std::replace(SAID.begin(), SAID.end(), '\'', ' ');
+
     std::string q = "SELECT * FROM tblClient WHERE SAID = '"+SAID+"';";
     vector<vector<string> > res = dbCF->query(q.c_str());
 
@@ -302,6 +304,7 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
 
 	int clientNum = wxAtoi(txfCID->GetValue());
 	string SAID = txfCSAID->GetValue().ToStdString();
+	std::replace(SAID.begin(), SAID.end(), '\'', ' ');
 
 	if(clientNum <= max && clientNum > 0){
         wxMessageBox("Acceptable");
@@ -370,6 +373,11 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
     int cNum = wxAtoi(txfCID->GetValue());
 	std::string cName = txfCName->GetValue().ToStdString(), cSAID = txfCSAID->GetValue().ToStdString(), cCon = txfCConNum->GetValue().ToStdString(), cAdd = txfCAddress->GetValue().ToStdString();
 
+    std::replace(cName.begin(), cName.end(), '\'', ' ');
+    std::replace(cSAID.begin(), cSAID.end(), '\'', ' ');
+    std::replace(cCon.begin(), cCon.end(), '\'', ' ');
+    std::replace(cAdd.begin(), cAdd.end(), '\'', ' ');
+
     std::string name = "clientName = '" + cName + "', ";
     std::string sID = "SAID = '" + cSAID + "', ";
     std::string clCon = "contact = '" + cCon + "', ";
@@ -391,6 +399,12 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
     std::string ID = txfCSAID->GetValue().ToStdString();
     std::string con = txfCConNum->GetValue().ToStdString();
     std::string add = txfCAddress->GetValue().ToStdString();
+
+    std::replace(name.begin(), name.end(), '\'', ' ');
+    std::replace(ID.begin(), ID.end(), '\'', ' ');
+    std::replace(con.begin(), con.end(), '\'', ' ');
+    std::replace(add.begin(), add.end(), '\'', ' ');
+
     double openAmt = wxAtof(txfCOAmt->GetValue());
     double openInterest = 0.0;
     bool cheque = RadioButton1->GetValue(), savings = RadioButton2->GetValue();
@@ -424,6 +438,8 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
         setup();
 
         btnCUpdate->Show(TRUE);
+        btnCSearch->Hide();
+        btnCCancel->Show(TRUE);
 
         txfCName->SetEditable(TRUE);
         txfCAddress->SetEditable(TRUE);
@@ -431,7 +447,7 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
 
         populateClientFields(cNumber);
     }else{
-        wxMessageBox("Reg failed");
+        wxMessageBox("Reg failed: Duplicate ID!");
     }
 
 }
