@@ -88,6 +88,9 @@ void account::setInterest(double interest){
 int account::getAccountID(){
     return this->accountID;
 }
+int account::getType(){
+    return this->type;
+}
 double account::getBalance(){
     return this->balance;
 }

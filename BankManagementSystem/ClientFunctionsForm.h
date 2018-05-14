@@ -3,6 +3,7 @@
 
 //(*Headers(ClientFunctionsForm)
 #include <wx/button.h>
+#include <wx/choice.h>
 #include <wx/frame.h>
 #include <wx/notebook.h>
 #include <wx/panel.h>
@@ -34,6 +35,11 @@ class ClientFunctionsForm: public wxFrame
 		account accObj;
 
 		//(*Declarations(ClientFunctionsForm)
+		wxButton* btnAccBack;
+		wxButton* btnAccDeposit;
+		wxButton* btnAccExit;
+		wxButton* btnAccUpdate;
+		wxButton* btnAccWithdraw;
 		wxButton* btnCBack;
 		wxButton* btnCCancel;
 		wxButton* btnCCreate;
@@ -41,6 +47,7 @@ class ClientFunctionsForm: public wxFrame
 		wxButton* btnCNew;
 		wxButton* btnCSearch;
 		wxButton* btnCUpdate;
+		wxChoice* cmbAccType;
 		wxNotebook* Notebook1;
 		wxPanel* Panel1;
 		wxPanel* Panel2;
@@ -48,6 +55,7 @@ class ClientFunctionsForm: public wxFrame
 		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
+		wxStaticText* StaticText10;
 		wxStaticText* StaticText11;
 		wxStaticText* StaticText12;
 		wxStaticText* StaticText1;
@@ -61,6 +69,8 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* StaticText9;
 		wxStaticText* lblAccBal;
 		wxStaticText* lblAccID;
+		wxStaticText* lblAccInt;
+		wxStaticText* lblAccType;
 		wxStaticText* lblCAddress;
 		wxStaticText* lblCConNum;
 		wxStaticText* lblCFunct;
@@ -70,8 +80,13 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblCSAID;
 		wxStaticText* lblClientID;
 		wxStaticText* lblClientName;
+		wxStaticText* lblIntEarnedText;
 		wxStaticText* lblInterest;
 		wxStaticText* lblInterestEarned;
+		wxStaticText* lblPercent;
+		wxTextCtrl* txfAccBal;
+		wxTextCtrl* txfAccID;
+		wxTextCtrl* txfAccInt;
 		wxTextCtrl* txfCAddress;
 		wxTextCtrl* txfCConNum;
 		wxTextCtrl* txfCID;
@@ -127,6 +142,20 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT16;
 		static const long ID_STATICTEXT17;
 		static const long ID_PANEL3;
+		static const long ID_STATICTEXT25;
+		static const long ID_STATICTEXT26;
+		static const long ID_TEXTCTRL8;
+		static const long ID_TEXTCTRL9;
+		static const long ID_STATICTEXT27;
+		static const long ID_STATICTEXT29;
+		static const long ID_TEXTCTRL11;
+		static const long ID_BUTTON6;
+		static const long ID_BUTTON7;
+		static const long ID_BUTTON10;
+		static const long ID_BUTTON11;
+		static const long ID_BUTTON12;
+		static const long ID_STATICTEXT30;
+		static const long ID_CHOICE1;
 		static const long ID_PANEL4;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -146,6 +175,12 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnCAccClick(wxCommandEvent& event);
 		void OnbtnCInvClick(wxCommandEvent& event);
 		void OnbtnCLoanClick(wxCommandEvent& event);
+		void OnbtnAccUpdateClick(wxCommandEvent& event);
+		void OncmbAccTypeSelect(wxCommandEvent& event);
+		void OnbtnAccBackClick(wxCommandEvent& event);
+		void OnbtnAccExitClick(wxCommandEvent& event);
+		void OnbtnAccWithdrawClick(wxCommandEvent& event);
+		void OnbtnAccDepositClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

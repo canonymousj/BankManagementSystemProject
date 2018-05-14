@@ -2,8 +2,7 @@
 <wxsmith>
 	<object class="wxFrame" name="ClientFunctionsForm">
 		<size>455,425</size>
-		<pos_arg>1</pos_arg>
-		<size_arg>1</size_arg>
+		<id_arg>0</id_arg>
 		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
 			<pos>0,8</pos>
 			<size>544,397</size>
@@ -179,7 +178,7 @@
 						<pos>288,96</pos>
 						<size>32,13</size>
 					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT16" variable="StaticText9" member="yes">
+					<object class="wxStaticText" name="ID_STATICTEXT16" variable="lblIntEarnedText" member="yes">
 						<label>Interest earned per month:</label>
 						<pos>24,128</pos>
 					</object>
@@ -194,6 +193,71 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL4" variable="Panel3" member="yes">
 					<pos>186,9</pos>
+					<object class="wxStaticText" name="ID_STATICTEXT25" variable="StaticText9" member="yes">
+						<label>Account ID:</label>
+						<pos>24,64</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT26" variable="StaticText10" member="yes">
+						<label>Account balance:</label>
+						<pos>24,104</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="txfAccID" member="yes">
+						<pos>136,64</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="txfAccBal" member="yes">
+						<pos>136,104</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT27" variable="lblAccType" member="yes">
+						<label>Account type:</label>
+						<pos>24,152</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT29" variable="lblAccInt" member="yes">
+						<label>Account interest:</label>
+						<pos>24,200</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL11" variable="txfAccInt" member="yes">
+						<pos>136,200</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON6" variable="btnAccWithdraw" member="yes">
+						<label>Withdraw</label>
+						<pos>88,272</pos>
+						<handler function="OnbtnAccWithdrawClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON7" variable="btnAccDeposit" member="yes">
+						<label>Deposit</label>
+						<pos>248,272</pos>
+						<handler function="OnbtnAccDepositClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON10" variable="btnAccBack" member="yes">
+						<label>Back</label>
+						<pos>360,336</pos>
+						<handler function="OnbtnAccBackClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON11" variable="btnAccExit" member="yes">
+						<label>Exit</label>
+						<pos>360,360</pos>
+						<handler function="OnbtnAccExitClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON12" variable="btnAccUpdate" member="yes">
+						<label>Update</label>
+						<pos>16,360</pos>
+						<handler function="OnbtnAccUpdateClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT30" variable="lblPercent" member="yes">
+						<label>%</label>
+						<pos>248,200</pos>
+						<size>26,21</size>
+					</object>
+					<object class="wxChoice" name="ID_CHOICE1" variable="cmbAccType" member="yes">
+						<content>
+							<item>Savings</item>
+							<item>Cheque</item>
+						</content>
+						<selection>0</selection>
+						<pos>136,152</pos>
+						<size>104,21</size>
+						<handler function="OncmbAccTypeSelect" entry="EVT_CHOICE" />
+					</object>
 				</object>
 				<label>Client Account</label>
 			</object>

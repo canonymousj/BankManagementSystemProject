@@ -6,6 +6,7 @@
 #include "ClientalManagement.h"
 #include <wx/msgdlg.h>
 #include "Database.h"
+#include <wx/textdlg.h>
 //(*InternalHeaders(ClientFunctionsForm)
 #include <wx/intl.h>
 #include <wx/string.h>
@@ -55,6 +56,20 @@ const long ClientFunctionsForm::ID_STATICTEXT24 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT16 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT25 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT26 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL8 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL9 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT27 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT29 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL11 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON6 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON7 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON10 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON11 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON12 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT30 = wxNewId();
+const long ClientFunctionsForm::ID_CHOICE1 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL4 = wxNewId();
 const long ClientFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -70,9 +85,8 @@ Database *dbCF = NULL;
 ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(ClientFunctionsForm)
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
 	SetClientSize(wxSize(455,425));
-	Move(wxDefaultPosition);
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(0,8), wxSize(544,397), 0, _T("ID_NOTEBOOK1"));
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxPoint(-28,-28), wxSize(495,371), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	lblCFunct = new wxStaticText(Panel1, ID_STATICTEXT1, _("Client Functions"), wxPoint(168,24), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
@@ -115,9 +129,25 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblClientName = new wxStaticText(Panel2, ID_STATICTEXT22, wxEmptyString, wxPoint(304,48), wxSize(24,13), 0, _T("ID_STATICTEXT22"));
 	lblAccID = new wxStaticText(Panel2, ID_STATICTEXT23, wxEmptyString, wxPoint(120,96), wxSize(24,13), 0, _T("ID_STATICTEXT23"));
 	lblAccBal = new wxStaticText(Panel2, ID_STATICTEXT24, wxEmptyString, wxPoint(288,96), wxSize(32,13), 0, _T("ID_STATICTEXT24"));
-	StaticText9 = new wxStaticText(Panel2, ID_STATICTEXT16, _("Interest earned per month:"), wxPoint(24,128), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
+	lblIntEarnedText = new wxStaticText(Panel2, ID_STATICTEXT16, _("Interest earned per month:"), wxPoint(24,128), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
 	lblInterestEarned = new wxStaticText(Panel2, ID_STATICTEXT17, wxEmptyString, wxPoint(184,128), wxSize(56,13), 0, _T("ID_STATICTEXT17"));
 	Panel3 = new wxPanel(Notebook1, ID_PANEL4, wxPoint(186,9), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
+	StaticText9 = new wxStaticText(Panel3, ID_STATICTEXT25, _("Account ID:"), wxPoint(24,64), wxDefaultSize, 0, _T("ID_STATICTEXT25"));
+	StaticText10 = new wxStaticText(Panel3, ID_STATICTEXT26, _("Account balance:"), wxPoint(24,104), wxDefaultSize, 0, _T("ID_STATICTEXT26"));
+	txfAccID = new wxTextCtrl(Panel3, ID_TEXTCTRL8, wxEmptyString, wxPoint(136,64), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL8"));
+	txfAccBal = new wxTextCtrl(Panel3, ID_TEXTCTRL9, wxEmptyString, wxPoint(136,104), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL9"));
+	lblAccType = new wxStaticText(Panel3, ID_STATICTEXT27, _("Account type:"), wxPoint(24,152), wxDefaultSize, 0, _T("ID_STATICTEXT27"));
+	lblAccInt = new wxStaticText(Panel3, ID_STATICTEXT29, _("Account interest:"), wxPoint(24,200), wxDefaultSize, 0, _T("ID_STATICTEXT29"));
+	txfAccInt = new wxTextCtrl(Panel3, ID_TEXTCTRL11, wxEmptyString, wxPoint(136,200), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL11"));
+	btnAccWithdraw = new wxButton(Panel3, ID_BUTTON6, _("Withdraw"), wxPoint(88,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnAccDeposit = new wxButton(Panel3, ID_BUTTON7, _("Deposit"), wxPoint(248,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnAccBack = new wxButton(Panel3, ID_BUTTON10, _("Back"), wxPoint(360,336), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON10"));
+	btnAccExit = new wxButton(Panel3, ID_BUTTON11, _("Exit"), wxPoint(360,360), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON11"));
+	btnAccUpdate = new wxButton(Panel3, ID_BUTTON12, _("Update"), wxPoint(16,360), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON12"));
+	lblPercent = new wxStaticText(Panel3, ID_STATICTEXT30, _("%"), wxPoint(248,200), wxSize(26,21), 0, _T("ID_STATICTEXT30"));
+	cmbAccType = new wxChoice(Panel3, ID_CHOICE1, wxPoint(136,152), wxSize(104,21), 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
+	cmbAccType->SetSelection( cmbAccType->Append(_("Savings")) );
+	cmbAccType->Append(_("Cheque"));
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
 	Notebook1->AddPage(Panel3, _("Client Account"), false);
@@ -131,6 +161,12 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Connect(ID_RADIOBUTTON1,wxEVT_COMMAND_RADIOBUTTON_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OnRadioButton1Select);
 	Connect(ID_BUTTON8,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCUpdateClick);
 	Connect(ID_BUTTON9,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCancelClick);
+	Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccWithdrawClick);
+	Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccDepositClick);
+	Connect(ID_BUTTON10,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccBackClick);
+	Connect(ID_BUTTON11,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccExitClick);
+	Connect(ID_BUTTON12,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccUpdateClick);
+	Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OncmbAccTypeSelect);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -172,6 +208,8 @@ void ClientFunctionsForm::populateAccount(int cNum){
 void ClientFunctionsForm::populateClientSummary(account &accObj){
     wxString clID, clName, AccID, intEarned;
 
+    wxString AccType;
+
     double interestEarned = 0.0;
 
     clientAcc = &accObj;
@@ -189,8 +227,29 @@ void ClientFunctionsForm::populateClientSummary(account &accObj){
     lblClientName->SetLabel(clName);
 
     lblAccID->SetLabel(AccID);
+    txfAccID->SetValue(AccID);
     lblAccBal->SetLabel("R "+wxString::Format("%.2f", accObj.getBalance()));
-    lblInterestEarned->SetLabel(intEarned);
+    txfAccBal->SetValue(wxString::Format("%.2f", accObj.getBalance()));
+
+    cmbAccType->SetSelection(accObj.getType());
+    txfAccInt->SetValue(wxString::Format("%.2f", accObj.getInterest()));
+
+    if(accObj.getType() == 0){
+        lblIntEarnedText->Show(TRUE);
+        lblInterestEarned->Show(TRUE);
+        lblInterestEarned->SetLabel(intEarned);
+
+        txfAccInt->Show(TRUE);
+        lblAccInt->Show(TRUE);
+        lblPercent->Show(TRUE);
+    }else{
+        lblIntEarnedText->Hide();
+        lblInterestEarned->Hide();
+
+        txfAccInt->Hide();
+        lblAccInt->Hide();
+        lblPercent->Hide();
+    }
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){
@@ -255,6 +314,17 @@ void ClientFunctionsForm::setup(){
     txfCOAmt->SetValue("");
     txfCSAID->SetValue("");
 
+    //reset all account and summary fields
+    txfAccBal->SetValue("");
+    txfAccID->SetValue("");
+    txfAccInt->SetValue("");
+
+    lblAccID->SetLabel("");
+    lblAccBal->SetLabel("");
+
+    lblClientID->SetLabel("");
+    lblClientName->SetLabel("");
+    lblInterestEarned->SetLabel("");
     //set default states
     RadioButton1->SetValue(TRUE);
     RadioButton2->SetValue(FALSE);
@@ -274,6 +344,9 @@ void ClientFunctionsForm::setup(){
     txfCConNum->SetEditable(FALSE);
 
     txfCID->SetEditable(TRUE);
+
+    //account page
+    txfAccID->SetEditable(FALSE);
 }
 
 void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//rebuild
@@ -370,24 +443,33 @@ void ClientFunctionsForm::OnbtnCCancelClick(wxCommandEvent& event)
 
 void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
 {
-    int cNum = wxAtoi(txfCID->GetValue());
-	std::string cName = txfCName->GetValue().ToStdString(), cSAID = txfCSAID->GetValue().ToStdString(), cCon = txfCConNum->GetValue().ToStdString(), cAdd = txfCAddress->GetValue().ToStdString();
+    vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
 
-    std::replace(cName.begin(), cName.end(), '\'', ' ');
-    std::replace(cSAID.begin(), cSAID.end(), '\'', ' ');
-    std::replace(cCon.begin(), cCon.end(), '\'', ' ');
-    std::replace(cAdd.begin(), cAdd.end(), '\'', ' ');
+	int max = resulta.size();
 
-    std::string name = "clientName = '" + cName + "', ";
-    std::string sID = "SAID = '" + cSAID + "', ";
-    std::string clCon = "contact = '" + cCon + "', ";
-    std::string clAdd = "address = '" + cAdd + "'";
+	int cNum = wxAtoi(txfCID->GetValue());
+    if(cNum <= max && cNum > 0){
+        std::string cName = txfCName->GetValue().ToStdString(), cSAID = txfCSAID->GetValue().ToStdString(), cCon = txfCConNum->GetValue().ToStdString(), cAdd = txfCAddress->GetValue().ToStdString();
 
-    string q = "UPDATE tblClient SET "+ name + sID + clCon + clAdd + " WHERE clientID = " + to_string(cNum) +";";
+        std::replace(cName.begin(), cName.end(), '\'', ' ');
+        std::replace(cSAID.begin(), cSAID.end(), '\'', ' ');
+        std::replace(cCon.begin(), cCon.end(), '\'', ' ');
+        std::replace(cAdd.begin(), cAdd.end(), '\'', ' ');
 
-	dbCF->query(q.c_str());
+        std::string name = "clientName = '" + cName + "', ";
+        std::string sID = "SAID = '" + cSAID + "', ";
+        std::string clCon = "contact = '" + cCon + "', ";
+        std::string clAdd = "address = '" + cAdd + "'";
 
-	wxMessageBox("Update successful!");
+        string q = "UPDATE tblClient SET "+ name + sID + clCon + clAdd + " WHERE clientID = " + to_string(cNum) +";";
+
+        dbCF->query(q.c_str());
+
+        populateClientFields(cNum);
+        wxMessageBox("Update successful!");
+    }else{
+        wxMessageBox("Client doesn't Exist");
+    }
 }
 
 void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
@@ -498,4 +580,150 @@ void ClientFunctionsForm::OnbtnCLoanClick(wxCommandEvent& event)
     //accForm->setup();
 
     this->Close(TRUE);
+}
+
+void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)
+{
+   vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblAccount;");
+
+	int max = resulta.size();
+
+	int accID = wxAtoi(txfAccID->GetValue());
+	int clID = accObj.getClientID();
+
+    if(accID <= max && accID > 0){
+        int accType = cmbAccType->GetCurrentSelection();
+        double accBal = wxAtof(txfAccBal->GetValue()), accInt = wxAtof(txfAccInt->GetValue());
+
+        if(accType == 1){
+            accInt=0;
+        }
+
+        std::string balance = "balance = " + to_string(accBal) + ", ";
+        std::string type = "type = " + to_string(accType) + ", ";
+        std::string interest = "interest = " + to_string(accInt);
+
+        string q = "UPDATE tblAccount SET "+ balance + type + interest + " WHERE accID = " + to_string(accID) +";";
+
+        dbCF->query(q.c_str());
+
+        wxMessageBox("Update successful!");
+
+        if(clID <= max && clID > 0){
+            populateClientFields(clID);
+        }
+    }else{
+        wxMessageBox("Account doesn't Exist");
+    }
+}
+
+void ClientFunctionsForm::OncmbAccTypeSelect(wxCommandEvent& event)
+{
+    if(cmbAccType->GetCurrentSelection() == 0){
+        lblAccInt->Show(TRUE);
+        txfAccInt->Show(TRUE);
+        lblPercent->Show(TRUE);
+    }else if(cmbAccType->GetCurrentSelection() == 1){
+        lblAccInt->Hide();
+        txfAccInt->Hide();
+        lblPercent->Hide();
+    }else{
+        wxMessageBox("Remeber to select a type!");
+    }
+
+}
+
+void ClientFunctionsForm::OnbtnAccBackClick(wxCommandEvent& event)
+{
+    SelectionMenu *seleForm = new SelectionMenu(NULL);
+
+    seleForm->currentLogged = this->curEmployee;
+    seleForm->Show(TRUE);
+    wxString EmID;
+    EmID<<seleForm->currentLogged->getEmployeeNumber();
+
+    seleForm->lblWelcome->SetLabelText("Welcome: "+seleForm->currentLogged->getName()+"\nEmployee ID: "+EmID);
+    seleForm->lblDays->SetLabelText(lblTextStore);
+
+    this->Close(TRUE);
+}
+
+void ClientFunctionsForm::OnbtnAccExitClick(wxCommandEvent& event)
+{
+    this->Close(TRUE);
+}
+
+void ClientFunctionsForm::OnbtnAccWithdrawClick(wxCommandEvent& event)
+{
+    vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
+
+	int max = resulta.size();
+
+	wxString drawAmt;
+
+    clientAcc = &accObj;
+    if(clientAcc->getClientID() <= max && clientAcc->getClientID() > 0){
+
+        wxTextEntryDialog dlg(this,  _("Please enter amount to withdraw"), _("Withdraw Amount"), _("Amount to withdraw"));
+        dlg.SetTextValidator(wxFILTER_NUMERIC);
+        if ( dlg.ShowModal() == wxID_OK )
+        {
+            // We can be certain that this string contains numbers only.
+            drawAmt = dlg.GetValue();
+        }
+        if(wxAtof(drawAmt)<=accObj.getBalance()){
+            clientAcc->withdraw(wxAtof(drawAmt));
+
+            if(accObj.getClientID()==clientAcc->getClientID()){
+                string q = "UPDATE tblAccount SET balance = "+ to_string(accObj.getBalance()) + " WHERE accID = " + to_string(accObj.getAccountID()) +";";
+
+                dbCF->query(q.c_str());
+
+                wxMessageBox("Withdraw successful!");
+
+                populateClientFields(clientAcc->getClientID());
+
+            }
+        }else{
+            wxMessageBox("Can't draw more than they have! Offer loan.");
+        }
+    }
+}
+
+void ClientFunctionsForm::OnbtnAccDepositClick(wxCommandEvent& event)
+{
+    vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
+
+	int max = resulta.size();
+
+	wxString depAmt;
+
+    clientAcc = &accObj;
+    if(clientAcc->getClientID() <= max && clientAcc->getClientID() > 0){
+
+        wxTextEntryDialog dlg(this,  _("Please enter amount to deposit"), _("Deposit Amount"), _("Amount to deposit"));
+        dlg.SetTextValidator(wxFILTER_NUMERIC);
+        if ( dlg.ShowModal() == wxID_OK )
+        {
+            // We can be certain that this string contains numbers only.
+            depAmt = dlg.GetValue();
+        }
+        if(wxAtof(depAmt) < 0 && (-1* wxAtof(depAmt)) >=accObj.getBalance()){
+            wxMessageBox("Can't draw more than they have! Offer loan.");
+        }else{
+            clientAcc->deposit(wxAtof(depAmt));
+
+
+            if(accObj.getClientID()==clientAcc->getClientID()){
+                string q = "UPDATE tblAccount SET balance = "+ to_string(accObj.getBalance()) + " WHERE accID = " + to_string(accObj.getAccountID()) +";";
+
+                dbCF->query(q.c_str());
+
+                wxMessageBox("Deposit successful!");
+
+                populateClientFields(clientAcc->getClientID());
+
+            }
+        }
+    }
 }
