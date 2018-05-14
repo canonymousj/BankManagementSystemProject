@@ -12,6 +12,7 @@
 				<bitmap>spring-leaves-background-photoshop-backgrounds.jpg</bitmap>
 				<pos>0,0</pos>
 				<size>448,216</size>
+				<enabled>0</enabled>
 				<style>0</style>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblLogin" member="yes">
@@ -27,13 +28,6 @@
 					<face>Castellar</face>
 				</font>
 			</object>
-			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUName" member="yes">
-				<pos>224,104</pos>
-				<size>144,29</size>
-				<fg>wxSYS_COLOUR_BTNTEXT</fg>
-				<bg>#DBEABB</bg>
-				<handler function="OnTextCtrl1Text" entry="EVT_TEXT" />
-			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblEmID" member="yes">
 				<label>EMPLOYEE ID:</label>
 				<pos>80,104</pos>
@@ -45,12 +39,6 @@
 					<family>swiss</family>
 					<face>Arial</face>
 				</font>
-			</object>
-			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfPass" member="yes">
-				<pos>224,152</pos>
-				<size>144,29</size>
-				<fg>wxSYS_COLOUR_WINDOWTEXT</fg>
-				<bg>#DCE8C6</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblPass" member="yes">
 				<label>PASSWORD:</label>
@@ -108,6 +96,19 @@
 					<family>swiss</family>
 				</font>
 				<handler function="OnbtnExitClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUName" member="yes">
+				<pos>224,104</pos>
+				<size>144,29</size>
+				<fg>wxSYS_COLOUR_BTNTEXT</fg>
+				<bg>#DBEABB</bg>
+				<handler function="OnTextCtrl1Text" entry="EVT_TEXT" />
+			</object>
+			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfPass" member="yes">
+				<pos>224,152</pos>
+				<size>144,29</size>
+				<fg>wxSYS_COLOUR_WINDOWTEXT</fg>
+				<bg>#DCE8C6</bg>
 			</object>
 		</object>
 	</object>

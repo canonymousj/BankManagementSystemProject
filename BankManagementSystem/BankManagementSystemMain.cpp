@@ -59,13 +59,13 @@ wxString wxbuildinfo(wxbuildinfoformat format)
 //(*IdInit(BankManagementSystemFrame)
 const long BankManagementSystemFrame::ID_STATICBITMAP1 = wxNewId();
 const long BankManagementSystemFrame::ID_STATICTEXT3 = wxNewId();
-const long BankManagementSystemFrame::ID_TEXTCTRL1 = wxNewId();
 const long BankManagementSystemFrame::ID_STATICTEXT1 = wxNewId();
-const long BankManagementSystemFrame::ID_TEXTCTRL2 = wxNewId();
 const long BankManagementSystemFrame::ID_STATICTEXT2 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON1 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON3 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON2 = wxNewId();
+const long BankManagementSystemFrame::ID_TEXTCTRL1 = wxNewId();
+const long BankManagementSystemFrame::ID_TEXTCTRL2 = wxNewId();
 const long BankManagementSystemFrame::ID_PANEL1 = wxNewId();
 //*)
 
@@ -83,18 +83,13 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     Panel1->SetForegroundColour(wxColour(0,128,0));
     Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
     StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("spring-leaves-background-photoshop-backgrounds.jpg")).Rescale(wxSize(448,216).GetWidth(),wxSize(448,216).GetHeight())), wxPoint(0,0), wxSize(448,216), 0, _T("ID_STATICBITMAP1"));
+    StaticBitmap1->Disable();
     lblLogin = new wxStaticText(Panel1, ID_STATICTEXT3, _("LOGIN"), wxPoint(152,24), wxSize(88,24), 0, _T("ID_STATICTEXT3"));
     wxFont lblLoginFont(28,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
     lblLogin->SetFont(lblLoginFont);
-    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(224,104), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-    txfUName->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNTEXT));
-    txfUName->SetBackgroundColour(wxColour(219,234,187));
     lblEmID = new wxStaticText(Panel1, ID_STATICTEXT1, _("EMPLOYEE ID:"), wxPoint(80,104), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
     wxFont lblEmIDFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     lblEmID->SetFont(lblEmIDFont);
-    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(224,152), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-    txfPass->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT));
-    txfPass->SetBackgroundColour(wxColour(220,232,198));
     lblPass = new wxStaticText(Panel1, ID_STATICTEXT2, _("PASSWORD:"), wxPoint(80,152), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
     wxFont lblPassFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
     lblPass->SetFont(lblPassFont);
@@ -113,11 +108,17 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     btnExit->SetBackgroundColour(wxColour(0,128,0));
     wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
     btnExit->SetFont(btnExitFont);
+    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(224,104), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+    txfUName->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNTEXT));
+    txfUName->SetBackgroundColour(wxColour(219,234,187));
+    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(224,152), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+    txfPass->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT));
+    txfPass->SetBackgroundColour(wxColour(220,232,198));
 
-    Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&BankManagementSystemFrame::OnTextCtrl1Text);
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BankManagementSystemFrame::OnbtnLoginClick);
     Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BankManagementSystemFrame::OnbtnRegClick);
     Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BankManagementSystemFrame::OnbtnExitClick);
+    Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&BankManagementSystemFrame::OnTextCtrl1Text);
     //*)
     SetMinSize(GetSize());
     SetMaxSize(GetSize());

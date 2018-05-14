@@ -40,13 +40,13 @@ class BankManagementSystemFrame: public wxFrame
         //(*Identifiers(BankManagementSystemFrame)
         static const long ID_STATICBITMAP1;
         static const long ID_STATICTEXT3;
-        static const long ID_TEXTCTRL1;
         static const long ID_STATICTEXT1;
-        static const long ID_TEXTCTRL2;
         static const long ID_STATICTEXT2;
         static const long ID_BUTTON1;
         static const long ID_BUTTON3;
         static const long ID_BUTTON2;
+        static const long ID_TEXTCTRL1;
+        static const long ID_TEXTCTRL2;
         static const long ID_PANEL1;
         //*)
 
