@@ -166,14 +166,6 @@
 						<label>Next repayment date:</label>
 						<pos>240,192</pos>
 					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT16" variable="StaticText9" member="yes">
-						<label>Number of investments</label>
-						<pos>24,240</pos>
-					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT17" variable="StaticText10" member="yes">
-						<label>Total amount:</label>
-						<pos>24,256</pos>
-					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText11" member="yes">
 						<label>Total assets:</label>
 						<pos>24,312</pos>
@@ -181,6 +173,22 @@
 					<object class="wxStaticText" name="ID_STATICTEXT19" variable="StaticText12" member="yes">
 						<label>Total liability:</label>
 						<pos>248,312</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT21" variable="lblClientID" member="yes">
+						<label></label>
+						<pos>104,48</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT22" variable="lblClientName" member="yes">
+						<label></label>
+						<pos>304,48</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT23" variable="lblAccID" member="yes">
+						<label></label>
+						<pos>112,96</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT24" variable="lblAccBal" member="yes">
+						<label></label>
+						<pos>280,96</pos>
 					</object>
 				</object>
 				<label>Client Summary</label>

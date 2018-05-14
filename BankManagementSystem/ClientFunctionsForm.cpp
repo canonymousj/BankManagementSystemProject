@@ -49,10 +49,12 @@ const long ClientFunctionsForm::ID_STATICTEXT12 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT13 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT14 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT15 = wxNewId();
-const long ClientFunctionsForm::ID_STATICTEXT16 = wxNewId();
-const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT18 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT19 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT21 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT22 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT23 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT24 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
 const long ClientFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -110,10 +112,12 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText6 = new wxStaticText(Panel2, ID_STATICTEXT13, _("Total amount:"), wxPoint(24,168), wxDefaultSize, 0, _T("ID_STATICTEXT13"));
 	StaticText7 = new wxStaticText(Panel2, ID_STATICTEXT14, _("Next repayment amount:"), wxPoint(24,192), wxDefaultSize, 0, _T("ID_STATICTEXT14"));
 	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT15, _("Next repayment date:"), wxPoint(240,192), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
-	StaticText9 = new wxStaticText(Panel2, ID_STATICTEXT16, _("Number of investments"), wxPoint(24,240), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
-	StaticText10 = new wxStaticText(Panel2, ID_STATICTEXT17, _("Total amount:"), wxPoint(24,256), wxDefaultSize, 0, _T("ID_STATICTEXT17"));
 	StaticText11 = new wxStaticText(Panel2, ID_STATICTEXT18, _("Total assets:"), wxPoint(24,312), wxDefaultSize, 0, _T("ID_STATICTEXT18"));
 	StaticText12 = new wxStaticText(Panel2, ID_STATICTEXT19, _("Total liability:"), wxPoint(248,312), wxDefaultSize, 0, _T("ID_STATICTEXT19"));
+	lblClientID = new wxStaticText(Panel2, ID_STATICTEXT21, wxEmptyString, wxPoint(104,48), wxDefaultSize, 0, _T("ID_STATICTEXT21"));
+	lblClientName = new wxStaticText(Panel2, ID_STATICTEXT22, wxEmptyString, wxPoint(304,48), wxDefaultSize, 0, _T("ID_STATICTEXT22"));
+	lblAccID = new wxStaticText(Panel2, ID_STATICTEXT23, wxEmptyString, wxPoint(112,96), wxDefaultSize, 0, _T("ID_STATICTEXT23"));
+	lblAccBal = new wxStaticText(Panel2, ID_STATICTEXT24, wxEmptyString, wxPoint(280,96), wxDefaultSize, 0, _T("ID_STATICTEXT24"));
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
 
@@ -163,6 +167,13 @@ void ClientFunctionsForm::populateAccount(int cNum){
         clientAcc->setContactNumber(res[0][3]);
         clientAcc->setAddress(res[0][4]);
     }
+    populateClientSummary();
+}
+
+void ClientFunctionsForm::populateClientSummary(){
+    wxString clID;
+    clID<<clientAcc->getClientID();
+    lblClientID->SetLabel(clID);
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){

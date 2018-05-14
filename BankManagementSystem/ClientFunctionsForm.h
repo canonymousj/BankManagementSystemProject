@@ -29,6 +29,7 @@ class ClientFunctionsForm: public wxFrame
 		int populateClientFields(std::string SAID);
 
 		void populateAccount(int cNum);
+		void populateClientSummary();
 		client *clientAcc = new account;
 
 		//(*Declarations(ClientFunctionsForm)
@@ -48,7 +49,6 @@ class ClientFunctionsForm: public wxFrame
 		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
-		wxStaticText* StaticText10;
 		wxStaticText* StaticText11;
 		wxStaticText* StaticText12;
 		wxStaticText* StaticText1;
@@ -59,7 +59,8 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* StaticText6;
 		wxStaticText* StaticText7;
 		wxStaticText* StaticText8;
-		wxStaticText* StaticText9;
+		wxStaticText* lblAccBal;
+		wxStaticText* lblAccID;
 		wxStaticText* lblCAddress;
 		wxStaticText* lblCConNum;
 		wxStaticText* lblCFunct;
@@ -67,6 +68,8 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblCName;
 		wxStaticText* lblCOAmt;
 		wxStaticText* lblCSAID;
+		wxStaticText* lblClientID;
+		wxStaticText* lblClientName;
 		wxStaticText* lblInterest;
 		wxTextCtrl* txfCAddress;
 		wxTextCtrl* txfCConNum;
@@ -117,10 +120,12 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT13;
 		static const long ID_STATICTEXT14;
 		static const long ID_STATICTEXT15;
-		static const long ID_STATICTEXT16;
-		static const long ID_STATICTEXT17;
 		static const long ID_STATICTEXT18;
 		static const long ID_STATICTEXT19;
+		static const long ID_STATICTEXT21;
+		static const long ID_STATICTEXT22;
+		static const long ID_STATICTEXT23;
+		static const long ID_STATICTEXT24;
 		static const long ID_PANEL3;
 		static const long ID_NOTEBOOK1;
 		//*)
