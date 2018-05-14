@@ -2414,12 +2414,13 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526294583 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1526306477 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/grid.h>
 	<wx/notebook.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 	"Employee.h"
@@ -2449,12 +2450,16 @@
 1526294583 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
 	"wx/msw/wx.rc"
 
-1526294583 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1526304336 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
 	"ClientFunctionsForm.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1526294583 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c

@@ -4,15 +4,22 @@
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(EmployeeFunctionsForm)
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 //(*IdInit(EmployeeFunctionsForm)
+const long EmployeeFunctionsForm::ID_STATICBITMAP1 = wxNewId();
 const long EmployeeFunctionsForm::ID_GRID1 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON5 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON6 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON7 = wxNewId();
+const long EmployeeFunctionsForm::ID_STATICTEXT7 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL1 = wxNewId();
+const long EmployeeFunctionsForm::ID_STATICBITMAP2 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT1 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL1 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON1 = wxNewId();
@@ -29,6 +36,7 @@ const long EmployeeFunctionsForm::ID_STATICTEXT6 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL6 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON3 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON4 = wxNewId();
+const long EmployeeFunctionsForm::ID_STATICTEXT8 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL2 = wxNewId();
 const long EmployeeFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -45,10 +53,12 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 {
 	//(*Initialize(EmployeeFunctionsForm)
 	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
-	SetClientSize(wxSize(463,335));
+	SetClientSize(wxSize(472,482));
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(8,40), wxSize(440,200), 0, _T("ID_GRID1"));
+	pnlViewEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	StaticBitmap1 = new wxStaticBitmap(pnlViewEm, ID_STATICBITMAP1, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\elegant-white-and-gold-background-6.jpg")).Rescale(wxSize(488,392).GetWidth(),wxSize(488,392).GetHeight())), wxPoint(0,0), wxSize(488,392), 0, _T("ID_STATICBITMAP1"));
+	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(16,88), wxSize(424,288), 0, _T("ID_GRID1"));
 	Grid1->CreateGrid(3,4);
 	Grid1->EnableEditing(false);
 	Grid1->EnableGridLines(true);
@@ -60,26 +70,90 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Grid1->SetColLabelValue(3, _("Privilege"));
 	Grid1->SetDefaultCellFont( Grid1->GetFont() );
 	Grid1->SetDefaultCellTextColour( Grid1->GetForegroundColour() );
-	btnGridRefresh = new wxButton(pnlViewEm, ID_BUTTON5, _("Refresh"), wxPoint(16,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
-	btnViewTblBack = new wxButton(pnlViewEm, ID_BUTTON6, _("Back"), wxPoint(352,248), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
-	btnViewTblExit = new wxButton(pnlViewEm, ID_BUTTON7, _("Exit"), wxPoint(352,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
-	pnlUpdateEm = new wxPanel(Notebook1, ID_PANEL2, wxPoint(78,11), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-	lblUpEmNum = new wxStaticText(pnlUpdateEm, ID_STATICTEXT1, _("Employee number:"), wxPoint(32,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-	txfUpEmNum = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL1, wxEmptyString, wxPoint(160,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-	btnUpSearch = new wxButton(pnlUpdateEm, ID_BUTTON1, _("Search"), wxPoint(352,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-	txfUpEName = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL2, wxEmptyString, wxPoint(160,64), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-	txfUpESAID = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL3, wxEmptyString, wxPoint(160,104), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
-	txfUpESal = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL4, wxEmptyString, wxPoint(160,144), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL4"));
-	txfUpEPriv = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL5, wxEmptyString, wxPoint(160,184), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
-	lblUpEName = new wxStaticText(pnlUpdateEm, ID_STATICTEXT2, _("Employee Name: "), wxPoint(32,64), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-	lblUpESAID = new wxStaticText(pnlUpdateEm, ID_STATICTEXT3, _("Employee SAID:"), wxPoint(32,112), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-	lblUpESal = new wxStaticText(pnlUpdateEm, ID_STATICTEXT4, _("Employee salary:"), wxPoint(32,152), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-	lblUpEPriv = new wxStaticText(pnlUpdateEm, ID_STATICTEXT5, _("Employee privilege:"), wxPoint(32,192), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("Update"), wxPoint(344,200), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-	lblUpEPass = new wxStaticText(pnlUpdateEm, ID_STATICTEXT6, _("Employee password:"), wxPoint(32,232), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
-	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,224), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
-	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("Exit"), wxPoint(344,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
-	btnUpBack = new wxButton(pnlUpdateEm, ID_BUTTON4, _("Back"), wxPoint(344,232), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+	btnGridRefresh = new wxButton(pnlViewEm, ID_BUTTON5, _("REFRESH"), wxPoint(200,408), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON5"));
+	btnGridRefresh->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
+	btnGridRefresh->SetBackgroundColour(wxColour(206,174,66));
+	wxFont btnGridRefreshFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnGridRefresh->SetFont(btnGridRefreshFont);
+	btnViewTblBack = new wxButton(pnlViewEm, ID_BUTTON6, _("BACK"), wxPoint(32,408), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnViewTblBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+	btnViewTblBack->SetBackgroundColour(wxColour(208,175,64));
+	wxFont btnViewTblBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnViewTblBack->SetFont(btnViewTblBackFont);
+	btnViewTblExit = new wxButton(pnlViewEm, ID_BUTTON7, _("EXIT"), wxPoint(376,408), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnViewTblExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnViewTblExit->SetBackgroundColour(wxColour(211,179,65));
+	wxFont btnViewTblExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnViewTblExit->SetFont(btnViewTblExitFont);
+	StaticText1 = new wxStaticText(pnlViewEm, ID_STATICTEXT7, _("EMPLOYEE DATABASE"), wxPoint(40,24), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+	StaticText1->SetForegroundColour(wxColour(209,174,52));
+	StaticText1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont StaticText1Font(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText1->SetFont(StaticText1Font);
+	pnlUpdateEm = new wxPanel(Notebook1, ID_PANEL2, wxPoint(78,11), wxSize(470,456), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+	pnlUpdateEm->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_MENUTEXT));
+	pnlUpdateEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	StaticBitmap2 = new wxStaticBitmap(pnlUpdateEm, ID_STATICBITMAP2, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\elegant-white-and-gold-background-6.jpg")).Rescale(wxSize(464,264).GetWidth(),wxSize(464,264).GetHeight())), wxPoint(0,88), wxSize(464,264), wxSIMPLE_BORDER, _T("ID_STATICBITMAP2"));
+	lblUpEmNum = new wxStaticText(pnlUpdateEm, ID_STATICTEXT1, _("EMPLOYEE NUMBER:"), wxPoint(88,104), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	lblUpEmNum->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpEmNumFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpEmNum->SetFont(lblUpEmNumFont);
+	txfUpEmNum = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL1, wxEmptyString, wxPoint(264,104), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	txfUpEmNum->SetBackgroundColour(wxColour(205,169,46));
+	btnUpSearch = new wxButton(pnlUpdateEm, ID_BUTTON1, _("SEARCH"), wxPoint(192,368), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	btnUpSearch->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnUpSearch->SetBackgroundColour(wxColour(205,169,46));
+	wxFont btnUpSearchFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnUpSearch->SetFont(btnUpSearchFont);
+	txfUpEName = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL2, wxEmptyString, wxPoint(264,144), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	txfUpEName->SetBackgroundColour(wxColour(205,169,46));
+	txfUpESAID = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL3, wxEmptyString, wxPoint(264,184), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+	txfUpESAID->SetBackgroundColour(wxColour(205,169,46));
+	txfUpESal = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL4, wxEmptyString, wxPoint(264,224), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL4"));
+	txfUpESal->SetBackgroundColour(wxColour(205,169,46));
+	txfUpEPriv = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL5, wxEmptyString, wxPoint(264,264), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
+	txfUpEPriv->SetBackgroundColour(wxColour(205,169,46));
+	lblUpEName = new wxStaticText(pnlUpdateEm, ID_STATICTEXT2, _("NAME:"), wxPoint(88,144), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+	lblUpEName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpENameFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpEName->SetFont(lblUpENameFont);
+	lblUpESAID = new wxStaticText(pnlUpdateEm, ID_STATICTEXT3, _("SA ID NUMBER:"), wxPoint(88,184), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+	lblUpESAID->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpESAIDFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpESAID->SetFont(lblUpESAIDFont);
+	lblUpESal = new wxStaticText(pnlUpdateEm, ID_STATICTEXT4, _("SALARY:"), wxPoint(88,224), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+	lblUpESal->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpESalFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpESal->SetFont(lblUpESalFont);
+	lblUpEPriv = new wxStaticText(pnlUpdateEm, ID_STATICTEXT5, _("PRVILEGE:"), wxPoint(88,264), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+	lblUpEPriv->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpEPrivFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpEPriv->SetFont(lblUpEPrivFont);
+	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("UPDATE"), wxPoint(192,416), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnUpUpdate->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnUpUpdate->SetBackgroundColour(wxColour(205,169,46));
+	wxFont btnUpUpdateFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnUpUpdate->SetFont(btnUpUpdateFont);
+	lblUpEPass = new wxStaticText(pnlUpdateEm, ID_STATICTEXT6, _("PASSWORD:"), wxPoint(88,304), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+	lblUpEPass->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	wxFont lblUpEPassFont(11,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	lblUpEPass->SetFont(lblUpEPassFont);
+	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(264,304), wxSize(116,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+	txfUpEPass->SetBackgroundColour(wxColour(205,169,46));
+	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("EXIT"), wxPoint(360,392), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+	btnUpExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnUpExit->SetBackgroundColour(wxColour(205,169,46));
+	wxFont btnUpExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnUpExit->SetFont(btnUpExitFont);
+	btnUpBack = new wxButton(pnlUpdateEm, ID_BUTTON4, _("BACK"), wxPoint(32,392), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+	btnUpBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnUpBack->SetBackgroundColour(wxColour(205,169,46));
+	wxFont btnUpBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnUpBack->SetFont(btnUpBackFont);
+	lblEinfo = new wxStaticText(pnlUpdateEm, ID_STATICTEXT8, _("EMPLOYEE INFORMATION"), wxPoint(32,32), wxDefaultSize, 0, _T("ID_STATICTEXT8"));
+	lblEinfo->SetForegroundColour(wxColour(205,169,46));
+	wxFont lblEinfoFont(20,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	lblEinfo->SetFont(lblEinfoFont);
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
@@ -87,9 +161,11 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Connect(ID_BUTTON6,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnButton1Click);
 	Connect(ID_BUTTON7,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnViewTblExitClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpSearchClick);
+	Connect(ID_TEXTCTRL3,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&EmployeeFunctionsForm::OntxfUpESAIDText);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpUpdateClick);
 	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpExitClick);
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&EmployeeFunctionsForm::OnbtnUpBackClick);
+	pnlUpdateEm->Connect(wxEVT_PAINT,(wxObjectEventFunction)&EmployeeFunctionsForm::OnpnlUpdateEmPaint,0,this);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -292,4 +368,12 @@ void EmployeeFunctionsForm::OnButton1Click(wxCommandEvent& event)
 void EmployeeFunctionsForm::OnbtnViewTblExitClick(wxCommandEvent& event)
 {
     this->Close();
+}
+
+void EmployeeFunctionsForm::OntxfUpESAIDText(wxCommandEvent& event)
+{
+}
+
+void EmployeeFunctionsForm::OnpnlUpdateEmPaint(wxPaintEvent& event)
+{
 }
