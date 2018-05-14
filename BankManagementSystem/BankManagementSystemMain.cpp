@@ -62,6 +62,7 @@ const long BankManagementSystemFrame::ID_STATICTEXT2 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON1 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON3 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON2 = wxNewId();
+const long BankManagementSystemFrame::ID_PANEL2 = wxNewId();
 const long BankManagementSystemFrame::ID_PANEL1 = wxNewId();
 //*)
 
@@ -86,6 +87,7 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     btnLogin = new wxButton(Panel1, ID_BUTTON1, _("Login"), wxPoint(184,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
     btnReg = new wxButton(Panel1, ID_BUTTON3, _("Register"), wxPoint(328,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
     btnExit = new wxButton(Panel1, ID_BUTTON2, _("Exit"), wxPoint(48,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+    Panel2 = new wxPanel(Panel1, ID_PANEL2, wxPoint(328,8), wxSize(88,44), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
 
     Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&BankManagementSystemFrame::OnTextCtrl1Text);
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BankManagementSystemFrame::OnbtnLoginClick);

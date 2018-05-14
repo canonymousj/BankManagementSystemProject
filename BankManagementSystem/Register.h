@@ -58,6 +58,7 @@ class Register: public wxFrame
 		//(*Handlers(Register)
 		void OnButton1Click(wxCommandEvent& event);
 		void OnbtnSubmitClick(wxCommandEvent& event);
+		void OntxfEIDText(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
