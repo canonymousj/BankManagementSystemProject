@@ -4,14 +4,20 @@
 #include <wx/msgdlg.h>
 
 //(*InternalHeaders(EmployeeFunctionsForm)
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 //(*IdInit(EmployeeFunctionsForm)
+const long EmployeeFunctionsForm::ID_STATICBITMAP1 = wxNewId();
 const long EmployeeFunctionsForm::ID_GRID1 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON5 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON6 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON7 = wxNewId();
+const long EmployeeFunctionsForm::ID_STATICTEXT7 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL1 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT1 = wxNewId();
 const long EmployeeFunctionsForm::ID_TEXTCTRL1 = wxNewId();
@@ -45,10 +51,12 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 {
 	//(*Initialize(EmployeeFunctionsForm)
 	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
-	SetClientSize(wxSize(463,335));
+	SetClientSize(wxSize(473,473));
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
-	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(8,40), wxSize(440,200), 0, _T("ID_GRID1"));
+	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxSize(465,439), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+	pnlViewEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
+	StaticBitmap1 = new wxStaticBitmap(pnlViewEm, ID_STATICBITMAP1, wxBitmap(wxImage(_T("animated-falling-leaves-background-9.jpg")).Rescale(wxSize(464,392).GetWidth(),wxSize(464,392).GetHeight())), wxPoint(0,0), wxSize(464,392), wxSIMPLE_BORDER, _T("ID_STATICBITMAP1"));
+	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(16,80), wxSize(432,256), 0, _T("ID_GRID1"));
 	Grid1->CreateGrid(3,4);
 	Grid1->EnableEditing(false);
 	Grid1->EnableGridLines(true);
@@ -60,9 +68,25 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Grid1->SetColLabelValue(3, _("Privilege"));
 	Grid1->SetDefaultCellFont( Grid1->GetFont() );
 	Grid1->SetDefaultCellTextColour( Grid1->GetForegroundColour() );
-	btnGridRefresh = new wxButton(pnlViewEm, ID_BUTTON5, _("Refresh"), wxPoint(16,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON5"));
-	btnViewTblBack = new wxButton(pnlViewEm, ID_BUTTON6, _("Back"), wxPoint(352,248), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON6"));
-	btnViewTblExit = new wxButton(pnlViewEm, ID_BUTTON7, _("Exit"), wxPoint(352,272), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnGridRefresh = new wxButton(pnlViewEm, ID_BUTTON5, _("REFRESH"), wxPoint(200,400), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON5"));
+	btnGridRefresh->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnGridRefresh->SetBackgroundColour(wxColour(0,128,0));
+	wxFont btnGridRefreshFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnGridRefresh->SetFont(btnGridRefreshFont);
+	btnViewTblBack = new wxButton(pnlViewEm, ID_BUTTON6, _("BACK"), wxPoint(24,400), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON6"));
+	btnViewTblBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnViewTblBack->SetBackgroundColour(wxColour(230,115,0));
+	wxFont btnViewTblBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnViewTblBack->SetFont(btnViewTblBackFont);
+	btnViewTblExit = new wxButton(pnlViewEm, ID_BUTTON7, _("EXIT"), wxPoint(368,400), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON7"));
+	btnViewTblExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnViewTblExit->SetBackgroundColour(wxColour(230,115,0));
+	wxFont btnViewTblExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnViewTblExit->SetFont(btnViewTblExitFont);
+	StaticText1 = new wxStaticText(pnlViewEm, ID_STATICTEXT7, _("EMPLOYEE DATABASE"), wxPoint(48,32), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+	StaticText1->SetForegroundColour(wxColour(0,128,0));
+	wxFont StaticText1Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText1->SetFont(StaticText1Font);
 	pnlUpdateEm = new wxPanel(Notebook1, ID_PANEL2, wxPoint(78,11), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
 	lblUpEmNum = new wxStaticText(pnlUpdateEm, ID_STATICTEXT1, _("Employee number:"), wxPoint(32,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	txfUpEmNum = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL1, wxEmptyString, wxPoint(160,16), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
