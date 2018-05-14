@@ -38,7 +38,9 @@ class EmployeeFunctionsForm: public wxFrame
 		wxPanel* pnlUpdateEm;
 		wxPanel* pnlViewEm;
 		wxStaticBitmap* StaticBitmap1;
+		wxStaticBitmap* StaticBitmap2;
 		wxStaticText* StaticText1;
+		wxStaticText* StaticText2;
 		wxStaticText* lblUpEName;
 		wxStaticText* lblUpEPass;
 		wxStaticText* lblUpEPriv;
@@ -63,6 +65,7 @@ class EmployeeFunctionsForm: public wxFrame
 		static const long ID_BUTTON7;
 		static const long ID_STATICTEXT7;
 		static const long ID_PANEL1;
+		static const long ID_STATICBITMAP2;
 		static const long ID_STATICTEXT1;
 		static const long ID_TEXTCTRL1;
 		static const long ID_BUTTON1;
@@ -79,6 +82,7 @@ class EmployeeFunctionsForm: public wxFrame
 		static const long ID_TEXTCTRL6;
 		static const long ID_BUTTON3;
 		static const long ID_BUTTON4;
+		static const long ID_STATICTEXT8;
 		static const long ID_PANEL2;
 		static const long ID_NOTEBOOK1;
 		//*)
