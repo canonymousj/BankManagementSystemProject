@@ -274,7 +274,7 @@ void ClientFunctionsForm::setup(){
     txfCID->SetEditable(TRUE);
 }
 
-void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//rebuild
 {
     SelectionMenu *seleForm = new SelectionMenu(NULL);
 
