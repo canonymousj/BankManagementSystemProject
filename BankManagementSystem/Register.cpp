@@ -130,6 +130,11 @@ void Register::OnbtnSubmitClick(wxCommandEvent& event)
     std::string PWD = txfEPass->GetValue().ToStdString();
     std::string mPWD = txfMPass->GetValue().ToStdString();
 
+    std::replace(name.begin(), name.end(), '\'', ' ');
+    std::replace(ID.begin(), ID.end(), '\'', ' ');
+    std::replace(PWD.begin(), PWD.end(), '\'', ' ');
+    std::replace(mPWD.begin(), mPWD.end(), '\'', ' ');
+
     string q = "SELECT password FROM tblEmployee WHERE privilege = 0;";
     vector<vector<string> > resReg;
     resReg = dbReg->query(q.c_str());
