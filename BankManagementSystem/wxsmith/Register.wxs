@@ -20,6 +20,7 @@
 				<value>SAID</value>
 				<pos>184,152</pos>
 				<size>128,21</size>
+				<handler function="OntxfEIDText" entry="EVT_TEXT" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblEID" member="yes">
 				<label>Enter SAID:</label>

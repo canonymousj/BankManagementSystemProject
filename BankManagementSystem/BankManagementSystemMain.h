@@ -45,7 +45,6 @@ class BankManagementSystemFrame: public wxFrame
         static const long ID_BUTTON1;
         static const long ID_BUTTON3;
         static const long ID_BUTTON2;
-        static const long ID_PANEL2;
         static const long ID_PANEL1;
         //*)
 
@@ -54,7 +53,6 @@ class BankManagementSystemFrame: public wxFrame
         wxButton* btnLogin;
         wxButton* btnReg;
         wxPanel* Panel1;
-        wxPanel* Panel2;
         wxStaticText* lblEmID;
         wxStaticText* lblLogin;
         wxStaticText* lblPass;

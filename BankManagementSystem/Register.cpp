@@ -55,6 +55,7 @@ Register::Register(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSiz
 	txfEmNum = new wxTextCtrl(Panel1, ID_TEXTCTRL5, wxEmptyString, wxPoint(184,88), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
 	lblEmNum = new wxStaticText(Panel1, ID_STATICTEXT6, _("Employee ID (given):"), wxPoint(16,96), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 
+	Connect(ID_TEXTCTRL2,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&Register::OntxfEIDText);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Register::OnbtnSubmitClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Register::OnButton1Click);
 	//*)
@@ -123,4 +124,8 @@ void Register::OnbtnSubmitClick(wxCommandEvent& event)
     }else{
         wxMessageBox("Reg failed");
     }
+}
+
+void Register::OntxfEIDText(wxCommandEvent& event)
+{
 }

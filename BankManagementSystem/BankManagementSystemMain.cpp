@@ -19,6 +19,7 @@
 //(*InternalHeaders(BankManagementSystemFrame)
 #include <wx/font.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
@@ -62,7 +63,6 @@ const long BankManagementSystemFrame::ID_STATICTEXT2 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON1 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON3 = wxNewId();
 const long BankManagementSystemFrame::ID_BUTTON2 = wxNewId();
-const long BankManagementSystemFrame::ID_PANEL2 = wxNewId();
 const long BankManagementSystemFrame::ID_PANEL1 = wxNewId();
 //*)
 
@@ -77,17 +77,34 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
     SetClientSize(wxSize(448,216));
     Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(16,16), wxSize(432,200), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-    lblLogin = new wxStaticText(Panel1, ID_STATICTEXT3, _("Login:"), wxPoint(176,16), wxSize(88,24), 0, _T("ID_STATICTEXT3"));
-    wxFont lblLoginFont(16,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Times New Roman"),wxFONTENCODING_DEFAULT);
+    Panel1->SetForegroundColour(wxColour(0,128,0));
+    Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+    lblLogin = new wxStaticText(Panel1, ID_STATICTEXT3, _("LOGIN"), wxPoint(160,16), wxSize(88,24), 0, _T("ID_STATICTEXT3"));
+    wxFont lblLoginFont(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
     lblLogin->SetFont(lblLoginFont);
-    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, _("Employee ID"), wxPoint(184,72), wxSize(200,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
-    lblEmID = new wxStaticText(Panel1, ID_STATICTEXT1, _("Enter employee ID: "), wxPoint(48,72), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, _("Password"), wxPoint(184,112), wxSize(200,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
-    lblPass = new wxStaticText(Panel1, ID_STATICTEXT2, _("Enter password:"), wxPoint(48,112), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-    btnLogin = new wxButton(Panel1, ID_BUTTON1, _("Login"), wxPoint(184,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-    btnReg = new wxButton(Panel1, ID_BUTTON3, _("Register"), wxPoint(328,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
-    btnExit = new wxButton(Panel1, ID_BUTTON2, _("Exit"), wxPoint(48,160), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-    Panel2 = new wxPanel(Panel1, ID_PANEL2, wxPoint(328,8), wxSize(88,44), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(232,72), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+    lblEmID = new wxStaticText(Panel1, ID_STATICTEXT1, _("EMPLOYEE ID:"), wxPoint(88,72), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+    wxFont lblEmIDFont(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+    lblEmID->SetFont(lblEmIDFont);
+    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(232,112), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+    lblPass = new wxStaticText(Panel1, ID_STATICTEXT2, _("PASSWORD:"), wxPoint(88,112), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+    wxFont lblPassFont(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+    lblPass->SetFont(lblPassFont);
+    btnLogin = new wxButton(Panel1, ID_BUTTON1, _("LOGIN"), wxPoint(184,160), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+    btnLogin->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+    btnLogin->SetBackgroundColour(wxColour(0,128,0));
+    wxFont btnLoginFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+    btnLogin->SetFont(btnLoginFont);
+    btnReg = new wxButton(Panel1, ID_BUTTON3, _("REGISTER"), wxPoint(328,160), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
+    btnReg->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+    btnReg->SetBackgroundColour(wxColour(0,128,0));
+    wxFont btnRegFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+    btnReg->SetFont(btnRegFont);
+    btnExit = new wxButton(Panel1, ID_BUTTON2, _("EXIT"), wxPoint(48,160), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+    btnExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+    btnExit->SetBackgroundColour(wxColour(0,128,0));
+    wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+    btnExit->SetFont(btnExitFont);
 
     Connect(ID_TEXTCTRL1,wxEVT_COMMAND_TEXT_UPDATED,(wxObjectEventFunction)&BankManagementSystemFrame::OnTextCtrl1Text);
     Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&BankManagementSystemFrame::OnbtnLoginClick);
