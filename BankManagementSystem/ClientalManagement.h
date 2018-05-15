@@ -46,3 +46,28 @@ private:
     int accountID, type;
     double balance, interest;
 };
+
+class loan:public client{
+public:
+    loan();
+    loan(int loanID, double amt, double interest, int type, int repayPeriod, std::string DOL);
+    void setLoanID(int loanID);
+    void setType(int type);
+	void setAmount(double amt);
+	void setInterest(double interest);
+	void setRepayPeriod(int repayPeriod);
+	void setDateOfLoan(std::string DOL);
+	int getLoanID();
+	int getType();
+	double getAmount();
+	double getInterest();
+	int getRepayPeriod();
+	std::string getDateOfLoan();
+	double interestEarned();
+	void withdraw(double amt);
+	void deposit(double amt);
+private:
+    int loanID, type, repayPeriod;
+    double amount, interest;
+    std::string dateOfLoan;
+};

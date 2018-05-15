@@ -62,6 +62,8 @@ const long ClientFunctionsForm::ID_STATICTEXT24 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT16 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT28 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT32 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT33 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT25 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT26 = wxNewId();
@@ -89,6 +91,8 @@ END_EVENT_TABLE()
 
 void DatabaseConnectCF();
 Database *dbCF = NULL;
+
+string g_data = "";
 
 ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -120,13 +124,14 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblCID = new wxStaticText(Panel1, ID_STATICTEXT6, _("CLIENT NUMBER:"), wxPoint(32,72), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 	wxFont lblCIDFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblCID->SetFont(lblCIDFont);
-	txfCID = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(176,72), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	txfCID = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(176,72), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL1"));
 	txfCID->SetBackgroundColour(wxColour(231,250,235));
-	txfCName = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(176,104), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	txfCID->SetExtraStyle( txfCID->GetExtraStyle() | wxWS_EX_VALIDATE_RECURSIVELY );
+	txfCName = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(176,104), wxSize(124,21), 0, wxTextValidator(wxFILTER_ALPHA, NULL), _T("ID_TEXTCTRL2"));
 	txfCName->SetBackgroundColour(wxColour(231,250,236));
-	txfCSAID = new wxTextCtrl(Panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(176,136), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+	txfCSAID = new wxTextCtrl(Panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(176,136), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL3"));
 	txfCSAID->SetBackgroundColour(wxColour(231,250,236));
-	txfCConNum = new wxTextCtrl(Panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(176,168), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL4"));
+	txfCConNum = new wxTextCtrl(Panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(176,168), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL4"));
 	txfCConNum->SetBackgroundColour(wxColour(231,250,236));
 	txfCAddress = new wxTextCtrl(Panel1, ID_TEXTCTRL5, wxEmptyString, wxPoint(176,200), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
 	txfCAddress->SetBackgroundColour(wxColour(231,250,236));
@@ -146,7 +151,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	wxFont btnCExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnCExit->SetFont(btnCExitFont);
 	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,232), wxSize(408,88), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,8), wxSize(88,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,8), wxSize(88,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL6"));
 	txfCOAmt->SetBackgroundColour(wxColour(231,250,236));
 	RadioButton2 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON2, _("Savings"), wxPoint(336,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
 	RadioButton1 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON1, _("Cheque"), wxPoint(264,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
@@ -156,7 +161,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblInterest = new wxStaticText(pnlCAccount, ID_STATICTEXT20, _("INTEREST:"), wxPoint(16,48), wxDefaultSize, 0, _T("ID_STATICTEXT20"));
 	wxFont lblInterestFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblInterest->SetFont(lblInterestFont);
-	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(160,48), wxSize(88,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL7"));
+	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(160,48), wxSize(88,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL7"));
 	txfInterest->SetBackgroundColour(wxColour(231,250,236));
 	btnCUpdate = new wxButton(Panel1, ID_BUTTON8, _("UPDATE"), wxPoint(184,376), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
 	btnCUpdate->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
@@ -223,6 +228,8 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText13 = new wxStaticText(Panel2, ID_STATICTEXT28, _("CLIENT SUMMARY"), wxPoint(16,32), wxDefaultSize, 0, _T("ID_STATICTEXT28"));
 	wxFont StaticText13Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText13->SetFont(StaticText13Font);
+	lblNumLoans = new wxStaticText(Panel2, ID_STATICTEXT32, wxEmptyString, wxPoint(224,256), wxSize(40,13), 0, _T("ID_STATICTEXT32"));
+	lblLoanAmtOwed = new wxStaticText(Panel2, ID_STATICTEXT33, wxEmptyString, wxPoint(224,280), wxSize(32,13), 0, _T("ID_STATICTEXT33"));
 	Panel3 = new wxPanel(Notebook1, ID_PANEL4, wxPoint(186,9), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
 	Panel3->SetForegroundColour(wxColour(0,128,128));
 	Panel3->SetBackgroundColour(wxColour(244,244,244));
@@ -232,15 +239,15 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText10 = new wxStaticText(Panel3, ID_STATICTEXT26, _("ACCOUNT BALANCE:"), wxPoint(24,128), wxDefaultSize, 0, _T("ID_STATICTEXT26"));
 	wxFont StaticText10Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText10->SetFont(StaticText10Font);
-	txfAccID = new wxTextCtrl(Panel3, ID_TEXTCTRL8, wxEmptyString, wxPoint(192,88), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL8"));
-	txfAccBal = new wxTextCtrl(Panel3, ID_TEXTCTRL9, wxEmptyString, wxPoint(192,128), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL9"));
+	txfAccID = new wxTextCtrl(Panel3, ID_TEXTCTRL8, wxEmptyString, wxPoint(192,88), wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL8"));
+	txfAccBal = new wxTextCtrl(Panel3, ID_TEXTCTRL9, wxEmptyString, wxPoint(192,128), wxDefaultSize, 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL9"));
 	lblAccType = new wxStaticText(Panel3, ID_STATICTEXT27, _("ACCOUNT TYPE:"), wxPoint(24,208), wxDefaultSize, 0, _T("ID_STATICTEXT27"));
 	wxFont lblAccTypeFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblAccType->SetFont(lblAccTypeFont);
 	lblAccInt = new wxStaticText(Panel3, ID_STATICTEXT29, _("INTEREST ON ACCOUNT:"), wxPoint(24,168), wxDefaultSize, 0, _T("ID_STATICTEXT29"));
 	wxFont lblAccIntFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblAccInt->SetFont(lblAccIntFont);
-	txfAccInt = new wxTextCtrl(Panel3, ID_TEXTCTRL11, wxEmptyString, wxPoint(192,168), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL11"));
+	txfAccInt = new wxTextCtrl(Panel3, ID_TEXTCTRL11, wxEmptyString, wxPoint(192,168), wxDefaultSize, 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL11"));
 	btnAccWithdraw = new wxButton(Panel3, ID_BUTTON6, _("WITHDRAW"), wxPoint(136,272), wxSize(176,32), 0, wxDefaultValidator, _T("ID_BUTTON6"));
 	btnAccWithdraw->SetForegroundColour(wxColour(0,128,128));
 	btnAccWithdraw->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
@@ -329,10 +336,40 @@ void ClientFunctionsForm::populateAccount(int cNum){
         accObj.setContactNumber(res[0][3]);
         accObj.setAddress(res[0][4]);
     }
-    populateClientSummary(accObj);
+    populateLoans(accObj);
+
+    populateClientSummary(accObj, loanObj);
 }
 
-void ClientFunctionsForm::populateClientSummary(account &accObj){   //populate fields in client summary tab
+void ClientFunctionsForm::populateLoans(account &accobj){
+    std::string q = "SELECT * FROM tblLoan WHERE clientID = "+std::to_string(accObj.getClientID())+";";
+    vector<vector<string> > res = dbCF->query(q.c_str());   //store query to string vector (2D)
+
+    int rowPos = 0;
+
+    if(!(res.empty())){ //if it contains information populate account object
+        loanObj.clear();
+        loanObj.reserve(res.size());
+
+        for (vector<vector<string> >::iterator it = res.begin(); it < res.end(); ++it)
+        {
+            vector<string> row = *it;
+
+            int loanID = atoi((row.at(0)).c_str()), rpPeriod = atoi((row.at(3)).c_str()), type = atoi((row.at(6)).c_str());
+            double amt = atof((row.at(1)).c_str()), interest = atof((row.at(4)).c_str());
+            string dol = row.at(2);
+
+            loanObj.push_back(loan(loanID, amt, interest, type, rpPeriod, dol));
+
+            rowPos++;
+        }
+    }else{
+        loanObj.clear();
+    }
+
+}
+
+void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< loan > &loanObj){   //populate fields in client summary tab
     wxString clID, clName, AccID, intEarned;    //temporary conversion variables
 
     wxString AccType;
@@ -378,6 +415,19 @@ void ClientFunctionsForm::populateClientSummary(account &accObj){   //populate f
         lblAccInt->Hide();
         lblPercent->Hide();
     }
+
+    double amtOwed = 0.0;
+    //loan part
+    lblNumLoans->SetLabel(to_string(loanObj.size()));
+    if(!(loanObj.empty())){ //if it contains information populate account object
+        for (unsigned int i = 0; i < loanObj.size(); i++)
+        {
+            amtOwed += loanObj[i].getAmount();
+        }
+    }
+    lblLoanAmtOwed->SetLabel("R "+wxString::Format("%.2f", amtOwed));
+
+
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){
@@ -860,6 +910,7 @@ void ClientFunctionsForm::OnbtnAccDepositClick(wxCommandEvent& event)
 void ClientFunctionsForm::OnPanel2Paint(wxPaintEvent& event)
 {
 }
+
 
 void ClientFunctionsForm::OnNotebook1PageChanged(wxNotebookEvent& event)
 {

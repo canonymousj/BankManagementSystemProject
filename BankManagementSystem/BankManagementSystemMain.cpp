@@ -15,6 +15,7 @@
 #include "SelectionMenu.h"
 #include "Employee.h"
 #include <ctime>
+#include <wx/valtext.h>
 
 //(*InternalHeaders(BankManagementSystemFrame)
 #include <wx/bitmap.h>
@@ -108,7 +109,7 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     btnExit->SetBackgroundColour(wxColour(0,128,0));
     wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
     btnExit->SetFont(btnExitFont);
-    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(224,104), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+    txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(224,104), wxSize(144,29), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL1"));
     txfUName->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNTEXT));
     txfUName->SetBackgroundColour(wxColour(219,234,187));
     txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(224,152), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));

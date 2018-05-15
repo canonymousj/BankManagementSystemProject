@@ -2,8 +2,7 @@
 <wxsmith>
 	<object class="wxFrame" name="Register">
 		<size>438,362</size>
-		<pos_arg>1</pos_arg>
-		<size_arg>1</size_arg>
+		<id_arg>0</id_arg>
 		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 			<pos>0,0</pos>
 			<size>438,360</size>
@@ -18,6 +17,7 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfEName" member="yes">
 				<pos>248,136</pos>
 				<size>128,21</size>
+				<validator>wxTextValidator(wxFILTER__ALPHA, NULL)</validator>
 				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblName" member="yes">
@@ -34,6 +34,7 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfEID" member="yes">
 				<pos>248,176</pos>
 				<size>128,21</size>
+				<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
 				<handler function="OntxfEIDText" entry="EVT_TEXT" />
 			</object>

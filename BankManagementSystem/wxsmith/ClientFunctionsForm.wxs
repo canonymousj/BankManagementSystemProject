@@ -3,7 +3,6 @@
 	<object class="wxFrame" name="ClientFunctionsForm">
 		<size>455,485</size>
 		<id_arg>0</id_arg>
-		<handler function="OnClose" entry="EVT_CLOSE" />
 		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
 			<pos>0,8</pos>
 			<size>320,485</size>
@@ -92,21 +91,26 @@
 					<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfCID" member="yes">
 						<pos>176,72</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEB</bg>
+						<exstyle>wxWS_EX_VALIDATE_RECURSIVELY</exstyle>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfCName" member="yes">
 						<pos>176,104</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__ALPHA, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfCSAID" member="yes">
 						<pos>176,136</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfCConNum" member="yes">
 						<pos>176,168</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
@@ -165,6 +169,7 @@
 						<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
 							<pos>160,8</pos>
 							<size>88,21</size>
+							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 							<bg>#E7FAEC</bg>
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
@@ -202,6 +207,7 @@
 						<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="txfInterest" member="yes">
 							<pos>160,48</pos>
 							<size>88,21</size>
+							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 							<bg>#E7FAEC</bg>
 						</object>
 					</object>
@@ -434,6 +440,16 @@
 							<face>Castellar</face>
 						</font>
 					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT32" variable="lblNumLoans" member="yes">
+						<label></label>
+						<pos>224,256</pos>
+						<size>40,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT33" variable="lblLoanAmtOwed" member="yes">
+						<label></label>
+						<pos>224,280</pos>
+						<size>32,13</size>
+					</object>
 				</object>
 				<label>Client Summary</label>
 			</object>
@@ -466,9 +482,11 @@
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="txfAccID" member="yes">
 						<pos>192,88</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="txfAccBal" member="yes">
 						<pos>192,128</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT27" variable="lblAccType" member="yes">
 						<label>ACCOUNT TYPE:</label>
@@ -494,6 +512,7 @@
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL11" variable="txfAccInt" member="yes">
 						<pos>192,168</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxButton" name="ID_BUTTON6" variable="btnAccWithdraw" member="yes">
 						<label>WITHDRAW</label>

@@ -100,6 +100,7 @@
 			<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUName" member="yes">
 				<pos>224,104</pos>
 				<size>144,29</size>
+				<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 				<fg>wxSYS_COLOUR_BTNTEXT</fg>
 				<bg>#DBEABB</bg>
 				<handler function="OnTextCtrl1Text" entry="EVT_TEXT" />

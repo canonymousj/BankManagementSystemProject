@@ -8,11 +8,13 @@
 #include <wx/notebook.h>
 #include <wx/panel.h>
 #include <wx/radiobut.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 #include <wx/textctrl.h>
 //*)
 #include "Employee.h"
 #include <string>
+#include <vector>
 #include "ClientalManagement.h"
 
 class ClientFunctionsForm: public wxFrame
@@ -30,9 +32,12 @@ class ClientFunctionsForm: public wxFrame
 		int populateClientFields(std::string SAID);
 
 		void populateAccount(int cNum);
-		void populateClientSummary(account &accObj);
+		void populateClientSummary(account &accObj, std::vector< loan > &loanObj);
+		void populateLoans(account &accObj);
+
 		client *clientAcc = new account;
 		account accObj;
+		std::vector< loan > loanObj;
 
 		//(*Declarations(ClientFunctionsForm)
 		wxButton* btnAccBack;
@@ -55,9 +60,13 @@ class ClientFunctionsForm: public wxFrame
 		wxPanel* pnlCAccount;
 		wxRadioButton* RadioButton1;
 		wxRadioButton* RadioButton2;
+		wxStaticBitmap* StaticBitmap1;
+		wxStaticBitmap* StaticBitmap2;
 		wxStaticText* StaticText10;
 		wxStaticText* StaticText11;
 		wxStaticText* StaticText12;
+		wxStaticText* StaticText13;
+		wxStaticText* StaticText14;
 		wxStaticText* StaticText1;
 		wxStaticText* StaticText2;
 		wxStaticText* StaticText3;
@@ -83,6 +92,8 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblIntEarnedText;
 		wxStaticText* lblInterest;
 		wxStaticText* lblInterestEarned;
+		wxStaticText* lblLoanAmtOwed;
+		wxStaticText* lblNumLoans;
 		wxStaticText* lblPercent;
 		wxTextCtrl* txfAccBal;
 		wxTextCtrl* txfAccID;
@@ -99,6 +110,7 @@ class ClientFunctionsForm: public wxFrame
 	protected:
 
 		//(*Identifiers(ClientFunctionsForm)
+		static const long ID_STATICBITMAP2;
 		static const long ID_STATICTEXT1;
 		static const long ID_STATICTEXT2;
 		static const long ID_STATICTEXT3;
@@ -113,8 +125,6 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_BUTTON1;
 		static const long ID_BUTTON2;
 		static const long ID_BUTTON3;
-		static const long ID_BUTTON4;
-		static const long ID_BUTTON5;
 		static const long ID_TEXTCTRL6;
 		static const long ID_RADIOBUTTON2;
 		static const long ID_RADIOBUTTON1;
@@ -124,7 +134,10 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_PANEL2;
 		static const long ID_BUTTON8;
 		static const long ID_BUTTON9;
+		static const long ID_BUTTON4;
+		static const long ID_BUTTON5;
 		static const long ID_PANEL1;
+		static const long ID_STATICBITMAP1;
 		static const long ID_STATICTEXT9;
 		static const long ID_STATICTEXT10;
 		static const long ID_STATICTEXT8;
@@ -141,6 +154,9 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT24;
 		static const long ID_STATICTEXT16;
 		static const long ID_STATICTEXT17;
+		static const long ID_STATICTEXT28;
+		static const long ID_STATICTEXT32;
+		static const long ID_STATICTEXT33;
 		static const long ID_PANEL3;
 		static const long ID_STATICTEXT25;
 		static const long ID_STATICTEXT26;
@@ -156,6 +172,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_BUTTON12;
 		static const long ID_STATICTEXT30;
 		static const long ID_CHOICE1;
+		static const long ID_STATICTEXT31;
 		static const long ID_PANEL4;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -181,7 +198,6 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnAccExitClick(wxCommandEvent& event);
 		void OnbtnAccWithdrawClick(wxCommandEvent& event);
 		void OnbtnAccDepositClick(wxCommandEvent& event);
-		void OnClose(wxCloseEvent& event);
 		void OnPanel2Paint(wxPaintEvent& event);
 		void OnNotebook1PageChanged(wxNotebookEvent& event);
 		//*)

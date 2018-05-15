@@ -1688,7 +1688,7 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\textctrl.h
 
-1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526388852 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -1697,6 +1697,7 @@
 	"SelectionMenu.h"
 	"Employee.h"
 	<ctime>
+	<wx/valtext.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -1801,23 +1802,24 @@
 1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+1526391386 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
 	"ClientalManagement.h"
 
-1526385135 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+1526387520 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
 	<string>
 
-1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
+1526393338 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
 	"Database.h"
 
 1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
 	"Employee.h"
 
-1526385143 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+1526389157 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
 	"EmployeeFunctionsForm.h"
 	"SelectionMenu.h"
 	"Database.h"
 	<wx/msgdlg.h>
+	<wx/valtext.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2050,11 +2052,12 @@
 1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
 	<wx/frame.h>
 
-1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1526389119 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
 	<wx/msgdlg.h>
+	<wx/valtext.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2083,7 +2086,7 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526385855 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526395376 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/frame.h>
@@ -2095,6 +2098,7 @@
 	<wx/textctrl.h>
 	"Employee.h"
 	<string>
+	<vector>
 	"ClientalManagement.h"
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\radiobut.h
@@ -2211,7 +2215,7 @@
 	<ctype.h>
 	<math.h>
 
-1526385973 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526394089 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"

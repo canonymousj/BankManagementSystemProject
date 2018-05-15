@@ -2,6 +2,7 @@
 #include "BankManagementSystemMain.h"
 #include "Database.h"
 #include <wx/msgdlg.h>
+#include <wx/valtext.h>
 
 //(*InternalHeaders(Register)
 #include <wx/bitmap.h>
@@ -42,19 +43,18 @@ END_EVENT_TABLE()
 Register::Register(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(Register)
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
 	SetClientSize(wxSize(438,362));
-	Move(wxDefaultPosition);
 	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(0,0), wxSize(438,360), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
 	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("blue-lace-ribbon-border.jpg")).Rescale(wxSize(440,296).GetWidth(),wxSize(440,296).GetHeight())), wxPoint(0,8), wxSize(440,296), 0, _T("ID_STATICBITMAP1"));
 	StaticBitmap1->Disable();
-	txfEName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(248,136), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL1"));
+	txfEName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(248,136), wxSize(128,21), 0, wxTextValidator(wxFILTER_ALPHA, NULL), _T("ID_TEXTCTRL1"));
 	txfEName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 	lblName = new wxStaticText(Panel1, ID_STATICTEXT1, _("NAME:"), wxPoint(64,136), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	wxFont lblNameFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblName->SetFont(lblNameFont);
-	txfEID = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(248,176), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+	txfEID = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(248,176), wxSize(128,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL2"));
 	txfEID->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 	lblEID = new wxStaticText(Panel1, ID_STATICTEXT2, _("SA ID NUMBER:"), wxPoint(64,176), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	wxFont lblEIDFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);

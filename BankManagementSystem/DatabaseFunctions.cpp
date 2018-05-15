@@ -60,7 +60,7 @@ vector<vector<string> > Database::query(const char* query)
 	}
 
 	string error = sqlite3_errmsg(database);
-	if (error != "not an error") results[0][0] = error;
+	if (error != "not an error") results[0][0] = "error";
 
 	return results;
 }
