@@ -1,8 +1,6 @@
 #include "ClientFunctionsForm.h"
 #include "SelectionMenu.h"
 #include "Account.h"
-#include "Investment.h"
-#include "Loan.h"
 #include "ClientalManagement.h"
 #include <wx/msgdlg.h>
 #include "Database.h"
@@ -851,38 +849,14 @@ void ClientFunctionsForm::OnRadioButton1Select(wxCommandEvent& event)
 
 void ClientFunctionsForm::OnbtnCAccClick(wxCommandEvent& event)
 {
-    Account *accForm = new Account(NULL);
-
-    accForm->Show(TRUE);
-   // accForm->curEmployee = this->currentLogged;
-   // accForm->lblTextStore = lblDays->GetLabel();
-    //accForm->setup();
-
-    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnCInvClick(wxCommandEvent& event)
 {
-    Investment *invForm = new Investment(NULL);
-
-    invForm->Show(TRUE);
-   // accForm->curEmployee = this->currentLogged;
-   // accForm->lblTextStore = lblDays->GetLabel();
-    //accForm->setup();
-
-    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnCLoanClick(wxCommandEvent& event)
 {
-    Loan *loanForm = new Loan(NULL);
-
-    loanForm->Show(TRUE);
-   // accForm->curEmployee = this->currentLogged;
-   // accForm->lblTextStore = lblDays->GetLabel();
-    //accForm->setup();
-
-    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)

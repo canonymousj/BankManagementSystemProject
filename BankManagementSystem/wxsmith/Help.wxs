@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<wxsmith>
+	<object class="wxFrame" name="Help">
+		<size>400,443</size>
+		<pos_arg>1</pos_arg>
+		<size_arg>1</size_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+			<pos>8,24</pos>
+			<size>480,450</size>
+			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+				<bitmap>HELPFILE.png</bitmap>
+				<pos>0,56</pos>
+				<size>400,336</size>
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+				<label>Help me</label>
+				<pos>144,16</pos>
+				<font>
+					<size>20</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>AR BLANCA</face>
+				</font>
+			</object>
+			<object class="wxButton" name="ID_BUTTON1" variable="Button1" member="yes">
+				<label>Exit</label>
+				<pos>312,408</pos>
+				<handler function="OnButton1Click" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON2" variable="Button2" member="yes">
+				<label>Back</label>
+				<pos>232,408</pos>
+				<handler function="OnButton2Click" entry="EVT_BUTTON" />
+			</object>
+		</object>
+	</object>
+</wxsmith>

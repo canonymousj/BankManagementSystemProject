@@ -56,6 +56,8 @@ class SelectionMenu: public wxFrame
 		void OnbtnEFunctClick(wxCommandEvent& event);
 		void OnbtnCFunctClick(wxCommandEvent& event);
 		void OnPanel1Paint(wxPaintEvent& event);
+		void OnbtnHelpClick(wxCommandEvent& event);
+		void OnbtnMetrClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

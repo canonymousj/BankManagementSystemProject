@@ -34,6 +34,7 @@
 					<underlined>0</underlined>
 					<family>swiss</family>
 				</font>
+				<handler function="OnbtnMetrClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblWelcome" member="yes">
 				<label>WELCOME: *Name* &#x0A;EMPLOYEE ID: *ID*</label>
@@ -85,6 +86,7 @@
 					<underlined>0</underlined>
 					<family>swiss</family>
 				</font>
+				<handler function="OnbtnHelpClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblSelection" member="yes">
 				<label>MAIN MENU</label>

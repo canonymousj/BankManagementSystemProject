@@ -1797,7 +1797,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1526414851 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -2080,11 +2080,13 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\msw\rcdefs.h
 
-1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+1526414922 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
 	"SelectionMenu.h"
 	"BankManagementSystemMain.h"
 	"EmployeeFunctionsForm.h"
 	"ClientFunctionsForm.h"
+	"Help.h"
+	"Metrics.h"
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2221,12 +2223,10 @@
 	<ctype.h>
 	<math.h>
 
-1526407917 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526412819 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"
-	"Investment.h"
-	"Loan.h"
 	"ClientalManagement.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -2251,4 +2251,36 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\valtext.h
 	"wx/defs.h"
 	"wx/validate.h"
+
+1526415126 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+	"Help.h"
+	"SelectionMenu.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1526413870 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.h
+	"SelectionMenu.h"
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1526416075 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
+	"Metrics.h"
+	"SelectionMenu.h"
+	"Database.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526415740 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
 
