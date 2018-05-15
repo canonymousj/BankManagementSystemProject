@@ -630,6 +630,95 @@
 				</object>
 				<label>Client Account</label>
 			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANEL5" variable="Panel4" member="yes">
+					<pos>268,6</pos>
+					<object class="wxStaticText" name="ID_STATICTEXT36" variable="lblLLoanID" member="yes">
+						<label>Loan ID:</label>
+						<pos>40,80</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT37" variable="lblLAmt" member="yes">
+						<label>Loan amount:</label>
+						<pos>40,112</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT38" variable="lblLDOL" member="yes">
+						<label>Date of loan:</label>
+						<pos>40,144</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT39" variable="lblLRP" member="yes">
+						<label>Repayment period (months): </label>
+						<pos>40,176</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="txfLLoanID" member="yes">
+						<pos>192,72</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL12" variable="txfLAmt" member="yes">
+						<pos>192,104</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL13" variable="txfLDOL" member="yes">
+						<pos>192,136</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL14" variable="txfLRP" member="yes">
+						<pos>192,168</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT40" variable="lblLInterest" member="yes">
+						<label>Interest:</label>
+						<pos>40,208</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL15" variable="txfLInterest" member="yes">
+						<pos>192,200</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
+					</object>
+					<object class="wxButton" name="ID_BUTTON13" variable="btnLBack" member="yes">
+						<label>Back</label>
+						<pos>360,400</pos>
+						<handler function="OnbtnLBackClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON14" variable="btnLExit" member="yes">
+						<label>Exit</label>
+						<pos>360,424</pos>
+						<handler function="OnbtnLExitClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON15" variable="btnLUpdate" member="yes">
+						<label>Update</label>
+						<pos>16,424</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON16" variable="btnLAdd" member="yes">
+						<label>Add</label>
+						<pos>96,424</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON17" variable="btnLView" member="yes">
+						<label>View table</label>
+						<pos>184,264</pos>
+						<handler function="OnbtnLViewClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON18" variable="btnLPrev" member="yes">
+						<label>Previous</label>
+						<pos>24,264</pos>
+						<handler function="OnbtnLPrevClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON19" variable="btnLNext" member="yes">
+						<label>Next</label>
+						<pos>352,264</pos>
+						<handler function="OnbtnLNextClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT41" variable="lblLLoanNum" member="yes">
+						<label>Loan number:</label>
+						<pos>40,48</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL16" variable="txfLLoanNum" member="yes">
+						<pos>192,40</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT42" variable="StaticText15" member="yes">
+						<label>%</label>
+						<pos>304,200</pos>
+					</object>
+				</object>
+				<label>Client Loans</label>
+			</object>
 		</object>
 	</object>
 </wxsmith>

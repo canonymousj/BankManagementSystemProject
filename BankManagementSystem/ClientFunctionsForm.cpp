@@ -7,6 +7,8 @@
 #include <wx/msgdlg.h>
 #include "Database.h"
 #include <wx/textdlg.h>
+#include "Account.h"
+
 //(*InternalHeaders(ClientFunctionsForm)
 #include <wx/bitmap.h>
 #include <wx/font.h>
@@ -83,6 +85,27 @@ const long ClientFunctionsForm::ID_STATICTEXT30 = wxNewId();
 const long ClientFunctionsForm::ID_CHOICE1 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT31 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL4 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT36 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT37 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT38 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT39 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL10 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL12 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL13 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL14 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT40 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL15 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON13 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON14 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON15 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON16 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON17 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON18 = wxNewId();
+const long ClientFunctionsForm::ID_BUTTON19 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT41 = wxNewId();
+const long ClientFunctionsForm::ID_TEXTCTRL16 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT42 = wxNewId();
+const long ClientFunctionsForm::ID_PANEL5 = wxNewId();
 const long ClientFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
 
@@ -284,9 +307,31 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText14 = new wxStaticText(Panel3, ID_STATICTEXT31, _("ACCOUNT MANAGEMENT"), wxPoint(24,32), wxDefaultSize, 0, _T("ID_STATICTEXT31"));
 	wxFont StaticText14Font(20,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText14->SetFont(StaticText14Font);
+	Panel4 = new wxPanel(Notebook1, ID_PANEL5, wxPoint(268,6), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL5"));
+	lblLLoanID = new wxStaticText(Panel4, ID_STATICTEXT36, _("Loan ID:"), wxPoint(40,80), wxDefaultSize, 0, _T("ID_STATICTEXT36"));
+	lblLAmt = new wxStaticText(Panel4, ID_STATICTEXT37, _("Loan amount:"), wxPoint(40,112), wxDefaultSize, 0, _T("ID_STATICTEXT37"));
+	lblLDOL = new wxStaticText(Panel4, ID_STATICTEXT38, _("Date of loan:"), wxPoint(40,144), wxDefaultSize, 0, _T("ID_STATICTEXT38"));
+	lblLRP = new wxStaticText(Panel4, ID_STATICTEXT39, _("Repayment period (months): "), wxPoint(40,176), wxDefaultSize, 0, _T("ID_STATICTEXT39"));
+	txfLLoanID = new wxTextCtrl(Panel4, ID_TEXTCTRL10, wxEmptyString, wxPoint(192,72), wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL10"));
+	txfLAmt = new wxTextCtrl(Panel4, ID_TEXTCTRL12, wxEmptyString, wxPoint(192,104), wxDefaultSize, 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL12"));
+	txfLDOL = new wxTextCtrl(Panel4, ID_TEXTCTRL13, wxEmptyString, wxPoint(192,136), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL13"));
+	txfLRP = new wxTextCtrl(Panel4, ID_TEXTCTRL14, wxEmptyString, wxPoint(192,168), wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL14"));
+	lblLInterest = new wxStaticText(Panel4, ID_STATICTEXT40, _("Interest:"), wxPoint(40,208), wxDefaultSize, 0, _T("ID_STATICTEXT40"));
+	txfLInterest = new wxTextCtrl(Panel4, ID_TEXTCTRL15, wxEmptyString, wxPoint(192,200), wxDefaultSize, 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL15"));
+	btnLBack = new wxButton(Panel4, ID_BUTTON13, _("Back"), wxPoint(360,400), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON13"));
+	btnLExit = new wxButton(Panel4, ID_BUTTON14, _("Exit"), wxPoint(360,424), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON14"));
+	btnLUpdate = new wxButton(Panel4, ID_BUTTON15, _("Update"), wxPoint(16,424), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON15"));
+	btnLAdd = new wxButton(Panel4, ID_BUTTON16, _("Add"), wxPoint(96,424), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON16"));
+	btnLView = new wxButton(Panel4, ID_BUTTON17, _("View table"), wxPoint(184,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON17"));
+	btnLPrev = new wxButton(Panel4, ID_BUTTON18, _("Previous"), wxPoint(24,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON18"));
+	btnLNext = new wxButton(Panel4, ID_BUTTON19, _("Next"), wxPoint(352,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON19"));
+	lblLLoanNum = new wxStaticText(Panel4, ID_STATICTEXT41, _("Loan number:"), wxPoint(40,48), wxDefaultSize, 0, _T("ID_STATICTEXT41"));
+	txfLLoanNum = new wxTextCtrl(Panel4, ID_TEXTCTRL16, wxEmptyString, wxPoint(192,40), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL16"));
+	StaticText15 = new wxStaticText(Panel4, ID_STATICTEXT42, _("%"), wxPoint(304,200), wxDefaultSize, 0, _T("ID_STATICTEXT42"));
 	Notebook1->AddPage(Panel1, _("Client Functions"), false);
 	Notebook1->AddPage(Panel2, _("Client Summary"), false);
 	Notebook1->AddPage(Panel3, _("Client Account"), false);
+	Notebook1->AddPage(Panel4, _("Client Loans"), false);
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCCreateClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnCBackClick);
@@ -304,6 +349,11 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Connect(ID_BUTTON11,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccExitClick);
 	Connect(ID_BUTTON12,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccUpdateClick);
 	Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OncmbAccTypeSelect);
+	Connect(ID_BUTTON13,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnLBackClick);
+	Connect(ID_BUTTON14,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnLExitClick);
+	Connect(ID_BUTTON17,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnLViewClick);
+	Connect(ID_BUTTON18,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnLPrevClick);
+	Connect(ID_BUTTON19,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnLNextClick);
 	Connect(ID_NOTEBOOK1,wxEVT_COMMAND_NOTEBOOK_PAGE_CHANGED,(wxObjectEventFunction)&ClientFunctionsForm::OnNotebook1PageChanged);
 	//*)
 	SetMinSize(GetSize());
@@ -428,19 +478,34 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
         {
             amtOwed += loanObj[i].getAmount();
         }
+
+        lblLoanAmtOwed->SetLabel("R "+wxString::Format("%.2f", amtOwed));
+
+        int nextPaymentPos = findNextPayment(loanObj);
+
+        //lblNextRPDate->SetLabel(loanObj[nextPaymentPos].findNextPayment());
+
+        lblNextRPAmt->SetLabel("R "+wxString::Format("%.2f", loanObj[nextPaymentPos].interestEarned()));
+
+        //loan page
+        populateLoanFields(0);
     }
-    lblLoanAmtOwed->SetLabel("R "+wxString::Format("%.2f", amtOwed));
-
-    int nextPaymentPos = findNextPayment(loanObj);
-
-    //lblNextRPDate->SetLabel(loanObj[nextPaymentPos].findNextPayment());
-
-    lblNextRPAmt->SetLabel("R "+wxString::Format("%.2f", loanObj[nextPaymentPos].interestEarned()));
 }
 
 int findNextPayment(std::vector< loan > &loanObj){
 
     return 0;
+}
+
+void ClientFunctionsForm::populateLoanFields(unsigned int pos){
+    if(!(loanObj.empty())&&(pos<loanObj.size())){
+        txfLLoanNum->SetValue(to_string(pos));
+        txfLLoanID->SetValue(to_string(loanObj[pos].getLoanID()));
+        txfLAmt->SetValue(wxString::Format("%.2f", loanObj[pos].getAmount()));
+        txfLDOL->SetValue(loanObj[pos].getDateOfLoan());
+        txfLRP->SetValue(to_string(loanObj[pos].getRepayPeriod()));
+        txfLInterest->SetValue(wxString::Format("%.2f", loanObj[pos].getInterest()));
+    }
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){
@@ -538,6 +603,10 @@ void ClientFunctionsForm::setup(){
 
     //account page
     txfAccID->SetEditable(FALSE);
+
+    //loan page
+    txfLLoanID->SetEditable(FALSE);
+    txfLLoanNum->SetEditable(FALSE);
 }
 
 void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//rebuild
@@ -927,4 +996,58 @@ void ClientFunctionsForm::OnPanel2Paint(wxPaintEvent& event)
 
 void ClientFunctionsForm::OnNotebook1PageChanged(wxNotebookEvent& event)
 {
+}
+
+void ClientFunctionsForm::OnbtnLNextClick(wxCommandEvent& event)
+{
+    unsigned int currentPos = wxAtoi(txfLLoanNum->GetValue());
+    unsigned int nextPos = currentPos+1;
+
+    if(nextPos<loanObj.size()){
+        populateLoanFields(nextPos);
+    }else{
+        wxMessageBox("End of Loans");
+    }
+}
+
+void ClientFunctionsForm::OnbtnLPrevClick(wxCommandEvent& event)
+{
+    unsigned int currentPos = wxAtoi(txfLLoanNum->GetValue());
+    unsigned int nextPos = currentPos-1;
+
+    if(nextPos<loanObj.size()&&nextPos>=0){
+        populateLoanFields(nextPos);
+    }else{
+        wxMessageBox("End of Loans");
+    }
+}
+
+void ClientFunctionsForm::OnbtnLBackClick(wxCommandEvent& event)
+{
+    SelectionMenu *seleForm = new SelectionMenu(NULL);
+
+    seleForm->currentLogged = this->curEmployee;
+    seleForm->Show(TRUE);
+    wxString EmID;
+    EmID<<seleForm->currentLogged->getEmployeeNumber();
+
+    seleForm->lblWelcome->SetLabelText("Welcome: "+seleForm->currentLogged->getName()+"\nEmployee ID: "+EmID);
+    seleForm->lblDays->SetLabelText(lblTextStore);
+
+    this->Close(TRUE);
+}
+
+void ClientFunctionsForm::OnbtnLExitClick(wxCommandEvent& event)
+{
+    this->Close(TRUE);
+}
+
+void ClientFunctionsForm::OnbtnLViewClick(wxCommandEvent& event)
+{
+    Account *tableForm = new Account(NULL);
+
+    tableForm->loanObj = this->loanObj;
+    tableForm->updateTable();
+
+    tableForm->Show(TRUE);
 }

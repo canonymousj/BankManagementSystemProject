@@ -1,7 +1,38 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="Account">
+		<size>682,278</size>
 		<pos_arg>1</pos_arg>
 		<size_arg>1</size_arg>
+		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
+			<pos>128,104</pos>
+			<size>640,278</size>
+			<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">
+				<cols>5</cols>
+				<rows>3</rows>
+				<readonly>1</readonly>
+				<defaultcolsize>108</defaultcolsize>
+				<collabels>
+					<item>Loan ID</item>
+					<item>Loan Amount</item>
+					<item>Date of Loan</item>
+					<item>Repayment Period</item>
+					<item>Interest</item>
+				</collabels>
+				<pos>24,40</pos>
+				<size>624,160</size>
+				<handler function="OnGrid1CellLeftClick" entry="EVT_CMD_GRID_CELL_LEFT_CLICK" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON1" variable="btnRefresh" member="yes">
+				<label>Refresh</label>
+				<pos>32,232</pos>
+				<handler function="OnbtnRefreshClick" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxButton" name="ID_BUTTON2" variable="btnExit" member="yes">
+				<label>Exit</label>
+				<pos>576,232</pos>
+				<handler function="OnButton2Click" entry="EVT_BUTTON" />
+			</object>
+		</object>
 	</object>
 </wxsmith>
