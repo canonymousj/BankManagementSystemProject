@@ -19,7 +19,7 @@ public:
 	virtual double calcBalance();       //virtual function to calculate the balance of that class
 	virtual double calcDebt();          //virtual function to calc debt of that class
 	virtual std::string findNextPayment(){return "";};  //virtual funct to return next payment for loan
-	virtual double interestEarned(){return 0.0};   //virtual funct interest earned/potential to earn for that class
+	virtual double interestEarned(){return 0.0;};   //virtual funct interest earned/potential to earn for that class
 	virtual void withdraw(double amt){};    //virtual funct withdraw an amount from that class overall amount
 	virtual void deposit(double amt){};     //similar to withdraw
 protected:

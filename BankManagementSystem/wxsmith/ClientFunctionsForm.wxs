@@ -3,6 +3,7 @@
 	<object class="wxFrame" name="ClientFunctionsForm">
 		<size>455,425</size>
 		<id_arg>0</id_arg>
+		<handler function="OnClose" entry="EVT_CLOSE" />
 		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
 			<pos>0,8</pos>
 			<size>544,397</size>

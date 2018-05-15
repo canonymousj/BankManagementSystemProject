@@ -391,6 +391,7 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
             txfCName->SetEditable(TRUE);
             txfCAddress->SetEditable(TRUE);
             txfCConNum->SetEditable(TRUE);
+            txfCID->SetEditable(FALSE);
 
             btnCSearch->Hide();
             btnCCancel->Show(TRUE);

@@ -181,6 +181,7 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnAccExitClick(wxCommandEvent& event);
 		void OnbtnAccWithdrawClick(wxCommandEvent& event);
 		void OnbtnAccDepositClick(wxCommandEvent& event);
+		void OnClose(wxCloseEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
