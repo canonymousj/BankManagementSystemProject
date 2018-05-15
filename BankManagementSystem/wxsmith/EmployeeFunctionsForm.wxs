@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="EmployeeFunctionsForm">
-		<size>463,335</size>
+		<size>473,473</size>
 		<id_arg>0</id_arg>
 		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
 			<pos>120,72</pos>
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL1" variable="pnlViewEm" member="yes">
 					<pos>262,206</pos>
+					<size>465,439</size>
+					<bg>wxSYS_COLOUR_HIGHLIGHTTEXT</bg>
+					<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+						<bitmap>animated-falling-leaves-background-9.jpg</bitmap>
+						<pos>0,0</pos>
+						<size>464,392</size>
+						<style>0</style>
+					</object>
 					<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">
 						<cols>4</cols>
 						<rows>3</rows>
@@ -20,23 +28,66 @@
 							<item>Salary</item>
 							<item>Privilege</item>
 						</collabels>
-						<pos>8,40</pos>
-						<size>440,200</size>
+						<pos>16,80</pos>
+						<size>432,256</size>
 					</object>
 					<object class="wxButton" name="ID_BUTTON5" variable="btnGridRefresh" member="yes">
-						<label>Refresh</label>
-						<pos>16,264</pos>
+						<label>REFRESH</label>
+						<pos>200,400</pos>
+						<size>75,31</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#008000</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnGridRefreshClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON6" variable="btnViewTblBack" member="yes">
-						<label>Back</label>
-						<pos>352,248</pos>
+						<label>BACK</label>
+						<pos>24,400</pos>
+						<size>75,31</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#E67300</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnButton1Click" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON7" variable="btnViewTblExit" member="yes">
-						<label>Exit</label>
-						<pos>352,272</pos>
+						<label>EXIT</label>
+						<pos>368,400</pos>
+						<size>75,31</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#E67300</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnViewTblExitClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText1" member="yes">
+						<label>EMPLOYEE DATABASE</label>
+						<pos>48,32</pos>
+						<fg>#008000</fg>
+						<font>
+							<size>22</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Castellar</face>
+						</font>
 					</object>
 				</object>
 				<label>View employees</label>
@@ -44,67 +95,185 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL2" variable="pnlUpdateEm" member="yes">
 					<pos>78,11</pos>
+					<bg>wxSYS_COLOUR_INACTIVEBORDER</bg>
+					<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
+						<bitmap>autumn-leaves-20413-1920x1200.jpg</bitmap>
+						<pos>0,64</pos>
+						<size>464,272</size>
+						<enabled>0</enabled>
+						<style>0</style>
+					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT1" variable="lblUpEmNum" member="yes">
-						<label>Employee number:</label>
-						<pos>32,16</pos>
+						<label>EMPLOYEE ID:</label>
+						<pos>104,104</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUpEmNum" member="yes">
-						<pos>160,16</pos>
+						<pos>240,104</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxButton" name="ID_BUTTON1" variable="btnUpSearch" member="yes">
-						<label>Search</label>
-						<pos>352,16</pos>
+						<label>SEARCH</label>
+						<pos>192,352</pos>
+						<fg>#D90000</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnUpSearchClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfUpEName" member="yes">
-						<pos>160,64</pos>
+						<pos>240,144</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfUpESAID" member="yes">
-						<pos>160,104</pos>
+						<pos>240,184</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfUpESal" member="yes">
-						<pos>160,144</pos>
+						<pos>240,224</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfUpEPriv" member="yes">
-						<pos>160,184</pos>
+						<pos>240,264</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblUpEName" member="yes">
-						<label>Employee Name: </label>
-						<pos>32,64</pos>
+						<label>NAME:</label>
+						<pos>104,144</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblUpESAID" member="yes">
-						<label>Employee SAID:</label>
-						<pos>32,112</pos>
+						<label>SA ID NUMBER:</label>
+						<pos>104,184</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT4" variable="lblUpESal" member="yes">
-						<label>Employee salary:</label>
-						<pos>32,152</pos>
+						<label>SALARY:</label>
+						<pos>104,224</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT5" variable="lblUpEPriv" member="yes">
-						<label>Employee privilege:</label>
-						<pos>32,192</pos>
+						<label>PRIVILEGE:</label>
+						<pos>104,264</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 					</object>
 					<object class="wxButton" name="ID_BUTTON2" variable="btnUpUpdate" member="yes">
-						<label>Update</label>
-						<pos>344,200</pos>
+						<label>UPDATE</label>
+						<pos>192,400</pos>
+						<fg>#D90000</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnUpUpdateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT6" variable="lblUpEPass" member="yes">
-						<label>Employee password:</label>
-						<pos>32,232</pos>
+						<label>PASSWORD:</label>
+						<pos>104,304</pos>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfUpEPass" member="yes">
-						<pos>160,224</pos>
+						<pos>240,304</pos>
+						<size>124,21</size>
+						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxButton" name="ID_BUTTON3" variable="btnUpExit" member="yes">
-						<label>Exit</label>
-						<pos>344,264</pos>
+						<label>EXIT</label>
+						<pos>352,376</pos>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#E67300</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnUpExitClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON4" variable="btnUpBack" member="yes">
-						<label>Back</label>
-						<pos>344,232</pos>
+						<label>BACK</label>
+						<pos>40,376</pos>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#E67300</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+						</font>
 						<handler function="OnbtnUpBackClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText2" member="yes">
+						<label>EMPLOYEE INFORMATION</label>
+						<pos>16,32</pos>
+						<fg>#E67300</fg>
+						<font>
+							<size>22</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Castellar</face>
+						</font>
 					</object>
 				</object>
 				<label>Update employee</label>
