@@ -2633,11 +2633,15 @@
 	<wx/statbmp.h>
 	<wx/stattext.h>
 
-1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
+1526421141 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
 	"Metrics.h"
 	"SelectionMenu.h"
 	"Database.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1526420979 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
