@@ -8,6 +8,7 @@
 			<pos>0,8</pos>
 			<size>320,485</size>
 			<bg>#008080</bg>
+			<handler function="OnNotebook1PageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 					<pos>-28,-28</pos>

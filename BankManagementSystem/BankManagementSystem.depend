@@ -1,30 +1,67 @@
 # depslib dependency file v1.0
-1524810871 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\bankmanagementsystemapp.cpp
-	"BankManagementSystemApp.h"
-	"BankManagementSystemMain.h"
-	<wx/image.h>
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
+	"Account.h"
+	<wx/intl.h>
+	<wx/string.h>
 
-1524810871 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\bankmanagementsystemapp.h
-	<wx/app.h>
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
+	<wx/frame.h>
 
-1518982230 c:\wxwidgets-3.1.1\include\wx\app.h
+1518982230 c:\wxwidgets-3.1.1\include\wx\frame.h
+	"wx/toplevel.h"
+	"wx/statusbr.h"
+	"wx/univ/frame.h"
+	"wx/msw/frame.h"
+	"wx/gtk/frame.h"
+	"wx/gtk1/frame.h"
+	"wx/motif/frame.h"
+	"wx/osx/frame.h"
+	"wx/qt/frame.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\toplevel.h
+	"wx/nonownedwnd.h"
+	"wx/iconbndl.h"
+	"wx/weakref.h"
+	"wx/msw/toplevel.h"
+	"wx/gtk/toplevel.h"
+	"wx/gtk1/toplevel.h"
+	"wx/x11/toplevel.h"
+	"wx/dfb/toplevel.h"
+	"wx/osx/toplevel.h"
+	"wx/motif/toplevel.h"
+	"wx/qt/toplevel.h"
+	"wx/univ/toplevel.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\nonownedwnd.h
+	"wx/window.h"
+	"wx/dfb/nonownedwnd.h"
+	"wx/gtk/nonownedwnd.h"
+	"wx/osx/nonownedwnd.h"
+	"wx/msw/nonownedwnd.h"
+	"wx/qt/nonownedwnd.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\window.h
 	"wx/event.h"
-	"wx/eventfilter.h"
-	"wx/build.h"
-	"wx/cmdargs.h"
-	"wx/init.h"
+	"wx/list.h"
+	"wx/cursor.h"
+	"wx/font.h"
+	"wx/colour.h"
+	"wx/region.h"
+	"wx/utils.h"
 	"wx/intl.h"
-	"wx/log.h"
-	"wx/unix/app.h"
-	"wx/msw/app.h"
-	"wx/motif/app.h"
-	"wx/dfb/app.h"
-	"wx/gtk/app.h"
-	"wx/gtk1/app.h"
-	"wx/x11/app.h"
-	"wx/osx/app.h"
-	"wx/qt/app.h"
-	"wx/univ/theme.h"
+	"wx/validate.h"
+	"wx/palette.h"
+	"wx/accel.h"
+	"wx/access.h"
+	"wx/msw/window.h"
+	"wx/motif/window.h"
+	"wx/gtk/window.h"
+	"wx/gtk1/window.h"
+	"wx/x11/window.h"
+	"wx/dfb/window.h"
+	"wx/osx/window.h"
+	"wx/qt/window.h"
+	"wx/univ/window.h"
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\event.h
 	"wx/defs.h"
@@ -811,131 +848,6 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\meta\removeref.h
 
-1518982230 c:\wxwidgets-3.1.1\include\wx\eventfilter.h
-	"wx/defs.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\build.h
-	"wx/version.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\cmdargs.h
-	"wx/arrstr.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\init.h
-	"wx/defs.h"
-	"wx/chartype.h"
-	"wx/msw/init.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\init.h
-	"wx/msw/wrapwin.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\unix\app.h
-	<signal.h>
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\app.h
-	"wx/event.h"
-	"wx/icon.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\icon.h
-	"wx/iconloc.h"
-	"wx/msw/icon.h"
-	"wx/motif/icon.h"
-	"wx/generic/icon.h"
-	"wx/generic/icon.h"
-	"wx/generic/icon.h"
-	"wx/generic/icon.h"
-	"wx/osx/icon.h"
-	"wx/generic/icon.h"
-	"wx/generic/icon.h"
-	"wx/variant.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\iconloc.h
-	"wx/string.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\icon.h
-	"wx/msw/gdiimage.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\motif\icon.h
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\icon.h
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\osx\icon.h
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\motif\app.h
-	"wx/event.h"
-	"wx/hashmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\dfb\app.h
-	"wx/dfb/dfbptr.h"
-	"wx/vidmode.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\vidmode.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\app.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\app.h
-	"wx/frame.h"
-	"wx/icon.h"
-	"wx/strconv.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\frame.h
-	"wx/toplevel.h"
-	"wx/statusbr.h"
-	"wx/univ/frame.h"
-	"wx/msw/frame.h"
-	"wx/gtk/frame.h"
-	"wx/gtk1/frame.h"
-	"wx/motif/frame.h"
-	"wx/osx/frame.h"
-	"wx/qt/frame.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\toplevel.h
-	"wx/nonownedwnd.h"
-	"wx/iconbndl.h"
-	"wx/weakref.h"
-	"wx/msw/toplevel.h"
-	"wx/gtk/toplevel.h"
-	"wx/gtk1/toplevel.h"
-	"wx/x11/toplevel.h"
-	"wx/dfb/toplevel.h"
-	"wx/osx/toplevel.h"
-	"wx/motif/toplevel.h"
-	"wx/qt/toplevel.h"
-	"wx/univ/toplevel.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\nonownedwnd.h
-	"wx/window.h"
-	"wx/dfb/nonownedwnd.h"
-	"wx/gtk/nonownedwnd.h"
-	"wx/osx/nonownedwnd.h"
-	"wx/msw/nonownedwnd.h"
-	"wx/qt/nonownedwnd.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\window.h
-	"wx/event.h"
-	"wx/list.h"
-	"wx/cursor.h"
-	"wx/font.h"
-	"wx/colour.h"
-	"wx/region.h"
-	"wx/utils.h"
-	"wx/intl.h"
-	"wx/validate.h"
-	"wx/palette.h"
-	"wx/accel.h"
-	"wx/access.h"
-	"wx/msw/window.h"
-	"wx/motif/window.h"
-	"wx/gtk/window.h"
-	"wx/gtk1/window.h"
-	"wx/x11/window.h"
-	"wx/dfb/window.h"
-	"wx/osx/window.h"
-	"wx/qt/window.h"
-	"wx/univ/window.h"
-
 1518982230 c:\wxwidgets-3.1.1\include\wx\font.h
 	"wx/defs.h"
 	"wx/fontenc.h"
@@ -1230,6 +1142,34 @@
 	"wx/icon.h"
 	"wx/dynarray.h"
 
+1518982230 c:\wxwidgets-3.1.1\include\wx\icon.h
+	"wx/iconloc.h"
+	"wx/msw/icon.h"
+	"wx/motif/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/osx/icon.h"
+	"wx/generic/icon.h"
+	"wx/generic/icon.h"
+	"wx/variant.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\iconloc.h
+	"wx/string.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\icon.h
+	"wx/msw/gdiimage.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\icon.h
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\icon.h
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\icon.h
+	"wx/bitmap.h"
+
 1518982230 c:\wxwidgets-3.1.1\include\wx\weakref.h
 	"wx/tracker.h"
 	"wx/meta/convertible.h"
@@ -1485,6 +1425,74 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\frame.h
 	"wx/frame.h"
 
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
+	"BankManagementSystemApp.h"
+	"BankManagementSystemMain.h"
+	<wx/image.h>
+
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
+	<wx/app.h>
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\app.h
+	"wx/event.h"
+	"wx/eventfilter.h"
+	"wx/build.h"
+	"wx/cmdargs.h"
+	"wx/init.h"
+	"wx/intl.h"
+	"wx/log.h"
+	"wx/unix/app.h"
+	"wx/msw/app.h"
+	"wx/motif/app.h"
+	"wx/dfb/app.h"
+	"wx/gtk/app.h"
+	"wx/gtk1/app.h"
+	"wx/x11/app.h"
+	"wx/osx/app.h"
+	"wx/qt/app.h"
+	"wx/univ/theme.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\eventfilter.h
+	"wx/defs.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\build.h
+	"wx/version.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\cmdargs.h
+	"wx/arrstr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\init.h
+	"wx/defs.h"
+	"wx/chartype.h"
+	"wx/msw/init.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\init.h
+	"wx/msw/wrapwin.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\unix\app.h
+	<signal.h>
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\app.h
+	"wx/event.h"
+	"wx/icon.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\app.h
+	"wx/event.h"
+	"wx/hashmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\dfb\app.h
+	"wx/dfb/dfbptr.h"
+	"wx/vidmode.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\vidmode.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\app.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\app.h
+	"wx/frame.h"
+	"wx/icon.h"
+	"wx/strconv.h"
+
 1518982230 c:\wxwidgets-3.1.1\include\wx\x11\app.h
 	"wx/gdicmn.h"
 	"wx/event.h"
@@ -1500,12 +1508,103 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\univ\theme.h
 	"wx/string.h"
 
-1524834753 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\bankmanagementsystemmain.h
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\panel.h
+	"wx/window.h"
+	"wx/containr.h"
+	"wx/univ/panel.h"
+	"wx/msw/panel.h"
+	"wx/generic/panelg.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\containr.h
+	"wx/defs.h"
+	"wx/event.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\panel.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\panel.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\panelg.h
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\statbmp.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/bitmap.h"
+	"wx/icon.h"
+	"wx/univ/statbmp.h"
+	"wx/msw/statbmp.h"
+	"wx/motif/statbmp.h"
+	"wx/gtk/statbmp.h"
+	"wx/gtk1/statbmp.h"
+	"wx/osx/statbmp.h"
+	"wx/qt/statbmp.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\statbmp.h
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\statbmp.h
+	"wx/control.h"
+	"wx/icon.h"
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\statbmp.h
+	"wx/motif/bmpmotif.h"
+	"wx/icon.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\bmpmotif.h
+	"wx/defs.h"
+	"wx/bitmap.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\statbmp.h
+	"wx/icon.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\statbmp.h
+	"wx/icon.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\statbmp.h
+	"wx/generic/statbmpg.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\statbmpg.h
+	"wx/statbmp.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\statbmp.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\stattext.h
+	"wx/defs.h"
+	"wx/control.h"
+	"wx/univ/stattext.h"
+	"wx/msw/stattext.h"
+	"wx/motif/stattext.h"
+	"wx/gtk/stattext.h"
+	"wx/gtk1/stattext.h"
+	"wx/osx/stattext.h"
+	"wx/qt/stattext.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\univ\stattext.h
+	"wx/generic/stattextg.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\stattextg.h
+	"wx/stattext.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\stattext.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\motif\stattext.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\stattext.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\stattext.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\osx\stattext.h
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\qt\stattext.h
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\textctrl.h
 	"wx/defs.h"
@@ -1565,24 +1664,6 @@
 	"wx/gtk1/scrolwin.h"
 	"wx/generic/scrolwin.h"
 
-1518982230 c:\wxwidgets-3.1.1\include\wx\panel.h
-	"wx/window.h"
-	"wx/containr.h"
-	"wx/univ/panel.h"
-	"wx/msw/panel.h"
-	"wx/generic/panelg.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\containr.h
-	"wx/defs.h"
-	"wx/event.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\univ\panel.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\panel.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\panelg.h
-	"wx/bitmap.h"
-
 1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\scrolwin.h
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\scrolwin.h
@@ -1607,16 +1688,7 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\textctrl.h
 
-1514140570 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\resource.rc
-	"wx/msw/wx.rc"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\wx.rc
-	<windows.h>
-	"wx/msw/rcdefs.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\rcdefs.h
-
-1524837680 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -1625,8 +1697,11 @@
 	"SelectionMenu.h"
 	"Employee.h"
 	<ctime>
+	<wx/bitmap.h>
 	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\msgdlg.h
@@ -1699,147 +1774,15 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\msgdlg.h
 	"wx/msgdlg.h"
 
-1523621819 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\database.h
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
 	<string>
 	<vector>
 	"sqlite3.h"
 
-1522668050 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\sqlite3.h
+1526333764 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
 	<stdarg.h>
 
-1524811962 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\databasefunctions.cpp
-	"Database.h"
-
-1522668050 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\sqlite3.c
-	"config.h"
-	<vxWorks.h>
-	<pthread.h>
-	"mingw.h"
-	"_mingw.h"
-	<stdarg.h>
-	<stdint.h>
-	<inttypes.h>
-	<intrin.h>
-	<cmnintrin.h>
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<assert.h>
-	<stddef.h>
-	<TargetConditionals.h>
-	<ctype.h>
-	<time.h>
-	<sys/sysctl.h>
-	<malloc/malloc.h>
-	<libkern/OSAtomic.h>
-	<malloc.h>
-	<pthread.h>
-	"windows.h"
-	<sys/cygwin.h>
-	<errno.h>
-	<process.h>
-	<math.h>
-	<sys/types.h>
-	<sys/stat.h>
-	<fcntl.h>
-	<sys/ioctl.h>
-	<unistd.h>
-	<sys/time.h>
-	<errno.h>
-	<sys/mman.h>
-	<sys/file.h>
-	<sys/param.h>
-	<semaphore.h>
-	<limits.h>
-	<sys/mount.h>
-	<utime.h>
-	<sys/dcmd_blk.h>
-	<sys/statvfs.h>
-	<dlfcn.h>
-	"sqlite_tcl.h"
-	"tcl.h"
-	"sqlite3rtree.h"
-	<unicode/utypes.h>
-	<unicode/uregex.h>
-	<unicode/ustring.h>
-	<unicode/ucol.h>
-	<unicode/ubrk.h>
-	<unicode/utf16.h>
-	<ctype.h>
-	<math.h>
-
-1524835527 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\register.cpp
-	"Register.h"
-	"BankManagementSystemMain.h"
-	"Database.h"
-	<wx/msgdlg.h>
-	<wx/intl.h>
-	<wx/string.h>
-
-1524834873 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\register.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\stattext.h
-	"wx/defs.h"
-	"wx/control.h"
-	"wx/univ/stattext.h"
-	"wx/msw/stattext.h"
-	"wx/motif/stattext.h"
-	"wx/gtk/stattext.h"
-	"wx/gtk1/stattext.h"
-	"wx/osx/stattext.h"
-	"wx/qt/stattext.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\univ\stattext.h
-	"wx/generic/stattextg.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\stattextg.h
-	"wx/stattext.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\stattext.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\motif\stattext.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\stattext.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\stattext.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\osx\stattext.h
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\qt\stattext.h
-
-1524512035 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\employeefunctions.cpp
-	"Employee.h"
-
-1524320263 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\employee.h
-	<string>
-
-1524836960 source:c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\selectionmenu.cpp
-	"SelectionMenu.h"
-	"BankManagementSystemMain.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1524836960 c:\users\craig_000\onedrive - university of kwazulu-natal\test\bankmanagementsystem\selectionmenu.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/stattext.h>
-	"Employee.h"
-
-1524810871 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
-	"BankManagementSystemApp.h"
-	"BankManagementSystemMain.h"
-	<wx/image.h>
-
-1524810871 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
-	<wx/app.h>
-
-1526326465 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -1847,133 +1790,34 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1524811962 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
-	"Database.h"
-
-1523621819 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
-	<string>
-	<vector>
-	"sqlite3.h"
-
-1522668050 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
-	<stdarg.h>
-
-1524512035 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
-	"Employee.h"
-
-1524320263 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
-	<string>
-
-1526326465 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
-	"Register.h"
-	"BankManagementSystemMain.h"
-	"Database.h"
-	<wx/msgdlg.h>
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326465 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
 	<wx/statbmp.h>
 	<wx/stattext.h>
-	<wx/textctrl.h>
+	"Employee.h"
 
-1514140570 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
-	"wx/msw/wx.rc"
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
+	<string>
 
-1526326465 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
-	"SelectionMenu.h"
-	"BankManagementSystemMain.h"
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+	"ClientalManagement.h"
+
+1526385135 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+	<string>
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
+	"Database.h"
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
+	"Employee.h"
+
+1526385143 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
 	"EmployeeFunctionsForm.h"
-	"ClientFunctionsForm.h"
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326465 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	"Employee.h"
-
-1522668050 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
-	"config.h"
-	<vxWorks.h>
-	<pthread.h>
-	"mingw.h"
-	"_mingw.h"
-	<stdarg.h>
-	<stdint.h>
-	<inttypes.h>
-	<intrin.h>
-	<cmnintrin.h>
-	<stdio.h>
-	<stdlib.h>
-	<string.h>
-	<assert.h>
-	<stddef.h>
-	<TargetConditionals.h>
-	<ctype.h>
-	<time.h>
-	<sys/sysctl.h>
-	<malloc/malloc.h>
-	<libkern/OSAtomic.h>
-	<malloc.h>
-	<pthread.h>
-	"windows.h"
-	<sys/cygwin.h>
-	<errno.h>
-	<process.h>
-	<math.h>
-	<sys/types.h>
-	<sys/stat.h>
-	<fcntl.h>
-	<sys/ioctl.h>
-	<unistd.h>
-	<sys/time.h>
-	<errno.h>
-	<sys/mman.h>
-	<sys/file.h>
-	<sys/param.h>
-	<semaphore.h>
-	<limits.h>
-	<sys/mount.h>
-	<utime.h>
-	<sys/dcmd_blk.h>
-	<sys/statvfs.h>
-	<dlfcn.h>
-	"sqlite_tcl.h"
-	"tcl.h"
-	"sqlite3rtree.h"
-	<unicode/utypes.h>
-	<unicode/uregex.h>
-	<unicode/ustring.h>
-	<unicode/ucol.h>
-	<unicode/ubrk.h>
-	<unicode/utf16.h>
-	<ctype.h>
-	<math.h>
-
-1526326465 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
-	"BankManagementSystemMain.h"
-	<wx/msgdlg.h>
-	"Database.h"
-	"Register.h"
-	"sqlite3.h"
 	"SelectionMenu.h"
-	"Employee.h"
-	<ctime>
+	"Database.h"
+	<wx/msgdlg.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -1981,15 +1825,34 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526373243 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1526385143 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/grid.h>
 	<wx/notebook.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 	"Employee.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\grid.h
+	"wx/generic/grid.h"
+	"wx/generic/grideditors.h"
+	"wx/generic/gridctrl.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\grid.h
+	"wx/defs.h"
+	"wx/hashmap.h"
+	"wx/scrolwin.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\grideditors.h
+	"wx/defs.h"
+	"wx/scopedptr.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\generic\gridctrl.h
+	"wx/grid.h"
+	"wx/datetime.h"
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\notebook.h
 	"wx/defs.h"
@@ -2171,56 +2034,63 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\notebook.h
 
-1518982230 c:\wxwidgets-3.1.1\include\wx\sizer.h
-	"wx/defs.h"
-	"wx/window.h"
-
-1526373243 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
-	"EmployeeFunctionsForm.h"
-	"SelectionMenu.h"
-	"Database.h"
-	<wx/msgdlg.h>
-	<wx/intl.h>
-	<wx/string.h>
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\grid.h
-	"wx/generic/grid.h"
-	"wx/generic/grideditors.h"
-	"wx/generic/gridctrl.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\grid.h
-	"wx/defs.h"
-	"wx/hashmap.h"
-	"wx/scrolwin.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\grideditors.h
-	"wx/defs.h"
-	"wx/scopedptr.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\gridctrl.h
-	"wx/grid.h"
-	"wx/datetime.h"
-
-1526373462 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
-	"ClientFunctionsForm.h"
-	"SelectionMenu.h"
-	"Account.h"
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.cpp
 	"Investment.h"
-	"Loan.h"
-	"ClientalManagement.h"
-	<wx/msgdlg.h>
-	"Database.h"
-	<wx/textdlg.h>
 	<wx/intl.h>
 	<wx/string.h>
 
-1526373766 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.h
+	<wx/frame.h>
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.cpp
+	"Loan.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526375332 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
+	<wx/frame.h>
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+	"Register.h"
+	"BankManagementSystemMain.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
+	"wx/msw/wx.rc"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/rcdefs.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\rcdefs.h
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+	"SelectionMenu.h"
+	"BankManagementSystemMain.h"
+	"EmployeeFunctionsForm.h"
+	"ClientFunctionsForm.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526385855 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/frame.h>
 	<wx/notebook.h>
 	<wx/panel.h>
 	<wx/radiobut.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 	<wx/textctrl.h>
 	"Employee.h"
@@ -2283,213 +2153,7 @@
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\qt\radiobut.h
 
-1526147700 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
-	"Account.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526147700 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
-	<wx/frame.h>
-
-1526147700 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.cpp
-	"Investment.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526147700 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.h
-	<wx/frame.h>
-
-1526147700 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.cpp
-	"Loan.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526147700 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
-	<wx/frame.h>
-
-1526373292 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
-	<string>
-
-1526326465 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
-	"ClientalManagement.h"
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
-	"Account.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
-	<wx/frame.h>
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
-	"BankManagementSystemApp.h"
-	"BankManagementSystemMain.h"
-	<wx/image.h>
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
-	<wx/app.h>
-
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
-	"BankManagementSystemMain.h"
-	<wx/msgdlg.h>
-	"Database.h"
-	"Register.h"
-	"sqlite3.h"
-	"SelectionMenu.h"
-	"Employee.h"
-	<ctime>
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
-	<string>
-	<vector>
-	"sqlite3.h"
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
-	<stdarg.h>
-
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/panel.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	"Employee.h"
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
-	<string>
-
-1526333497 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
-	"ClientFunctionsForm.h"
-	"SelectionMenu.h"
-	"Account.h"
-	"Investment.h"
-	"Loan.h"
-	"ClientalManagement.h"
-	<wx/msgdlg.h>
-	"Database.h"
-	<wx/textdlg.h>
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526333313 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
-	<wx/button.h>
-	<wx/choice.h>
-	<wx/frame.h>
-	<wx/notebook.h>
-	<wx/panel.h>
-	<wx/radiobut.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-	"Employee.h"
-	<string>
-	"ClientalManagement.h"
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
-	<string>
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.h
-	<wx/frame.h>
-
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
-	<wx/frame.h>
-
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
-	"ClientalManagement.h"
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
-	"Database.h"
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
-	"Employee.h"
-
-1526329155 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
-	"EmployeeFunctionsForm.h"
-	"SelectionMenu.h"
-	"Database.h"
-	<wx/msgdlg.h>
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526328304 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
-	<wx/button.h>
-	<wx/frame.h>
-	<wx/grid.h>
-	<wx/notebook.h>
-	<wx/panel.h>
-	<wx/statbmp.h>
-	<wx/stattext.h>
-	<wx/textctrl.h>
-	"Employee.h"
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.cpp
-	"Investment.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.cpp
-	"Loan.h"
-	<wx/intl.h>
-	<wx/string.h>
-
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
-	"Register.h"
-	"BankManagementSystemMain.h"
-	"Database.h"
-	<wx/msgdlg.h>
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
-	"wx/msw/wx.rc"
-
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
-	"SelectionMenu.h"
-	"BankManagementSystemMain.h"
-	"EmployeeFunctionsForm.h"
-	"ClientFunctionsForm.h"
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
+1526333764 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
 	"config.h"
 	<vxWorks.h>
 	<pthread.h>
@@ -2547,48 +2211,22 @@
 	<ctype.h>
 	<math.h>
 
-1518982230 c:\wxwidgets-3.1.1\include\wx\statbmp.h
-	"wx/defs.h"
-	"wx/control.h"
-	"wx/bitmap.h"
-	"wx/icon.h"
-	"wx/univ/statbmp.h"
-	"wx/msw/statbmp.h"
-	"wx/motif/statbmp.h"
-	"wx/gtk/statbmp.h"
-	"wx/gtk1/statbmp.h"
-	"wx/osx/statbmp.h"
-	"wx/qt/statbmp.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\univ\statbmp.h
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\msw\statbmp.h
-	"wx/control.h"
-	"wx/icon.h"
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\motif\statbmp.h
-	"wx/motif/bmpmotif.h"
-	"wx/icon.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\motif\bmpmotif.h
-	"wx/defs.h"
-	"wx/bitmap.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk\statbmp.h
-	"wx/icon.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\gtk1\statbmp.h
-	"wx/icon.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\osx\statbmp.h
-	"wx/generic/statbmpg.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\generic\statbmpg.h
-	"wx/statbmp.h"
-
-1518982230 c:\wxwidgets-3.1.1\include\wx\qt\statbmp.h
+1526385973 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+	"ClientFunctionsForm.h"
+	"SelectionMenu.h"
+	"Account.h"
+	"Investment.h"
+	"Loan.h"
+	"ClientalManagement.h"
+	<wx/msgdlg.h>
+	"Database.h"
+	<wx/textdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
 
 1518982230 c:\wxwidgets-3.1.1\include\wx\textdlg.h
 	"wx/generic/textdlgg.h"

@@ -192,6 +192,7 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnAccDepositClick(wxCommandEvent& event);
 		void OnClose(wxCloseEvent& event);
 		void OnPanel2Paint(wxPaintEvent& event);
+		void OnNotebook1PageChanged(wxNotebookEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

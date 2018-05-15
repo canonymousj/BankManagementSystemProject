@@ -293,6 +293,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Connect(ID_BUTTON11,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccExitClick);
 	Connect(ID_BUTTON12,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&ClientFunctionsForm::OnbtnAccUpdateClick);
 	Connect(ID_CHOICE1,wxEVT_COMMAND_CHOICE_SELECTED,(wxObjectEventFunction)&ClientFunctionsForm::OncmbAccTypeSelect);
+	Connect(ID_NOTEBOOK1,wxEVT_COMMAND_NOTEBOOK_PAGE_CHANGED,(wxObjectEventFunction)&ClientFunctionsForm::OnNotebook1PageChanged);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -857,5 +858,9 @@ void ClientFunctionsForm::OnbtnAccDepositClick(wxCommandEvent& event)
 }
 
 void ClientFunctionsForm::OnPanel2Paint(wxPaintEvent& event)
+{
+}
+
+void ClientFunctionsForm::OnNotebook1PageChanged(wxNotebookEvent& event)
 {
 }
