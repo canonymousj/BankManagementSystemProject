@@ -187,15 +187,15 @@ void DatabaseConnectCF(){
 
 void ClientFunctionsForm::populateAccount(int cNum){
     std::string q = "SELECT * FROM tblAccount WHERE clientID = "+std::to_string(cNum)+";";
-    vector<vector<string> > res = dbCF->query(q.c_str());
-    if(!(res.empty())){
+    vector<vector<string> > res = dbCF->query(q.c_str());   //store query to string vector (2D)
+    if(!(res.empty())){ //if it contains information populate account object
         accObj = account(atoi(res[0][0].c_str()), atoi(res[0][2].c_str()), atof(res[0][1].c_str()), atof(res[0][3].c_str()));
     }
 
-
+    //new query to load client with specific client ID
     q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";
-    res = dbCF->query(q.c_str());
-    if(!(res.empty())){
+    res = dbCF->query(q.c_str());   //store result of query to vector
+    if(!(res.empty())){ //if not empty populate inherited client details of accObj
         accObj.setClientID(atoi(res[0][0].c_str()));
         accObj.setName(res[0][1]);
         accObj.setSAID(res[0][2]);
