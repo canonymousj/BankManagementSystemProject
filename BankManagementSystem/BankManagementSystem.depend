@@ -2379,7 +2379,7 @@
 1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526333497 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"
@@ -2389,7 +2389,11 @@
 	<wx/msgdlg.h>
 	"Database.h"
 	<wx/textdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1526333313 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
