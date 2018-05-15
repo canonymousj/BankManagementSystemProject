@@ -2614,13 +2614,14 @@
 	"wx/defs.h"
 	"wx/validate.h"
 
-1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+1526419834 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
 	"Help.h"
 	"SelectionMenu.h"
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.h
@@ -2639,7 +2640,7 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+1526420060 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
 	"Employee.h"
 	<wx/button.h>
 	<wx/frame.h>

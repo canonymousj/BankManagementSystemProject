@@ -35,6 +35,7 @@ class Metrics: public wxFrame
 		wxStaticText* StaticText5;
 		wxStaticText* StaticText6;
 		wxStaticText* StaticText7;
+		wxStaticText* StaticText8;
 		wxStaticText* lblNet;
 		wxStaticText* lblNumCl;
 		wxStaticText* lblNumEm;
@@ -65,6 +66,7 @@ class Metrics: public wxFrame
 		static const long ID_STATICTEXT14;
 		static const long ID_STATICTEXT15;
 		static const long ID_STATICTEXT16;
+		static const long ID_STATICTEXT17;
 		static const long ID_PANEL1;
 		//*)
 
