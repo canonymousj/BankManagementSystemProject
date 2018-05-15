@@ -12,7 +12,7 @@
 					<size>465,439</size>
 					<bg>wxSYS_COLOUR_HIGHLIGHTTEXT</bg>
 					<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-						<bitmap>animated-falling-leaves-background-9.jpg</bitmap>
+						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
 						<size>464,392</size>
 						<style>0</style>
@@ -37,7 +37,7 @@
 						<pos>200,400</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008000</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -52,7 +52,7 @@
 						<pos>24,400</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#E67300</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -67,7 +67,7 @@
 						<pos>368,400</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#E67300</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -80,7 +80,7 @@
 					<object class="wxStaticText" name="ID_STATICTEXT7" variable="StaticText1" member="yes">
 						<label>EMPLOYEE DATABASE</label>
 						<pos>48,32</pos>
-						<fg>#008000</fg>
+						<fg>#D2AF66</fg>
 						<font>
 							<size>22</size>
 							<style>normal</style>
@@ -96,10 +96,10 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL2" variable="pnlUpdateEm" member="yes">
 					<pos>78,11</pos>
-					<fg>#008000</fg>
+					<fg>wxSYS_COLOUR_BACKGROUND</fg>
 					<bg>wxSYS_COLOUR_WINDOW</bg>
 					<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
-						<bitmap>C:\Users\Nascha\Documents\GitHub\BankManagementSystemProject\BankManagementSystem\animated-falling-leaves-background-9.jpg</bitmap>
+						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
 						<size>464,344</size>
 						<enabled>0</enabled>
@@ -126,7 +126,7 @@
 					<object class="wxButton" name="ID_BUTTON1" variable="btnUpSearch" member="yes">
 						<label>SEARCH</label>
 						<pos>192,352</pos>
-						<fg>#D90000</fg>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<font>
 							<size>10</size>
@@ -212,7 +212,7 @@
 					<object class="wxButton" name="ID_BUTTON2" variable="btnUpUpdate" member="yes">
 						<label>UPDATE</label>
 						<pos>192,408</pos>
-						<fg>#D90000</fg>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<font>
 							<size>10</size>
@@ -245,7 +245,7 @@
 						<pos>352,376</pos>
 						<size>75,32</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#E67300</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -260,7 +260,7 @@
 						<pos>40,376</pos>
 						<size>75,32</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#E67300</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -273,7 +273,7 @@
 					<object class="wxStaticText" name="ID_STATICTEXT8" variable="StaticText2" member="yes">
 						<label>EMPLOYEE INFORMATION</label>
 						<pos>16,32</pos>
-						<fg>#008000</fg>
+						<fg>#D2AF66</fg>
 						<font>
 							<size>22</size>
 							<style>normal</style>
