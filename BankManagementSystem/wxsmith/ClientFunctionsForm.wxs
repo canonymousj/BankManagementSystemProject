@@ -349,19 +349,8 @@
 						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT14" variable="StaticText7" member="yes">
-						<label>NEXT REPAYMENT AMOUNT:</label>
+						<label>TOTAL REPAYMENT AMOUNT:</label>
 						<pos>64,304</pos>
-						<font>
-							<size>10</size>
-							<style>normal</style>
-							<weight>bold</weight>
-							<underlined>0</underlined>
-							<family>swiss</family>
-						</font>
-					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText8" member="yes">
-						<label>NEXT REPAYMENT DATE:</label>
-						<pos>64,328</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -372,7 +361,7 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText11" member="yes">
 						<label>TOTAL ASSETS:</label>
-						<pos>64,392</pos>
+						<pos>32,360</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -383,7 +372,7 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT19" variable="StaticText12" member="yes">
 						<label>TOTAL LIABILITY:</label>
-						<pos>248,392</pos>
+						<pos>32,400</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -455,10 +444,56 @@
 						<pos>256,304</pos>
 						<size>40,13</size>
 					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT35" variable="lblNextRPDate" member="yes">
+					<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText8" member="yes">
+						<label>NET WORTH:</label>
+						<pos>264,400</pos>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT35" variable="lblTAss" member="yes">
 						<label></label>
-						<pos>232,328</pos>
+						<pos>152,360</pos>
 						<size>32,13</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT43" variable="lblTLia" member="yes">
+						<label></label>
+						<pos>160,400</pos>
+						<size>24,16</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT44" variable="lblNWorth" member="yes">
+						<label></label>
+						<pos>352,400</pos>
+						<size>32,13</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
 					</object>
 				</object>
 				<label>Client Summary</label>
@@ -685,10 +720,12 @@
 					<object class="wxButton" name="ID_BUTTON15" variable="btnLUpdate" member="yes">
 						<label>Update</label>
 						<pos>16,424</pos>
+						<handler function="OnbtnLUpdateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON16" variable="btnLAdd" member="yes">
 						<label>Add</label>
-						<pos>96,424</pos>
+						<pos>104,424</pos>
+						<handler function="OnbtnLAddClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON17" variable="btnLView" member="yes">
 						<label>View table</label>
@@ -711,10 +748,21 @@
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL16" variable="txfLLoanNum" member="yes">
 						<pos>192,40</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT42" variable="StaticText15" member="yes">
 						<label>%</label>
 						<pos>304,200</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON20" variable="btnLNew" member="yes">
+						<label>New</label>
+						<pos>16,392</pos>
+						<handler function="OnButton1Click" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON21" variable="btnLCancel" member="yes">
+						<label>Cancel</label>
+						<pos>104,392</pos>
+						<handler function="OnbtnLCancelClick" entry="EVT_BUTTON" />
 					</object>
 				</object>
 				<label>Client Loans</label>

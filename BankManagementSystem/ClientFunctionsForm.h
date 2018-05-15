@@ -36,6 +36,8 @@ class ClientFunctionsForm: public wxFrame
 		void populateLoans(account &accObj);
 		void populateLoanFields(unsigned int pos);
 
+		void writeLoanChanges();
+
 		client *clientAcc = new account;
 		account accObj;
 		std::vector< loan > loanObj;
@@ -55,7 +57,9 @@ class ClientFunctionsForm: public wxFrame
 		wxButton* btnCUpdate;
 		wxButton* btnLAdd;
 		wxButton* btnLBack;
+		wxButton* btnLCancel;
 		wxButton* btnLExit;
+		wxButton* btnLNew;
 		wxButton* btnLNext;
 		wxButton* btnLPrev;
 		wxButton* btnLUpdate;
@@ -109,10 +113,12 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblLLoanNum;
 		wxStaticText* lblLRP;
 		wxStaticText* lblLoanAmtOwed;
+		wxStaticText* lblNWorth;
 		wxStaticText* lblNextRPAmt;
-		wxStaticText* lblNextRPDate;
 		wxStaticText* lblNumLoans;
 		wxStaticText* lblPercent;
+		wxStaticText* lblTAss;
+		wxStaticText* lblTLia;
 		wxTextCtrl* txfAccBal;
 		wxTextCtrl* txfAccID;
 		wxTextCtrl* txfAccInt;
@@ -169,7 +175,6 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT12;
 		static const long ID_STATICTEXT13;
 		static const long ID_STATICTEXT14;
-		static const long ID_STATICTEXT15;
 		static const long ID_STATICTEXT18;
 		static const long ID_STATICTEXT19;
 		static const long ID_STATICTEXT21;
@@ -182,7 +187,10 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT32;
 		static const long ID_STATICTEXT33;
 		static const long ID_STATICTEXT34;
+		static const long ID_STATICTEXT15;
 		static const long ID_STATICTEXT35;
+		static const long ID_STATICTEXT43;
+		static const long ID_STATICTEXT44;
 		static const long ID_PANEL3;
 		static const long ID_STATICTEXT25;
 		static const long ID_STATICTEXT26;
@@ -220,6 +228,8 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT41;
 		static const long ID_TEXTCTRL16;
 		static const long ID_STATICTEXT42;
+		static const long ID_BUTTON20;
+		static const long ID_BUTTON21;
 		static const long ID_PANEL5;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -252,6 +262,10 @@ class ClientFunctionsForm: public wxFrame
 		void OnbtnLBackClick(wxCommandEvent& event);
 		void OnbtnLExitClick(wxCommandEvent& event);
 		void OnbtnLViewClick(wxCommandEvent& event);
+		void OnbtnLUpdateClick(wxCommandEvent& event);
+		void OnbtnLAddClick(wxCommandEvent& event);
+		void OnButton1Click(wxCommandEvent& event);
+		void OnbtnLCancelClick(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()
