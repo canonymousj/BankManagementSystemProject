@@ -59,10 +59,10 @@
 		<Unit filename="EmployeeFunctions.cpp" />
 		<Unit filename="EmployeeFunctionsForm.cpp" />
 		<Unit filename="EmployeeFunctionsForm.h" />
-		<Unit filename="Investment.cpp" />
-		<Unit filename="Investment.h" />
-		<Unit filename="Loan.cpp" />
-		<Unit filename="Loan.h" />
+		<Unit filename="Help.cpp" />
+		<Unit filename="Help.h" />
+		<Unit filename="Metrics.cpp" />
+		<Unit filename="Metrics.h" />
 		<Unit filename="Register.cpp" />
 		<Unit filename="Register.h" />
 		<Unit filename="SelectionMenu.cpp" />
@@ -79,8 +79,8 @@
 		<Unit filename="wxsmith/BankManagementSystemframe.wxs" />
 		<Unit filename="wxsmith/ClientFunctionsForm.wxs" />
 		<Unit filename="wxsmith/EmployeeFunctionsForm.wxs" />
-		<Unit filename="wxsmith/Investment.wxs" />
-		<Unit filename="wxsmith/Loan.wxs" />
+		<Unit filename="wxsmith/Help.wxs" />
+		<Unit filename="wxsmith/Metrics.wxs" />
 		<Unit filename="wxsmith/Register.wxs" />
 		<Unit filename="wxsmith/SelectionMenu.wxs" />
 		<Extensions>
@@ -96,8 +96,8 @@
 					<wxFrame wxs="wxsmith/EmployeeFunctionsForm.wxs" src="EmployeeFunctionsForm.cpp" hdr="EmployeeFunctionsForm.h" fwddecl="0" i18n="1" name="EmployeeFunctionsForm" language="CPP" />
 					<wxFrame wxs="wxsmith/ClientFunctionsForm.wxs" src="ClientFunctionsForm.cpp" hdr="ClientFunctionsForm.h" fwddecl="0" i18n="1" name="ClientFunctionsForm" language="CPP" />
 					<wxFrame wxs="wxsmith/Account.wxs" src="Account.cpp" hdr="Account.h" fwddecl="0" i18n="1" name="Account" language="CPP" />
-					<wxFrame wxs="wxsmith/Investment.wxs" src="Investment.cpp" hdr="Investment.h" fwddecl="0" i18n="1" name="Investment" language="CPP" />
-					<wxFrame wxs="wxsmith/Loan.wxs" src="Loan.cpp" hdr="Loan.h" fwddecl="0" i18n="1" name="Loan" language="CPP" />
+					<wxFrame wxs="wxsmith/Help.wxs" src="Help.cpp" hdr="Help.h" fwddecl="0" i18n="1" name="Help" language="CPP" />
+					<wxFrame wxs="wxsmith/Metrics.wxs" src="Metrics.cpp" hdr="Metrics.h" fwddecl="0" i18n="1" name="Metrics" language="CPP" />
 				</resources>
 			</wxsmith>
 		</Extensions>

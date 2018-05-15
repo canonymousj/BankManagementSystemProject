@@ -1,6 +1,8 @@
 #include "ClientFunctionsForm.h"
 #include "SelectionMenu.h"
 #include "Account.h"
+#include "Investment.h"
+#include "Loan.h"
 #include "ClientalManagement.h"
 #include <wx/msgdlg.h>
 #include "Database.h"
@@ -52,6 +54,7 @@ const long ClientFunctionsForm::ID_STATICTEXT11 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT12 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT13 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT14 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT15 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT18 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT19 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT21 = wxNewId();
@@ -64,10 +67,7 @@ const long ClientFunctionsForm::ID_STATICTEXT28 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT32 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT33 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT34 = wxNewId();
-const long ClientFunctionsForm::ID_STATICTEXT15 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT35 = wxNewId();
-const long ClientFunctionsForm::ID_STATICTEXT43 = wxNewId();
-const long ClientFunctionsForm::ID_STATICTEXT44 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT25 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT26 = wxNewId();
@@ -232,13 +232,16 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText6 = new wxStaticText(Panel2, ID_STATICTEXT13, _("AMOUNT OWED:"), wxPoint(64,280), wxDefaultSize, 0, _T("ID_STATICTEXT13"));
 	wxFont StaticText6Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText6->SetFont(StaticText6Font);
-	StaticText7 = new wxStaticText(Panel2, ID_STATICTEXT14, _("TOTAL REPAYMENT AMOUNT:"), wxPoint(64,304), wxDefaultSize, 0, _T("ID_STATICTEXT14"));
+	StaticText7 = new wxStaticText(Panel2, ID_STATICTEXT14, _("NEXT REPAYMENT AMOUNT:"), wxPoint(64,304), wxDefaultSize, 0, _T("ID_STATICTEXT14"));
 	wxFont StaticText7Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
-	StaticText11 = new wxStaticText(Panel2, ID_STATICTEXT18, _("TOTAL ASSETS:"), wxPoint(32,360), wxDefaultSize, 0, _T("ID_STATICTEXT18"));
+	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT15, _("NEXT REPAYMENT DATE:"), wxPoint(64,328), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
+	wxFont StaticText8Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	StaticText8->SetFont(StaticText8Font);
+	StaticText11 = new wxStaticText(Panel2, ID_STATICTEXT18, _("TOTAL ASSETS:"), wxPoint(64,392), wxDefaultSize, 0, _T("ID_STATICTEXT18"));
 	wxFont StaticText11Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText11->SetFont(StaticText11Font);
-	StaticText12 = new wxStaticText(Panel2, ID_STATICTEXT19, _("TOTAL LIABILITY:"), wxPoint(32,400), wxDefaultSize, 0, _T("ID_STATICTEXT19"));
+	StaticText12 = new wxStaticText(Panel2, ID_STATICTEXT19, _("TOTAL LIABILITY:"), wxPoint(248,392), wxDefaultSize, 0, _T("ID_STATICTEXT19"));
 	wxFont StaticText12Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText12->SetFont(StaticText12Font);
 	lblClientID = new wxStaticText(Panel2, ID_STATICTEXT21, wxEmptyString, wxPoint(224,88), wxSize(32,13), 0, _T("ID_STATICTEXT21"));
@@ -255,18 +258,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblNumLoans = new wxStaticText(Panel2, ID_STATICTEXT32, wxEmptyString, wxPoint(224,256), wxSize(40,13), 0, _T("ID_STATICTEXT32"));
 	lblLoanAmtOwed = new wxStaticText(Panel2, ID_STATICTEXT33, wxEmptyString, wxPoint(224,280), wxSize(32,13), 0, _T("ID_STATICTEXT33"));
 	lblNextRPAmt = new wxStaticText(Panel2, ID_STATICTEXT34, wxEmptyString, wxPoint(256,304), wxSize(40,13), 0, _T("ID_STATICTEXT34"));
-	StaticText8 = new wxStaticText(Panel2, ID_STATICTEXT15, _("NET WORTH:"), wxPoint(264,400), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
-	wxFont StaticText8Font(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
-	StaticText8->SetFont(StaticText8Font);
-	lblTAss = new wxStaticText(Panel2, ID_STATICTEXT35, wxEmptyString, wxPoint(152,360), wxSize(32,13), 0, _T("ID_STATICTEXT35"));
-	wxFont lblTAssFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
-	lblTAss->SetFont(lblTAssFont);
-	lblTLia = new wxStaticText(Panel2, ID_STATICTEXT43, wxEmptyString, wxPoint(160,400), wxSize(24,16), 0, _T("ID_STATICTEXT43"));
-	wxFont lblTLiaFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
-	lblTLia->SetFont(lblTLiaFont);
-	lblNWorth = new wxStaticText(Panel2, ID_STATICTEXT44, wxEmptyString, wxPoint(352,400), wxSize(32,13), 0, _T("ID_STATICTEXT44"));
-	wxFont lblNWorthFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
-	lblNWorth->SetFont(lblNWorthFont);
+	lblNextRPDate = new wxStaticText(Panel2, ID_STATICTEXT35, wxEmptyString, wxPoint(232,328), wxSize(32,13), 0, _T("ID_STATICTEXT35"));
 	Panel3 = new wxPanel(Notebook1, ID_PANEL4, wxPoint(186,9), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
 	Panel3->SetForegroundColour(wxColour(0,128,128));
 	Panel3->SetBackgroundColour(wxColour(244,244,244));
@@ -336,7 +328,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	btnLPrev = new wxButton(Panel4, ID_BUTTON18, _("Previous"), wxPoint(24,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON18"));
 	btnLNext = new wxButton(Panel4, ID_BUTTON19, _("Next"), wxPoint(352,264), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON19"));
 	lblLLoanNum = new wxStaticText(Panel4, ID_STATICTEXT41, _("Loan number:"), wxPoint(40,48), wxDefaultSize, 0, _T("ID_STATICTEXT41"));
-	txfLLoanNum = new wxTextCtrl(Panel4, ID_TEXTCTRL16, wxEmptyString, wxPoint(192,40), wxDefaultSize, 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL16"));
+	txfLLoanNum = new wxTextCtrl(Panel4, ID_TEXTCTRL16, wxEmptyString, wxPoint(192,40), wxDefaultSize, 0, wxDefaultValidator, _T("ID_TEXTCTRL16"));
 	StaticText15 = new wxStaticText(Panel4, ID_STATICTEXT42, _("%"), wxPoint(304,200), wxDefaultSize, 0, _T("ID_STATICTEXT42"));
 	btnLNew = new wxButton(Panel4, ID_BUTTON20, _("New"), wxPoint(16,392), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON20"));
 	btnLCancel = new wxButton(Panel4, ID_BUTTON21, _("Cancel"), wxPoint(104,392), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON21"));
@@ -440,7 +432,7 @@ void ClientFunctionsForm::populateLoans(account &accobj){
 }
 
 void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< loan > &loanObj){   //populate fields in client summary tab
-    wxString clID, clName, AccID, intEarned, accBal;    //temporary conversion variables
+    wxString clID, clName, AccID, intEarned;    //temporary conversion variables
 
     wxString AccType;
 
@@ -461,15 +453,10 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
     lblClientID->SetLabel(clID);
     lblClientName->SetLabel(clName);
 
-    accBal = wxString::Format("%.2f", accObj.getBalance());
-
     lblAccID->SetLabel(AccID);
     txfAccID->SetValue(AccID);
-    lblAccBal->SetLabel("R "+accBal);
-    txfAccBal->SetValue(accBal);
-
-    lblTAss->SetLabel("R "+accBal);
-    lblTAss->SetForegroundColour(wxColour(0, 255, 0));
+    lblAccBal->SetLabel("R "+wxString::Format("%.2f", accObj.getBalance()));
+    txfAccBal->SetValue(wxString::Format("%.2f", accObj.getBalance()));
 
     cmbAccType->SetSelection(accObj.getType());
     txfAccInt->SetValue(wxString::Format("%.2f", accObj.getInterest()));
@@ -492,32 +479,30 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
     }
 
     double amtOwed = 0.0;
-    double interestOwed = 0.0;
-
     //loan part
     lblNumLoans->SetLabel(to_string(loanObj.size()));
     if(!(loanObj.empty())){ //if it contains information populate account object
         for (unsigned int i = 0; i < loanObj.size(); i++)
         {
             amtOwed += loanObj[i].getAmount();
-            interestOwed += loanObj[i].interestEarned();
         }
-
-        double nWorth = wxAtof(accBal) - amtOwed;
 
         lblLoanAmtOwed->SetLabel("R "+wxString::Format("%.2f", amtOwed));
 
-        lblNextRPAmt->SetLabel("R "+wxString::Format("%.2f", interestOwed));
+        int nextPaymentPos = findNextPayment(loanObj);
 
-        lblTLia->SetLabel("R "+ wxString::Format("%.2f", amtOwed));
-        lblTLia->SetForegroundColour(wxColour(255, 0, 0));
+        //lblNextRPDate->SetLabel(loanObj[nextPaymentPos].findNextPayment());
 
-        lblNWorth->SetLabel("R "+ wxString::Format("%.2f", nWorth));
-        lblNWorth->SetForegroundColour(wxColour(0, 0, 255));
+        lblNextRPAmt->SetLabel("R "+wxString::Format("%.2f", loanObj[nextPaymentPos].interestEarned()));
 
         //loan page
         populateLoanFields(0);
     }
+}
+
+int findNextPayment(std::vector< loan > &loanObj){
+
+    return 0;
 }
 
 void ClientFunctionsForm::populateLoanFields(unsigned int pos){
@@ -849,14 +834,38 @@ void ClientFunctionsForm::OnRadioButton1Select(wxCommandEvent& event)
 
 void ClientFunctionsForm::OnbtnCAccClick(wxCommandEvent& event)
 {
+    Account *accForm = new Account(NULL);
+
+    accForm->Show(TRUE);
+   // accForm->curEmployee = this->currentLogged;
+   // accForm->lblTextStore = lblDays->GetLabel();
+    //accForm->setup();
+
+    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnCInvClick(wxCommandEvent& event)
 {
+    Investment *invForm = new Investment(NULL);
+
+    invForm->Show(TRUE);
+   // accForm->curEmployee = this->currentLogged;
+   // accForm->lblTextStore = lblDays->GetLabel();
+    //accForm->setup();
+
+    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnCLoanClick(wxCommandEvent& event)
 {
+    Loan *loanForm = new Loan(NULL);
+
+    loanForm->Show(TRUE);
+   // accForm->curEmployee = this->currentLogged;
+   // accForm->lblTextStore = lblDays->GetLabel();
+    //accForm->setup();
+
+    this->Close(TRUE);
 }
 
 void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)
@@ -1124,7 +1133,7 @@ void ClientFunctionsForm::OnbtnLAddClick(wxCommandEvent& event)
     btnLView->Show(TRUE);
     btnLPrev->Show(TRUE);
 
-    string q = "INSERT INTO tblLoan VALUES(null, " + to_string(lAmt) + ", '" + lDOL + "', " + to_string(rpPeriod) + ", " + to_string(lInterest) + ", " + to_string(wxAtoi(txfCID->GetValue())) + ", 0);";
+    string q = "INSERT INTO tblLoan VALUES(null, " + to_string(lAmt) + ", '" + lDOL + "', " + to_string(rpPeriod) + ", " + to_string(lInterest) + ", " + wxAtoi(txfCID->GetValue()) + ", 0);";
     dbCF->query(q.c_str());
 
     wxMessageBox("New loan added successfully!");

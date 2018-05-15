@@ -106,3 +106,69 @@ void account::withdraw(double amt){
 void account::deposit(double amt){
     balance += amt;
 }
+
+//loan class
+loan::loan(){
+    this->loanID = 0;
+    this->amount = 0.0;
+	this->interest = 0.0;
+	this->type = 0;
+	this->repayPeriod = 0;
+	this->dateOfLoan = "";
+}
+loan::loan(int loanID, double amt, double interest, int type, int repayPeriod, std::string DOL){
+    this->loanID = loanID;
+    this->amount = amt;
+	this->interest = interest;
+	this->type = type;
+	this->repayPeriod = repayPeriod;
+	this->dateOfLoan = DOL;
+}
+void loan::setLoanID(int loanID){
+    this->loanID = loanID;
+}
+void loan::setType(int type){
+    this->type = type;
+}
+void loan::setAmount(double amt){
+    this->amount = amt;
+}
+void loan::setInterest(double interest){
+    this->interest = interest;
+}
+void loan::setRepayPeriod(int repayPeriod){
+    this->repayPeriod = repayPeriod;
+}
+void loan::setDateOfLoan(std::string DOL){
+    this->dateOfLoan = DOL;
+}
+int loan::getLoanID(){
+    return this->loanID;
+}
+int loan::getType(){
+    return this->type;
+}
+double loan::getAmount(){
+    return this->amount;
+}
+double loan::getInterest(){
+    return this->interest;
+}
+int loan::getRepayPeriod(){
+    return this->repayPeriod;
+}
+std::string loan::getDateOfLoan(){
+    return this->dateOfLoan;
+}
+double loan::interestEarned(){
+    return ((interest/100)*amount);
+}
+void loan::withdraw(double amt){
+    amount -= amt;
+}
+void loan::deposit(double amt){
+    amount += amt;
+}
+std::string loan::findNextPayment(){
+
+}

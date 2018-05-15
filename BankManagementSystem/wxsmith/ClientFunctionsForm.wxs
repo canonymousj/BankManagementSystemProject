@@ -7,6 +7,7 @@
 			<pos>0,8</pos>
 			<size>320,485</size>
 			<bg>#008080</bg>
+			<handler function="OnNotebook1PageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 					<pos>-28,-28</pos>
@@ -90,21 +91,26 @@
 					<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfCID" member="yes">
 						<pos>176,72</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEB</bg>
+						<exstyle>wxWS_EX_VALIDATE_RECURSIVELY</exstyle>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfCName" member="yes">
 						<pos>176,104</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__ALPHA, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfCSAID" member="yes">
 						<pos>176,136</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfCConNum" member="yes">
 						<pos>176,168</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#E7FAEC</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
@@ -163,6 +169,7 @@
 						<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
 							<pos>160,8</pos>
 							<size>88,21</size>
+							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 							<bg>#E7FAEC</bg>
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
@@ -200,6 +207,7 @@
 						<object class="wxTextCtrl" name="ID_TEXTCTRL7" variable="txfInterest" member="yes">
 							<pos>160,48</pos>
 							<size>88,21</size>
+							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 							<bg>#E7FAEC</bg>
 						</object>
 					</object>
@@ -341,19 +349,8 @@
 						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT14" variable="StaticText7" member="yes">
-						<label>NEXT REPAYMENT AMOUNT:</label>
+						<label>TOTAL REPAYMENT AMOUNT:</label>
 						<pos>64,304</pos>
-						<font>
-							<size>10</size>
-							<style>normal</style>
-							<weight>bold</weight>
-							<underlined>0</underlined>
-							<family>swiss</family>
-						</font>
-					</object>
-					<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText8" member="yes">
-						<label>NEXT REPAYMENT DATE:</label>
-						<pos>64,328</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -364,7 +361,7 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT18" variable="StaticText11" member="yes">
 						<label>TOTAL ASSETS:</label>
-						<pos>64,392</pos>
+						<pos>32,360</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -375,7 +372,7 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT19" variable="StaticText12" member="yes">
 						<label>TOTAL LIABILITY:</label>
-						<pos>248,392</pos>
+						<pos>32,400</pos>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -432,6 +429,72 @@
 							<face>Castellar</face>
 						</font>
 					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT32" variable="lblNumLoans" member="yes">
+						<label></label>
+						<pos>224,256</pos>
+						<size>40,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT33" variable="lblLoanAmtOwed" member="yes">
+						<label></label>
+						<pos>224,280</pos>
+						<size>32,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT34" variable="lblNextRPAmt" member="yes">
+						<label></label>
+						<pos>256,304</pos>
+						<size>40,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT15" variable="StaticText8" member="yes">
+						<label>NET WORTH:</label>
+						<pos>264,400</pos>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT35" variable="lblTAss" member="yes">
+						<label></label>
+						<pos>152,360</pos>
+						<size>32,13</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT43" variable="lblTLia" member="yes">
+						<label></label>
+						<pos>160,400</pos>
+						<size>24,16</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT44" variable="lblNWorth" member="yes">
+						<label></label>
+						<pos>352,400</pos>
+						<size>32,13</size>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Arial</face>
+						</font>
+					</object>
 				</object>
 				<label>Client Summary</label>
 			</object>
@@ -464,9 +527,11 @@
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL8" variable="txfAccID" member="yes">
 						<pos>192,88</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL9" variable="txfAccBal" member="yes">
 						<pos>192,128</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT27" variable="lblAccType" member="yes">
 						<label>ACCOUNT TYPE:</label>
@@ -492,6 +557,7 @@
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL11" variable="txfAccInt" member="yes">
 						<pos>192,168</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxButton" name="ID_BUTTON6" variable="btnAccWithdraw" member="yes">
 						<label>WITHDRAW</label>
@@ -598,6 +664,108 @@
 					</object>
 				</object>
 				<label>Client Account</label>
+			</object>
+			<object class="notebookpage">
+				<object class="wxPanel" name="ID_PANEL5" variable="Panel4" member="yes">
+					<pos>268,6</pos>
+					<object class="wxStaticText" name="ID_STATICTEXT36" variable="lblLLoanID" member="yes">
+						<label>Loan ID:</label>
+						<pos>40,80</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT37" variable="lblLAmt" member="yes">
+						<label>Loan amount:</label>
+						<pos>40,112</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT38" variable="lblLDOL" member="yes">
+						<label>Date of loan:</label>
+						<pos>40,144</pos>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT39" variable="lblLRP" member="yes">
+						<label>Repayment period (months): </label>
+						<pos>40,176</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="txfLLoanID" member="yes">
+						<pos>192,72</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL12" variable="txfLAmt" member="yes">
+						<pos>192,104</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL13" variable="txfLDOL" member="yes">
+						<pos>192,136</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL14" variable="txfLRP" member="yes">
+						<pos>192,168</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT40" variable="lblLInterest" member="yes">
+						<label>Interest:</label>
+						<pos>40,208</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL15" variable="txfLInterest" member="yes">
+						<pos>192,200</pos>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
+					</object>
+					<object class="wxButton" name="ID_BUTTON13" variable="btnLBack" member="yes">
+						<label>Back</label>
+						<pos>360,400</pos>
+						<handler function="OnbtnLBackClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON14" variable="btnLExit" member="yes">
+						<label>Exit</label>
+						<pos>360,424</pos>
+						<handler function="OnbtnLExitClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON15" variable="btnLUpdate" member="yes">
+						<label>Update</label>
+						<pos>16,424</pos>
+						<handler function="OnbtnLUpdateClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON16" variable="btnLAdd" member="yes">
+						<label>Add</label>
+						<pos>104,424</pos>
+						<handler function="OnbtnLAddClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON17" variable="btnLView" member="yes">
+						<label>View table</label>
+						<pos>184,264</pos>
+						<handler function="OnbtnLViewClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON18" variable="btnLPrev" member="yes">
+						<label>Previous</label>
+						<pos>24,264</pos>
+						<handler function="OnbtnLPrevClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON19" variable="btnLNext" member="yes">
+						<label>Next</label>
+						<pos>352,264</pos>
+						<handler function="OnbtnLNextClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT41" variable="lblLLoanNum" member="yes">
+						<label>Loan number:</label>
+						<pos>40,48</pos>
+					</object>
+					<object class="wxTextCtrl" name="ID_TEXTCTRL16" variable="txfLLoanNum" member="yes">
+						<pos>192,40</pos>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT42" variable="StaticText15" member="yes">
+						<label>%</label>
+						<pos>304,200</pos>
+					</object>
+					<object class="wxButton" name="ID_BUTTON20" variable="btnLNew" member="yes">
+						<label>New</label>
+						<pos>16,392</pos>
+						<handler function="OnButton1Click" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxButton" name="ID_BUTTON21" variable="btnLCancel" member="yes">
+						<label>Cancel</label>
+						<pos>104,392</pos>
+						<handler function="OnbtnLCancelClick" entry="EVT_BUTTON" />
+					</object>
+				</object>
+				<label>Client Loans</label>
 			</object>
 		</object>
 	</object>

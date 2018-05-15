@@ -2,6 +2,9 @@
 #include "BankManagementSystemMain.h"
 #include "EmployeeFunctionsForm.h"
 #include "ClientFunctionsForm.h"
+#include "Help.h"
+#include "Metrics.h"
+#include <wx/msgdlg.h>
 
 //(*InternalHeaders(SelectionMenu)
 #include <wx/bitmap.h>
@@ -70,8 +73,10 @@ SelectionMenu::SelectionMenu(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("abstract-icons-tree-gold.jpg")).Rescale(wxSize(48,56).GetWidth(),wxSize(48,56).GetHeight())), wxPoint(16,16), wxSize(48,56), 0, _T("ID_STATICBITMAP2"));
 
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnCFunctClick);
+	Connect(ID_BUTTON3,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnMetrClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnEFunctClick);
 	Connect(ID_BUTTON4,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnLogoutClick);
+	Connect(ID_BUTTON5,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&SelectionMenu::OnbtnHelpClick);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -124,4 +129,31 @@ void SelectionMenu::OnbtnCFunctClick(wxCommandEvent& event)
 
 void SelectionMenu::OnPanel1Paint(wxPaintEvent& event)
 {
+}
+
+void SelectionMenu::OnbtnHelpClick(wxCommandEvent& event)
+{
+    Help *helpForm = new Help(NULL);
+
+    helpForm->Show(TRUE);
+    helpForm->curEmployee = this->currentLogged;
+    helpForm->lblTextStore = lblDays->GetLabel();
+
+    this->Close(TRUE);
+}
+
+void SelectionMenu::OnbtnMetrClick(wxCommandEvent& event)
+{
+    if(currentLogged->getPrivilege() == 0){
+        Metrics *metForm = new Metrics(NULL);
+
+        metForm->Show(TRUE);
+        metForm->curEmployee = this->currentLogged;
+        metForm->lblTextStore = lblDays->GetLabel();
+        metForm->setup();
+
+        this->Close(TRUE);
+    }else{
+        wxMessageBox("Only managers allowed!");
+    }
 }

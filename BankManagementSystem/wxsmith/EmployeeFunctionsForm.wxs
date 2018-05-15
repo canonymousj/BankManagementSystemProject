@@ -120,6 +120,7 @@
 					<object class="wxTextCtrl" name="ID_TEXTCTRL1" variable="txfUpEmNum" member="yes">
 						<pos>240,104</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxButton" name="ID_BUTTON1" variable="btnUpSearch" member="yes">
@@ -139,16 +140,19 @@
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfUpEName" member="yes">
 						<pos>240,144</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__ALPHA, NULL)</validator>
 						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfUpESAID" member="yes">
 						<pos>240,184</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfUpESal" member="yes">
 						<pos>240,224</pos>
 						<size>124,21</size>
+						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 						<bg>#FFF1EA</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfUpEPriv" member="yes">
