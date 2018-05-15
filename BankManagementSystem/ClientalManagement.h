@@ -66,6 +66,7 @@ public:
 	double interestEarned();
 	void withdraw(double amt);
 	void deposit(double amt);
+	std::string findNextPayment();
 private:
     int loanID, type, repayPeriod;
     double amount, interest;

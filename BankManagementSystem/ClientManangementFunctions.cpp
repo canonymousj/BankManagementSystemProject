@@ -169,3 +169,6 @@ void loan::withdraw(double amt){
 void loan::deposit(double amt){
     amount += amt;
 }
+std::string loan::findNextPayment(){
+
+}

@@ -64,6 +64,8 @@ const long ClientFunctionsForm::ID_STATICTEXT17 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT28 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT32 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT33 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT34 = wxNewId();
+const long ClientFunctionsForm::ID_STATICTEXT35 = wxNewId();
 const long ClientFunctionsForm::ID_PANEL3 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT25 = wxNewId();
 const long ClientFunctionsForm::ID_STATICTEXT26 = wxNewId();
@@ -89,10 +91,10 @@ BEGIN_EVENT_TABLE(ClientFunctionsForm,wxFrame)
 	//*)
 END_EVENT_TABLE()
 
+int findNextPayment(std::vector< loan > &loanObj);
+
 void DatabaseConnectCF();
 Database *dbCF = NULL;
-
-string g_data = "";
 
 ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -230,6 +232,8 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	StaticText13->SetFont(StaticText13Font);
 	lblNumLoans = new wxStaticText(Panel2, ID_STATICTEXT32, wxEmptyString, wxPoint(224,256), wxSize(40,13), 0, _T("ID_STATICTEXT32"));
 	lblLoanAmtOwed = new wxStaticText(Panel2, ID_STATICTEXT33, wxEmptyString, wxPoint(224,280), wxSize(32,13), 0, _T("ID_STATICTEXT33"));
+	lblNextRPAmt = new wxStaticText(Panel2, ID_STATICTEXT34, wxEmptyString, wxPoint(256,304), wxSize(40,13), 0, _T("ID_STATICTEXT34"));
+	lblNextRPDate = new wxStaticText(Panel2, ID_STATICTEXT35, wxEmptyString, wxPoint(232,328), wxSize(32,13), 0, _T("ID_STATICTEXT35"));
 	Panel3 = new wxPanel(Notebook1, ID_PANEL4, wxPoint(186,9), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL4"));
 	Panel3->SetForegroundColour(wxColour(0,128,128));
 	Panel3->SetBackgroundColour(wxColour(244,244,244));
@@ -427,7 +431,16 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
     }
     lblLoanAmtOwed->SetLabel("R "+wxString::Format("%.2f", amtOwed));
 
+    int nextPaymentPos = findNextPayment(loanObj);
 
+    //lblNextRPDate->SetLabel(loanObj[nextPaymentPos].findNextPayment());
+
+    lblNextRPAmt->SetLabel("R "+wxString::Format("%.2f", loanObj[nextPaymentPos].interestEarned()));
+}
+
+int findNextPayment(std::vector< loan > &loanObj){
+
+    return 0;
 }
 
 int ClientFunctionsForm::populateClientFields(int cNum){

@@ -93,6 +93,8 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblInterest;
 		wxStaticText* lblInterestEarned;
 		wxStaticText* lblLoanAmtOwed;
+		wxStaticText* lblNextRPAmt;
+		wxStaticText* lblNextRPDate;
 		wxStaticText* lblNumLoans;
 		wxStaticText* lblPercent;
 		wxTextCtrl* txfAccBal;
@@ -157,6 +159,8 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT28;
 		static const long ID_STATICTEXT32;
 		static const long ID_STATICTEXT33;
+		static const long ID_STATICTEXT34;
+		static const long ID_STATICTEXT35;
 		static const long ID_PANEL3;
 		static const long ID_STATICTEXT25;
 		static const long ID_STATICTEXT26;

@@ -450,6 +450,16 @@
 						<pos>224,280</pos>
 						<size>32,13</size>
 					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT34" variable="lblNextRPAmt" member="yes">
+						<label></label>
+						<pos>256,304</pos>
+						<size>40,13</size>
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT35" variable="lblNextRPDate" member="yes">
+						<label></label>
+						<pos>232,328</pos>
+						<size>32,13</size>
+					</object>
 				</object>
 				<label>Client Summary</label>
 			</object>
