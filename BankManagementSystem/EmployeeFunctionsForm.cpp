@@ -54,7 +54,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	//(*Initialize(EmployeeFunctionsForm)
 	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
 	SetClientSize(wxSize(473,473));
-	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxDefaultSize, 0, _T("ID_NOTEBOOK1"));
+	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(120,72), wxSize(473,456), 0, _T("ID_NOTEBOOK1"));
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxSize(465,439), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	pnlViewEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
 	StaticBitmap1 = new wxStaticBitmap(pnlViewEm, ID_STATICBITMAP1, wxBitmap(wxImage(_T("animated-falling-leaves-background-9.jpg")).Rescale(wxSize(464,392).GetWidth(),wxSize(464,392).GetHeight())), wxPoint(0,0), wxSize(464,392), 0, _T("ID_STATICBITMAP1"));
@@ -90,8 +90,9 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	wxFont StaticText1Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText1->SetFont(StaticText1Font);
 	pnlUpdateEm = new wxPanel(Notebook1, ID_PANEL2, wxPoint(78,11), wxDefaultSize, wxTAB_TRAVERSAL, _T("ID_PANEL2"));
-	pnlUpdateEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVEBORDER));
-	StaticBitmap2 = new wxStaticBitmap(pnlUpdateEm, ID_STATICBITMAP2, wxBitmap(wxImage(_T("autumn-leaves-20413-1920x1200.jpg")).Rescale(wxSize(464,272).GetWidth(),wxSize(464,272).GetHeight())), wxPoint(0,64), wxSize(464,272), 0, _T("ID_STATICBITMAP2"));
+	pnlUpdateEm->SetForegroundColour(wxColour(0,128,0));
+	pnlUpdateEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+	StaticBitmap2 = new wxStaticBitmap(pnlUpdateEm, ID_STATICBITMAP2, wxBitmap(wxImage(_T("C:\\Users\\Nascha\\Documents\\GitHub\\BankManagementSystemProject\\BankManagementSystem\\animated-falling-leaves-background-9.jpg")).Rescale(wxSize(464,344).GetWidth(),wxSize(464,344).GetHeight())), wxPoint(0,0), wxSize(464,344), 0, _T("ID_STATICBITMAP2"));
 	StaticBitmap2->Disable();
 	lblUpEmNum = new wxStaticText(pnlUpdateEm, ID_STATICTEXT1, _("EMPLOYEE ID:"), wxPoint(104,104), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	lblUpEmNum->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
@@ -128,7 +129,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	lblUpEPriv->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpEPrivFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblUpEPriv->SetFont(lblUpEPrivFont);
-	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("UPDATE"), wxPoint(192,400), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnUpUpdate = new wxButton(pnlUpdateEm, ID_BUTTON2, _("UPDATE"), wxPoint(192,408), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
 	btnUpUpdate->SetForegroundColour(wxColour(217,0,0));
 	btnUpUpdate->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont btnUpUpdateFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
@@ -139,18 +140,18 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	lblUpEPass->SetFont(lblUpEPassFont);
 	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(240,304), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
 	txfUpEPass->SetBackgroundColour(wxColour(255,241,234));
-	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("EXIT"), wxPoint(352,376), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON3"));
+	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("EXIT"), wxPoint(352,376), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	btnUpExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnUpExit->SetBackgroundColour(wxColour(230,115,0));
 	wxFont btnUpExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnUpExit->SetFont(btnUpExitFont);
-	btnUpBack = new wxButton(pnlUpdateEm, ID_BUTTON4, _("BACK"), wxPoint(40,376), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON4"));
+	btnUpBack = new wxButton(pnlUpdateEm, ID_BUTTON4, _("BACK"), wxPoint(40,376), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON4"));
 	btnUpBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnUpBack->SetBackgroundColour(wxColour(230,115,0));
 	wxFont btnUpBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnUpBack->SetFont(btnUpBackFont);
 	StaticText2 = new wxStaticText(pnlUpdateEm, ID_STATICTEXT8, _("EMPLOYEE INFORMATION"), wxPoint(16,32), wxDefaultSize, 0, _T("ID_STATICTEXT8"));
-	StaticText2->SetForegroundColour(wxColour(230,115,0));
+	StaticText2->SetForegroundColour(wxColour(0,128,0));
 	wxFont StaticText2Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
