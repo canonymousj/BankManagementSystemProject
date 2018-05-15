@@ -3,12 +3,16 @@
 #include "Database.h"
 
 //(*InternalHeaders(Metrics)
+#include <wx/bitmap.h>
 #include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
 //(*IdInit(Metrics)
+const long Metrics::ID_STATICBITMAP1 = wxNewId();
 const long Metrics::ID_STATICTEXT1 = wxNewId();
 const long Metrics::ID_STATICTEXT2 = wxNewId();
 const long Metrics::ID_STATICTEXT3 = wxNewId();
@@ -42,40 +46,58 @@ Database *dbMF = NULL;
 Metrics::Metrics(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(Metrics)
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
+	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
 	SetClientSize(wxSize(543,468));
-	Move(wxDefaultPosition);
 	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(248,144), wxSize(544,352), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+	Panel1->SetForegroundColour(wxColour(188,154,73));
+	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
+	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("943103.jpg")).Rescale(wxSize(544,384).GetWidth(),wxSize(544,384).GetHeight())), wxPoint(0,0), wxSize(544,384), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap1->Disable();
 	StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("NUMBER OF EMPLOYEES:"), wxPoint(40,144), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	StaticText1->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
 	wxFont StaticText1Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	StaticText1->SetFont(StaticText1Font);
 	StaticText2 = new wxStaticText(Panel1, ID_STATICTEXT2, _("TOTAL SALARY BALANCE:"), wxPoint(40,168), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+	StaticText2->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
 	wxFont StaticText2Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
 	StaticText3 = new wxStaticText(Panel1, ID_STATICTEXT3, _("NUMBER OF CUSTOMERS:"), wxPoint(40,264), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+	StaticText3->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
+	StaticText3->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont StaticText3Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	StaticText3->SetFont(StaticText3Font);
 	StaticText4 = new wxStaticText(Panel1, ID_STATICTEXT4, _("TOTAL CUSTOMER BALANCES:"), wxPoint(40,288), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+	StaticText4->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
 	wxFont StaticText4Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	StaticText4->SetFont(StaticText4Font);
 	StaticText5 = new wxStaticText(Panel1, ID_STATICTEXT5, _("NUMBER OF LOANS:"), wxPoint(304,264), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+	StaticText5->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
 	wxFont StaticText5Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText5->SetFont(StaticText5Font);
 	StaticText6 = new wxStaticText(Panel1, ID_STATICTEXT6, _("TOTAL AMOUNT LOANED:"), wxPoint(304,288), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+	StaticText6->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWFRAME));
 	wxFont StaticText6Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	StaticText6->SetFont(StaticText6Font);
 	StaticText7 = new wxStaticText(Panel1, ID_STATICTEXT7, _("NET AMOUNT:"), wxPoint(40,344), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
 	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText7->SetFont(StaticText7Font);
 	btnBack = new wxButton(Panel1, ID_BUTTON1, _("BACK"), wxPoint(40,408), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	btnBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnBack->SetBackgroundColour(wxColour(188,154,73));
+	wxFont btnBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnBack->SetFont(btnBackFont);
 	btnExit = new wxButton(Panel1, ID_BUTTON2, _("EXIT"), wxPoint(432,408), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnExit->SetBackgroundColour(wxColour(188,154,73));
+	wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnExit->SetFont(btnExitFont);
 	lblNumEm = new wxStaticText(Panel1, ID_STATICTEXT8, wxEmptyString, wxPoint(224,144), wxSize(24,13), 0, _T("ID_STATICTEXT8"));
 	lblTSal = new wxStaticText(Panel1, ID_STATICTEXT9, wxEmptyString, wxPoint(224,168), wxSize(32,13), 0, _T("ID_STATICTEXT9"));
 	lblNumCl = new wxStaticText(Panel1, ID_STATICTEXT10, wxEmptyString, wxPoint(224,264), wxSize(24,13), 0, _T("ID_STATICTEXT10"));
 	lblNumLoans = new wxStaticText(Panel1, ID_STATICTEXT11, wxEmptyString, wxPoint(464,264), wxSize(32,13), 0, _T("ID_STATICTEXT11"));
 	lbllblTAmt = new wxStaticText(Panel1, ID_STATICTEXT12, wxEmptyString, wxPoint(464,288), wxSize(24,13), 0, _T("ID_STATICTEXT12"));
 	lblTBal = new wxStaticText(Panel1, ID_STATICTEXT13, wxEmptyString, wxPoint(224,288), wxSize(24,13), 0, _T("ID_STATICTEXT13"));
-	lblNet = new wxStaticText(Panel1, ID_STATICTEXT14, wxEmptyString, wxPoint(240,344), wxSize(24,13), 0, _T("ID_STATICTEXT14"));
+	lblNet = new wxStaticText(Panel1, ID_STATICTEXT14, wxEmptyString, wxPoint(224,344), wxSize(24,13), 0, _T("ID_STATICTEXT14"));
 	StaticText15 = new wxStaticText(Panel1, ID_STATICTEXT15, _("Monthly"), wxPoint(40,112), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
 	wxFont StaticText15Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText15->SetFont(StaticText15Font);

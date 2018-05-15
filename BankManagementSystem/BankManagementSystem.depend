@@ -2640,10 +2640,11 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526420060 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+1526420979 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
 	"Employee.h"
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 

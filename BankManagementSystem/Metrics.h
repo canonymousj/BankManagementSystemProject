@@ -6,6 +6,7 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 //*)
 
@@ -26,6 +27,7 @@ class Metrics: public wxFrame
 		wxButton* btnBack;
 		wxButton* btnExit;
 		wxPanel* Panel1;
+		wxStaticBitmap* StaticBitmap1;
 		wxStaticText* StaticText15;
 		wxStaticText* StaticText16;
 		wxStaticText* StaticText1;
@@ -48,6 +50,7 @@ class Metrics: public wxFrame
 	protected:
 
 		//(*Identifiers(Metrics)
+		static const long ID_STATICBITMAP1;
 		static const long ID_STATICTEXT1;
 		static const long ID_STATICTEXT2;
 		static const long ID_STATICTEXT3;
