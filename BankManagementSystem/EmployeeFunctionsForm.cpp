@@ -100,20 +100,15 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	wxFont lblUpEmNumFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblUpEmNum->SetFont(lblUpEmNumFont);
 	txfUpEmNum = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL1, wxEmptyString, wxPoint(240,104), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL1"));
-	txfUpEmNum->SetBackgroundColour(wxColour(255,241,234));
 	btnUpSearch = new wxButton(pnlUpdateEm, ID_BUTTON1, _("SEARCH"), wxPoint(192,352), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
 	btnUpSearch->SetForegroundColour(wxColour(210,175,102));
 	btnUpSearch->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont btnUpSearchFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnUpSearch->SetFont(btnUpSearchFont);
 	txfUpEName = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL2, wxEmptyString, wxPoint(240,144), wxSize(124,21), 0, wxTextValidator(wxFILTER_ALPHA, NULL), _T("ID_TEXTCTRL2"));
-	txfUpEName->SetBackgroundColour(wxColour(255,241,234));
 	txfUpESAID = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL3, wxEmptyString, wxPoint(240,184), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL3"));
-	txfUpESAID->SetBackgroundColour(wxColour(255,241,234));
 	txfUpESal = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL4, wxEmptyString, wxPoint(240,224), wxSize(124,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL4"));
-	txfUpESal->SetBackgroundColour(wxColour(255,241,234));
 	txfUpEPriv = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL5, wxEmptyString, wxPoint(240,264), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
-	txfUpEPriv->SetBackgroundColour(wxColour(255,241,234));
 	lblUpEName = new wxStaticText(pnlUpdateEm, ID_STATICTEXT2, _("NAME:"), wxPoint(104,144), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	lblUpEName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpENameFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
@@ -140,7 +135,6 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	wxFont lblUpEPassFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblUpEPass->SetFont(lblUpEPassFont);
 	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(240,304), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
-	txfUpEPass->SetBackgroundColour(wxColour(255,241,234));
 	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("EXIT"), wxPoint(352,376), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	btnUpExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnUpExit->SetBackgroundColour(wxColour(210,175,102));

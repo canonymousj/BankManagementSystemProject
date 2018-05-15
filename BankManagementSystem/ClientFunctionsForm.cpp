@@ -131,11 +131,12 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Notebook1 = new wxNotebook(this, ID_NOTEBOOK1, wxPoint(0,8), wxSize(320,485), 0, _T("ID_NOTEBOOK1"));
 	Notebook1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxPoint(-28,-28), wxSize(447,457), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	Panel1->SetForegroundColour(wxColour(210,175,102));
+	Panel1->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTIONTEXT));
 	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(448,328).GetWidth(),wxSize(448,328).GetHeight())), wxPoint(0,0), wxSize(448,328), 0, _T("ID_STATICBITMAP2"));
 	StaticBitmap2->Disable();
 	lblCFunct = new wxStaticText(Panel1, ID_STATICTEXT1, _("CLIENT FUNCTIONS"), wxPoint(40,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	lblCFunct->SetForegroundColour(wxColour(210,175,102));
 	wxFont lblCFunctFont(24,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	lblCFunct->SetFont(lblCFunctFont);
 	lblCName = new wxStaticText(Panel1, ID_STATICTEXT2, _("NAME:"), wxPoint(32,104), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
@@ -252,6 +253,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	lblIntEarnedText->SetFont(lblIntEarnedTextFont);
 	lblInterestEarned = new wxStaticText(Panel2, ID_STATICTEXT17, wxEmptyString, wxPoint(256,208), wxSize(56,13), 0, _T("ID_STATICTEXT17"));
 	StaticText13 = new wxStaticText(Panel2, ID_STATICTEXT28, _("CLIENT SUMMARY"), wxPoint(64,32), wxDefaultSize, 0, _T("ID_STATICTEXT28"));
+	StaticText13->SetForegroundColour(wxColour(210,175,102));
 	wxFont StaticText13Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText13->SetFont(StaticText13Font);
 	lblNumLoans = new wxStaticText(Panel2, ID_STATICTEXT32, wxEmptyString, wxPoint(256,256), wxSize(40,13), 0, _T("ID_STATICTEXT32"));
