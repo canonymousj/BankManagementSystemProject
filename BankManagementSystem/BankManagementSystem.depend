@@ -2312,23 +2312,29 @@
 1526318299 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
 	"ClientalManagement.h"
 
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
 	"Account.h"
+	<string>
 	<wx/intl.h>
 	<wx/string.h>
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
+	<vector>
+	"ClientalManagement.h"
+	<wx/button.h>
 	<wx/frame.h>
+	<wx/grid.h>
+	<wx/panel.h>
 
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
+1526419375 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
 	"BankManagementSystemApp.h"
 	"BankManagementSystemMain.h"
 	<wx/image.h>
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
+1526419375 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
 	<wx/app.h>
 
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -2336,7 +2342,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
 	"BankManagementSystemMain.h"
 	<wx/msgdlg.h>
 	"Database.h"
@@ -2345,6 +2351,7 @@
 	"SelectionMenu.h"
 	"Employee.h"
 	<ctime>
+	<wx/valtext.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2352,15 +2359,15 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
+1526419375 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
 	<string>
 	<vector>
 	"sqlite3.h"
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
+1526419376 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
 	<stdarg.h>
 
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -2368,7 +2375,7 @@
 	<wx/stattext.h>
 	<wx/textctrl.h>
 
-1526327009 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
@@ -2376,19 +2383,18 @@
 	<wx/stattext.h>
 	"Employee.h"
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
+1526419375 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
 	<string>
 
-1526333497 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"
-	"Investment.h"
-	"Loan.h"
 	"ClientalManagement.h"
 	<wx/msgdlg.h>
 	"Database.h"
 	<wx/textdlg.h>
+	"Account.h"
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2396,7 +2402,7 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526333313 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/frame.h>
@@ -2408,9 +2414,10 @@
 	<wx/textctrl.h>
 	"Employee.h"
 	<string>
+	<vector>
 	"ClientalManagement.h"
 
-1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
 	<string>
 
 1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\investment.h
@@ -2419,20 +2426,21 @@
 1526326743 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\loan.h
 	<wx/frame.h>
 
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
 	"ClientalManagement.h"
 
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
 	"Database.h"
 
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
+1526419375 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
 	"Employee.h"
 
-1526389314 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
 	"EmployeeFunctionsForm.h"
 	"SelectionMenu.h"
 	"Database.h"
 	<wx/msgdlg.h>
+	<wx/valtext.h>
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
@@ -2440,7 +2448,7 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526389129 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/grid.h>
@@ -2461,10 +2469,29 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
 	"Register.h"
 	"BankManagementSystemMain.h"
 	"Database.h"
+	<wx/msgdlg.h>
+	<wx/valtext.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526419376 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
+	"wx/msw/wx.rc"
+
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+	"SelectionMenu.h"
+	"BankManagementSystemMain.h"
+	"EmployeeFunctionsForm.h"
+	"ClientFunctionsForm.h"
+	"Help.h"
+	"Metrics.h"
 	<wx/msgdlg.h>
 	<wx/bitmap.h>
 	<wx/font.h>
@@ -2473,22 +2500,7 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
-	"wx/msw/wx.rc"
-
-1526327009 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
-	"SelectionMenu.h"
-	"BankManagementSystemMain.h"
-	"EmployeeFunctionsForm.h"
-	"ClientFunctionsForm.h"
-	<wx/bitmap.h>
-	<wx/font.h>
-	<wx/image.h>
-	<wx/intl.h>
-	<wx/settings.h>
-	<wx/string.h>
-
-1526326743 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
+1526419376 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
 	"config.h"
 	<vxWorks.h>
 	<pthread.h>
@@ -2601,4 +2613,36 @@
 1518982230 c:\wxwidgets-3.1.1\include\wx\valtext.h
 	"wx/defs.h"
 	"wx/validate.h"
+
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+	"Help.h"
+	"SelectionMenu.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/string.h>
+
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.h
+	"SelectionMenu.h"
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1526419391 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
+	"Metrics.h"
+	"SelectionMenu.h"
+	"Database.h"
+	<wx/intl.h>
+	<wx/string.h>
+
+1526419391 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/stattext.h>
 
