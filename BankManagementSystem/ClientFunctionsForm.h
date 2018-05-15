@@ -75,6 +75,7 @@ class ClientFunctionsForm: public wxFrame
 		wxRadioButton* RadioButton2;
 		wxStaticBitmap* StaticBitmap1;
 		wxStaticBitmap* StaticBitmap2;
+		wxStaticBitmap* StaticBitmap3;
 		wxStaticText* StaticText10;
 		wxStaticText* StaticText11;
 		wxStaticText* StaticText12;
@@ -103,6 +104,7 @@ class ClientFunctionsForm: public wxFrame
 		wxStaticText* lblCSAID;
 		wxStaticText* lblClientID;
 		wxStaticText* lblClientName;
+		wxStaticText* lblCloans;
 		wxStaticText* lblIntEarnedText;
 		wxStaticText* lblInterest;
 		wxStaticText* lblInterestEarned;
@@ -208,6 +210,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_CHOICE1;
 		static const long ID_STATICTEXT31;
 		static const long ID_PANEL4;
+		static const long ID_STATICBITMAP3;
 		static const long ID_STATICTEXT36;
 		static const long ID_STATICTEXT37;
 		static const long ID_STATICTEXT38;
@@ -230,6 +233,7 @@ class ClientFunctionsForm: public wxFrame
 		static const long ID_STATICTEXT42;
 		static const long ID_BUTTON20;
 		static const long ID_BUTTON21;
+		static const long ID_STATICTEXT45;
 		static const long ID_PANEL5;
 		static const long ID_NOTEBOOK1;
 		//*)

@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="ClientFunctionsForm">
-		<size>455,485</size>
+		<size>455,501</size>
 		<id_arg>0</id_arg>
 		<object class="wxNotebook" name="ID_NOTEBOOK1" variable="Notebook1" member="yes">
 			<pos>0,8</pos>
 			<size>320,485</size>
-			<bg>#008080</bg>
+			<bg>wxSYS_COLOUR_HIGHLIGHTTEXT</bg>
 			<handler function="OnNotebook1PageChanged" entry="EVT_NOTEBOOK_PAGE_CHANGED" />
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 					<pos>-28,-28</pos>
 					<size>447,457</size>
-					<fg>#008080</fg>
-					<bg>#EFEFEF</bg>
+					<fg>#D2AF66</fg>
+					<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
-						<bitmap>greyleaf.PNG</bitmap>
+						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
 						<size>448,328</size>
 						<enabled>0</enabled>
@@ -92,37 +92,37 @@
 						<pos>176,72</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>#E7FAEB</bg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<exstyle>wxWS_EX_VALIDATE_RECURSIVELY</exstyle>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfCName" member="yes">
 						<pos>176,104</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__ALPHA, NULL)</validator>
-						<bg>#E7FAEC</bg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL3" variable="txfCSAID" member="yes">
 						<pos>176,136</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>#E7FAEC</bg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfCConNum" member="yes">
 						<pos>176,168</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>#E7FAEC</bg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
 						<pos>176,200</pos>
 						<size>124,21</size>
-						<bg>#E7FAEC</bg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxButton" name="ID_BUTTON1" variable="btnCCreate" member="yes">
 						<label>CREATE</label>
 						<pos>184,336</pos>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -138,7 +138,7 @@
 						<pos>24,376</pos>
 						<size>75,32</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -153,7 +153,7 @@
 						<pos>344,376</pos>
 						<size>75,32</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -170,7 +170,7 @@
 							<pos>160,8</pos>
 							<size>88,21</size>
 							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
-							<bg>#E7FAEC</bg>
+							<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
 							<label>Savings</label>
@@ -208,14 +208,14 @@
 							<pos>160,48</pos>
 							<size>88,21</size>
 							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
-							<bg>#E7FAEC</bg>
+							<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						</object>
 					</object>
 					<object class="wxButton" name="ID_BUTTON8" variable="btnCUpdate" member="yes">
 						<label>UPDATE</label>
 						<pos>184,376</pos>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -229,7 +229,7 @@
 						<label>CANCEL</label>
 						<pos>184,416</pos>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -241,8 +241,8 @@
 					</object>
 					<object class="wxButton" name="ID_BUTTON4" variable="btnCSearch" member="yes">
 						<label>SEARCH</label>
-						<pos>24,328</pos>
-						<fg>#008080</fg>
+						<pos>24,336</pos>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<font>
 							<size>10</size>
@@ -255,8 +255,8 @@
 					</object>
 					<object class="wxButton" name="ID_BUTTON5" variable="btnCNew" member="yes">
 						<label>NEW</label>
-						<pos>344,328</pos>
-						<fg>#008080</fg>
+						<pos>344,336</pos>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<font>
 							<size>10</size>
@@ -274,11 +274,11 @@
 				<object class="wxPanel" name="ID_PANEL3" variable="Panel2" member="yes">
 					<pos>8,10</pos>
 					<size>447,442</size>
-					<fg>#008080</fg>
-					<bg>wxSYS_COLOUR_BTNFACE</bg>
+					<fg>wxSYS_COLOUR_INACTIVECAPTIONTEXT</fg>
+					<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					<handler function="OnPanel2Paint" entry="EVT_PAINT" />
 					<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
-						<bitmap>greyleaf.PNG</bitmap>
+						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
 						<size>448,456</size>
 					</object>
@@ -389,12 +389,12 @@
 					<object class="wxStaticText" name="ID_STATICTEXT22" variable="lblClientName" member="yes">
 						<label></label>
 						<pos>224,112</pos>
-						<size>24,13</size>
+						<size>32,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT23" variable="lblAccID" member="yes">
 						<label></label>
 						<pos>224,160</pos>
-						<size>24,13</size>
+						<size>32,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT24" variable="lblAccBal" member="yes">
 						<label></label>
@@ -419,7 +419,7 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT28" variable="StaticText13" member="yes">
 						<label>CLIENT SUMMARY</label>
-						<pos>16,32</pos>
+						<pos>64,32</pos>
 						<font>
 							<size>22</size>
 							<style>normal</style>
@@ -431,13 +431,13 @@
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT32" variable="lblNumLoans" member="yes">
 						<label></label>
-						<pos>224,256</pos>
+						<pos>256,256</pos>
 						<size>40,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT33" variable="lblLoanAmtOwed" member="yes">
 						<label></label>
-						<pos>224,280</pos>
-						<size>32,13</size>
+						<pos>256,280</pos>
+						<size>40,13</size>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT34" variable="lblNextRPAmt" member="yes">
 						<label></label>
@@ -501,8 +501,8 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL4" variable="Panel3" member="yes">
 					<pos>186,9</pos>
-					<fg>#008080</fg>
-					<bg>#F4F4F4</bg>
+					<fg>#D2AF66</fg>
+					<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					<object class="wxStaticText" name="ID_STATICTEXT25" variable="StaticText9" member="yes">
 						<label>ACCOUNT NUMBER:</label>
 						<pos>24,88</pos>
@@ -563,7 +563,7 @@
 						<label>WITHDRAW</label>
 						<pos>136,272</pos>
 						<size>176,32</size>
-						<fg>#008080</fg>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<font>
 							<size>10</size>
@@ -579,7 +579,7 @@
 						<label>DEPOSIT</label>
 						<pos>136,320</pos>
 						<size>176,31</size>
-						<fg>#008080</fg>
+						<fg>#D2AF66</fg>
 						<bg>wxSYS_COLOUR_HIGHLIGHTTEXT</bg>
 						<font>
 							<size>10</size>
@@ -595,7 +595,7 @@
 						<pos>32,392</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -610,7 +610,7 @@
 						<pos>344,392</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -625,7 +625,7 @@
 						<pos>192,392</pos>
 						<size>75,31</size>
 						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
-						<bg>#008080</bg>
+						<bg>#D2AF66</bg>
 						<font>
 							<size>10</size>
 							<style>normal</style>
@@ -668,101 +668,266 @@
 			<object class="notebookpage">
 				<object class="wxPanel" name="ID_PANEL5" variable="Panel4" member="yes">
 					<pos>268,6</pos>
+					<size>447,470</size>
+					<fg>#D2AF66</fg>
+					<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+					<object class="wxStaticBitmap" name="ID_STATICBITMAP3" variable="StaticBitmap3" member="yes">
+						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
+						<pos>0,0</pos>
+						<size>448,264</size>
+						<enabled>0</enabled>
+						<style>0</style>
+					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT36" variable="lblLLoanID" member="yes">
-						<label>Loan ID:</label>
-						<pos>40,80</pos>
+						<label>LOAN ID:</label>
+						<pos>40,104</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT37" variable="lblLAmt" member="yes">
-						<label>Loan amount:</label>
-						<pos>40,112</pos>
+						<label>LOAN AMOUNT:</label>
+						<pos>40,136</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT38" variable="lblLDOL" member="yes">
-						<label>Date of loan:</label>
-						<pos>40,144</pos>
+						<label>DATE OF LOAN:</label>
+						<pos>40,168</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT39" variable="lblLRP" member="yes">
-						<label>Repayment period (months): </label>
-						<pos>40,176</pos>
+						<label>REPAYMENT PERIOD(MONTHS):</label>
+						<pos>40,200</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="txfLLoanID" member="yes">
-						<pos>192,72</pos>
+						<pos>216,104</pos>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL12" variable="txfLAmt" member="yes">
-						<pos>192,104</pos>
+						<pos>216,136</pos>
 						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL13" variable="txfLDOL" member="yes">
-						<pos>192,136</pos>
+						<pos>216,168</pos>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL14" variable="txfLRP" member="yes">
-						<pos>192,168</pos>
+						<pos>216,200</pos>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT40" variable="lblLInterest" member="yes">
-						<label>Interest:</label>
-						<pos>40,208</pos>
+						<label>INTEREST:</label>
+						<pos>40,232</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL15" variable="txfLInterest" member="yes">
-						<pos>192,200</pos>
+						<pos>216,232</pos>
 						<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
 					</object>
 					<object class="wxButton" name="ID_BUTTON13" variable="btnLBack" member="yes">
-						<label>Back</label>
-						<pos>360,400</pos>
+						<label>BACK</label>
+						<pos>40,408</pos>
+						<size>75,32</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#D2AF66</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLBackClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON14" variable="btnLExit" member="yes">
-						<label>Exit</label>
-						<pos>360,424</pos>
+						<label>EXIT</label>
+						<pos>328,408</pos>
+						<size>75,32</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#D2AF66</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLExitClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON15" variable="btnLUpdate" member="yes">
-						<label>Update</label>
-						<pos>16,424</pos>
+						<label>UPDATE</label>
+						<pos>184,352</pos>
+						<fg>#D2AF66</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLUpdateClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON16" variable="btnLAdd" member="yes">
-						<label>Add</label>
-						<pos>104,424</pos>
+						<label>ADD</label>
+						<pos>184,392</pos>
+						<fg>#D2AF66</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLAddClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON17" variable="btnLView" member="yes">
-						<label>View table</label>
-						<pos>184,264</pos>
+						<label>VIEW TABLE</label>
+						<pos>168,272</pos>
+						<size>104,23</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#D2AF66</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLViewClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON18" variable="btnLPrev" member="yes">
-						<label>Previous</label>
-						<pos>24,264</pos>
+						<label>PREVIOUS</label>
+						<pos>24,272</pos>
+						<size>104,23</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#D2AF66</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLPrevClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON19" variable="btnLNext" member="yes">
-						<label>Next</label>
-						<pos>352,264</pos>
+						<label>NEXT</label>
+						<pos>320,272</pos>
+						<size>107,23</size>
+						<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+						<bg>#D2AF66</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLNextClick" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT41" variable="lblLLoanNum" member="yes">
-						<label>Loan number:</label>
-						<pos>40,48</pos>
+						<label>LOAN NUMBER:</label>
+						<pos>40,72</pos>
+						<font>
+							<size>9</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL16" variable="txfLLoanNum" member="yes">
-						<pos>192,40</pos>
+						<pos>216,72</pos>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT42" variable="StaticText15" member="yes">
 						<label>%</label>
-						<pos>304,200</pos>
+						<pos>344,232</pos>
 					</object>
 					<object class="wxButton" name="ID_BUTTON20" variable="btnLNew" member="yes">
-						<label>New</label>
-						<pos>16,392</pos>
+						<label>NEW</label>
+						<pos>184,312</pos>
+						<fg>#D2AF66</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnButton1Click" entry="EVT_BUTTON" />
 					</object>
 					<object class="wxButton" name="ID_BUTTON21" variable="btnLCancel" member="yes">
-						<label>Cancel</label>
-						<pos>104,392</pos>
+						<label>CANCEL</label>
+						<pos>184,432</pos>
+						<fg>#D2AF66</fg>
+						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+						<font>
+							<size>10</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face></face>
+						</font>
 						<handler function="OnbtnLCancelClick" entry="EVT_BUTTON" />
+					</object>
+					<object class="wxStaticText" name="ID_STATICTEXT45" variable="lblCloans" member="yes">
+						<label>CLIENT LOANS</label>
+						<pos>72,16</pos>
+						<font>
+							<size>26</size>
+							<style>normal</style>
+							<weight>bold</weight>
+							<underlined>0</underlined>
+							<family>swiss</family>
+							<face>Castellar</face>
+						</font>
 					</object>
 				</object>
 				<label>Client Loans</label>
