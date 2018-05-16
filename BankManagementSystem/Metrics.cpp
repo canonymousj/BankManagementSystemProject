@@ -3,11 +3,16 @@
 #include "Database.h"
 
 //(*InternalHeaders(Metrics)
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
 //(*IdInit(Metrics)
+const long Metrics::ID_STATICBITMAP1 = wxNewId();
 const long Metrics::ID_STATICTEXT1 = wxNewId();
 const long Metrics::ID_STATICTEXT2 = wxNewId();
 const long Metrics::ID_STATICTEXT3 = wxNewId();
@@ -26,6 +31,7 @@ const long Metrics::ID_STATICTEXT13 = wxNewId();
 const long Metrics::ID_STATICTEXT14 = wxNewId();
 const long Metrics::ID_STATICTEXT15 = wxNewId();
 const long Metrics::ID_STATICTEXT16 = wxNewId();
+const long Metrics::ID_STATICTEXT17 = wxNewId();
 const long Metrics::ID_PANEL1 = wxNewId();
 //*)
 
@@ -40,31 +46,64 @@ Database *dbMF = NULL;
 Metrics::Metrics(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
 	//(*Initialize(Metrics)
-	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-	SetClientSize(wxSize(543,353));
-	Move(wxDefaultPosition);
-	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(248,144), wxSize(544,352), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("Number of employees:"), wxPoint(40,72), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
-	StaticText2 = new wxStaticText(Panel1, ID_STATICTEXT2, _("Total of salaries:"), wxPoint(40,104), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
-	StaticText3 = new wxStaticText(Panel1, ID_STATICTEXT3, _("Number of customers:"), wxPoint(40,160), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
-	StaticText4 = new wxStaticText(Panel1, ID_STATICTEXT4, _("Total customer balances: "), wxPoint(40,192), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
-	StaticText5 = new wxStaticText(Panel1, ID_STATICTEXT5, _("Number of loans:"), wxPoint(280,160), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
-	StaticText6 = new wxStaticText(Panel1, ID_STATICTEXT6, _("Total loaned amount:"), wxPoint(280,192), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
-	StaticText7 = new wxStaticText(Panel1, ID_STATICTEXT7, _("Net amount:"), wxPoint(152,272), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
-	btnBack = new wxButton(Panel1, ID_BUTTON1, _("Back"), wxPoint(448,280), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-	btnExit = new wxButton(Panel1, ID_BUTTON2, _("Exit"), wxPoint(448,312), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
-	lblNumEm = new wxStaticText(Panel1, ID_STATICTEXT8, wxEmptyString, wxPoint(176,72), wxSize(24,13), 0, _T("ID_STATICTEXT8"));
-	lblTSal = new wxStaticText(Panel1, ID_STATICTEXT9, wxEmptyString, wxPoint(144,104), wxSize(32,13), 0, _T("ID_STATICTEXT9"));
-	lblNumCl = new wxStaticText(Panel1, ID_STATICTEXT10, wxEmptyString, wxPoint(176,160), wxSize(24,13), 0, _T("ID_STATICTEXT10"));
-	lblNumLoans = new wxStaticText(Panel1, ID_STATICTEXT11, wxEmptyString, wxPoint(400,160), wxSize(32,13), 0, _T("ID_STATICTEXT11"));
-	lbllblTAmt = new wxStaticText(Panel1, ID_STATICTEXT12, wxEmptyString, wxPoint(400,192), wxSize(24,13), 0, _T("ID_STATICTEXT12"));
-	lblTBal = new wxStaticText(Panel1, ID_STATICTEXT13, wxEmptyString, wxPoint(176,192), wxSize(24,13), 0, _T("ID_STATICTEXT13"));
-	lblNet = new wxStaticText(Panel1, ID_STATICTEXT14, wxEmptyString, wxPoint(224,272), wxSize(24,13), 0, _T("ID_STATICTEXT14"));
-	StaticText15 = new wxStaticText(Panel1, ID_STATICTEXT15, _("Monthly"), wxPoint(40,40), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
-	StaticText16 = new wxStaticText(Panel1, ID_STATICTEXT16, _("Capital"), wxPoint(40,136), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
+	Create(parent, wxID_ANY, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("wxID_ANY"));
+	SetClientSize(wxSize(543,433));
+	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(248,144), wxSize(543,440), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
+	Panel1->SetForegroundColour(wxColour(174,134,51));
+	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("943103.jpg")).Rescale(wxSize(544,360).GetWidth(),wxSize(544,360).GetHeight())), wxPoint(0,0), wxSize(544,360), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap1->Disable();
+	StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("Number of employees:"), wxPoint(48,144), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	wxFont StaticText1Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	StaticText1->SetFont(StaticText1Font);
+	StaticText2 = new wxStaticText(Panel1, ID_STATICTEXT2, _("Total of salaries:"), wxPoint(48,168), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+	wxFont StaticText2Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	StaticText2->SetFont(StaticText2Font);
+	StaticText3 = new wxStaticText(Panel1, ID_STATICTEXT3, _("Number of customers:"), wxPoint(48,248), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
+	wxFont StaticText3Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
+	StaticText3->SetFont(StaticText3Font);
+	StaticText4 = new wxStaticText(Panel1, ID_STATICTEXT4, _("Total customer balances: "), wxPoint(48,272), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
+	wxFont StaticText4Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	StaticText4->SetFont(StaticText4Font);
+	StaticText5 = new wxStaticText(Panel1, ID_STATICTEXT5, _("Number of loans:"), wxPoint(312,248), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+	wxFont StaticText5Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	StaticText5->SetFont(StaticText5Font);
+	StaticText6 = new wxStaticText(Panel1, ID_STATICTEXT6, _("Total loaned amount:"), wxPoint(312,272), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+	wxFont StaticText6Font(9,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	StaticText6->SetFont(StaticText6Font);
+	StaticText7 = new wxStaticText(Panel1, ID_STATICTEXT7, _("Net amount:"), wxPoint(48,336), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
+	wxFont StaticText7Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText7->SetFont(StaticText7Font);
+	btnBack = new wxButton(Panel1, ID_BUTTON1, _("BACK"), wxPoint(32,376), wxSize(75,31), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	btnBack->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+	btnBack->SetBackgroundColour(wxColour(210,175,102));
+	wxFont btnBackFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnBack->SetFont(btnBackFont);
+	btnExit = new wxButton(Panel1, ID_BUTTON2, _("EXIT"), wxPoint(432,376), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));
+	btnExit->SetBackgroundColour(wxColour(210,175,102));
+	wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnExit->SetFont(btnExitFont);
+	lblNumEm = new wxStaticText(Panel1, ID_STATICTEXT8, wxEmptyString, wxPoint(232,144), wxSize(24,13), 0, _T("ID_STATICTEXT8"));
+	lblTSal = new wxStaticText(Panel1, ID_STATICTEXT9, wxEmptyString, wxPoint(232,168), wxSize(32,13), 0, _T("ID_STATICTEXT9"));
+	lblNumCl = new wxStaticText(Panel1, ID_STATICTEXT10, wxEmptyString, wxPoint(232,248), wxSize(24,13), 0, _T("ID_STATICTEXT10"));
+	lblNumLoans = new wxStaticText(Panel1, ID_STATICTEXT11, wxEmptyString, wxPoint(456,248), wxSize(32,13), 0, _T("ID_STATICTEXT11"));
+	lbllblTAmt = new wxStaticText(Panel1, ID_STATICTEXT12, wxEmptyString, wxPoint(456,272), wxSize(24,13), 0, _T("ID_STATICTEXT12"));
+	lblTBal = new wxStaticText(Panel1, ID_STATICTEXT13, wxEmptyString, wxPoint(232,272), wxSize(24,13), 0, _T("ID_STATICTEXT13"));
+	lblNet = new wxStaticText(Panel1, ID_STATICTEXT14, wxEmptyString, wxPoint(232,336), wxSize(24,13), 0, _T("ID_STATICTEXT14"));
+	StaticText15 = new wxStaticText(Panel1, ID_STATICTEXT15, _("MONTHLY"), wxPoint(48,120), wxDefaultSize, 0, _T("ID_STATICTEXT15"));
+	wxFont StaticText15Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_NORMAL,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText15->SetFont(StaticText15Font);
+	StaticText16 = new wxStaticText(Panel1, ID_STATICTEXT16, _("Capital"), wxPoint(48,224), wxDefaultSize, 0, _T("ID_STATICTEXT16"));
+	wxFont StaticText16Font(12,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText16->SetFont(StaticText16Font);
+	StaticText8 = new wxStaticText(Panel1, ID_STATICTEXT17, _("BANK STATISTICS"), wxPoint(104,32), wxDefaultSize, 0, _T("ID_STATICTEXT17"));
+	wxFont StaticText8Font(26,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText8->SetFont(StaticText8Font);
 
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Metrics::OnbtnBackClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Metrics::OnbtnExitClick);
+	Panel1->Connect(wxEVT_PAINT,(wxObjectEventFunction)&Metrics::OnPanel1Paint,0,this);
 	//*)
 	SetMinSize(GetSize());
     SetMaxSize(GetSize());
@@ -157,4 +196,8 @@ void Metrics::OnbtnBackClick(wxCommandEvent& event)
     seleForm->lblDays->SetLabelText(lblTextStore);
 
     this->Close(TRUE);
+}
+
+void Metrics::OnPanel1Paint(wxPaintEvent& event)
+{
 }

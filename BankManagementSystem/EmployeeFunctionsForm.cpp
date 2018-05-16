@@ -64,6 +64,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxSize(465,439), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	pnlViewEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
 	StaticBitmap1 = new wxStaticBitmap(pnlViewEm, ID_STATICBITMAP1, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(464,392).GetWidth(),wxSize(464,392).GetHeight())), wxPoint(0,0), wxSize(464,392), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap1->Disable();
 	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(16,80), wxSize(432,256), 0, _T("ID_GRID1"));
 	Grid1->CreateGrid(3,4);
 	Grid1->EnableEditing(false);

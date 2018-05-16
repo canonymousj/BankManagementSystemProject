@@ -6,6 +6,7 @@
 #include <wx/button.h>
 #include <wx/frame.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
 #include <wx/stattext.h>
 //*)
 
@@ -26,6 +27,7 @@ class Metrics: public wxFrame
 		wxButton* btnBack;
 		wxButton* btnExit;
 		wxPanel* Panel1;
+		wxStaticBitmap* StaticBitmap1;
 		wxStaticText* StaticText15;
 		wxStaticText* StaticText16;
 		wxStaticText* StaticText1;
@@ -35,6 +37,7 @@ class Metrics: public wxFrame
 		wxStaticText* StaticText5;
 		wxStaticText* StaticText6;
 		wxStaticText* StaticText7;
+		wxStaticText* StaticText8;
 		wxStaticText* lblNet;
 		wxStaticText* lblNumCl;
 		wxStaticText* lblNumEm;
@@ -47,6 +50,7 @@ class Metrics: public wxFrame
 	protected:
 
 		//(*Identifiers(Metrics)
+		static const long ID_STATICBITMAP1;
 		static const long ID_STATICTEXT1;
 		static const long ID_STATICTEXT2;
 		static const long ID_STATICTEXT3;
@@ -65,6 +69,7 @@ class Metrics: public wxFrame
 		static const long ID_STATICTEXT14;
 		static const long ID_STATICTEXT15;
 		static const long ID_STATICTEXT16;
+		static const long ID_STATICTEXT17;
 		static const long ID_PANEL1;
 		//*)
 
@@ -73,6 +78,7 @@ class Metrics: public wxFrame
 		//(*Handlers(Metrics)
 		void OnbtnExitClick(wxCommandEvent& event);
 		void OnbtnBackClick(wxCommandEvent& event);
+		void OnPanel1Paint(wxPaintEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

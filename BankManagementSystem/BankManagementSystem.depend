@@ -2310,13 +2310,14 @@
 	<wx/textctrl.h>
 	"Employee.h"
 
-1526464561 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+1526467114 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
 	"Help.h"
 	"SelectionMenu.h"
 	<wx/bitmap.h>
 	<wx/font.h>
 	<wx/image.h>
 	<wx/intl.h>
+	<wx/settings.h>
 	<wx/string.h>
 
 1526464328 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.h
@@ -2335,11 +2336,12 @@
 	<wx/intl.h>
 	<wx/string.h>
 
-1526464230 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+1526467764 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
 	"Employee.h"
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
+	<wx/statbmp.h>
 	<wx/stattext.h>
 
 1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
