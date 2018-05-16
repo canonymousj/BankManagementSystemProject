@@ -104,6 +104,7 @@ class EmployeeFunctionsForm: public wxFrame
 		void OnButton1Click(wxCommandEvent& event);
 		void OnbtnViewTblExitClick(wxCommandEvent& event);
 		void OnCheckBox1Click(wxCommandEvent& event);
+		void OnChoice1Select(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

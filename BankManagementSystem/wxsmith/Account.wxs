@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <wxsmith>
 	<object class="wxFrame" name="Account">
-		<size>682,278</size>
+		<size>682,346</size>
 		<pos_arg>1</pos_arg>
 		<size_arg>1</size_arg>
 		<object class="wxPanel" name="ID_PANEL1" variable="Panel1" member="yes">
 			<pos>128,104</pos>
 			<size>640,278</size>
+			<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
+			<object class="wxStaticBitmap" name="ID_STATICBITMAP1" variable="StaticBitmap1" member="yes">
+				<bitmap>elegant-white-and-gold-background-6.jpg</bitmap>
+				<pos>0,0</pos>
+				<size>688,280</size>
+				<style>0</style>
+			</object>
 			<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">
 				<cols>5</cols>
 				<rows>3</rows>
@@ -19,19 +26,54 @@
 					<item>Repayment Period</item>
 					<item>Interest</item>
 				</collabels>
-				<pos>24,40</pos>
-				<size>624,160</size>
+				<pos>24,80</pos>
+				<size>624,176</size>
 				<handler function="OnGrid1CellLeftClick" entry="EVT_CMD_GRID_CELL_LEFT_CLICK" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON1" variable="btnRefresh" member="yes">
-				<label>Refresh</label>
-				<pos>32,232</pos>
+				<label>REFRESH</label>
+				<pos>32,296</pos>
+				<size>75,32</size>
+				<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+				<bg>#D2AF66</bg>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 				<handler function="OnbtnRefreshClick" entry="EVT_BUTTON" />
 			</object>
 			<object class="wxButton" name="ID_BUTTON2" variable="btnExit" member="yes">
-				<label>Exit</label>
-				<pos>576,232</pos>
+				<label>EXIT</label>
+				<pos>576,296</pos>
+				<size>75,32</size>
+				<fg>wxSYS_COLOUR_BTNHIGHLIGHT</fg>
+				<bg>#D2AF66</bg>
+				<font>
+					<size>10</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face></face>
+				</font>
 				<handler function="OnButton2Click" entry="EVT_BUTTON" />
+			</object>
+			<object class="wxStaticText" name="ID_STATICTEXT1" variable="StaticText1" member="yes">
+				<label>LOANS TABLE</label>
+				<pos>208,24</pos>
+				<fg>#D2AF66</fg>
+				<font>
+					<size>26</size>
+					<style>normal</style>
+					<weight>bold</weight>
+					<underlined>0</underlined>
+					<family>swiss</family>
+					<face>Castellar</face>
+				</font>
 			</object>
 		</object>
 	</object>
