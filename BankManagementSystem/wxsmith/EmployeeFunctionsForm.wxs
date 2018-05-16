@@ -286,6 +286,10 @@
 						<pos>304,344</pos>
 						<bg>#FFF1EA</bg>
 					</object>
+					<object class="wxCheckBox" name="ID_CHECKBOX1" variable="CheckBox1" member="yes">
+						<label>Label</label>
+						<pos>376,312</pos>
+					</object>
 				</object>
 				<label>Update employee</label>
 			</object>

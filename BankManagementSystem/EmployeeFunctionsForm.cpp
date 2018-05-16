@@ -40,6 +40,7 @@ const long EmployeeFunctionsForm::ID_BUTTON3 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON4 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT8 = wxNewId();
 const long EmployeeFunctionsForm::ID_CHOICE1 = wxNewId();
+const long EmployeeFunctionsForm::ID_CHECKBOX1 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL2 = wxNewId();
 const long EmployeeFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -157,6 +158,8 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Choice1->SetSelection( Choice1->Append(_("Manager")) );
 	Choice1->Append(_("Employee"));
 	Choice1->SetBackgroundColour(wxColour(255,241,234));
+	CheckBox1 = new wxCheckBox(pnlUpdateEm, ID_CHECKBOX1, _("Label"), wxPoint(376,312), wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
+	CheckBox1->SetValue(false);
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
