@@ -56,6 +56,7 @@ SelectionMenu::SelectionMenu(wxWindow* parent,wxWindowID id,const wxPoint& pos,c
 	wxFont btnEFunctFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnEFunct->SetFont(btnEFunctFont);
 	lblDays = new wxStaticText(Panel1, ID_STATICTEXT2, _("Days to birthday: *days*"), wxPoint(264,96), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
+	lblDays->Hide();
 	btnLogout = new wxButton(Panel1, ID_BUTTON4, _("LOGOUT"), wxPoint(32,328), wxSize(104,31), 0, wxDefaultValidator, _T("ID_BUTTON4"));
 	btnLogout->SetForegroundColour(wxColour(190,157,44));
 	btnLogout->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));

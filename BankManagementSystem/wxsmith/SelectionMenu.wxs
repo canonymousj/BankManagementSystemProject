@@ -57,6 +57,7 @@
 			<object class="wxStaticText" name="ID_STATICTEXT2" variable="lblDays" member="yes">
 				<label>Days to birthday: *days*</label>
 				<pos>264,96</pos>
+				<hidden>1</hidden>
 			</object>
 			<object class="wxButton" name="ID_BUTTON4" variable="btnLogout" member="yes">
 				<label>LOGOUT</label>
