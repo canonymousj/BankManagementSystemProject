@@ -652,6 +652,14 @@ void ClientFunctionsForm::setup(){
     txfLRP->SetValue("");
     txfLLoanID->SetValue("");
     txfLLoanNum->SetValue("");
+
+    lblLoanAmtOwed->SetLabel("");
+    lblNextRPAmt->SetLabel("");
+    lblTAss->SetLabel("");
+    lblTLia->SetLabel("");
+    lblNWorth->SetLabel("");
+
+    lblNumLoans->SetLabel("");
 }
 
 void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//rebuild
