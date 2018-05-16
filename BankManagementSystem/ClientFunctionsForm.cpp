@@ -138,7 +138,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxPoint(-28,-28), wxSize(447,457), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	Panel1->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTIONTEXT));
 	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
-	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(448,328).GetWidth(),wxSize(448,328).GetHeight())), wxPoint(0,0), wxSize(448,328), 0, _T("ID_STATICBITMAP2"));
+	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(448,272).GetWidth(),wxSize(448,272).GetHeight())), wxPoint(0,0), wxSize(448,272), 0, _T("ID_STATICBITMAP2"));
 	StaticBitmap2->Disable();
 	lblCFunct = new wxStaticText(Panel1, ID_STATICTEXT1, _("CLIENT FUNCTIONS"), wxPoint(40,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	lblCFunct->SetForegroundColour(wxColour(210,175,102));
@@ -182,7 +182,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	btnCExit->SetBackgroundColour(wxColour(210,175,102));
 	wxFont btnCExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnCExit->SetFont(btnCExitFont);
-	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,232), wxSize(408,88), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,232), wxSize(408,80), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
 	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,8), wxSize(88,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL6"));
 	RadioButton2 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON2, _("Savings"), wxPoint(336,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
 	RadioButton1 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON1, _("Cheque"), wxPoint(264,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
