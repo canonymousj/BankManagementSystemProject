@@ -1833,7 +1833,7 @@
 	"wx/defs.h"
 	"wx/validate.h"
 
-1526459725 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+1526463931 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
 	"ClientFunctionsForm.h"
 	"SelectionMenu.h"
 	"Account.h"
@@ -1851,7 +1851,7 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526459724 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+1526463931 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
 	<wx/button.h>
 	<wx/choice.h>
 	<wx/frame.h>
@@ -2120,7 +2120,7 @@
 1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
 	"Employee.h"
 
-1526459724 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+1526463932 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
 	"Help.h"
 	"SelectionMenu.h"
 	<wx/bitmap.h>
@@ -2139,7 +2139,7 @@
 	<wx/statbmp.h>
 	<wx/stattext.h>
 
-1526459724 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
+1526463932 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
 	"Metrics.h"
 	"SelectionMenu.h"
 	"Database.h"
@@ -2150,11 +2150,133 @@
 	<wx/settings.h>
 	<wx/string.h>
 
-1526459724 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+1526463932 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
 	"Employee.h"
 	<wx/button.h>
 	<wx/frame.h>
 	<wx/panel.h>
 	<wx/statbmp.h>
 	<wx/stattext.h>
+
+1526463932 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+	"EmployeeFunctionsForm.h"
+	"SelectionMenu.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/valtext.h>
+	<wx/textctrl.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526463932 c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+	<wx/button.h>
+	<wx/checkbox.h>
+	<wx/choice.h>
+	<wx/frame.h>
+	<wx/grid.h>
+	<wx/notebook.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"Employee.h"
+
+1526459591 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+	"Register.h"
+	"BankManagementSystemMain.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/valtext.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526375332 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
+	"wx/msw/wx.rc"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/rcdefs.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\rcdefs.h
+
+1526416548 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+	"SelectionMenu.h"
+	"BankManagementSystemMain.h"
+	"EmployeeFunctionsForm.h"
+	"ClientFunctionsForm.h"
+	"Help.h"
+	"Metrics.h"
+	<wx/msgdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526333764 source:c:\users\craig_000\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
 

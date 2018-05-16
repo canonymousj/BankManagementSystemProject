@@ -831,6 +831,10 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
             wxMessageBox("Invalid ID number");
             return;
         }
+        if(cCon.length()!=10){
+        wxMessageBox("Invalid Contact number");
+        return;
+        }
 
         std::string name = "clientName = '" + cName + "', ";
         std::string sID = "SAID = '" + cSAID + "', ";
@@ -870,6 +874,10 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
 
     if(!checkID(ID)){
         wxMessageBox("Invalid ID number");
+        return;
+    }
+    if(con.length()!=10){
+        wxMessageBox("Invalid Contact number");
         return;
     }
 
