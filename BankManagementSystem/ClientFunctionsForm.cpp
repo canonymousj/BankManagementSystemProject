@@ -1113,6 +1113,16 @@ void ClientFunctionsForm::OnbtnLUpdateClick(wxCommandEvent& event)
 
     std::replace(lDOL.begin(), lDOL.end(), '\'', ' ');
 
+    if(!checkdate(lDOL)){
+        wxMessageBox("Invalid date");
+        return;
+    }
+
+    if(txfLAmt->GetValue().IsEmpty() || txfLDOL->GetValue().IsEmpty()  || txfLInterest->GetValue().IsEmpty() || txfLRP->GetValue().IsEmpty() ){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
     if(!(loanObj.empty())){
         loanObj[loanNum].setAmount(lAmt);
         loanObj[loanNum].setDateOfLoan(lDOL);
@@ -1296,7 +1306,7 @@ bool checkID(string SAID){
         }
 
         if(!checkdate(d, m, y)){
-                wxMessageBox("Invalid date");
+            wxMessageBox("Invalid ID date");
             return false;
         }
 

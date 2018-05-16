@@ -279,6 +279,15 @@
 							<face>Castellar</face>
 						</font>
 					</object>
+					<object class="wxChoice" name="ID_CHOICE1" variable="Choice1" member="yes">
+						<content>
+							<item>Manager</item>
+							<item>Employee</item>
+						</content>
+						<selection>0</selection>
+						<pos>304,344</pos>
+						<bg>#FFF1EA</bg>
+					</object>
 				</object>
 				<label>Update employee</label>
 			</object>

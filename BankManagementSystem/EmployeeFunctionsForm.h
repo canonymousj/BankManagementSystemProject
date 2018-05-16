@@ -3,6 +3,7 @@
 
 //(*Headers(EmployeeFunctionsForm)
 #include <wx/button.h>
+#include <wx/choice.h>
 #include <wx/frame.h>
 #include <wx/grid.h>
 #include <wx/notebook.h>
@@ -33,6 +34,7 @@ class EmployeeFunctionsForm: public wxFrame
 		wxButton* btnUpUpdate;
 		wxButton* btnViewTblBack;
 		wxButton* btnViewTblExit;
+		wxChoice* Choice1;
 		wxGrid* Grid1;
 		wxNotebook* Notebook1;
 		wxPanel* pnlUpdateEm;
@@ -83,6 +85,7 @@ class EmployeeFunctionsForm: public wxFrame
 		static const long ID_BUTTON3;
 		static const long ID_BUTTON4;
 		static const long ID_STATICTEXT8;
+		static const long ID_CHOICE1;
 		static const long ID_PANEL2;
 		static const long ID_NOTEBOOK1;
 		//*)
@@ -97,6 +100,7 @@ class EmployeeFunctionsForm: public wxFrame
 		void OnbtnGridRefreshClick(wxCommandEvent& event);
 		void OnButton1Click(wxCommandEvent& event);
 		void OnbtnViewTblExitClick(wxCommandEvent& event);
+		void OnCheckBox1Click(wxCommandEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

@@ -16,6 +16,8 @@
 Database *dbReg = NULL;
 
 void DatabaseConnectReg();
+bool checkTheDate(int d, int m, int y);
+bool checkTheID(string SAID);
 
 //(*IdInit(Register)
 const long Register::ID_STATICBITMAP1 = wxNewId();
@@ -136,6 +138,16 @@ void Register::OnbtnSubmitClick(wxCommandEvent& event)
     std::replace(PWD.begin(), PWD.end(), '\'', ' ');
     std::replace(mPWD.begin(), mPWD.end(), '\'', ' ');
 
+    if(txfEName->GetValue().IsEmpty() || txfEID->GetValue().IsEmpty()  || txfEPass->GetValue().IsEmpty() || txfMPass->GetValue().IsEmpty()){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
+    if(!checkTheID(ID)){
+        wxMessageBox("Invalid ID number");
+        return;
+    }
+
     string q = "SELECT password FROM tblEmployee WHERE privilege = 0;";
     vector<vector<string> > resReg;
     resReg = dbReg->query(q.c_str());
@@ -166,4 +178,58 @@ void Register::OnbtnSubmitClick(wxCommandEvent& event)
 
 void Register::OntxfEIDText(wxCommandEvent& event)
 {
+}
+
+
+bool checkTheDate(int d, int m, int y){
+    try{
+        if (! (1918<= y )  )//comment these 2 lines out if it bothers you
+            return false;
+        if (! (1<= m && m<=12) )
+            return false;
+        if (! (1<= d && d<=31) )
+            return false;
+        if ( (d==31) && (m==2 || m==4 || m==6 || m==9 || m==11) )
+            return false;
+        if ( (d==30) && (m==2) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4!=0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%400==0) )
+            return true;
+        if ( (m==2) && (d==29) && (y%100==0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4==0)  )
+            return true;
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
+}
+
+bool checkTheID(string SAID){
+    try{
+        if(SAID.length() != 13){
+            return false;
+        }
+        int d = atoi((SAID.substr(4, 2)).c_str()), m = atoi((SAID.substr(2, 2)).c_str()), y = atoi((SAID.substr(0,2)).c_str());
+
+        if(y<=18&&y>=0){
+            y+=2000;
+        }else{
+            y+=1900;
+        }
+
+        if(!checkTheDate(d, m, y)){
+                wxMessageBox("Invalid ID date");
+            return false;
+        }
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
 }

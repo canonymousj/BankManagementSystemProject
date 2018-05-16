@@ -3,6 +3,7 @@
 #include "Database.h"
 #include <wx/msgdlg.h>
 #include <wx/valtext.h>
+#include <wx/textctrl.h>
 
 //(*InternalHeaders(EmployeeFunctionsForm)
 #include <wx/bitmap.h>
@@ -38,6 +39,7 @@ const long EmployeeFunctionsForm::ID_TEXTCTRL6 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON3 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON4 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT8 = wxNewId();
+const long EmployeeFunctionsForm::ID_CHOICE1 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL2 = wxNewId();
 const long EmployeeFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -49,6 +51,8 @@ END_EVENT_TABLE()
 
 void DatabaseConnectEF();
 Database *dbEF = NULL;
+bool checkEmDate(int d, int m, int y);
+bool checkEmID(string SAID);
 
 EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -154,6 +158,10 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	StaticText2->SetForegroundColour(wxColour(230,115,0));
 	wxFont StaticText2Font(22,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
 	StaticText2->SetFont(StaticText2Font);
+	Choice1 = new wxChoice(pnlUpdateEm, ID_CHOICE1, wxPoint(304,344), wxDefaultSize, 0, 0, 0, wxDefaultValidator, _T("ID_CHOICE1"));
+	Choice1->SetSelection( Choice1->Append(_("Manager")) );
+	Choice1->Append(_("Employee"));
+	Choice1->SetBackgroundColour(wxColour(255,241,234));
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
@@ -202,6 +210,7 @@ void EmployeeFunctionsForm::populateUpdateFields(int EmNum){
     txfUpESAID->SetValue(upEmID);
     txfUpESal->SetValue(upEmSal);
     txfUpEPriv->SetValue(upEmPriv);
+    Choice1->SetSelection(wxAtoi(upEmPriv));
     txfUpEPass->SetValue(upEmPass);
 }
 
@@ -238,6 +247,9 @@ void EmployeeFunctionsForm::setupCurEmployee(){
 
 void EmployeeFunctionsForm::updateTable(){
     int rows = Grid1->GetNumberRows();
+    int emPriv = 1;
+
+    emPriv = curEmployee->getPrivilege();
 
     if(rows>0){
         Grid1->DeleteRows(0, rows, true);
@@ -254,7 +266,11 @@ void EmployeeFunctionsForm::updateTable(){
 
 		Grid1->SetCellValue(rowPos, 0, row.at(1));
 		Grid1->SetCellValue(rowPos, 1, row.at(2));
-		Grid1->SetCellValue(rowPos, 2, row.at(4));
+		if(!emPriv){
+            Grid1->SetCellValue(rowPos, 2, row.at(4));
+		}else{
+            Grid1->SetCellValue(rowPos, 2, "-");
+		}
 		Grid1->SetCellValue(rowPos, 3, row.at(5));
 
 		rowPos++;
@@ -266,6 +282,19 @@ void EmployeeFunctionsForm::OnbtnUpUpdateClick(wxCommandEvent& event)
     int upEmNum = wxAtoi(txfUpEmNum->GetValue()), upEmPriv = wxAtoi(txfUpEPriv->GetValue());
 	std::string upEmName = txfUpEName->GetValue().ToStdString(), upEmID = txfUpESAID->GetValue().ToStdString(), upEmPass = txfUpEPass->GetValue().ToStdString();
 	double upEmSal = wxAtof(txfUpESal->GetValue());
+
+    upEmPriv = Choice1->GetCurrentSelection();
+
+
+	if(txfUpEmNum->GetValue().IsEmpty() || txfUpEPriv->GetValue().IsEmpty()  || txfUpEName->GetValue().IsEmpty() || txfUpESAID->GetValue().IsEmpty() || txfUpESal->GetValue().IsEmpty() ||  txfUpEPass->GetValue().IsEmpty()){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
+    if(!checkEmID(upEmID)){
+        wxMessageBox("Invalid ID number");
+        return;
+    }
 
     std::string name = "employeeName = '" + upEmName + "', ";
     std::string sID = "SAID = '" + upEmID + "', ";
@@ -366,4 +395,67 @@ void EmployeeFunctionsForm::OnButton1Click(wxCommandEvent& event)
 void EmployeeFunctionsForm::OnbtnViewTblExitClick(wxCommandEvent& event)
 {
     this->Close();
+}
+
+bool checkEmDate(int d, int m, int y){
+    try{
+        if (! (1918<= y )  )//comment these 2 lines out if it bothers you
+            return false;
+        if (! (1<= m && m<=12) )
+            return false;
+        if (! (1<= d && d<=31) )
+            return false;
+        if ( (d==31) && (m==2 || m==4 || m==6 || m==9 || m==11) )
+            return false;
+        if ( (d==30) && (m==2) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4!=0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%400==0) )
+            return true;
+        if ( (m==2) && (d==29) && (y%100==0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4==0)  )
+            return true;
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
+}
+
+bool checkEmID(string SAID){
+    try{
+        if(SAID.length() != 13){
+            return false;
+        }
+        int d = atoi((SAID.substr(4, 2)).c_str()), m = atoi((SAID.substr(2, 2)).c_str()), y = atoi((SAID.substr(0,2)).c_str());
+
+        if(y<=18&&y>=0){
+            y+=2000;
+        }else{
+            y+=1900;
+        }
+
+        if(!checkEmDate(d, m, y)){
+                wxMessageBox("Invalid ID date");
+            return false;
+        }
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
+}
+
+void EmployeeFunctionsForm::OnCheckBox1Click(wxCommandEvent& event)
+{
+    if(CheckBox1->GetValue()){
+        wxMessageBox("Show");
+        txfUpEPass->SetWindowStyle(wxTE_PASSWORD);
+    }else{
+        txfUpEPass->SetWindowStyle(wxTE_RICH);
+    }
 }

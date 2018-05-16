@@ -44,6 +44,8 @@ Account::Account(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Account::OnbtnRefreshClick);
 	Connect(ID_BUTTON2,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Account::OnButton2Click);
 	//*)
+	SetMinSize(GetSize());
+    SetMaxSize(GetSize());
 }
 
 Account::~Account()
