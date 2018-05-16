@@ -6,6 +6,8 @@
 #include "Database.h"
 #include <wx/textdlg.h>
 #include "Account.h"
+#include <locale.h>
+#include <time.h>
 
 //(*InternalHeaders(ClientFunctionsForm)
 #include <wx/bitmap.h>
@@ -120,6 +122,9 @@ int findNextPayment(std::vector< loan > &loanObj);
 
 void DatabaseConnectCF();
 Database *dbCF = NULL;
+bool checkdate(string date1);
+bool checkdate(int d, int m, int y);
+bool checkID(string SAID);
 
 ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize& size)
 {
@@ -749,6 +754,12 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
 	int max = resulta.size();
 
 	int cNum = wxAtoi(txfCID->GetValue());
+
+	if(txfCAddress->GetValue().IsEmpty() || txfCConNum->GetValue().IsEmpty()  || txfCName->GetValue().IsEmpty() || txfCSAID->GetValue().IsEmpty() ){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
     if(cNum <= max && cNum > 0){
         std::string cName = txfCName->GetValue().ToStdString(), cSAID = txfCSAID->GetValue().ToStdString(), cCon = txfCConNum->GetValue().ToStdString(), cAdd = txfCAddress->GetValue().ToStdString();
 
@@ -756,6 +767,11 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
         std::replace(cSAID.begin(), cSAID.end(), '\'', ' ');
         std::replace(cCon.begin(), cCon.end(), '\'', ' ');
         std::replace(cAdd.begin(), cAdd.end(), '\'', ' ');
+
+        if(!checkID(cSAID)){
+            wxMessageBox("Invalid ID number");
+            return;
+        }
 
         std::string name = "clientName = '" + cName + "', ";
         std::string sID = "SAID = '" + cSAID + "', ";
@@ -778,6 +794,11 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
     int check = 1, type = -1;
     int cNumber = wxAtoi(txfCID->GetValue());
 
+    if(txfCAddress->GetValue().IsEmpty() || txfCConNum->GetValue().IsEmpty()  || txfCName->GetValue().IsEmpty() || txfCSAID->GetValue().IsEmpty() || txfCOAmt->GetValue().IsEmpty()){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
     std::string name = txfCName->GetValue().ToStdString();
     std::string ID = txfCSAID->GetValue().ToStdString();
     std::string con = txfCConNum->GetValue().ToStdString();
@@ -787,6 +808,11 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
     std::replace(ID.begin(), ID.end(), '\'', ' ');
     std::replace(con.begin(), con.end(), '\'', ' ');
     std::replace(add.begin(), add.end(), '\'', ' ');
+
+    if(!checkID(ID)){
+        wxMessageBox("Invalid ID number");
+        return;
+    }
 
     double openAmt = wxAtof(txfCOAmt->GetValue());
     double openInterest = 0.0;
@@ -798,6 +824,11 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
     if(savings){
         type = 1;
         openInterest = wxAtof(txfInterest->GetValue());
+    }
+
+    if(type == 1 && txfInterest->GetValue().IsEmpty()){
+        wxMessageBox("Empty interest field");
+        return;
     }
 
     string q = "SELECT SAID FROM tblClient WHERE SAID = '"+ ID +"';";
@@ -867,6 +898,11 @@ void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)
 
 	int accID = wxAtoi(txfAccID->GetValue());
 	int clID = accObj.getClientID();
+
+	if(txfAccBal->GetValue().IsEmpty() || txfAccInt->GetValue().IsEmpty()){
+        wxMessageBox("Emplty fields");
+        return;
+    }
 
     if(accID <= max && accID > 0){
         int accType = cmbAccType->GetCurrentSelection();
@@ -1114,6 +1150,16 @@ void ClientFunctionsForm::OnbtnLAddClick(wxCommandEvent& event)
 
     std::replace(lDOL.begin(), lDOL.end(), '\'', ' ');
 
+    if(!checkdate(lDOL)){
+        wxMessageBox("Invalid date");
+        return;
+    }
+
+    if(txfLAmt->GetValue().IsEmpty() || txfLDOL->GetValue().IsEmpty()  || txfLInterest->GetValue().IsEmpty() || txfLRP->GetValue().IsEmpty() ){
+        wxMessageBox("Emplty fields");
+        return;
+    }
+
     loanObj.push_back(loan(loanID, lAmt, lInterest, 0, rpPeriod, lDOL));
 
     btnLAdd->Hide();
@@ -1133,6 +1179,11 @@ void ClientFunctionsForm::OnbtnLAddClick(wxCommandEvent& event)
 void ClientFunctionsForm::OnButton1Click(wxCommandEvent& event)
 {
     unsigned int numOfLoans = loanObj.size();
+
+    if(wxAtoi(txfCID->GetValue()) == 0){
+        wxMessageBox("Please search for client first!");
+        return;
+    }
 
     txfLAmt->SetValue("");
     txfLDOL->SetValue("");
@@ -1160,4 +1211,98 @@ void ClientFunctionsForm::OnButton1Click(wxCommandEvent& event)
 void ClientFunctionsForm::OnbtnLCancelClick(wxCommandEvent& event)
 {
     setup();
+}
+
+bool checkdate(string date1){
+    try{
+        int pos1 = 0, pos2 = 0;
+        pos1 = date1.find_first_of('/'); pos2 = date1.find_last_of('/');
+
+        if(pos1<0){
+            pos1 = 0;
+        }
+        if(pos2<0){
+            pos2 = 0;
+        }
+        int lengthDays = pos1, lengthMonths = pos2-pos1;
+
+        int d = atoi((date1.substr(0, lengthDays)).c_str()), m = atoi((date1.substr(pos1+1, lengthMonths)).c_str()), y = atoi((date1.substr(pos2+1)).c_str());
+
+        if (! (2010<= y )  )//comment these 2 lines out if it bothers you
+            return false;
+        if (! (1<= m && m<=12) )
+            return false;
+        if (! (1<= d && d<=31) )
+            return false;
+        if ( (d==31) && (m==2 || m==4 || m==6 || m==9 || m==11) )
+            return false;
+        if ( (d==30) && (m==2) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4!=0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%400==0) )
+            return true;
+        if ( (m==2) && (d==29) && (y%100==0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4==0)  )
+            return true;
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
+}
+
+bool checkdate(int d, int m, int y){
+    try{
+        if (! (1918<= y )  )//comment these 2 lines out if it bothers you
+            return false;
+        if (! (1<= m && m<=12) )
+            return false;
+        if (! (1<= d && d<=31) )
+            return false;
+        if ( (d==31) && (m==2 || m==4 || m==6 || m==9 || m==11) )
+            return false;
+        if ( (d==30) && (m==2) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4!=0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%400==0) )
+            return true;
+        if ( (m==2) && (d==29) && (y%100==0) )
+            return false;
+        if ( (m==2) && (d==29) && (y%4==0)  )
+            return true;
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
+}
+
+bool checkID(string SAID){
+    try{
+        if(SAID.length() != 13){
+            return false;
+        }
+        int d = atoi((SAID.substr(4, 2)).c_str()), m = atoi((SAID.substr(2, 2)).c_str()), y = atoi((SAID.substr(0,2)).c_str());
+
+        if(y<=18&&y>=0){
+            y+=2000;
+        }else{
+            y+=1900;
+        }
+
+        if(!checkdate(d, m, y)){
+                wxMessageBox("Invalid date");
+            return false;
+        }
+
+        return true;
+    }catch(...){
+        return false;
+    }
+
 }
