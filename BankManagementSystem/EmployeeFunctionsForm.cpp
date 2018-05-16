@@ -40,7 +40,6 @@ const long EmployeeFunctionsForm::ID_BUTTON3 = wxNewId();
 const long EmployeeFunctionsForm::ID_BUTTON4 = wxNewId();
 const long EmployeeFunctionsForm::ID_STATICTEXT8 = wxNewId();
 const long EmployeeFunctionsForm::ID_CHOICE1 = wxNewId();
-const long EmployeeFunctionsForm::ID_CHECKBOX1 = wxNewId();
 const long EmployeeFunctionsForm::ID_PANEL2 = wxNewId();
 const long EmployeeFunctionsForm::ID_NOTEBOOK1 = wxNewId();
 //*)
@@ -114,7 +113,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	txfUpEName = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL2, wxEmptyString, wxPoint(240,144), wxSize(124,21), 0, wxTextValidator(wxFILTER_ALPHA, NULL), _T("ID_TEXTCTRL2"));
 	txfUpESAID = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL3, wxEmptyString, wxPoint(240,184), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL3"));
 	txfUpESal = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL4, wxEmptyString, wxPoint(240,224), wxSize(124,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL4"));
-	txfUpEPriv = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL5, wxEmptyString, wxPoint(240,264), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
+	txfUpEPriv = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL5, wxEmptyString, wxPoint(240,304), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
 	lblUpEName = new wxStaticText(pnlUpdateEm, ID_STATICTEXT2, _("NAME:"), wxPoint(104,144), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	lblUpEName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpENameFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
@@ -127,7 +126,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	lblUpESal->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpESalFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Arial"),wxFONTENCODING_DEFAULT);
 	lblUpESal->SetFont(lblUpESalFont);
-	lblUpEPriv = new wxStaticText(pnlUpdateEm, ID_STATICTEXT5, _("PRIVILEGE:"), wxPoint(104,264), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
+	lblUpEPriv = new wxStaticText(pnlUpdateEm, ID_STATICTEXT5, _("PRIVILEGE:"), wxPoint(104,304), wxDefaultSize, 0, _T("ID_STATICTEXT5"));
 	lblUpEPriv->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpEPrivFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblUpEPriv->SetFont(lblUpEPrivFont);
@@ -136,11 +135,11 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	btnUpUpdate->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont btnUpUpdateFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnUpUpdate->SetFont(btnUpUpdateFont);
-	lblUpEPass = new wxStaticText(pnlUpdateEm, ID_STATICTEXT6, _("PASSWORD:"), wxPoint(104,304), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
+	lblUpEPass = new wxStaticText(pnlUpdateEm, ID_STATICTEXT6, _("PASSWORD:"), wxPoint(104,264), wxDefaultSize, 0, _T("ID_STATICTEXT6"));
 	lblUpEPass->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	wxFont lblUpEPassFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblUpEPass->SetFont(lblUpEPassFont);
-	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(240,304), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
+	txfUpEPass = new wxTextCtrl(pnlUpdateEm, ID_TEXTCTRL6, wxEmptyString, wxPoint(240,264), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL6"));
 	btnUpExit = new wxButton(pnlUpdateEm, ID_BUTTON3, _("EXIT"), wxPoint(352,416), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON3"));
 	btnUpExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnUpExit->SetBackgroundColour(wxColour(210,175,102));
@@ -159,8 +158,6 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	Choice1->SetSelection( Choice1->Append(_("Manager")) );
 	Choice1->Append(_("Employee"));
 	Choice1->SetBackgroundColour(wxColour(255,241,234));
-	CheckBox1 = new wxCheckBox(pnlUpdateEm, ID_CHECKBOX1, _("Label"), wxPoint(376,312), wxDefaultSize, 0, wxDefaultValidator, _T("ID_CHECKBOX1"));
-	CheckBox1->SetValue(false);
 	Notebook1->AddPage(pnlViewEm, _("View employees"), false);
 	Notebook1->AddPage(pnlUpdateEm, _("Update employee"), false);
 
@@ -452,12 +449,12 @@ bool checkEmID(string SAID){
 
 void EmployeeFunctionsForm::OnCheckBox1Click(wxCommandEvent& event)
 {
-    if(CheckBox1->GetValue()){
+/*    if(CheckBox1->GetValue()){
         wxMessageBox("Show");
         txfUpEPass->SetWindowStyle(wxTE_PASSWORD);
     }else{
         txfUpEPass->SetWindowStyle(wxTE_RICH);
-    }
+    }*/
 }
 
 void EmployeeFunctionsForm::OnChoice1Select(wxCommandEvent& event)
