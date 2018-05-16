@@ -17,7 +17,7 @@
 					<object class="wxStaticBitmap" name="ID_STATICBITMAP2" variable="StaticBitmap2" member="yes">
 						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
-						<size>448,328</size>
+						<size>448,272</size>
 						<enabled>0</enabled>
 						<style>0</style>
 					</object>
@@ -163,7 +163,7 @@
 					</object>
 					<object class="wxPanel" name="ID_PANEL2" variable="pnlCAccount" member="yes">
 						<pos>16,232</pos>
-						<size>408,88</size>
+						<size>408,80</size>
 						<object class="wxTextCtrl" name="ID_TEXTCTRL6" variable="txfCOAmt" member="yes">
 							<pos>160,8</pos>
 							<size>88,21</size>
