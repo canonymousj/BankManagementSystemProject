@@ -9,6 +9,8 @@
 #include <wx/frame.h>
 #include <wx/grid.h>
 #include <wx/panel.h>
+#include <wx/statbmp.h>
+#include <wx/stattext.h>
 //*)
 
 class Account: public wxFrame
@@ -27,14 +29,18 @@ class Account: public wxFrame
 		wxButton* btnRefresh;
 		wxGrid* Grid1;
 		wxPanel* Panel1;
+		wxStaticBitmap* StaticBitmap1;
+		wxStaticText* StaticText1;
 		//*)
 
 	protected:
 
 		//(*Identifiers(Account)
+		static const long ID_STATICBITMAP1;
 		static const long ID_GRID1;
 		static const long ID_BUTTON1;
 		static const long ID_BUTTON2;
+		static const long ID_STATICTEXT1;
 		static const long ID_PANEL1;
 		//*)
 
@@ -44,6 +50,7 @@ class Account: public wxFrame
 		void OnGrid1CellLeftClick(wxGridEvent& event);
 		void OnButton2Click(wxCommandEvent& event);
 		void OnbtnRefreshClick(wxCommandEvent& event);
+		void OnClose(wxCloseEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

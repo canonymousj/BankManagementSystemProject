@@ -2,14 +2,20 @@
 #include <string>
 
 //(*InternalHeaders(Account)
+#include <wx/bitmap.h>
+#include <wx/font.h>
+#include <wx/image.h>
 #include <wx/intl.h>
+#include <wx/settings.h>
 #include <wx/string.h>
 //*)
 
 //(*IdInit(Account)
+const long Account::ID_STATICBITMAP1 = wxNewId();
 const long Account::ID_GRID1 = wxNewId();
 const long Account::ID_BUTTON1 = wxNewId();
 const long Account::ID_BUTTON2 = wxNewId();
+const long Account::ID_STATICTEXT1 = wxNewId();
 const long Account::ID_PANEL1 = wxNewId();
 //*)
 
@@ -22,10 +28,12 @@ Account::Account(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
 {
 	//(*Initialize(Account)
 	Create(parent, id, wxEmptyString, wxDefaultPosition, wxDefaultSize, wxDEFAULT_FRAME_STYLE, _T("id"));
-	SetClientSize(wxSize(682,278));
+	SetClientSize(wxSize(682,346));
 	Move(wxDefaultPosition);
 	Panel1 = new wxPanel(this, ID_PANEL1, wxPoint(128,104), wxSize(640,278), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
-	Grid1 = new wxGrid(Panel1, ID_GRID1, wxPoint(24,40), wxSize(624,160), 0, _T("ID_GRID1"));
+	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	StaticBitmap1 = new wxStaticBitmap(Panel1, ID_STATICBITMAP1, wxBitmap(wxImage(_T("elegant-white-and-gold-background-6.jpg")).Rescale(wxSize(688,280).GetWidth(),wxSize(688,280).GetHeight())), wxPoint(0,0), wxSize(688,280), 0, _T("ID_STATICBITMAP1"));
+	Grid1 = new wxGrid(Panel1, ID_GRID1, wxPoint(24,80), wxSize(624,176), 0, _T("ID_GRID1"));
 	Grid1->CreateGrid(3,5);
 	Grid1->EnableEditing(false);
 	Grid1->EnableGridLines(true);
@@ -37,8 +45,20 @@ Account::Account(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSize&
 	Grid1->SetColLabelValue(4, _("Interest"));
 	Grid1->SetDefaultCellFont( Grid1->GetFont() );
 	Grid1->SetDefaultCellTextColour( Grid1->GetForegroundColour() );
-	btnRefresh = new wxButton(Panel1, ID_BUTTON1, _("Refresh"), wxPoint(32,232), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
-	btnExit = new wxButton(Panel1, ID_BUTTON2, _("Exit"), wxPoint(576,232), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnRefresh = new wxButton(Panel1, ID_BUTTON1, _("REFRESH"), wxPoint(32,296), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON1"));
+	btnRefresh->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnRefresh->SetBackgroundColour(wxColour(210,175,102));
+	wxFont btnRefreshFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnRefresh->SetFont(btnRefreshFont);
+	btnExit = new wxButton(Panel1, ID_BUTTON2, _("EXIT"), wxPoint(576,296), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
+	btnExit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
+	btnExit->SetBackgroundColour(wxColour(210,175,102));
+	wxFont btnExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
+	btnExit->SetFont(btnExitFont);
+	StaticText1 = new wxStaticText(Panel1, ID_STATICTEXT1, _("LOANS TABLE"), wxPoint(208,24), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
+	StaticText1->SetForegroundColour(wxColour(210,175,102));
+	wxFont StaticText1Font(26,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,_T("Castellar"),wxFONTENCODING_DEFAULT);
+	StaticText1->SetFont(StaticText1Font);
 
 	Connect(ID_GRID1,wxEVT_GRID_CELL_LEFT_CLICK,(wxObjectEventFunction)&Account::OnGrid1CellLeftClick);
 	Connect(ID_BUTTON1,wxEVT_COMMAND_BUTTON_CLICKED,(wxObjectEventFunction)&Account::OnbtnRefreshClick);
@@ -88,4 +108,8 @@ void Account::OnButton2Click(wxCommandEvent& event)
 void Account::OnbtnRefreshClick(wxCommandEvent& event)
 {
     updateTable();
+}
+
+void Account::OnClose(wxCloseEvent& event)
+{
 }

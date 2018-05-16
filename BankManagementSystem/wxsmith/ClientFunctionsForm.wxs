@@ -93,7 +93,6 @@
 						<pos>176,72</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						<exstyle>wxWS_EX_VALIDATE_RECURSIVELY</exstyle>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL2" variable="txfCName" member="yes">
@@ -106,13 +105,11 @@
 						<pos>176,136</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL4" variable="txfCConNum" member="yes">
 						<pos>176,168</pos>
 						<size>124,21</size>
 						<validator>wxTextValidator(wxFILTER__DIGITS, NULL)</validator>
-						<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL5" variable="txfCAddress" member="yes">
 						<pos>176,200</pos>
@@ -171,7 +168,6 @@
 							<pos>160,8</pos>
 							<size>88,21</size>
 							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
-							<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						</object>
 						<object class="wxRadioButton" name="ID_RADIOBUTTON2" variable="RadioButton2" member="yes">
 							<label>Savings</label>
@@ -209,7 +205,6 @@
 							<pos>160,48</pos>
 							<size>88,21</size>
 							<validator>wxTextValidator(wxFILTER__NUMERIC, NULL)</validator>
-							<bg>wxSYS_COLOUR_BTNHIGHLIGHT</bg>
 						</object>
 					</object>
 					<object class="wxButton" name="ID_BUTTON8" variable="btnCUpdate" member="yes">
@@ -689,7 +684,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT37" variable="lblLAmt" member="yes">
@@ -701,7 +695,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT38" variable="lblLDOL" member="yes">
@@ -713,7 +706,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxStaticText" name="ID_STATICTEXT39" variable="lblLRP" member="yes">
@@ -725,7 +717,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL10" variable="txfLLoanID" member="yes">
@@ -752,7 +743,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL15" variable="txfLInterest" member="yes">
@@ -771,7 +761,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLBackClick" entry="EVT_BUTTON" />
 					</object>
@@ -787,7 +776,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLExitClick" entry="EVT_BUTTON" />
 					</object>
@@ -802,7 +790,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLUpdateClick" entry="EVT_BUTTON" />
 					</object>
@@ -817,7 +804,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLAddClick" entry="EVT_BUTTON" />
 					</object>
@@ -833,7 +819,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLViewClick" entry="EVT_BUTTON" />
 					</object>
@@ -849,7 +834,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLPrevClick" entry="EVT_BUTTON" />
 					</object>
@@ -865,7 +849,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLNextClick" entry="EVT_BUTTON" />
 					</object>
@@ -878,7 +861,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 					</object>
 					<object class="wxTextCtrl" name="ID_TEXTCTRL16" variable="txfLLoanNum" member="yes">
@@ -900,7 +882,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnButton1Click" entry="EVT_BUTTON" />
 					</object>
@@ -915,7 +896,6 @@
 							<weight>bold</weight>
 							<underlined>0</underlined>
 							<family>swiss</family>
-							<face></face>
 						</font>
 						<handler function="OnbtnLCancelClick" entry="EVT_BUTTON" />
 					</object>

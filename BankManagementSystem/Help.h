@@ -46,6 +46,7 @@ class Help: public wxFrame
 		//(*Handlers(Help)
 		void OnButton1Click(wxCommandEvent& event);
 		void OnButton2Click(wxCommandEvent& event);
+		void OnPanel1Paint(wxPaintEvent& event);
 		//*)
 
 		DECLARE_EVENT_TABLE()

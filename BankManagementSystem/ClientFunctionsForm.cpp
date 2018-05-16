@@ -138,7 +138,7 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	Panel1 = new wxPanel(Notebook1, ID_PANEL1, wxPoint(-28,-28), wxSize(447,457), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	Panel1->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_INACTIVECAPTIONTEXT));
 	Panel1->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
-	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(448,328).GetWidth(),wxSize(448,328).GetHeight())), wxPoint(0,0), wxSize(448,328), 0, _T("ID_STATICBITMAP2"));
+	StaticBitmap2 = new wxStaticBitmap(Panel1, ID_STATICBITMAP2, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(448,272).GetWidth(),wxSize(448,272).GetHeight())), wxPoint(0,0), wxSize(448,272), 0, _T("ID_STATICBITMAP2"));
 	StaticBitmap2->Disable();
 	lblCFunct = new wxStaticText(Panel1, ID_STATICTEXT1, _("CLIENT FUNCTIONS"), wxPoint(40,16), wxDefaultSize, 0, _T("ID_STATICTEXT1"));
 	lblCFunct->SetForegroundColour(wxColour(210,175,102));
@@ -160,14 +160,11 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	wxFont lblCIDFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblCID->SetFont(lblCIDFont);
 	txfCID = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(176,72), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL1"));
-	txfCID->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	txfCID->SetExtraStyle( txfCID->GetExtraStyle() | wxWS_EX_VALIDATE_RECURSIVELY );
 	txfCName = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(176,104), wxSize(124,21), 0, wxTextValidator(wxFILTER_ALPHA, NULL), _T("ID_TEXTCTRL2"));
 	txfCName->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	txfCSAID = new wxTextCtrl(Panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(176,136), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL3"));
-	txfCSAID->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	txfCConNum = new wxTextCtrl(Panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(176,168), wxSize(124,21), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL4"));
-	txfCConNum->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	txfCAddress = new wxTextCtrl(Panel1, ID_TEXTCTRL5, wxEmptyString, wxPoint(176,200), wxSize(124,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL5"));
 	txfCAddress->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnCCreate = new wxButton(Panel1, ID_BUTTON1, _("CREATE"), wxPoint(184,336), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON1"));
@@ -185,9 +182,8 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	btnCExit->SetBackgroundColour(wxColour(210,175,102));
 	wxFont btnCExitFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	btnCExit->SetFont(btnCExitFont);
-	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,232), wxSize(408,88), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
+	pnlCAccount = new wxPanel(Panel1, ID_PANEL2, wxPoint(16,232), wxSize(408,80), wxTAB_TRAVERSAL, _T("ID_PANEL2"));
 	txfCOAmt = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL6, wxEmptyString, wxPoint(160,8), wxSize(88,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL6"));
-	txfCOAmt->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	RadioButton2 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON2, _("Savings"), wxPoint(336,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON2"));
 	RadioButton1 = new wxRadioButton(pnlCAccount, ID_RADIOBUTTON1, _("Cheque"), wxPoint(264,8), wxDefaultSize, 0, wxDefaultValidator, _T("ID_RADIOBUTTON1"));
 	lblCOAmt = new wxStaticText(pnlCAccount, ID_STATICTEXT7, _("OPENING AMOUNT:"), wxPoint(16,8), wxDefaultSize, 0, _T("ID_STATICTEXT7"));
@@ -197,7 +193,6 @@ ClientFunctionsForm::ClientFunctionsForm(wxWindow* parent,wxWindowID id,const wx
 	wxFont lblInterestFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblInterest->SetFont(lblInterestFont);
 	txfInterest = new wxTextCtrl(pnlCAccount, ID_TEXTCTRL7, wxEmptyString, wxPoint(160,48), wxSize(88,21), 0, wxTextValidator(wxFILTER_NUMERIC, NULL), _T("ID_TEXTCTRL7"));
-	txfInterest->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnCUpdate = new wxButton(Panel1, ID_BUTTON8, _("UPDATE"), wxPoint(184,376), wxDefaultSize, 0, wxDefaultValidator, _T("ID_BUTTON8"));
 	btnCUpdate->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNHIGHLIGHT));
 	btnCUpdate->SetBackgroundColour(wxColour(210,175,102));
