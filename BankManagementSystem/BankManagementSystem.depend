@@ -2158,3 +2158,284 @@
 	<wx/statbmp.h>
 	<wx/stattext.h>
 
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.cpp
+	"Account.h"
+	<string>
+	<wx/intl.h>
+	<wx/string.h>
+
+1526463579 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\account.h
+	<vector>
+	"ClientalManagement.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/grid.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientalmanagement.h
+	<string>
+
+1526460982 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.cpp
+	"BankManagementSystemApp.h"
+	"BankManagementSystemMain.h"
+	<wx/image.h>
+
+1526460982 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemapp.h
+	<wx/app.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\bankmanagementsystemmain.cpp
+	"BankManagementSystemMain.h"
+	<wx/msgdlg.h>
+	"Database.h"
+	"Register.h"
+	"sqlite3.h"
+	"SelectionMenu.h"
+	"Employee.h"
+	<ctime>
+	<wx/valtext.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460982 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\database.h
+	<string>
+	<vector>
+	"sqlite3.h"
+
+1526460983 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.h
+	<stdarg.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.h
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	"Employee.h"
+
+1526460982 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employee.h
+	<string>
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.cpp
+	"ClientFunctionsForm.h"
+	"SelectionMenu.h"
+	"Account.h"
+	"ClientalManagement.h"
+	<wx/msgdlg.h>
+	"Database.h"
+	<wx/textdlg.h>
+	"Account.h"
+	<locale.h>
+	<time.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientfunctionsform.h
+	<wx/button.h>
+	<wx/choice.h>
+	<wx/frame.h>
+	<wx/notebook.h>
+	<wx/panel.h>
+	<wx/radiobut.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"Employee.h"
+	<string>
+	<vector>
+	"ClientalManagement.h"
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\clientmanangementfunctions.cpp
+	"ClientalManagement.h"
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\databasefunctions.cpp
+	"Database.h"
+
+1526460982 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctions.cpp
+	"Employee.h"
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.cpp
+	"EmployeeFunctionsForm.h"
+	"SelectionMenu.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/valtext.h>
+	<wx/textctrl.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\employeefunctionsform.h
+	<wx/button.h>
+	<wx/checkbox.h>
+	<wx/choice.h>
+	<wx/frame.h>
+	<wx/grid.h>
+	<wx/notebook.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+	<wx/textctrl.h>
+	"Employee.h"
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.cpp
+	"Help.h"
+	"SelectionMenu.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\help.h
+	"SelectionMenu.h"
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.cpp
+	"Metrics.h"
+	"SelectionMenu.h"
+	"Database.h"
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460993 c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\metrics.h
+	"Employee.h"
+	<wx/button.h>
+	<wx/frame.h>
+	<wx/panel.h>
+	<wx/statbmp.h>
+	<wx/stattext.h>
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\register.cpp
+	"Register.h"
+	"BankManagementSystemMain.h"
+	"Database.h"
+	<wx/msgdlg.h>
+	<wx/valtext.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460983 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\resource.rc
+	"wx/msw/wx.rc"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\wx.rc
+	<windows.h>
+	"wx/msw/rcdefs.h"
+
+1518982230 c:\wxwidgets-3.1.1\include\wx\msw\rcdefs.h
+
+1526460993 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\selectionmenu.cpp
+	"SelectionMenu.h"
+	"BankManagementSystemMain.h"
+	"EmployeeFunctionsForm.h"
+	"ClientFunctionsForm.h"
+	"Help.h"
+	"Metrics.h"
+	<wx/msgdlg.h>
+	<wx/bitmap.h>
+	<wx/font.h>
+	<wx/image.h>
+	<wx/intl.h>
+	<wx/settings.h>
+	<wx/string.h>
+
+1526460983 source:c:\users\nascha\documents\github\bankmanagementsystemproject\bankmanagementsystem\sqlite3.c
+	"config.h"
+	<vxWorks.h>
+	<pthread.h>
+	"mingw.h"
+	"_mingw.h"
+	<stdarg.h>
+	<stdint.h>
+	<inttypes.h>
+	<intrin.h>
+	<cmnintrin.h>
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+	<assert.h>
+	<stddef.h>
+	<TargetConditionals.h>
+	<ctype.h>
+	<time.h>
+	<sys/sysctl.h>
+	<malloc/malloc.h>
+	<libkern/OSAtomic.h>
+	<malloc.h>
+	<pthread.h>
+	"windows.h"
+	<sys/cygwin.h>
+	<errno.h>
+	<process.h>
+	<math.h>
+	<sys/types.h>
+	<sys/stat.h>
+	<fcntl.h>
+	<sys/ioctl.h>
+	<unistd.h>
+	<sys/time.h>
+	<errno.h>
+	<sys/mman.h>
+	<sys/file.h>
+	<sys/param.h>
+	<semaphore.h>
+	<limits.h>
+	<sys/mount.h>
+	<utime.h>
+	<sys/dcmd_blk.h>
+	<sys/statvfs.h>
+	<dlfcn.h>
+	"sqlite_tcl.h"
+	"tcl.h"
+	"sqlite3rtree.h"
+	<unicode/utypes.h>
+	<unicode/uregex.h>
+	<unicode/ustring.h>
+	<unicode/ucol.h>
+	<unicode/ubrk.h>
+	<unicode/utf16.h>
+	<ctype.h>
+	<math.h>
+
