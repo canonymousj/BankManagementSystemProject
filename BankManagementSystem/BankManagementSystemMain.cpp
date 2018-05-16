@@ -112,7 +112,7 @@ BankManagementSystemFrame::BankManagementSystemFrame(wxWindow* parent,wxWindowID
     txfUName = new wxTextCtrl(Panel1, ID_TEXTCTRL1, wxEmptyString, wxPoint(224,104), wxSize(144,29), 0, wxTextValidator(wxFILTER_DIGITS, NULL), _T("ID_TEXTCTRL1"));
     txfUName->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_BTNTEXT));
     txfUName->SetBackgroundColour(wxColour(219,234,187));
-    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(224,152), wxSize(144,29), 0, wxDefaultValidator, _T("ID_TEXTCTRL2"));
+    txfPass = new wxTextCtrl(Panel1, ID_TEXTCTRL2, wxEmptyString, wxPoint(224,152), wxSize(144,29), wxTE_PASSWORD, wxDefaultValidator, _T("ID_TEXTCTRL2"));
     txfPass->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOWTEXT));
     txfPass->SetBackgroundColour(wxColour(220,232,198));
 

@@ -15,6 +15,7 @@
 						<bitmap>white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg</bitmap>
 						<pos>0,0</pos>
 						<size>464,392</size>
+						<enabled>0</enabled>
 						<style>0</style>
 					</object>
 					<object class="wxGrid" name="ID_GRID1" variable="Grid1" member="yes">

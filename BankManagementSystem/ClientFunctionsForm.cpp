@@ -448,7 +448,7 @@ void DatabaseConnectCF(){
     dbCF = new Database("Database.sqlite");
 }
 
-void ClientFunctionsForm::populateAccount(int cNum){
+void ClientFunctionsForm::populateAccount(int cNum){    //populates account object
     std::string q = "SELECT * FROM tblAccount WHERE clientID = "+std::to_string(cNum)+";";
     vector<vector<string> > res = dbCF->query(q.c_str());   //store query to string vector (2D)
     if(!(res.empty())){ //if it contains information populate account object
@@ -488,7 +488,7 @@ void ClientFunctionsForm::populateLoans(account &accobj){
             double amt = atof((row.at(1)).c_str()), interest = atof((row.at(4)).c_str());
             string dol = row.at(2);
 
-            loanObj.push_back(loan(loanID, amt, interest, type, rpPeriod, dol));
+            loanObj.push_back(loan(loanID, amt, interest, type, rpPeriod, dol));    //adds loan to vector
 
             rowPos++;
         }
@@ -517,7 +517,7 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
 
     AccID<<accObj.getAccountID();
 
-    lblClientID->SetLabel(clID);
+    lblClientID->SetLabel(clID);    //set labels with relevant data
     lblClientName->SetLabel(clName);
 
     accBal = wxString::Format("%.2f", accObj.getBalance());
@@ -579,7 +579,7 @@ void ClientFunctionsForm::populateClientSummary(account &accObj, std::vector< lo
     }
 }
 
-void ClientFunctionsForm::populateLoanFields(unsigned int pos){
+void ClientFunctionsForm::populateLoanFields(unsigned int pos){ //populates textfield for loans
     if(!(loanObj.empty())&&(pos<loanObj.size())){
         txfLLoanNum->SetValue(to_string(pos+1));
         txfLLoanID->SetValue(to_string(loanObj[pos].getLoanID()));
@@ -590,7 +590,7 @@ void ClientFunctionsForm::populateLoanFields(unsigned int pos){
     }
 }
 
-int ClientFunctionsForm::populateClientFields(int cNum){
+int ClientFunctionsForm::populateClientFields(int cNum){    //populates client fields
     wxString clNum, cName, cSAID, cContact, cAddress;   //main variable init
 
     std::string q = "SELECT * FROM tblClient WHERE clientID = "+std::to_string(cNum)+";";   //get user record from database
@@ -716,7 +716,7 @@ void ClientFunctionsForm::setup(){
     lblNumLoans->SetLabel("");
 }
 
-void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//rebuild
+void ClientFunctionsForm::OnbtnCBackClick(wxCommandEvent& event)//back action, create object of form load it
 {
     SelectionMenu *seleForm = new SelectionMenu(NULL);
 
@@ -736,7 +736,7 @@ void ClientFunctionsForm::OnbtnCExitClick(wxCommandEvent& event)
     this->Close(TRUE);
 }
 
-void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)  //button to search for client
 {
     vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
 
@@ -781,7 +781,7 @@ void ClientFunctionsForm::OnbtnCSearchClick(wxCommandEvent& event)
 	}
 }
 
-void ClientFunctionsForm::OnbtnCNewClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnCNewClick(wxCommandEvent& event) //create new client
 {
     setup();
     pnlCAccount->Show(TRUE);
@@ -809,7 +809,7 @@ void ClientFunctionsForm::OnbtnCCancelClick(wxCommandEvent& event)
     setup();
 }
 
-void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)  //update new client
 {
     vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
 
@@ -855,7 +855,7 @@ void ClientFunctionsForm::OnbtnCUpdateClick(wxCommandEvent& event)
     }
 }
 
-void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)  //create new client
 {
     int check = 1, type = -1;
     int cNumber = wxAtoi(txfCID->GetValue());
@@ -870,7 +870,7 @@ void ClientFunctionsForm::OnbtnCCreateClick(wxCommandEvent& event)
     std::string con = txfCConNum->GetValue().ToStdString();
     std::string add = txfCAddress->GetValue().ToStdString();
 
-    std::replace(name.begin(), name.end(), '\'', ' ');
+    std::replace(name.begin(), name.end(), '\'', ' ');  //remove potentially hazardous characters
     std::replace(ID.begin(), ID.end(), '\'', ' ');
     std::replace(con.begin(), con.end(), '\'', ' ');
     std::replace(add.begin(), add.end(), '\'', ' ');
@@ -960,7 +960,7 @@ void ClientFunctionsForm::OnbtnCLoanClick(wxCommandEvent& event)
 {
 }
 
-void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnAccUpdateClick(wxCommandEvent& event)    //updates account
 {
    vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblAccount;");
 
@@ -1073,7 +1073,7 @@ void ClientFunctionsForm::OnbtnAccWithdrawClick(wxCommandEvent& event)
     }
 }
 
-void ClientFunctionsForm::OnbtnAccDepositClick(wxCommandEvent& event)
+void ClientFunctionsForm::OnbtnAccDepositClick(wxCommandEvent& event)   //deposit an amount
 {
     vector<vector<string> > resulta = dbCF->query("SELECT * FROM tblClient;");
 

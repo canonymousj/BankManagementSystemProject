@@ -110,6 +110,7 @@
 				<size>144,29</size>
 				<fg>wxSYS_COLOUR_WINDOWTEXT</fg>
 				<bg>#DCE8C6</bg>
+				<style>wxTE_PASSWORD</style>
 			</object>
 		</object>
 	</object>

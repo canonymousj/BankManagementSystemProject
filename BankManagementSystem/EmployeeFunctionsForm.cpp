@@ -64,6 +64,7 @@ EmployeeFunctionsForm::EmployeeFunctionsForm(wxWindow* parent,wxWindowID id,cons
 	pnlViewEm = new wxPanel(Notebook1, ID_PANEL1, wxPoint(262,206), wxSize(465,439), wxTAB_TRAVERSAL, _T("ID_PANEL1"));
 	pnlViewEm->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_HIGHLIGHTTEXT));
 	StaticBitmap1 = new wxStaticBitmap(pnlViewEm, ID_STATICBITMAP1, wxBitmap(wxImage(_T("white and gold christmas wallpaper ; Gold-Christmas-Lights-Background-06.jpg")).Rescale(wxSize(464,392).GetWidth(),wxSize(464,392).GetHeight())), wxPoint(0,0), wxSize(464,392), 0, _T("ID_STATICBITMAP1"));
+	StaticBitmap1->Disable();
 	Grid1 = new wxGrid(pnlViewEm, ID_GRID1, wxPoint(16,80), wxSize(432,256), 0, _T("ID_GRID1"));
 	Grid1->CreateGrid(3,4);
 	Grid1->EnableEditing(false);
@@ -189,7 +190,7 @@ void DatabaseConnectEF(){
     dbEF = new Database("Database.sqlite");
 }
 
-void EmployeeFunctionsForm::populateUpdateFields(int EmNum){
+void EmployeeFunctionsForm::populateUpdateFields(int EmNum){    //loads all the text fields with relevant information
     wxString upEmNum, upEmName, upEmID, upEmPass, upEmSal, upEmPriv;
 
     std::string q = "SELECT * FROM tblEmployee WHERE employeeID = "+std::to_string(EmNum)+";";
@@ -213,7 +214,7 @@ void EmployeeFunctionsForm::populateUpdateFields(int EmNum){
     txfUpEPass->SetValue(upEmPass);
 }
 
-void EmployeeFunctionsForm::setupCurEmployee(){
+void EmployeeFunctionsForm::setupCurEmployee(){ //setup employee object
     wxString upEmNum, upEmName, upEmID, upEmPass, upEmSal, upEmPriv;
 
     upEmNum << curEmployee->getEmployeeNumber();
@@ -233,7 +234,7 @@ void EmployeeFunctionsForm::setupCurEmployee(){
 
     txfUpEPriv->SetEditable(FALSE);
     txfUpESal->SetEditable(FALSE);
-    txfUpESAID->SetEditable(FALSE);
+    //txfUpESAID->SetEditable(FALSE);
 
     if(curEmployee->getPrivilege() != 0){
         txfUpEmNum->SetEditable(FALSE);
@@ -244,7 +245,7 @@ void EmployeeFunctionsForm::setupCurEmployee(){
     }
 }
 
-void EmployeeFunctionsForm::updateTable(){
+void EmployeeFunctionsForm::updateTable(){  //update grid on front
     int rows = Grid1->GetNumberRows();
     int emPriv = 1;
 

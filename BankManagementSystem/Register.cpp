@@ -61,7 +61,7 @@ Register::Register(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSiz
 	lblEID = new wxStaticText(Panel1, ID_STATICTEXT2, _("SA ID NUMBER:"), wxPoint(64,176), wxDefaultSize, 0, _T("ID_STATICTEXT2"));
 	wxFont lblEIDFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblEID->SetFont(lblEIDFont);
-	txfEPass = new wxTextCtrl(Panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(248,216), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL3"));
+	txfEPass = new wxTextCtrl(Panel1, ID_TEXTCTRL3, wxEmptyString, wxPoint(248,216), wxSize(128,21), wxTE_PASSWORD, wxDefaultValidator, _T("ID_TEXTCTRL3"));
 	txfEPass->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 	lblEPass = new wxStaticText(Panel1, ID_STATICTEXT3, _("PASSWORD:"), wxPoint(64,216), wxDefaultSize, 0, _T("ID_STATICTEXT3"));
 	wxFont lblEPassFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
@@ -69,7 +69,7 @@ Register::Register(wxWindow* parent,wxWindowID id,const wxPoint& pos,const wxSiz
 	lblMPass = new wxStaticText(Panel1, ID_STATICTEXT4, _("MANAGER\'S PASSWORD:"), wxPoint(64,256), wxDefaultSize, 0, _T("ID_STATICTEXT4"));
 	wxFont lblMPassFont(10,wxFONTFAMILY_SWISS,wxFONTSTYLE_NORMAL,wxFONTWEIGHT_BOLD,false,wxEmptyString,wxFONTENCODING_DEFAULT);
 	lblMPass->SetFont(lblMPassFont);
-	txfMPass = new wxTextCtrl(Panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(248,256), wxSize(128,21), 0, wxDefaultValidator, _T("ID_TEXTCTRL4"));
+	txfMPass = new wxTextCtrl(Panel1, ID_TEXTCTRL4, wxEmptyString, wxPoint(248,256), wxSize(128,21), wxTE_PASSWORD, wxDefaultValidator, _T("ID_TEXTCTRL4"));
 	txfMPass->SetBackgroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_GRADIENTINACTIVECAPTION));
 	btnSubmit = new wxButton(Panel1, ID_BUTTON2, _("SUBMIT"), wxPoint(320,312), wxSize(75,32), 0, wxDefaultValidator, _T("ID_BUTTON2"));
 	btnSubmit->SetForegroundColour(wxSystemSettings::GetColour(wxSYS_COLOUR_WINDOW));

@@ -53,6 +53,7 @@
 				<pos>248,216</pos>
 				<size>128,21</size>
 				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
+				<style>wxTE_PASSWORD</style>
 			</object>
 			<object class="wxStaticText" name="ID_STATICTEXT3" variable="lblEPass" member="yes">
 				<label>PASSWORD:</label>
@@ -80,6 +81,7 @@
 				<pos>248,256</pos>
 				<size>128,21</size>
 				<bg>wxSYS_COLOUR_GRADIENTINACTIVECAPTION</bg>
+				<style>wxTE_PASSWORD</style>
 			</object>
 			<object class="wxButton" name="ID_BUTTON2" variable="btnSubmit" member="yes">
 				<label>SUBMIT</label>
